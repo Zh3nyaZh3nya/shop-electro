@@ -4,44 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/styles/vuetify.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/main/Offers.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/main/TopBlocks.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/main/background-top-1.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/main/offer-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/main/offer-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/main/offer-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/utils/vuetify/defaults.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shop-electro.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="added swiper &amp; two main blocks">
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/category_kk.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/category_ru.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/combineCategoriesWithProducts.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/main_blocks_kk.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/main_blocks_ru.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/offers_kk.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/offers_ru.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/product_kk.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/product_ru.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/main/Products.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug].vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/stores/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/main/Offers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/main/Offers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/main/TopBlocks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/main/TopBlocks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/i18n/locales/kk.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/i18n/locales/kk.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/i18n/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/i18n/locales/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/nuxt.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="TypeScript File" />
         <option value="Vue Composition API Component" />
       </list>
     </option>
@@ -60,34 +63,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "H:/shop-electro/frontend/public/main",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "H:\\shop-electro\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/shop-electro/frontend/assets/staticData&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;H:\\shop-electro\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\assets\staticData" />
       <recent name="H:\shop-electro\frontend\public\main" />
       <recent name="H:\shop-electro\frontend\assets\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\pages\catalog\[category]\[subcategory]" />
+      <recent name="H:\shop-electro\frontend\pages\catalog\[category]" />
       <recent name="H:\shop-electro\frontend\utils\vuetify" />
     </key>
   </component>
@@ -102,7 +108,17 @@
       <workItem from="1733584516129" duration="7000" />
       <workItem from="1733584545293" duration="4724000" />
       <workItem from="1733610333373" duration="88000" />
-      <workItem from="1733937775793" duration="11895000" />
+      <workItem from="1733937775793" duration="12019000" />
+      <workItem from="1734322532058" duration="803000" />
+      <workItem from="1734323552216" duration="2227000" />
+      <workItem from="1734333857877" duration="221000" />
+      <workItem from="1734434208932" duration="20000" />
+      <workItem from="1734704455085" duration="3095000" />
+      <workItem from="1734932271083" duration="3000" />
+      <workItem from="1735008130237" duration="101000" />
+      <workItem from="1735196649821" duration="18000" />
+      <workItem from="1737801249613" duration="14999000" />
+      <workItem from="1737968437285" duration="19000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -112,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733584642026</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added swiper &amp; two main blocks">
+      <option name="closed" value="true" />
+      <created>1733951755408</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733951755408</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="added swiper &amp; two main blocks" />
+    <option name="LAST_COMMIT_MESSAGE" value="added swiper &amp; two main blocks" />
   </component>
 </project>

@@ -47,7 +47,7 @@ watch(() => locale.value, () => {
 
 <template>
   <v-app-bar color="white" class="py-2 header" elevation="0" height="208">
-    <v-container class="header-top">
+    <v-container class="header-top py-0">
       <v-row>
         <v-col cols="12" md="3" class="d-flex align-center text-body-2">
           <v-select
@@ -69,7 +69,6 @@ watch(() => locale.value, () => {
               :hide-details="true"
               prepend-inner-icon="mdi-map-marker-outline"
               menu-icon="mdi-chevron-down"
-
           >
           </v-select>
         </v-col>
@@ -90,7 +89,9 @@ watch(() => locale.value, () => {
       <v-row>
         <v-col cols="12" md="3">
           <v-card rounded="lg" height="64" class="pa-4 d-flex justify-space-between align-center" elevation="0" color="primary">
-            <v-img src="/img.png" max-width="56" cover />
+            <nuxt-link :to="localePath('/')" class="w-100">
+              <v-img src="/img.png" max-width="56" width="100%" height="100%" cover />
+            </nuxt-link>
             <v-btn variant="outlined" class="bg-primary text-none text-body-1 d-flex align-center">
               {{ $t('catalog') }}
               <v-icon icon="mdi-chevron-down" style="margin-top: 2px" size="18"></v-icon>

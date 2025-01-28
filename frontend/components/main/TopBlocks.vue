@@ -1,55 +1,13 @@
 <script setup lang="ts">
-import { ref } from "vue"
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { useI18n } from "vue-i18n";
 import 'swiper/css';
+import type { ITopBlock } from "~/types";
 
-const { t } = useI18n()
+interface IProps {
+  cards: ITopBlock[]
+}
 
-const blocks = ref([
-  {
-    id: 1,
-    title: t('main_block_title_1'),
-    subtitle: t('main_block_subtitle_1'),
-    background: '#e0d2ff',
-  },
-  {
-    id: 2,
-    title: t('main_block_title_2'),
-    subtitle: t('main_block_subtitle_2'),
-    background: '#ffd0d0',
-  },
-  {
-    id: 3,
-    title: t('main_block_title_3'),
-    subtitle: t('main_block_subtitle_3'),
-    background: '#cdeaff',
-  },
-  {
-    id: 4,
-    title: t('main_block_title_4'),
-    subtitle: t('main_block_subtitle_4'),
-    background: '#e0d2ff',
-  },
-  {
-    id: 5,
-    title: t('main_block_title_5'),
-    subtitle: t('main_block_subtitle_5'),
-    background: '#ffd0d0',
-  },
-  {
-    id: 6,
-    title: t('main_block_title_6'),
-    subtitle: t('main_block_subtitle_6'),
-    background: '#cdeaff',
-  },
-  {
-    id: 7,
-    title: t('main_block_title_7'),
-    subtitle: t('main_block_subtitle_7'),
-    background: '#ffd0d0',
-  },
-])
+const props = defineProps<IProps>()
 </script>
 
 <template>
@@ -68,18 +26,25 @@ const blocks = ref([
     </v-col>
     <v-col cols="12" md="9">
       <swiper
-          slides-per-view="5.4"
+          slides-per-view="4.4"
           direction="horizontal"
           space-between="20"
           :style="{ 'height': '206px' }"
       >
         <swiper-slide
-            v-for="block in blocks"
-            :key="block.id"
+            v-for="card in cards"
+            :key="card.id"
         >
-          <v-card rounded="lg" :color="block.background" class="main__top__blocks-card pa-4" elevation="0" height="174">
-            <h2 class="mb-1 text-h5 text-secondary">{{ block.title }}</h2>
-            <h3 class="text-caption text-secondary">{{ block.subtitle }}</h3>
+          <v-card
+              rounded="lg"
+              :color="card.background"
+              class="main__top__blocks-card pa-4"
+              elevation="0"
+              height="174"
+              :to="card.link"
+          >
+            <h2 class="mb-1 text-h6 text-secondary">{{ card.title }}</h2>
+            <h3 class="text-caption text-secondary">{{ card.subtitle }}</h3>
           </v-card>
         </swiper-slide>
       </swiper>
@@ -88,7 +53,7 @@ const blocks = ref([
 </template>
 
 <style lang="scss">
-.main-top__blocks-card {
+.main__top__blocks-card {
   &-first {
     background: #fff7da url('/main/background-top-1.webp') no-repeat bottom right;
     &-btn {
