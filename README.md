@@ -6,8 +6,6 @@
 ## Стек технологий
 
 - **Frontend**: [Nuxt 3](https://nuxt.com/docs/getting-started/introduction) — современный фреймворк для создания Vue-приложений.
-- **Backend**: [Laravel](https://laravel.com/) — мощный PHP-фреймворк с интуитивно понятной архитектурой.
-- **База данных**: [MySQL](https://www.mysql.com/) — реляционная база данных для надёжного хранения данных.
 
 ## Основные возможности
 
@@ -20,9 +18,6 @@
 ### Требования
 
 - Node.js: 20.11.1
-- PHP: 8.2
-- MySQL
-- Composer
 
 ### Установка
 
@@ -38,25 +33,9 @@
    cd frontend
    yarn install
 
-3. Установите зависимости для backend:
-
-   ```bash
-   cd ../backend
-   composer install
-
-## Настройте файл окружения .env для frontend и backend частей. Примерные файлы .env.example можно найти в папках frontend и backend.
-
-4. Выполните миграции базы данных:
-
-   ```bash
-   php artisan migrate
+## Настройте файл окружения .env для frontend. Примерные файлы .env.example можно найти в папке frontend.
 
 ### Запустите сервер разработки.
-
-- Для backend:
-
-   ```bash
-   php artisan serve
 
 - Для frontend:
 
@@ -65,8 +44,6 @@
 
 ## Структура проекта
 frontend/ - Nuxt 3 проект для интерфейса пользователя
-
-backend/ - Laravel проект для серверной части приложения
 
 ## Контакты
 Для вопросов и предложений свяжитесь со мной по email: evgeniq.golovkin@gmail.com или https://t.me/Zh3nya_qwe.
