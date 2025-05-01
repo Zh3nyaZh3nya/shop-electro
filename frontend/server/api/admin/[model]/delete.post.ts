@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
     const { model } = event.context.params as { model: string }
     const body = await readBody(event)
-    const filePath = join('staticData', `${model}.json`)
+    const filePath = join('assets/staticData', `${model}.json`)
 
     let data = []
     try {
@@ -16,9 +16,20 @@ export default defineEventHandler(async (event) => {
         data = JSON.parse(content)
     } catch {}
 
-    data = data.filter((item: any) => item.id !== body.id)
+    const idsToDelete: number[] = []
+
+    if (Array.isArray(body.ids)) {
+        idsToDelete.push(...body.ids)
+    } else if (typeof body.id !== 'undefined') {
+        idsToDelete.push(body.id)
+    }
+
+    data = data.filter((item: any) => !idsToDelete.includes(item.id))
 
     await writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8')
 
-    return { success: true }
+    return {
+        success: true,
+        deletedIds: idsToDelete,
+    }
 })

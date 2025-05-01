@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
 
     const { model } = event.context.params as { model: string }
     const body = await readBody(event)
-    const filePath = join('staticData', `${model}.json`)
+    const filePath = join('assets/staticData', `${model}.json`)
 
     let data = []
     try {
@@ -17,7 +17,12 @@ export default defineEventHandler(async (event) => {
     } catch {}
 
     const index = data.findIndex((item: any) => item.id === body.id)
-    if (index !== -1) data[index] = body
+    if (index !== -1) {
+        data[index] = {
+            ...data[index],
+            ...body
+        }
+    }
 
     await writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8')
 
