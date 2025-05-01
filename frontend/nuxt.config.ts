@@ -1,19 +1,49 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-import i18n from '@nuxtjs/i18n'
+import { copyFile, mkdir, readdir, stat } from 'fs/promises'
+import { join, dirname } from 'path'
+
+async function copyStaticData() {
+  const fromDir = join(process.cwd(), 'assets/staticData')
+  const toDir = join(process.cwd(), '.output/assets/staticData')
+
+  async function copyRecursive(src: string, dest: string) {
+    const entries = await readdir(src, { withFileTypes: true })
+
+    for (const entry of entries) {
+      const srcPath = join(src, entry.name)
+      const destPath = join(dest, entry.name)
+
+      if (entry.isDirectory()) {
+        await mkdir(destPath, { recursive: true })
+        await copyRecursive(srcPath, destPath)
+      } else {
+        await mkdir(dirname(destPath), { recursive: true })
+        await copyFile(srcPath, destPath)
+      }
+    }
+  }
+
+  await mkdir(toDir, { recursive: true })
+  await copyRecursive(fromDir, toDir)
+}
 
 export default defineNuxtConfig({
+  hooks: {
+    'nitro:build:public-assets': async () => {
+      await copyStaticData()
+    }
+  },
   css: ['~/assets/styles/global.scss', 'vuetify/lib/styles/main.sass', "@/assets/fonts/fonts.css"],
   runtimeConfig: {
     public: {
-      apiUrl: process.env.API_ENDPOINT ?? 'http://127.0.0.1:8000/api'
+      apiUrl: process.env.API_ENDPOINT ?? 'http://localhost:3000/api'
     }
   },
   build: {
     transpile: ['vuetify'],
   },
   modules: [
-    '@nuxtjs/i18n',
     'vue-yandex-maps/nuxt',
     '@pinia/nuxt',
     (_options, nuxt) => {
@@ -34,15 +64,6 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
-  },
-  i18n: {
-    defaultLocale: "ru",
-    locales: [
-      { code: "ru", name: "Рус", file: 'locales/ru.json' },
-      { code: "kk", name: "Каз", file: 'locales/kk.json' },
-    ],
-    lazy: true,
-    langDir: '',
   },
   yandexMaps: {
     apikey: '61a0064e-8ce3-4b3e-a7d1-cf970fadd310',

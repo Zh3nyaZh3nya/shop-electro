@@ -12,8 +12,38 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.link-hover {
+  text-decoration: none;
+  color: inherit;
   transition: color 0.15s ease;
   &:hover {
     color: rgb(var(--v-theme-primary)) !important;
   }
+}
+
+.swiper-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  pointer-events: none;
+  padding: 16px 0;
+  .swiper-button {
+    pointer-events: auto;
+  }
+}
+
+.border-card {
+  border: 1px solid #ffffff1a !important;
+}
+
+.rotate-left {
+  transform: rotate(.5turn);
 }
