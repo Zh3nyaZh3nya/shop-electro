@@ -12,6 +12,8 @@ const pageType = computed(() => pageConfig.value?.type ?? 'card')
 
 const currentPage = ref(1)
 const itemsPerPage = ref(10)
+const sortBy = ref<string | undefined>(undefined)
+const sortDesc = ref<boolean>(false)
 
 function generateHeadersFromData(items: any[]): TableHeader[] {
   if (!items.length || typeof items[0] !== 'object') return []
@@ -41,6 +43,8 @@ const { data: pageData, pending: pagePending, error: pageError, refresh } = awai
         query: {
           page: currentPage.value,
           perPage: itemsPerPage.value,
+          sortBy: sortBy.value,
+          sortDesc: sortDesc.value,
         },
         credentials: 'include',
       })
@@ -48,13 +52,20 @@ const { data: pageData, pending: pagePending, error: pageError, refresh } = awai
       return dataFetch.value
     },
     {
-      watch: [currentPage, itemsPerPage]
+      watch: [currentPage, itemsPerPage, sortBy, sortDesc]
     }
 )
 
-function onPaginationUpdate(p: { page: number; itemsPerPage: number }) {
+function onPaginationUpdate(p: {
+  page: number
+  itemsPerPage: number
+  sortBy?: string
+  sortDesc?: boolean
+}) {
   currentPage.value = p.page
   itemsPerPage.value = p.itemsPerPage
+  sortBy.value = p.sortBy
+  sortDesc.value = p.sortDesc ?? false
 }
 
 async function updateActiveItem(payload: { id: number, active: boolean }) {
@@ -96,7 +107,7 @@ definePageMeta({
         </v-btn>
       </v-container>
     </section>
-    <section v-if="pageType === 'card' && pageData && pageData.items">
+    <section v-if="(pageType === 'card' || pageType === 'card-color') && pageData && pageData.items">
       <v-container>
         <AdminTable
             :header="generateHeadersFromData(pageData?.items || [])"

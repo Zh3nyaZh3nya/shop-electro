@@ -12,10 +12,20 @@ export default defineEventHandler(async (event) => {
     const query = getQuery(event)
     const page = parseInt(query.page as string) || 1
     const perPage = parseInt(query.perPage as string) || 10
+    const sortBy = query.sortBy as string || ''
+    const sortDesc = query.sortDesc === 'true'
 
     try {
         const content = await readFile(filePath, 'utf-8')
-        const data = JSON.parse(content)
+        let data = JSON.parse(content)
+
+        if (sortBy) {
+            data.sort((a: any, b: any) => {
+                if (a[sortBy] < b[sortBy]) return sortDesc ? 1 : -1
+                if (a[sortBy] > b[sortBy]) return sortDesc ? -1 : 1
+                return 0
+            })
+        }
 
         const total = data.length
         const start = (page - 1) * perPage

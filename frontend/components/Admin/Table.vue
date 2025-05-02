@@ -3,6 +3,11 @@ interface TableItem {
   [key: string]: any
 }
 
+type SortItem = {
+  key: string
+  order?: 'asc' | 'desc'
+}
+
 const props = defineProps<{
   header: TableHeader[]
   items: TableItem[]
@@ -12,9 +17,17 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'update:pagination', value: { page: number; itemsPerPage: number }): void
+  (e: 'update:pagination', value: {
+    page: number
+    itemsPerPage: number
+    sortBy?: string
+    sortDesc?: boolean
+  }): void
   (e: 'toggle:active', value: { id: number; active: boolean }): void
 }>()
+
+const sortBy = ref<SortItem[]>([])
+const sortDesc = ref(false)
 
 const page = computed({
   get: () => props.page,
@@ -25,6 +38,16 @@ const itemsPerPage = computed({
   get: () => props.itemsPerPage,
   set: (val) => emit('update:pagination', { page: props.page, itemsPerPage: val })
 })
+
+watch(sortBy, () => {
+  const sort = sortBy.value[0]
+  emit('update:pagination', {
+    page: props.page,
+    itemsPerPage: props.itemsPerPage,
+    sortBy: sort?.key,
+    sortDesc: sort?.order === 'desc'
+  })
+})
 </script>
 
 <template>
@@ -33,6 +56,7 @@ const itemsPerPage = computed({
       :items="items"
       v-model:page="page"
       v-model:items-per-page="itemsPerPage"
+      v-model:sort-by="sortBy"
       class="bg-admin-grey-dark-1 rounded-lg admin-table"
       items-per-page-text="На страницу"
       no-data-text="Нет данных"
@@ -70,6 +94,13 @@ const itemsPerPage = computed({
 
 <style lang="scss">
 .admin-table {
+  .v-switch__track {
+    height: 26px;
+    min-width: 46px;
+  }
+  .v-data-table-header__content {
+    column-gap: 6px;
+  }
   .v-pagination__last, .v-pagination__first {
     display: none;
   }
@@ -94,6 +125,5 @@ const itemsPerPage = computed({
       }
     }
   }
-
 }
 </style>

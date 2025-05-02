@@ -1,9 +1,10 @@
+type TypeDisplay = 'card' | 'card-color' | 'index'
 type AdminMenuItem =
     | {
     title: string
     icon: string
     link: string
-    type: string
+    type: TypeDisplay
 }
     | {
     title: string
@@ -11,7 +12,7 @@ type AdminMenuItem =
         title: string
         icon: string
         link: string
-        type: string
+        type: TypeDisplay
     }[]
 }
 
@@ -30,7 +31,7 @@ export const useAdminMenu = () => {
                     title: 'Предложения',
                     icon: 'mdi-offer',
                     link: 'offers',
-                    type: 'card',
+                    type: 'card-color',
                 },
             ],
         },
