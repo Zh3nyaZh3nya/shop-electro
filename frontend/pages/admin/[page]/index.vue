@@ -36,7 +36,7 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
 }
 
 const { data: pageData, pending: pagePending, error: pageError, refresh } = await useAsyncData(
-    `${pageType.value}Data`,
+    `admin-${route.params.page}-data`,
     async () => {
       const { data: dataFetch } = await useApi(`/admin/${route.params.page}`, {
         method: 'GET',
@@ -51,9 +51,6 @@ const { data: pageData, pending: pagePending, error: pageError, refresh } = awai
 
       return dataFetch.value
     },
-    {
-      watch: [currentPage, itemsPerPage, sortBy, sortDesc]
-    }
 )
 
 function onPaginationUpdate(p: {
@@ -66,6 +63,7 @@ function onPaginationUpdate(p: {
   itemsPerPage.value = p.itemsPerPage
   sortBy.value = p.sortBy
   sortDesc.value = p.sortDesc ?? false
+  refresh()
 }
 
 async function updateActiveItem(payload: { id: number, active: boolean }) {

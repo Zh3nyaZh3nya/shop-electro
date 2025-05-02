@@ -54,7 +54,6 @@ watch(sortBy, () => {
   <v-data-table
       :headers="header"
       :items="items"
-      v-model:page="page"
       v-model:items-per-page="itemsPerPage"
       v-model:sort-by="sortBy"
       class="bg-admin-grey-dark-1 rounded-lg admin-table"
@@ -88,7 +87,42 @@ watch(sortBy, () => {
         Изменить
       </nuxt-link>
     </template>
+    <template #bottom>
+      <v-divider class="mb-3"></v-divider>
+      <v-container class="d-flex justify-space-between align-center py-2 pb-4 px-4">
+        <div class="text-body-2">
+          Показано с
+          {{ (page - 1) * itemsPerPage + 1 }}
+          по
+          {{ Math.min(page * itemsPerPage, total) }}
+          из {{ total }}
+        </div>
 
+        <div class="d-flex align-center select-items ga-4">
+          <label class="text-body-2 label-select text-admin-grey-light-1">На страницу</label>
+          <v-select
+              v-model="itemsPerPage"
+              :items="[5, 10, 20, 50, 100]"
+              hide-details
+              density="compact"
+              variant="outlined"
+              style="max-width: 90px"
+              :focused="true"
+          />
+        </div>
+
+        <div class="d-flex align-center ga-4">
+          <v-pagination
+              v-model="page"
+              :length="Math.ceil(total / itemsPerPage)"
+              color="admin-primary"
+              density="comfortable"
+              size="small"
+              class="text-caption"
+          />
+        </div>
+      </v-container>
+    </template>
   </v-data-table>
 </template>
 
@@ -104,6 +138,7 @@ watch(sortBy, () => {
   .v-pagination__last, .v-pagination__first {
     display: none;
   }
+
   .v-data-table__th--sortable {
     transition: color 0.3s ease;
 
