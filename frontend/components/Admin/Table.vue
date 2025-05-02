@@ -84,8 +84,8 @@ watch(sortBy, () => {
           class="d-flex align-center ga-2 justify-end text-admin-primary"
           :to="{
             name: 'admin-page-edit',
-            params: { page: 'offers' },
-            query: { id: item.id }
+            params: { page: $route.params.page },
+            query: { id: item.id, ...$route.query }
           }"
       >
         <v-icon icon="mdi-pencil-outline" />
