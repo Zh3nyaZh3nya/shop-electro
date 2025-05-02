@@ -51,6 +51,12 @@ watch(sortBy, () => {
 </script>
 
 <template>
+  <v-pagination
+      v-show="false"
+      :length="4"
+      color="admin-primary"
+      size="small"
+  />
   <v-data-table
       :headers="header"
       :items="items"
@@ -115,10 +121,8 @@ watch(sortBy, () => {
           <v-pagination
               v-model="page"
               :length="Math.ceil(total / itemsPerPage)"
-              color="admin-primary"
-              density="comfortable"
               size="small"
-              class="text-caption"
+              :total-visible="6"
           />
         </div>
       </v-container>
@@ -137,6 +141,37 @@ watch(sortBy, () => {
   }
   .v-pagination__last, .v-pagination__first {
     display: none;
+  }
+
+  .v-pagination__prev {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .v-pagination__next {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-left: 0 !important;
+  }
+
+  .v-pagination__item {
+    border-left: 0 !important;
+  }
+
+  .v-pagination__item--is-active {
+    color: rgb(var(--v-theme-admin-primary));
+    background-color: #ffffff0d !important;
+    border: 1px solid #ffffff0d;
+    border-left: 0 !important;
+  }
+
+  .v-pagination__prev, .v-pagination__item, .v-pagination__next {
+    border: 1px solid #ffffff0d;
+    margin: 0px;
+    background: #ffffff0d;
+    .v-btn {
+      border-radius: 0px;
+    }
   }
 
   .v-data-table__th--sortable {

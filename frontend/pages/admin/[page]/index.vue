@@ -104,6 +104,7 @@ definePageMeta({
           Создать
         </v-btn>
       </v-container>
+
     </section>
     <section v-if="(pageType === 'card' || pageType === 'card-color') && pageData && pageData.items">
       <v-container>
