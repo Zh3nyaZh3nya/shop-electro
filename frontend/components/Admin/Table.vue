@@ -8,7 +8,7 @@ type SortItem = {
   order?: 'asc' | 'desc'
 }
 
-const props = defineProps<{
+const { header, items, total, page, itemsPerPage} = defineProps<{
   header: TableHeader[]
   items: TableItem[]
   total: number
@@ -27,23 +27,22 @@ const emit = defineEmits<{
 }>()
 
 const sortBy = ref<SortItem[]>([])
-const sortDesc = ref(false)
 
-const page = computed({
-  get: () => props.page,
-  set: (val) => emit('update:pagination', { page: val, itemsPerPage: props.itemsPerPage })
+const pages = computed({
+  get: () => page,
+  set: (val) => emit('update:pagination', { page: val, itemsPerPage: itemsPerPage })
 })
 
-const itemsPerPage = computed({
-  get: () => props.itemsPerPage,
-  set: (val) => emit('update:pagination', { page: props.page, itemsPerPage: val })
+const itemsPerPages = computed({
+  get: () => itemsPerPage,
+  set: (val) => emit('update:pagination', { page: page, itemsPerPage: val })
 })
 
 watch(sortBy, () => {
   const sort = sortBy.value[0]
   emit('update:pagination', {
-    page: props.page,
-    itemsPerPage: props.itemsPerPage,
+    page: page,
+    itemsPerPage: itemsPerPage,
     sortBy: sort?.key,
     sortDesc: sort?.order === 'desc'
   })
@@ -60,7 +59,7 @@ watch(sortBy, () => {
   <v-data-table
       :headers="header"
       :items="items"
-      v-model:items-per-page="itemsPerPage"
+      v-model:items-per-page="itemsPerPages"
       v-model:sort-by="sortBy"
       class="bg-admin-grey-dark-1 rounded-lg admin-table"
       items-per-page-text="На страницу"
@@ -98,29 +97,31 @@ watch(sortBy, () => {
       <v-container class="d-flex justify-space-between align-center py-2 pb-4 px-4">
         <div class="text-body-2">
           Показано с
-          {{ (page - 1) * itemsPerPage + 1 }}
+          {{ (pages - 1) * itemsPerPages + 1 }}
           по
-          {{ Math.min(page * itemsPerPage, total) }}
+          {{ Math.min(pages * itemsPerPages, total) }}
           из {{ total }}
         </div>
 
         <div class="d-flex align-center select-items ga-4">
           <label class="text-body-2 label-select text-admin-grey-light-1">На страницу</label>
           <v-select
-              v-model="itemsPerPage"
+              v-model="itemsPerPages"
               :items="[5, 10, 20, 50, 100]"
               hide-details
               density="compact"
               variant="outlined"
               style="max-width: 90px"
               :focused="true"
+              :menu-props="{ contentClass: 'table-select-menu', closeOnContentClick: false, offset: '15px' }"
+
           />
         </div>
 
         <div class="d-flex align-center ga-4">
           <v-pagination
-              v-model="page"
-              :length="Math.ceil(total / itemsPerPage)"
+              v-model="pages"
+              :length="Math.ceil(total / itemsPerPages)"
               size="small"
               :total-visible="6"
           />
@@ -193,6 +194,19 @@ watch(sortBy, () => {
       .v-icon {
         color: rgb(var(--v-theme-admin-primary)) !important;
       }
+    }
+  }
+}
+
+.table-select-menu {
+  .v-list {
+    background: rgb(var(--v-theme-admin-grey-dark-1));
+    box-shadow: none;
+    color: #fff;
+    padding: 0px;
+    border: 1px solid #ffffff0d;
+    .v-list-item {
+      border-bottom: 1px solid #ffffff0d;
     }
   }
 }
