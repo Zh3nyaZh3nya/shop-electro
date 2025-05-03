@@ -46,7 +46,7 @@ async function logout() {
               <span class="text-body-2">Admin</span>
             </div>
             <v-divider></v-divider>
-            <div class="pa-2 d-flex align-center ga-2" @click="logout">
+            <div class="pa-2 d-flex align-center ga-2 cursor-pointer" @click="logout">
               <v-icon icon="mdi-exit-to-app" color="admin-grey" class="rotate-left" />
               <span class="text-body-2">Выйти</span>
             </div>
