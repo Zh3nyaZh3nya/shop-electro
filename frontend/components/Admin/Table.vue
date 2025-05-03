@@ -118,7 +118,7 @@ watch(sortBy, () => {
           />
         </div>
 
-        <div class="d-flex align-center ga-4">
+        <div class="align-center ga-4" :class="total > 1 ? 'd-flex' : 'd-none'">
           <v-pagination
               v-model="pages"
               :length="Math.ceil(total / itemsPerPages)"
@@ -200,13 +200,13 @@ watch(sortBy, () => {
 
 .table-select-menu {
   .v-list {
-    background: rgb(var(--v-theme-admin-grey-dark-1));
-    box-shadow: none;
-    color: #fff;
-    padding: 0px;
-    border: 1px solid #ffffff0d;
+    background: rgb(var(--v-theme-admin-grey-dark-1)) !important;
+    box-shadow: none !important;
+    color: #fff !important;
+    padding: 0px !important;
+    border: 1px solid #ffffff0d !important;
     .v-list-item {
-      border-bottom: 1px solid #ffffff0d;
+      border-bottom: 1px solid #ffffff0d !important;
     }
   }
 }

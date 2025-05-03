@@ -2,7 +2,6 @@
 import { useAdminMenu } from "~/composables/useAdminMenu";
 
 const { menu } = useAdminMenu()
-
 </script>
 
 <template>
@@ -26,11 +25,22 @@ const { menu } = useAdminMenu()
                   }
                 }"
               class="d-flex align-center ga-2 text-body-2 font-weight-bold mb-2"
-              exact-active-class="text-admin-primary"
+              :class="[
+                'd-flex align-center ga-2 text-body-2 font-weight-bold mb-2',
+                (
+                  $route.path === '/admin' && item.type === 'index' ||
+                  $route.path === '/admin/' + item.link ||
+                  $route.path.startsWith('/admin/' + item.link + '/')
+                ) ? 'text-admin-primary router-link-active' : ''
+              ]"
           >
             <v-icon
                 :icon="item.icon"
-                :color="$route.path === (item.type === 'index' ? '/admin' : '/admin/' + item.link) ? 'admin-primary' : 'admin-grey-light-1'"
+                :color="(
+                  $route.path === '/admin' && item.type === 'index' ||
+                  $route.path === '/admin/' + item.link ||
+                  $route.path.startsWith('/admin/' + item.link + '/')
+                ) ? 'admin-primary' : 'admin-grey-light-1'"
                 size="24px"
             />
 
@@ -39,7 +49,7 @@ const { menu } = useAdminMenu()
 
         </template>
         <template v-else>
-          <v-expansion-panels class="bg-transparent my-6" multiple>
+          <v-expansion-panels class="bg-transparent my-6" multiple elevation="0">
             <v-expansion-panel class="bg-transparent">
               <v-expansion-panel-title min-width="0" min-height="0" class="px-2 py-2 text-admin-grey-light-1">
                 <span class="text-body-1 ">{{ item.title }}</span>
@@ -60,12 +70,23 @@ const { menu } = useAdminMenu()
                           title: link.title
                         }
                       }"
-                    class="d-flex align-center ga-2 text-body-2 font-weight-bold"
-                    exact-active-class="text-admin-primary"
+                    class="d-flex align-center ga-2 text-body-2 font-weight-bold mb-2"
+                    :class="[
+                      'd-flex align-center ga-2 text-body-2 font-weight-bold mb-2',
+                      (
+                        $route.path === '/admin' && link.type === 'index' ||
+                        $route.path === '/admin/' + link.link ||
+                        $route.path.startsWith('/admin/' + link.link + '/')
+                      ) ? 'text-admin-primary router-link-active' : ''
+                    ]"
                 >
                   <v-icon
                       :icon="link.icon"
-                      :color="$route.path === ('/admin/' + link.link) ? 'admin-primary' : 'admin-grey-light-1'"
+                      :color="(
+                        $route.path === '/admin' && link.type === 'index' ||
+                        $route.path === '/admin/' + link.link ||
+                        $route.path.startsWith('/admin/' + link.link + '/')
+                      ) ? 'admin-primary' : 'admin-grey-light-1'"
                       size="24px"
                   />
                   <p>

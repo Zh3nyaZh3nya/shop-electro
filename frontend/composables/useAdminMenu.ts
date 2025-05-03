@@ -25,12 +25,23 @@ export const useAdminMenu = () => {
             type: 'index',
         },
         {
+            icon: 'mdi-home-outline',
+            title: 'test',
+            link: 'test',
+        },
+        {
             title: 'Главная страница',
             list: [
                 {
                     title: 'Предложения',
                     icon: 'mdi-offer',
                     link: 'offers',
+                    type: 'card-color',
+                },
+                {
+                    title: 'test',
+                    icon: 'mdi-offer',
+                    link: 'testtest',
                     type: 'card-color',
                 },
             ],
