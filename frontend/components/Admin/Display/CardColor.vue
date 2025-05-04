@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import type { BaseItem, DisplayProps } from '~/components/Admin/Display/Props'
 
-const { action, title: titleProps, item: itemProps } = defineProps<
+const { action, item: itemProps } = defineProps<
     DisplayProps<BaseItem & { color: string }>
 >()
 
 const emit = defineEmits(['updateData', "remove"])
-const route = useRoute()
 
 const formRef = ref()
 const editorRef = ref()

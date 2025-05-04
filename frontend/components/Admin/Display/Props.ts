@@ -7,6 +7,5 @@ export interface BaseItem {
 
 export interface DisplayProps<T extends BaseItem = BaseItem> {
     action: 'create' | 'edit'
-    title: string
     item?: T
 }

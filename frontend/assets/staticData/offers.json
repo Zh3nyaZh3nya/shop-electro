@@ -1,17 +1,5 @@
 [
   {
-    "id": 3,
-    "title": "test3",
-    "color": "#a1a1aa",
-    "active": true
-  },
-  {
-    "id": 4,
-    "title": "test4",
-    "color": "#a1a1aa",
-    "active": true
-  },
-  {
     "id": 5,
     "title": "test5",
     "color": "#a1a1aa",

@@ -3,4 +3,5 @@ interface TableHeader {
     key: string
     sortable?: boolean
     align: 'start' | 'center' | 'end'
+    width?: string
 }

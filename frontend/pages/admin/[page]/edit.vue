@@ -3,6 +3,7 @@ import { useAsyncData } from "#app";
 import { useApi } from "~/composables/useApi";
 import type { PropsCrumbs } from "~/components/Admin/BreadCrumbs.vue";
 import { useNotificationStore } from "~/stores/notifications";
+import type { BaseItem } from "~/components/Admin/Display/Props";
 
 const route = useRoute()
 const { getByPage } = useAdminMenu()
@@ -49,7 +50,7 @@ const crumbs: PropsCrumbs[] = [
   },
 ]
 
-async function editData(payload) {
+async function editData<T extends object>(payload: T & BaseItem) {
   if(!payload) return
 
   await useApi(`/admin/${route.params.page}/edit`, {
@@ -67,9 +68,9 @@ async function editData(payload) {
   navigateTo({ name: 'admin-page', params: { page: route.params.page } })
 }
 
-async function removeData(payload) {
+async function removeData(payload: { id: number }) {
   if(!payload) return
-  console.log(payload)
+
   await useApi(`/admin/${route.params.page}/delete`, { method: 'POST', credentials: 'include', body: { id: payload.id } })
 
   notifications.add({

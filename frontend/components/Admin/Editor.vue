@@ -21,7 +21,11 @@ function format(command: string, value: string | null = null) {
 }
 
 function validate() {
-  const cleaned = html.value.replace(/<[^/>][^>]*><br><\/[^>]+>/gi, '').replace(/<[^>]+>/g, '').trim()
+  const rawHtml = html.value ?? ''
+  const cleaned = rawHtml
+      .replace(/<[^/>][^>]*><br><\/[^>]+>/gi, '')
+      .replace(/<[^>]+>/g, '')
+      .trim()
 
   if (!rules?.length) return true
 

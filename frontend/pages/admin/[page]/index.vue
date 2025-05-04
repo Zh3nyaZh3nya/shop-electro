@@ -28,14 +28,22 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
     sortable: key !== 'active'
   }))
 
-  return baseHeaders.concat([
+  return [
+    {
+      title: '',
+      key: 'select',
+      sortable: false,
+      align: 'start',
+      width: '50px'
+    },
+    ...baseHeaders,
     {
       title: '',
       key: 'edit',
       sortable: false,
       align: 'end'
     }
-  ])
+  ]
 }
 
 const { data: pageData, pending: pagePending, error: pageError, refresh } = await useAsyncData(
@@ -96,6 +104,20 @@ async function updateActiveItem(payload: { id: number, active: boolean }) {
   })
 }
 
+async function removeSelectItem(payload: { id: number }[]) {
+  console.log(payload.map(item => item.id))
+
+  await useApi(`/admin/${route.params.page}/delete`, { method: 'POST', credentials: 'include', body: { ids: payload.map(item => item.id) }})
+
+  notifications.add({
+    title: 'Сохранено',
+    message: 'Данные сохранены',
+    type: 'success'
+  })
+
+  await refresh()
+}
+
 definePageMeta({
   layout: 'admin',
 })
@@ -142,6 +164,7 @@ definePageMeta({
             :items-per-page="itemsPerPage"
             @update:pagination="onPaginationUpdate"
             @toggle:active="updateActiveItem"
+            @remove:select="removeSelectItem"
         />
       </v-container>
     </section>
