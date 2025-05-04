@@ -106,12 +106,13 @@ watch(search, debounce(() => emit('search', search.value), 300))
       color="admin-primary"
       size="small"
   />
-  <div class="bg-admin-grey-dark-1 px-4 pt-4 rounded-t-lg admin-table-search-panel">
-    <div class="d-flex align-center" :class="[selected.length ? 'justify-space-between' : 'justify-end']">
-      <v-menu :close-on-content-click="false" content-class="table-select-menu" offset="10px" v-if="selected.length">
+  <div class="bg-admin-grey-dark-1 px-4 py-4 rounded-t-lg admin-table-search-panel">
+    <div class="d-flex align-center justify-space-between">
+      <v-menu :close-on-content-click="false" content-class="table-select-menu" offset="10px" :disabled="!selected.length">
         <template v-slot:activator="{ props }">
           <div
-              class="d-flex align-center ga-2 border-card pa-2 rounded-lg bg-admin-grey-dark-2 cursor-pointer "
+              class="d-flex align-center ga-2 border-card pa-2 rounded-lg"
+              :class="!selected.length ? 'bg-admin-grey-dark-1 text-admin-grey' : 'bg-admin-grey-dark-2 cursor-pointer'"
               v-bind="props"
           >
             <v-icon icon="mdi-format-list-bulleted" />
@@ -130,14 +131,17 @@ watch(search, debounce(() => emit('search', search.value), 300))
         max-width="245px"
         variant="outlined"
         class="text-field-admin"
-        color="primary"
+        color="admin-primary"
+        rounded="lg"
         prepend-inner-icon="mdi-magnify"
+        placeholder="Поиск"
+        :hide-details="true"
       />
     </div>
   </div>
   <div
       v-show="selected.length"
-      class="bg-admin-grey-dark-1 pa-4 admin-table-show-panel"
+      class="bg-admin-grey-dark-1 px-4 pb-4 py-0 admin-table-show-panel"
   >
     <div class="d-flex align-center justify-space-between">
       <p>
@@ -147,9 +151,10 @@ watch(search, debounce(() => emit('search', search.value), 300))
       </p>
       <v-btn
           color="admin-primary"
-          class=""
+          class="px-0"
           variant="text"
           @click="toggleAll"
+          min-width="0"
       >
         {{ selected.length === items.length ? 'Снять выделение' : 'Выбрать все' }}
       </v-btn>

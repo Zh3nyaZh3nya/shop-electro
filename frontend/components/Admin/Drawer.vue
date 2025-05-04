@@ -52,7 +52,7 @@ const { menu } = useAdminMenu()
           <v-expansion-panels class="bg-transparent my-6" multiple elevation="0">
             <v-expansion-panel class="bg-transparent">
               <v-expansion-panel-title min-width="0" min-height="0" class="px-2 py-2 text-admin-grey-light-1">
-                <span class="text-body-1 ">{{ item.title }}</span>
+                <span class="text-body-2 font-weight-bold">{{ item.title }}</span>
               </v-expansion-panel-title>
 
               <v-expansion-panel-text class="px-0">

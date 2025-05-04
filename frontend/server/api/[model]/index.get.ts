@@ -1,11 +1,8 @@
-// @ts-ignore
 import { readFile } from 'fs/promises'
-// @ts-ignore
 import { join } from 'path'
 import { defineEventHandler, getQuery } from 'h3'
 
 export default defineEventHandler(async (event) => {
-
     const { model } = event.context.params as { model: string }
     const filePath = join('assets/staticData', `${model}.json`)
 
@@ -14,10 +11,19 @@ export default defineEventHandler(async (event) => {
     const perPage = parseInt(query.perPage as string) || 10
     const sortBy = query.sortBy as string || ''
     const sortDesc = query.sortDesc === 'true'
+    const search = (query.search as string)?.toLowerCase().trim() || ''
 
     try {
         const content = await readFile(filePath, 'utf-8')
         let data = JSON.parse(content)
+
+        if (search) {
+            data = data.filter((item: any) => {
+                return Object.values(item).some(value =>
+                    String(value).toLowerCase().includes(search)
+                )
+            })
+        }
 
         if (sortBy) {
             data.sort((a: any, b: any) => {

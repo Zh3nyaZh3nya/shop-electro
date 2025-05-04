@@ -89,6 +89,16 @@ definePageMeta({
 
 <template>
   <template v-if="!pageEditError || !route.query.id">
+    <v-overlay
+        :model-value="pageEditPending"
+        class="align-center justify-center"
+    >
+      <v-progress-circular
+          color="admin-primary"
+          size="64"
+          indeterminate
+      ></v-progress-circular>
+    </v-overlay>
     <section>
       <v-container>
         <AdminBreadCrumbs :crumbs="crumbs" />
@@ -99,7 +109,6 @@ definePageMeta({
         <template v-if="pageType === 'card-color'">
           <AdminDisplayCardColor
               :action="'edit'"
-              :title="pageEditData.title"
               :item="pageEditData"
               @update-data="editData"
               @remove="removeData"

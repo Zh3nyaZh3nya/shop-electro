@@ -156,6 +156,10 @@ definePageMeta({
             elevation="0"
             size="large"
             class="text-white"
+            :to="{
+              name: 'admin-page-create',
+              params: { page: $route.params.page },
+            }"
         >
           Создать
         </v-btn>

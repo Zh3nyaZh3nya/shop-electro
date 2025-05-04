@@ -71,6 +71,7 @@
     --v-field-padding-bottom: 4px !important;
   }
   .v-input__control {
+    border-radius: 8px;
     background: rgb(var(--v-theme-admin-grey-dark-2));
   }
 }
