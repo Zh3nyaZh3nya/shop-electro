@@ -2,9 +2,12 @@
 import { useRoute } from 'vue-router'
 import { useAsyncData } from "#app";
 import { useApi } from "~/composables/useApi";
+import type { PropsCrumbs } from "~/components/Admin/BreadCrumbs.vue";
+import { useNotificationStore } from "~/stores/notifications";
 
 const route = useRoute()
 const { getByPage } = useAdminMenu()
+const notifications = useNotificationStore()
 
 const pageConfig = computed(() => getByPage(route.params.page as string))
 const pageTitle = computed(() => pageConfig.value?.title ?? 'Без названия')
@@ -53,6 +56,19 @@ const { data: pageData, pending: pagePending, error: pageError, refresh } = awai
     },
 )
 
+const crumbs: PropsCrumbs[] = [
+  {
+    title: pageTitle.value,
+    href: String(route.params.page),
+    disabled: true,
+  },
+  {
+    title: 'Список',
+    href: String(route.params.page),
+    disabled: true,
+  }
+]
+
 function onPaginationUpdate(p: {
   page: number
   itemsPerPage: number
@@ -71,6 +87,12 @@ async function updateActiveItem(payload: { id: number, active: boolean }) {
     method: 'POST',
     body: payload,
     credentials: 'include'
+  })
+
+  notifications.add({
+    title: 'Сохранено',
+    message: 'Данные сохранены',
+    type: 'success'
   })
 }
 
@@ -92,8 +114,13 @@ definePageMeta({
           indeterminate
       ></v-progress-circular>
     </v-overlay>
+    <section>
+      <v-container class="d-flex justify-space-between align-center py-0">
+        <AdminBreadCrumbs :crumbs="crumbs" />
+      </v-container>
+    </section>
     <section class="mb-4">
-      <v-container class="d-flex justify-space-between align-center">
+      <v-container class="d-flex justify-space-between align-center pt-0">
         <h1 class="text-h4 font-weight-bold">{{ pageTitle }}</h1>
         <v-btn
             color="admin-primary"
@@ -104,7 +131,6 @@ definePageMeta({
           Создать
         </v-btn>
       </v-container>
-
     </section>
     <section v-if="(pageType === 'card' || pageType === 'card-color') && pageData && pageData.items">
       <v-container>
@@ -119,12 +145,14 @@ definePageMeta({
         />
       </v-container>
     </section>
+
+    <AdminNotificationStack ref="notificationRef" />
   </template>
   <template v-else>
     <section class="h-100">
       <v-container class="d-flex flex-column justify-center h-100 align-center text-center">
         <h1 class="text-h4 font-weight-bold">Произошла ошибка при получении данных</h1>
-        <h2 class="text-h6 font-weight-medium">Обновите страницу или перезайди в админ-панель</h2>
+        <h2 class="text-h6 font-weight-medium">Обновите страницу или перезайдите в админ-панель</h2>
       </v-container>
     </section>
   </template>

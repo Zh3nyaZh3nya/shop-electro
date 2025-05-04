@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { crumbs } = defineProps<{
-  crumbs: {
-    title: string
-    disabled: boolean
-    href: string
-  }[]
-}>()
+export interface PropsCrumbs {
+  title: string
+  disabled: boolean
+  href: string
+}
+
+const { crumbs } = defineProps<{ crumbs: PropsCrumbs[] }>()
 </script>
 
 

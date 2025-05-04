@@ -26,7 +26,10 @@ export default defineNuxtPlugin((app) => {
                         'admin-red': "#ff6f6f",
                         'admin-grey': "#71717a",
                         'admin-grey-light-1': '#a1a1aa',
+                        'admin-grey-light-2': '#474747',
                         'admin-grey-dark-1': '#18181b',
+                        'admin-grey-dark-2': '#100e0e',
+                        'admin-error': '#ef4444'
                     },
                 },
             },

@@ -68,10 +68,11 @@ definePageMeta({
               <div class="mb-2">
                 <p class="text-body-2 mb-2">Адрес электронной почты<label class="text-admin-red text-body-1">*</label></p>
                 <v-text-field
+                    color="primary"
                     v-model="bodyData.login"
                     variant="outlined"
                     rounded="lg"
-                    class="login-input"
+                    class="text-field-admin"
                     :error-messages="errors.login"
                     :rules="[rules.required]"
                 />
@@ -81,11 +82,12 @@ definePageMeta({
               <div class="mb-2">
                 <p class="text-body-2 mb-2">Пароль<label class="text-admin-red text-body-1">*</label></p>
                 <v-text-field
+                    color="primary"
                     v-model="bodyData.password"
                     type="password"
                     variant="outlined"
                     rounded="lg"
-                    class="login-input"
+                    class="text-field-admin"
                     :error-messages="errors.password"
                     :rules="[rules.required]"
                 />
@@ -110,11 +112,4 @@ definePageMeta({
 </template>
 
 <style lang="scss">
-.login-input {
-  --v-input-control-height: 50px;
-  --v-input-padding-top: 8px;
-  .v-field {
-    --v-field-padding-bottom: 8px;
-  }
-}
 </style>

@@ -34,7 +34,12 @@ export default defineNuxtConfig({
       await copyStaticData()
     }
   },
-  css: ['~/assets/styles/global.scss', 'vuetify/lib/styles/main.sass', "@/assets/fonts/fonts.css"],
+  css: [
+    'vuetify/lib/styles/main.sass',
+    "@/assets/fonts/fonts.css",
+    "@/assets/styles/admin.scss",
+    '@/assets/styles/global.scss',
+  ],
   runtimeConfig: {
     public: {
       apiUrl: process.env.API_ENDPOINT ?? 'http://localhost:3000/api'
