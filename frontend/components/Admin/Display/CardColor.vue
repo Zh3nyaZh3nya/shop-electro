@@ -5,7 +5,7 @@ const { action, title: titleProps, item: itemProps } = defineProps<
     DisplayProps<BaseItem & { color: string }>
 >()
 
-const emit = defineEmits(['updateData'])
+const emit = defineEmits(['updateData', "remove"])
 const route = useRoute()
 
 const formRef = ref()
@@ -42,8 +42,12 @@ async function submitForm() {
     active: active.value,
     color: color.value,
   })
+}
 
-  navigateTo({ name: 'admin-page', params: { page: route.params.page } })
+async function removeItem() {
+  emit('remove', {
+    id: itemData.id
+  })
 }
 </script>
 
@@ -57,6 +61,7 @@ async function submitForm() {
           size="large"
           class="text-body-1 font-weight-bold"
           elevation="0"
+          @click="removeItem"
         >
           Удалить
         </v-btn>

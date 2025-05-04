@@ -1,0 +1,158 @@
+Index: .idea/workspace.xml
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+deleted file mode 100644
+--- a/.idea/workspace.xml	(revision 41e799cb00746453b4a4dc972a62e54c73cebbcb)
++++ /dev/null	(revision 41e799cb00746453b4a4dc972a62e54c73cebbcb)
+@@ -1,150 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="AutoImportSettings">
+-    <option name="autoReloadType" value="SELECTIVE" />
+-  </component>
+-  <component name="ChangeListManager">
+-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="added swiper &amp; two main blocks">
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/category_kk.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/category_ru.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/combineCategoriesWithProducts.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/index.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/main_blocks_kk.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/main_blocks_ru.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/offers_kk.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/offers_ru.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/product_kk.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/product_ru.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/components/main/Products.vue" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug].vue" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/frontend/stores/index.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/components/main/Offers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/main/Offers.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/components/main/TopBlocks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/main/TopBlocks.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/i18n/locales/kk.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/i18n/locales/kk.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/i18n/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/i18n/locales/ru.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/frontend/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.ts" afterDir="false" />
+-    </list>
+-    <option name="SHOW_DIALOG" value="false" />
+-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+-    <option name="LAST_RESOLUTION" value="IGNORE" />
+-  </component>
+-  <component name="ChangesViewManager">
+-    <option name="groupingKeys">
+-      <option value="directory" />
+-    </option>
+-  </component>
+-  <component name="FileTemplateManagerImpl">
+-    <option name="RECENT_TEMPLATES">
+-      <list>
+-        <option value="SCSS File" />
+-        <option value="TypeScript File" />
+-        <option value="Vue Composition API Component" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="Git.Settings">
+-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+-  </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+-  </component>
+-  <component name="ProjectColorInfo">{
+-  &quot;associatedIndex&quot;: 5
+-}</component>
+-  <component name="ProjectId" id="2ptTkW7bQiQMqk1AdeHiTUKTNbd" />
+-  <component name="ProjectViewState">
+-    <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showLibraryContents" value="true" />
+-  </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;H:/shop-electro/frontend/assets/staticData&quot;,
+-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+-    &quot;ts.external.directory.path&quot;: &quot;H:\\shop-electro\\frontend\\node_modules\\typescript\\lib&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+-  },
+-  &quot;keyToStringList&quot;: {
+-    &quot;vue.recent.templates&quot;: [
+-      &quot;Vue Composition API Component&quot;
+-    ]
+-  }
+-}</component>
+-  <component name="RecentsManager">
+-    <key name="CopyFile.RECENT_KEYS">
+-      <recent name="H:\shop-electro\frontend\assets\staticData" />
+-      <recent name="H:\shop-electro\frontend\public\main" />
+-      <recent name="H:\shop-electro\frontend\assets\fonts" />
+-    </key>
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="H:\shop-electro\frontend\pages\catalog\[category]\[subcategory]" />
+-      <recent name="H:\shop-electro\frontend\pages\catalog\[category]" />
+-      <recent name="H:\shop-electro\frontend\utils\vuetify" />
+-    </key>
+-  </component>
+-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-  <component name="TaskManager">
+-    <task active="true" id="Default" summary="Default task">
+-      <changelist id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="" />
+-      <created>1733584515043</created>
+-      <option name="number" value="Default" />
+-      <option name="presentableId" value="Default" />
+-      <updated>1733584515043</updated>
+-      <workItem from="1733584516129" duration="7000" />
+-      <workItem from="1733584545293" duration="4724000" />
+-      <workItem from="1733610333373" duration="88000" />
+-      <workItem from="1733937775793" duration="12019000" />
+-      <workItem from="1734322532058" duration="803000" />
+-      <workItem from="1734323552216" duration="2227000" />
+-      <workItem from="1734333857877" duration="221000" />
+-      <workItem from="1734434208932" duration="20000" />
+-      <workItem from="1734704455085" duration="3095000" />
+-      <workItem from="1734932271083" duration="3000" />
+-      <workItem from="1735008130237" duration="101000" />
+-      <workItem from="1735196649821" duration="18000" />
+-      <workItem from="1737801249613" duration="14999000" />
+-      <workItem from="1737968437285" duration="19000" />
+-    </task>
+-    <task id="LOCAL-00001" summary="init">
+-      <option name="closed" value="true" />
+-      <created>1733584642026</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1733584642026</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="added swiper &amp; two main blocks">
+-      <option name="closed" value="true" />
+-      <created>1733951755408</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1733951755408</updated>
+-    </task>
+-    <option name="localTasksCounter" value="3" />
+-    <servers />
+-  </component>
+-  <component name="TypeScriptGeneratedFilesManager">
+-    <option name="version" value="3" />
+-  </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="init" />
+-    <MESSAGE value="added swiper &amp; two main blocks" />
+-    <option name="LAST_COMMIT_MESSAGE" value="added swiper &amp; two main blocks" />
+-  </component>
+-</project>
+\ No newline at end of file

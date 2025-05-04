@@ -4,31 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="added swiper &amp; two main blocks">
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/category_kk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/category_ru.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/combineCategoriesWithProducts.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/main_blocks_kk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/main_blocks_ru.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/offers_kk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/offers_ru.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/product_kk.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/assets/staticData/product_ru.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/main/Products.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug].vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/stores/index.ts" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add notifications, global styles for admin, edit data &amp; small fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/main/Offers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/main/Offers.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/main/TopBlocks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/main/TopBlocks.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/i18n/locales/kk.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/i18n/locales/kk.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/i18n/locales/ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/i18n/locales/ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/offers.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/offers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardColor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/CardColor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="TypeScript File" />
         <option value="Vue Composition API Component" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -69,7 +49,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/shop-electro/frontend/assets/staticData&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/shop-electro/frontend/server/api/[model]&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -87,6 +67,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\server\api\[model]" />
       <recent name="H:\shop-electro\frontend\assets\staticData" />
       <recent name="H:\shop-electro\frontend\public\main" />
       <recent name="H:\shop-electro\frontend\assets\fonts" />
@@ -119,6 +100,8 @@
       <workItem from="1735196649821" duration="18000" />
       <workItem from="1737801249613" duration="14999000" />
       <workItem from="1737968437285" duration="19000" />
+      <workItem from="1746340879017" duration="4572000" />
+      <workItem from="1746345538623" duration="4240000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -136,7 +119,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733951755408</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: add notifications, global styles for admin, edit data &amp; small fixes">
+      <option name="closed" value="true" />
+      <created>1746350315472</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1746350315472</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +136,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="added swiper &amp; two main blocks" />
-    <option name="LAST_COMMIT_MESSAGE" value="added swiper &amp; two main blocks" />
+    <MESSAGE value="small fixes[2]" />
+    <MESSAGE value="feat: add notifications, global styles for admin, edit data &amp; small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add notifications, global styles for admin, edit data &amp; small fixes" />
   </component>
 </project>

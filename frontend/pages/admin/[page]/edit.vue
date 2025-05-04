@@ -63,6 +63,22 @@ async function editData(payload) {
     message: 'Данные сохранены',
     type: 'success'
   })
+
+  navigateTo({ name: 'admin-page', params: { page: route.params.page } })
+}
+
+async function removeData(payload) {
+  if(!payload) return
+  console.log(payload)
+  await useApi(`/admin/${route.params.page}/delete`, { method: 'POST', credentials: 'include', body: { id: payload.id } })
+
+  notifications.add({
+    title: 'Удалено',
+    message: 'Данные сохранены',
+    type: 'success'
+  })
+
+  navigateTo({ name: 'admin-page', params: { page: route.params.page } })
 }
 
 definePageMeta({
@@ -85,6 +101,7 @@ definePageMeta({
               :title="pageEditData.title"
               :item="pageEditData"
               @update-data="editData"
+              @remove="removeData"
           />
         </template>
       </v-container>
