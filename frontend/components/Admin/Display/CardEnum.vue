@@ -47,7 +47,7 @@ async function submitForm() {
     value: value.value,
     label: label.value,
     ...(isImage && file ? { image: file } : {}),
-    ...(is_for_main_page ? { for_main_page: forMainPage.value } : false)
+    ...(is_for_main_page ? { for_main_page: forMainPage.value } : {})
 
   })
 }

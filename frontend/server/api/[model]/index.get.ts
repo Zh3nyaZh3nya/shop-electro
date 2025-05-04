@@ -13,10 +13,19 @@ export default defineEventHandler(async (event) => {
     const sortBy = query.sortBy as string || ''
     const sortDesc = query.sortDesc === 'true'
     const search = (query.search as string)?.toLowerCase().trim() || ''
+    const filterByMainPage = query.mainPage === 'true'
 
     try {
         const content = await readFile(filePath, 'utf-8')
         let data = JSON.parse(content)
+
+        data = data.filter((item: any) => {
+            const isActive = 'active' in item ? item.active === true : true
+            const isForMainPage = !filterByMainPage || item.for_main_page === true
+            return isActive && isForMainPage
+        })
+
+        data = data.map(({ active, for_main_page, ...rest }: any) => rest)
 
         if (search) {
             data = data.filter((item: any) =>
@@ -62,7 +71,7 @@ export default defineEventHandler(async (event) => {
             page: 1,
             perPage: 10,
             total: 0,
-            totalPages: 0
+            totalPages: 0,
         }
     }
 })

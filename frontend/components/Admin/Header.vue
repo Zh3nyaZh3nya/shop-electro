@@ -6,7 +6,7 @@ async function logout() {
     const { status } = await useApi('/admin/logout', { method: 'POST' })
 
     if(status.value === 'success') {
-      navigateTo('/admin/login')
+      navigateTo('/')
     }
   } catch (e) {
     console.log(e)

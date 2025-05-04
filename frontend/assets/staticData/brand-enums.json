@@ -29,7 +29,7 @@
     "value": "msi",
     "label": "Msi",
     "image": "/storage/brand-enums/msi-1746377117880-1746377118189.webp",
-    "for_main_page": true
+    "for_main_page": false
   },
   {
     "id": "5",

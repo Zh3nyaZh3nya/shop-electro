@@ -9,8 +9,23 @@ interface infoBlocks {
   id: string
 }
 
+interface Brand {
+  id: string
+  key: string
+  value: string
+  label: string
+  image: string
+}
+
 const { data: infoBlocksData, pending: infoBlocksPending } = await useAsyncData<infoBlocks[]>('main-page-info-blocks-data', async () => {
       const { data: dataFetch } = await useApi<{ items: infoBlocks[] }>(`/info-blocks`, { method: 'GET' })
+
+      return dataFetch?.value?.items || []
+    }
+)
+
+const { data: brandData, pending: brandPending } = await useAsyncData<Brand[]>('main-page-brand-data', async () => {
+      const { data: dataFetch } = await useApi<{ items: Brand[] }>(`/brand-enums?mainPage=true`, { method: 'GET' })
 
       return dataFetch?.value?.items || []
     }
@@ -19,7 +34,7 @@ const { data: infoBlocksData, pending: infoBlocksPending } = await useAsyncData<
 
 <template>
   <v-overlay
-      :model-value="infoBlocksPending"
+      :model-value="infoBlocksPending || brandPending"
       class="align-center justify-center"
   >
     <v-progress-circular
@@ -71,6 +86,29 @@ const { data: infoBlocksData, pending: infoBlocksPending } = await useAsyncData<
 
         </v-col>
       </v-row>
+    </v-container>
+  </section>
+  <section v-if="brandData && brandData.length">
+    <v-container>
+      <UISlider
+          :slides="brandData || []"
+          :per-view="9.8"
+          :space-between="15"
+
+      >
+        <template #default="{ slide, index }">
+          <v-card
+              elevation="1"
+              rounded="xl"
+              class="d-flex align-center justify-center pa-4 my-1"
+              width="132px"
+              height="68px"
+              :to="`/brand/${slide.value}`"
+          >
+            <v-img :src="slide.image"  />
+          </v-card>
+        </template>
+      </UISlider>
     </v-container>
   </section>
 </template>

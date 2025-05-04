@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add notifications, global styles for admin, edit data &amp; small fixes">
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="small fixes">
+      <change afterPath="$PROJECT_DIR$/frontend/pages/brand/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/offers.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/offers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardColor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/CardColor.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/brand-enums.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/brand-enums.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/[model]/[id].get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/[model]/[id].get.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/[model]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/[model]/index.get.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="Vue Composition API Component" />
         <option value="TypeScript File" />
+        <option value="Vue Composition API Component" />
       </list>
     </option>
   </component>
@@ -101,7 +106,8 @@
       <workItem from="1737801249613" duration="14999000" />
       <workItem from="1737968437285" duration="19000" />
       <workItem from="1746340879017" duration="4572000" />
-      <workItem from="1746345538623" duration="4240000" />
+      <workItem from="1746345538623" duration="15194000" />
+      <workItem from="1746362707009" duration="17842000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -127,17 +133,93 @@
       <option name="project" value="LOCAL" />
       <updated>1746350315472</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: add remove item">
+      <option name="closed" value="true" />
+      <created>1746350745603</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1746350745603</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add remove select item">
+      <option name="closed" value="true" />
+      <created>1746354731447</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746354731447</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add search for table">
+      <option name="closed" value="true" />
+      <created>1746355958839</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1746355958839</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: add create, new api method for get model's last id">
+      <option name="closed" value="true" />
+      <created>1746360409610</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1746360409610</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: add info blocks, upload files for api">
+      <option name="closed" value="true" />
+      <created>1746369097473</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1746369097473</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: add card for enums, small fxies">
+      <option name="closed" value="true" />
+      <created>1746377454233</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746377454233</updated>
+    </task>
+    <task id="LOCAL-00010" summary="small fixes">
+      <option name="closed" value="true" />
+      <created>1746380601582</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746380601582</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="added swiper &amp; two main blocks" />
     <MESSAGE value="small fixes[2]" />
     <MESSAGE value="feat: add notifications, global styles for admin, edit data &amp; small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add notifications, global styles for admin, edit data &amp; small fixes" />
+    <MESSAGE value="feat: add remove item" />
+    <MESSAGE value="feat: add remove select item" />
+    <MESSAGE value="feat: add search" />
+    <MESSAGE value="feat: add search for table" />
+    <MESSAGE value="feat: add create" />
+    <MESSAGE value="feat: add create, new api method for get model's last id" />
+    <MESSAGE value="feat: add info blocks, upload files for api" />
+    <MESSAGE value="feat: add card for enums, small fxies" />
+    <MESSAGE value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
   </component>
 </project>
