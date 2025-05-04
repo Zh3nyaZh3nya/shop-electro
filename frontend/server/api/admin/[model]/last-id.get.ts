@@ -13,9 +13,15 @@ export default defineEventHandler(async (event) => {
         const content = await readFile(filePath, 'utf-8')
         const data = JSON.parse(content)
 
-        const maxId = Math.max(
-            ...data.map((item: any) => parseInt(item.id, 10)).filter(id => !isNaN(id))
-        )
+        if (!Array.isArray(data) || data.length === 0) {
+            return { last_id: '1' }
+        }
+
+        const ids = data
+            .map((item: any) => parseInt(item.id, 10))
+            .filter(id => !isNaN(id))
+
+        const maxId = ids.length > 0 ? Math.max(...ids) : 0
 
         return {
             last_id: String(maxId + 1)

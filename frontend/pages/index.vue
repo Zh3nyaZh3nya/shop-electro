@@ -1,11 +1,86 @@
 <script setup lang="ts">
+import { useAsyncData } from "#app";
+import { useApi } from "~/composables/useApi";
 
+interface infoBlocks {
+  title: string
+  description: string
+  color: string
+  id: string
+}
+
+const { data: infoBlocksData, pending: infoBlocksPending } = await useAsyncData<infoBlocks[]>('main-page-info-blocks-data', async () => {
+      const { data: dataFetch } = await useApi<{ items: infoBlocks[] }>(`/info-blocks`, { method: 'GET' })
+
+      return dataFetch?.value?.items || []
+    }
+)
 </script>
 
 <template>
+  <v-overlay
+      :model-value="infoBlocksPending"
+      class="align-center justify-center"
+  >
+    <v-progress-circular
+        color="admin-primary"
+        size="64"
+        indeterminate
+    ></v-progress-circular>
+  </v-overlay>
+  <section v-if="infoBlocksData && infoBlocksData.length">
+    <v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          md="3"
+        >
+          <v-card
+              elevation="0"
+              class="pa-6 main-info-blocks-enter"
+              height="204px"
+              rounded="xl"
+          >
+            <p class="text-body-1 mb-2 font-weight-bold">Личный кабинет</p>
+            <p class="text-body-2">Получайте бонусы, отслеживайте заказы и делитесь мнением</p>
+          </v-card>
+        </v-col>
+        <v-col
+          cols="12"
+          md="9"
+        >
+          <UISlider
+              :slides="infoBlocksData || []"
+              :per-view="4.4"
+              :space-between="15"
+          >
+            <template #default="{ slide, index }">
+              <v-card
+                  elevation="0"
+                  rounded="xl"
+                  class="pa-4"
+                  :style="{'background': slide.color }"
+                  width="100%"
+                  height="204px"
+              >
+                <p class="text-body-1 font-weight-bold mb-2 text-secondary">{{ slide.title }}</p>
+                <p class="text-body-2 text-secondary">{{ slide.description }}</p>
+              </v-card>
+            </template>
+          </UISlider>
 
+        </v-col>
+      </v-row>
+    </v-container>
+  </section>
 </template>
 
-<style scoped>
-
+<style lang="scss">
+.main {
+  &-info-blocks {
+    &-enter {
+      background: #fff7da url('/main/enter.png') no-repeat bottom right;
+    }
+  }
+}
 </style>

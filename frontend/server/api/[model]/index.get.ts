@@ -7,6 +7,7 @@ export default defineEventHandler(async (event) => {
     const filePath = join('assets/staticData', `${model}.json`)
 
     const query = getQuery(event)
+    const hasPagination = 'page' in query && 'perPage' in query
     const page = parseInt(query.page as string) || 1
     const perPage = parseInt(query.perPage as string) || 10
     const sortBy = query.sortBy as string || ''
@@ -18,11 +19,11 @@ export default defineEventHandler(async (event) => {
         let data = JSON.parse(content)
 
         if (search) {
-            data = data.filter((item: any) => {
-                return Object.values(item).some(value =>
+            data = data.filter((item: any) =>
+                Object.values(item).some(value =>
                     String(value).toLowerCase().includes(search)
                 )
-            })
+            )
         }
 
         if (sortBy) {
@@ -31,6 +32,16 @@ export default defineEventHandler(async (event) => {
                 if (a[sortBy] > b[sortBy]) return sortDesc ? -1 : 1
                 return 0
             })
+        }
+
+        if (!hasPagination) {
+            return {
+                items: data,
+                total: data.length,
+                page: 1,
+                perPage: data.length,
+                totalPages: 1,
+            }
         }
 
         const total = data.length
@@ -48,8 +59,8 @@ export default defineEventHandler(async (event) => {
     } catch {
         return {
             items: [],
-            page,
-            perPage,
+            page: 1,
+            perPage: 10,
             total: 0,
             totalPages: 0
         }

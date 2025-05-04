@@ -4,7 +4,9 @@
 <template>
   <v-app>
     <Header />
-    <NuxtPage />
+    <v-main>
+      <NuxtPage />
+    </v-main>
   </v-app>
 </template>
 

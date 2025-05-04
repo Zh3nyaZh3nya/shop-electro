@@ -202,8 +202,7 @@ watch(search, debounce(() => emit('search', search.value), 300))
             <div v-if="item?.description">
               {{
                 item.description.replace(/<[^>]*>/g, '').slice(0, 30)
-              }}
-              <span v-if="item.description.replace(/<[^>]*>/g, '').length > 30">...</span>
+              }}<span v-if="item.description.replace(/<[^>]*>/g, '').length > 30">...</span>
             </div>
           </template>
           <template v-else-if="column.key === 'active'">

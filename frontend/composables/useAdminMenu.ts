@@ -25,24 +25,24 @@ export const useAdminMenu = () => {
             type: 'index',
         },
         {
-            icon: 'mdi-home-outline',
-            title: 'test',
-            link: 'test',
-        },
-        {
             title: 'Главная страница',
             list: [
                 {
-                    title: 'Предложения',
-                    icon: 'mdi-offer',
-                    link: 'offers',
+                    title: 'Инфо-блоки',
+                    icon: 'mdi-information-variant-circle-outline',
+                    link: 'info-blocks',
                     type: 'card-color',
                 },
+            ],
+        },
+        {
+            title: 'Справочники',
+            list: [
                 {
-                    title: 'test',
-                    icon: 'mdi-offer',
-                    link: 'testtest',
-                    type: 'card-color',
+                    title: 'Бренды',
+                    icon: 'mdi-tag-multiple-outline',
+                    link: 'brand-enums',
+                    type: 'card',
                 },
             ],
         },

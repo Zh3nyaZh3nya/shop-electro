@@ -1,0 +1,51 @@
+[
+  {
+    "id": "1",
+    "title": "Каталог",
+    "description": "Большой выбор техники для дома и вас",
+    "active": true,
+    "color": "#E5F4FB"
+  },
+  {
+    "id": "2",
+    "title": "Акции",
+    "description": "Скидки, рассрочки, выгодные комплекты",
+    "active": true,
+    "color": "#EBFFED"
+  },
+  {
+    "id": "3",
+    "title": "Собрать ПК",
+    "description": "Без проблем c совместимостью",
+    "active": true,
+    "color": "#F2F3F5"
+  },
+  {
+    "id": "4",
+    "title": "Готовые сборки",
+    "description": "Горячие сборки ПК от пользователей",
+    "active": true,
+    "color": "#ECF9FF"
+  },
+  {
+    "id": "5",
+    "title": "Сервис",
+    "description": "Гарантия, возврат, обмен и ремонт",
+    "active": true,
+    "color": "#ECF9FF"
+  },
+  {
+    "id": "6",
+    "title": "Собрать кухню",
+    "description": "Выбирайте технику для кухни по-новому!",
+    "active": true,
+    "color": "#FCF6D7"
+  },
+  {
+    "id": "7",
+    "title": "Помощь",
+    "description": "Частые вопросы, полезная информация",
+    "active": true,
+    "color": "#FFEFEF"
+  }
+]

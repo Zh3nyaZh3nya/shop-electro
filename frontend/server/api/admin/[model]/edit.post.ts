@@ -1,30 +1,90 @@
-import { readBody, defineEventHandler } from 'h3'
-import { readFile, writeFile } from 'fs/promises'
-import { join } from 'path'
+import { mkdir, readFile, writeFile } from 'fs/promises'
+import { join, resolve } from 'path'
+import { defineEventHandler } from 'h3'
+import Busboy from 'busboy'
+import sharp from 'sharp'
 import { requireAdmin } from '~/utils/auth'
 
 export default defineEventHandler(async (event) => {
     requireAdmin(event)
 
     const { model } = event.context.params as { model: string }
-    const body = await readBody(event)
-    const filePath = join('assets/staticData', `${model}.json`)
+    const uploadDir = resolve('public/storage', model)
+    await mkdir(uploadDir, { recursive: true })
 
+    const busboy = Busboy({ headers: event.node.req.headers })
+    const fields: Record<string, string> = {}
+    const chunks: Buffer[] = []
+    let filename: string | null = null
+    let filePath: string | null = null
+
+    const fileUploadPromise = new Promise<void>((resolveUpload, rejectUpload) => {
+        busboy.on('file', (fieldname, file, info) => {
+            filename = info.filename
+            if (!filename) {
+                file.resume()
+                return
+            }
+
+            file.on('data', (chunk) => chunks.push(chunk))
+            file.on('error', rejectUpload)
+        })
+
+        busboy.on('field', (fieldname, val) => {
+            fields[fieldname] = val
+        })
+
+        busboy.on('finish', async () => {
+            if (filename && chunks.length) {
+                const fileNameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'image'
+                const webpFileName = `${fileNameWithoutExt}-${Date.now()}.webp`
+                const saveTo = join(uploadDir, webpFileName)
+                filePath = `/storage/${model}/${webpFileName}`
+
+                try {
+                    const buffer = Buffer.concat(chunks)
+                    await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
+                } catch (err) {
+                    return rejectUpload(err)
+                }
+            }
+
+            resolveUpload()
+        })
+
+        event.node.req.pipe(busboy)
+    })
+
+    await fileUploadPromise
+
+    const dataPath = resolve('assets/staticData', `${model}.json`)
     let data = []
     try {
-        const content = await readFile(filePath, 'utf-8')
+        const content = await readFile(dataPath, 'utf-8')
         data = JSON.parse(content)
     } catch {}
 
-    const index = data.findIndex((item: any) => item.id === body.id)
+    const id = Number(fields.id)
+    const index = data.findIndex((item: any) => Number(item.id) === id)
+
     if (index !== -1) {
-        data[index] = {
+        const updated = {
             ...data[index],
-            ...body
+            ...fields,
         }
+
+        if (filePath) {
+            updated.image = filePath
+        }
+
+        data[index] = updated
     }
 
-    await writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8')
+    console.log('Incoming fields:', fields)
+    console.log('Parsed id:', id)
+    console.log('Matched index:', index)
+
+    await writeFile(dataPath, JSON.stringify(data, null, 2), 'utf-8')
 
     return { success: true }
 })

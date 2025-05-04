@@ -35,7 +35,7 @@ const itemData: {
 }
 
 const title = ref<string>(isEdit ? itemData.title ?? '' : '')
-const active = ref<boolean>(isEdit ? itemData.active : false)
+const active = ref<boolean>(isEdit ? itemData.active : true)
 const color = ref<string>(isEdit ? itemData.color : '')
 const description = ref<string>(isEdit ? itemData.description : '')
 const rules = {
