@@ -17,6 +17,7 @@ const currentPage = ref(1)
 const itemsPerPage = ref(10)
 const sortBy = ref<string | undefined>(undefined)
 const sortDesc = ref<boolean>(false)
+const search = ref('')
 
 function generateHeadersFromData(items: any[]): TableHeader[] {
   if (!items.length || typeof items[0] !== 'object') return []
@@ -56,6 +57,7 @@ const { data: pageData, pending: pagePending, error: pageError, refresh } = awai
           perPage: itemsPerPage.value,
           sortBy: sortBy.value,
           sortDesc: sortDesc.value,
+          search: search.value
         },
         credentials: 'include',
       })
@@ -118,6 +120,11 @@ async function removeSelectItem(payload: { id: number }[]) {
   await refresh()
 }
 
+const onSearch = (value: string) => {
+  search.value = value
+  refresh()
+}
+
 definePageMeta({
   layout: 'admin',
 })
@@ -165,6 +172,7 @@ definePageMeta({
             @update:pagination="onPaginationUpdate"
             @toggle:active="updateActiveItem"
             @remove:select="removeSelectItem"
+            @search="onSearch"
         />
       </v-container>
     </section>

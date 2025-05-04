@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { pluralize } from "~/utils/pluralize";
+// @ts-ignore
+import debounce from "lodash-es/debounce"
 
 interface TableItem {
   [key: string]: any
@@ -27,10 +29,12 @@ const emit = defineEmits<{
   }): void
   (e: 'toggle:active', value: { id: number; active: boolean }): void
   (e: 'remove:select', value: { id: number } | { id: number }[]): void
+  (e: 'search', value: string): void
 }>()
 
 const sortBy = ref<SortItem[]>([])
 const selected = ref<number[]>([])
+const search = ref<string>('')
 
 const pages = computed({
   get: () => page,
@@ -91,6 +95,8 @@ watch(sortBy, () => {
     sortDesc: sort?.order === 'desc'
   })
 })
+
+watch(search, debounce(() => emit('search', search.value), 300))
 </script>
 
 <template>
@@ -100,10 +106,8 @@ watch(sortBy, () => {
       color="admin-primary"
       size="small"
   />
-  <div
-      class="bg-admin-grey-dark-1 px-4 pt-4 rounded-t-lg"
-  >
-    <div class="d-flex align-center justify-space-between">
+  <div class="bg-admin-grey-dark-1 px-4 pt-4 rounded-t-lg admin-table-search-panel">
+    <div class="d-flex align-center" :class="[selected.length ? 'justify-space-between' : 'justify-end']">
       <v-menu :close-on-content-click="false" content-class="table-select-menu" offset="10px" v-if="selected.length">
         <template v-slot:activator="{ props }">
           <div
@@ -121,12 +125,19 @@ watch(sortBy, () => {
           </div>
         </v-card>
       </v-menu>
-
+      <v-text-field
+        v-model="search"
+        max-width="245px"
+        variant="outlined"
+        class="text-field-admin"
+        color="primary"
+        prepend-inner-icon="mdi-magnify"
+      />
     </div>
   </div>
   <div
       v-show="selected.length"
-      class="bg-admin-grey-dark-1 pa-4"
+      class="bg-admin-grey-dark-1 pa-4 admin-table-show-panel"
   >
     <div class="d-flex align-center justify-space-between">
       <p>
@@ -150,7 +161,7 @@ watch(sortBy, () => {
       :item-class="getRowClass"
       v-model:items-per-page="itemsPerPages"
       v-model:sort-by="sortBy"
-      class="bg-admin-grey-dark-1 admin-table rounded-b-lg"
+      class="bg-admin-grey-dark-1 admin-table rounded-b-lg "
       items-per-page-text="На страницу"
       no-data-text="Нет данных"
       dense
@@ -261,8 +272,18 @@ watch(sortBy, () => {
 
 <style lang="scss">
 .admin-table {
+  border: 1px solid rgb(var(--v-theme-admin-grey-light-2));
+  &-show-panel {
+    border-left: 1px solid rgb(var(--v-theme-admin-grey-light-2));
+    border-right: 1px solid rgb(var(--v-theme-admin-grey-light-2));
+  }
+  &-search-panel {
+    border: 1px solid rgb(var(--v-theme-admin-grey-light-2));
+    border-bottom: none;
+  }
   thead {
     tr {
+      background: rgb(var(--v-theme-admin-grey-dark-2));
       th:first-child {
         border-left: 2px solid transparent;
       }
@@ -271,6 +292,9 @@ watch(sortBy, () => {
   .row {
     td:first-child {
       border-left: 2px solid transparent;
+    }
+    &:hover {
+      background: rgb(var(--v-theme-admin-grey-dark-2));
     }
   }
   .row-selected {
