@@ -1,9 +1,11 @@
 import { mkdir, readFile, writeFile } from 'fs/promises'
 import { join, resolve } from 'path'
 import { defineEventHandler } from 'h3'
+// @ts-ignore
 import Busboy from 'busboy'
 import sharp from 'sharp'
 import { requireAdmin } from '~/utils/auth'
+import { autoCast } from "~/server/utils/autoCast";
 
 export default defineEventHandler(async (event) => {
     requireAdmin(event)
@@ -19,19 +21,19 @@ export default defineEventHandler(async (event) => {
     let filePath: string | null = null
 
     const fileUploadPromise = new Promise<void>((resolveUpload, rejectUpload) => {
-        busboy.on('file', (fieldname, file, info) => {
+        busboy.on('file', (fieldname: any, file: any, info: any) => {
             filename = info.filename
             if (!filename) {
                 file.resume()
                 return
             }
 
-            file.on('data', (chunk) => chunks.push(chunk))
+            file.on('data', (chunk: any) => chunks.push(chunk))
             file.on('error', rejectUpload)
         })
 
-        busboy.on('field', (fieldname, val) => {
-            fields[fieldname] = val
+        busboy.on('field', (fieldname: any, val: any) => {
+            fields[fieldname] = autoCast(val)
         })
 
         busboy.on('finish', async () => {

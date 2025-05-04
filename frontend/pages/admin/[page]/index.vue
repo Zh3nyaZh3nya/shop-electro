@@ -23,7 +23,7 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
   if (!items.length || typeof items[0] !== 'object') return []
 
   const keys = Object.keys(items[0]).filter(
-      (key) => key !== 'key' && key !== 'value'
+      (key) => key !== 'key' && key !== 'value' && key !== 'for_main_page'
   )
 
   const reorderedKeys: string[] = []

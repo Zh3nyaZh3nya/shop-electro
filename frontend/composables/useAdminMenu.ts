@@ -3,7 +3,8 @@ type TypeDisplay =
     'card-color' |
     'index' |
     'card-enum' |
-    'image'
+    'image' |
+    'for-main-page'
 type AdminMenuItem =
     | {
     title: string
@@ -49,7 +50,7 @@ export const useAdminMenu = () => {
                     title: 'Бренды',
                     icon: 'mdi-tag-multiple-outline',
                     link: 'brand-enums',
-                    type: ['card-enum', 'image'],
+                    type: ['card-enum', 'image', 'for-main-page'],
                 },
             ],
         },

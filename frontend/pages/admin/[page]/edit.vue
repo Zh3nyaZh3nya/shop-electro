@@ -133,6 +133,7 @@ definePageMeta({
               :action="'edit'"
               :item="pageEditData"
               :is-image="pageType.includes('image')"
+              :is_for_main_page="pageType.includes('for-main-page')"
               @update-data="editData"
               @remove="removeData"
           />

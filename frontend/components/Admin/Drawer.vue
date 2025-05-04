@@ -2,6 +2,14 @@
 import { useAdminMenu } from "~/composables/useAdminMenu";
 
 const { menu } = useAdminMenu()
+
+const expandedPanelsMap = ref<Record<string, number[]>>({})
+
+menu.forEach((item) => {
+  if ('list' in item) {
+    expandedPanelsMap.value[item.title] = [0]
+  }
+})
 </script>
 
 <template>
@@ -49,7 +57,12 @@ const { menu } = useAdminMenu()
 
         </template>
         <template v-else>
-          <v-expansion-panels class="bg-transparent my-6" multiple elevation="0">
+          <v-expansion-panels
+              class="bg-transparent my-6"
+              multiple
+              elevation="0"
+              v-model="expandedPanelsMap[item.title]"
+          >
             <v-expansion-panel class="bg-transparent">
               <v-expansion-panel-title min-width="0" min-height="0" class="px-2 py-2 text-admin-grey-light-1">
                 <span class="text-body-2 font-weight-bold">{{ item.title }}</span>

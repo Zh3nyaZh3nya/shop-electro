@@ -106,6 +106,7 @@ definePageMeta({
           <AdminDisplayCardEnum
               :last_id="lastId?.value?.last_id"
               :is-image="pageType.includes('image')"
+              :is_for_main_page="pageType.includes('for-main-page')"
               @update-data="createData"
           />
         </template>

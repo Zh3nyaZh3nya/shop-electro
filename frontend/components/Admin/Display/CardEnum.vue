@@ -4,7 +4,7 @@ import { rules } from './Props'
 import { slugify } from "~/utils/slugify";
 import type { BaseItemEnum, DisplayProps, BaseEmitFn } from "./Props";
 
-const { action, item: itemProps, last_id, isImage } = defineProps<
+const { action, item: itemProps, last_id, isImage, is_for_main_page } = defineProps<
     DisplayProps<BaseItemEnum>
 >()
 
@@ -17,6 +17,7 @@ const itemData: BaseItemEnum = itemProps ?? {
   key: '',
   value: '',
   label: '',
+  for_main_page: true,
   ...(isImage ? { image: null } : {})
 }
 
@@ -25,6 +26,7 @@ const key = computed(() => label.value.toUpperCase())
 const value = computed(() => label.value.toLowerCase())
 const image = ref<File | string | null>(isEdit ? itemData.image : null)
 const previewUrl = ref<string | null>(null)
+const forMainPage = ref<boolean>(isEdit ? itemData.for_main_page : true)
 
 async function submitForm() {
   const { valid } = await formRef?.value.validate()
@@ -44,7 +46,9 @@ async function submitForm() {
     key: key.value,
     value: value.value,
     label: label.value,
-    ...(isImage && file ? { image: file } : {})
+    ...(isImage && file ? { image: file } : {}),
+    ...(is_for_main_page ? { for_main_page: forMainPage.value } : false)
+
   })
 }
 
@@ -93,7 +97,9 @@ watch(image, (newFile) => {
           variant="outlined"
           :prepend-icon="false"
           placeholder="Перетащите сюда файл или выберите"
-          :rules="[rules.required, rules.imageOnly]"
+          :rules="[
+            ...(isEdit && typeof image === 'string' ? [] : [rules.required, rules.imageOnly]),
+          ]"
           accept="image/jpeg, image/png, image/webp"
           rounded="lg"
       />
@@ -121,6 +127,18 @@ watch(image, (newFile) => {
         >
         </v-text-field>
       </div>
+
+      <div class="d-flex align-center ga-4" v-if="is_for_main_page">
+        <v-switch
+          v-model="forMainPage"
+          color="admin-primary"
+          :hide-details="true"
+        >
+
+        </v-switch>
+        <p class="text-body-1">Закрепить для главной страницы</p>
+      </div>
+
     </v-sheet>
 
     <div class="d-flex ga-3 align-center mt-4">

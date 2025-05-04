@@ -3,18 +3,21 @@ export interface BaseItem {
     title: string
     description: string
     active: boolean
+    for_main_page?: boolean
 }
 
 export interface BaseItemEnum {
     id: string | number
-    image?: File
+    image?: File | string | null
     key: string
     value: string
     label: string
+    for_main_page?: boolean
 }
 
 export interface DisplayProps<T extends BaseItem | BaseItemEnum = BaseItem> {
     action: 'create' | 'edit'
+    is_for_main_page?: boolean
     isImage?: boolean
     last_id?: number | string
     item?: T
