@@ -3,7 +3,7 @@ import { useAsyncData } from "#app";
 import { useApi } from "~/composables/useApi";
 import type { PropsCrumbs } from "~/components/Admin/BreadCrumbs.vue";
 import { useNotificationStore } from "~/stores/notifications";
-import type { BaseItem } from "~/components/Admin/Display/Props";
+import type {BaseItem, BaseItemEnum} from "~/components/Admin/Display/Props";
 
 const route = useRoute()
 const { getByPage } = useAdminMenu()
@@ -43,13 +43,23 @@ const crumbs: PropsCrumbs[] = [
   },
 ]
 
-async function createData<T extends object>(payload: T & BaseItem) {
-  if(!payload) return
+async function createData<T extends object>(payload: T & BaseItem | BaseItemEnum) {
+  if (!payload) return
+
+  const formData = new FormData()
+
+  for (const [key, value] of Object.entries(payload)) {
+    if (value instanceof File) {
+      formData.append(key, value)
+    } else if (value !== undefined && value !== null) {
+      formData.append(key, String(value))
+    }
+  }
 
   await useApi(`/admin/${route.params.page}/add`, {
     method: 'POST',
+    body: formData,
     credentials: 'include',
-    body: payload
   })
 
   notifications.add({
@@ -85,10 +95,17 @@ definePageMeta({
     </section>
     <section>
       <v-container>
-        <template v-if="pageType === 'card-color'">
+        <template v-if="pageType.includes('card-color')">
           <AdminDisplayCardColor
               :action="'create'"
               :last_id="lastId?.value?.last_id"
+              @update-data="createData"
+          />
+        </template>
+        <template v-if="pageType.includes('card-enum')">
+          <AdminDisplayCardEnum
+              :last_id="lastId?.value?.last_id"
+              :is-image="pageType.includes('image')"
               @update-data="createData"
           />
         </template>

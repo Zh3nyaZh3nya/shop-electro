@@ -14,7 +14,7 @@ const { menu } = useAdminMenu()
         <template v-if="!('list' in item)">
           <nuxt-link
               :to="
-                item.type === 'index' ?
+                item.type.includes( 'index') ?
                 '/admin' :
                 {
                   name: 'admin-page',
@@ -28,7 +28,7 @@ const { menu } = useAdminMenu()
               :class="[
                 'd-flex align-center ga-2 text-body-2 font-weight-bold mb-2',
                 (
-                  $route.path === '/admin' && item.type === 'index' ||
+                  $route.path === '/admin' && item.type.includes('index') ||
                   $route.path === '/admin/' + item.link ||
                   $route.path.startsWith('/admin/' + item.link + '/')
                 ) ? 'text-admin-primary router-link-active' : ''
@@ -37,7 +37,7 @@ const { menu } = useAdminMenu()
             <v-icon
                 :icon="item.icon"
                 :color="(
-                  $route.path === '/admin' && item.type === 'index' ||
+                  $route.path === '/admin' && item.type.includes('index') ||
                   $route.path === '/admin/' + item.link ||
                   $route.path.startsWith('/admin/' + item.link + '/')
                 ) ? 'admin-primary' : 'admin-grey-light-1'"
@@ -60,7 +60,7 @@ const { menu } = useAdminMenu()
                     v-for="link in item.list"
                     :key="link.title"
                     :to="
-                      link.type === 'index' ?
+                      link.type.includes('index') ?
                       '/admin' :
                       {
                         name: 'admin-page',
@@ -74,7 +74,7 @@ const { menu } = useAdminMenu()
                     :class="[
                       'd-flex align-center ga-2 text-body-2 font-weight-bold mb-2',
                       (
-                        $route.path === '/admin' && link.type === 'index' ||
+                        $route.path === '/admin' && link.type.includes('index') ||
                         $route.path === '/admin/' + link.link ||
                         $route.path.startsWith('/admin/' + link.link + '/')
                       ) ? 'text-admin-primary router-link-active' : ''
@@ -83,7 +83,7 @@ const { menu } = useAdminMenu()
                   <v-icon
                       :icon="link.icon"
                       :color="(
-                        $route.path === '/admin' && link.type === 'index' ||
+                        $route.path === '/admin' && link.type.includes('index') ||
                         $route.path === '/admin/' + link.link ||
                         $route.path.startsWith('/admin/' + link.link + '/')
                       ) ? 'admin-primary' : 'admin-grey-light-1'"

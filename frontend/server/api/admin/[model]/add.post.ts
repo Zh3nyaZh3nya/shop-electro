@@ -60,11 +60,14 @@ export default defineEventHandler(async (event) => {
     await fileUploadPromise
 
     const dataPath = resolve('assets/staticData', `${model}.json`)
-    let data = []
+    let data: any[] = []
+
     try {
         const content = await readFile(dataPath, 'utf-8')
         data = JSON.parse(content)
-    } catch {}
+    } catch (err: any) {
+        if (err.code !== 'ENOENT') throw err
+    }
 
     const newItem: Record<string, any> = {
         id: Date.now(),

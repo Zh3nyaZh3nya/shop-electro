@@ -215,6 +215,15 @@ watch(search, debounce(() => emit('search', search.value), 300))
               />
             </div>
           </template>
+          <template v-else-if="column.key === 'image'">
+            <v-img
+                :src="item.image"
+                rounded="lg"
+                :max-width="160"
+                :max-height="90"
+                class="d-flex justify-center my-4"
+            />
+          </template>
           <template v-else>
             {{ item[column.key] }}
           </template>

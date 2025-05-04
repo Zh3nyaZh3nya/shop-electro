@@ -1,10 +1,16 @@
-type TypeDisplay = 'card' | 'card-color' | 'index'
+type TypeDisplay =
+    'card' |
+    'card-color' |
+    'index' |
+    'card-enum' |
+    'image'
 type AdminMenuItem =
     | {
     title: string
     icon: string
     link: string
-    type: TypeDisplay
+    type: TypeDisplay[]
+    enums?: string[] // <- Какие энамы нужны для модуля (берутся из item'а у которого в link есть приписка enums)
 }
     | {
     title: string
@@ -12,7 +18,8 @@ type AdminMenuItem =
         title: string
         icon: string
         link: string
-        type: TypeDisplay
+        type: TypeDisplay[]
+        enums?: string[] // <- Какие энамы нужны для модуля (берутся из item'а у которого в link есть приписка enums)
     }[]
 }
 
@@ -22,7 +29,7 @@ export const useAdminMenu = () => {
             icon: 'mdi-home-outline',
             title: 'Инфопанель',
             link: '',
-            type: 'index',
+            type: ['index'],
         },
         {
             title: 'Главная страница',
@@ -31,7 +38,7 @@ export const useAdminMenu = () => {
                     title: 'Инфо-блоки',
                     icon: 'mdi-information-variant-circle-outline',
                     link: 'info-blocks',
-                    type: 'card-color',
+                    type: ['card-color'],
                 },
             ],
         },
@@ -42,7 +49,7 @@ export const useAdminMenu = () => {
                     title: 'Бренды',
                     icon: 'mdi-tag-multiple-outline',
                     link: 'brand-enums',
-                    type: 'card',
+                    type: ['card-enum', 'image'],
                 },
             ],
         },

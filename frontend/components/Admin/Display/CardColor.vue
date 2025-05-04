@@ -1,21 +1,16 @@
 <script setup lang="ts">
-import type { BaseItem, DisplayProps } from '~/components/Admin/Display/Props'
+import { rules, } from './Props'
+import type { BaseItem, DisplayProps, BaseEmitFn } from './Props'
+
+interface ColoredItem extends BaseItem {
+  color: string
+}
 
 const { action, item: itemProps, last_id } = defineProps<
-    DisplayProps<BaseItem & { color: string }>
+    DisplayProps<ColoredItem>
 >()
 
-const emit = defineEmits<{
-  (e: 'updateData', value: {
-    id: string | number
-    title: string
-    description: string
-    active: boolean
-    color: string
-  }): void
-  (e: 'remove', value: { id: string | number }): void
-}>()
-
+const emit = defineEmits<BaseEmitFn<ColoredItem>>()
 
 const formRef = ref()
 const editorRef = ref()
@@ -38,9 +33,6 @@ const title = ref<string>(isEdit ? itemData.title ?? '' : '')
 const active = ref<boolean>(isEdit ? itemData.active : true)
 const color = ref<string>(isEdit ? itemData.color : '')
 const description = ref<string>(isEdit ? itemData.description : '')
-const rules = {
-  required: (v: any) => !!v || 'Обязательно',
-}
 
 async function submitForm() {
   const { valid } = await formRef?.value.validate()
@@ -59,7 +51,7 @@ async function submitForm() {
   })
 }
 
-async function removeItem() {
+function removeItem() {
   emit('remove', {
     id: itemData.id
   })

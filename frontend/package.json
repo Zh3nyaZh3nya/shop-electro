@@ -30,6 +30,6 @@
     "sass-loader": "^16.0.4",
     "typescript": "^5.7.2",
     "vite-plugin-vuetify": "^2.0.4",
-    "vuetify": "^3.7.5"
+    "vuetify": "^3.7.6"
   }
 }

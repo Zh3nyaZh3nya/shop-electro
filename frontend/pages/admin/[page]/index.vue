@@ -22,11 +22,28 @@ const search = ref('')
 function generateHeadersFromData(items: any[]): TableHeader[] {
   if (!items.length || typeof items[0] !== 'object') return []
 
-  const baseHeaders: TableHeader[] = Object.keys(items[0]).map((key) => ({
+  const keys = Object.keys(items[0]).filter(
+      (key) => key !== 'key' && key !== 'value'
+  )
+
+  const reorderedKeys: string[] = []
+
+  for (const key of keys) {
+    if (key === 'id') {
+      reorderedKeys.push('id')
+      if (keys.includes('image')) {
+        reorderedKeys.push('image')
+      }
+    } else if (key !== 'image') {
+      reorderedKeys.push(key)
+    }
+  }
+
+  const baseHeaders: TableHeader[] = reorderedKeys.map((key) => ({
     title: key.charAt(0).toUpperCase() + key.slice(1),
     key,
     align: 'center',
-    sortable: key !== 'active'
+    sortable: key !== 'active' && key !== 'image'
   }))
 
   return [
@@ -165,7 +182,7 @@ definePageMeta({
         </v-btn>
       </v-container>
     </section>
-    <section v-if="(pageType === 'card' || pageType === 'card-color') && pageData && pageData.items">
+    <section v-if="!pageType.includes('index') && pageData && pageData.items">
       <v-container>
         <AdminTable
             :header="generateHeadersFromData(pageData?.items || [])"

@@ -3,7 +3,7 @@ import { useAsyncData } from "#app";
 import { useApi } from "~/composables/useApi";
 import type { PropsCrumbs } from "~/components/Admin/BreadCrumbs.vue";
 import { useNotificationStore } from "~/stores/notifications";
-import type { BaseItem } from "~/components/Admin/Display/Props";
+import type {BaseItem, BaseItemEnum} from "~/components/Admin/Display/Props";
 
 const route = useRoute()
 const { getByPage } = useAdminMenu()
@@ -50,13 +50,23 @@ const crumbs: PropsCrumbs[] = [
   },
 ]
 
-async function editData<T extends object>(payload: T & BaseItem) {
-  if(!payload) return
+async function editData<T extends object>(payload: T & (BaseItem | BaseItemEnum)) {
+  if (!payload) return
+
+  const formData = new FormData()
+
+  for (const [key, value] of Object.entries(payload)) {
+    if (value instanceof File) {
+      formData.append(key, value)
+    } else if (value !== undefined && value !== null) {
+      formData.append(key, String(value))
+    }
+  }
 
   await useApi(`/admin/${route.params.page}/edit`, {
     method: 'POST',
-    credentials: 'include',
-    body: payload
+    body: formData,
+    credentials: 'include'
   })
 
   notifications.add({
@@ -68,10 +78,14 @@ async function editData<T extends object>(payload: T & BaseItem) {
   navigateTo({ name: 'admin-page', params: { page: route.params.page } })
 }
 
-async function removeData(payload: { id: number }) {
+async function removeData(payload: { id: number | string }) {
   if(!payload) return
 
-  await useApi(`/admin/${route.params.page}/delete`, { method: 'POST', credentials: 'include', body: { id: payload.id } })
+  await useApi(`/admin/${route.params.page}/delete`, {
+    method: 'POST',
+    credentials: 'include',
+    body: { id: payload.id }
+  })
 
   notifications.add({
     title: 'Удалено',
@@ -106,10 +120,19 @@ definePageMeta({
     </section>
     <section v-if="pageEditData && Object.keys(pageEditData).length">
       <v-container>
-        <template v-if="pageType === 'card-color'">
+        <template v-if="pageType.includes('card-color')">
           <AdminDisplayCardColor
               :action="'edit'"
               :item="pageEditData"
+              @update-data="editData"
+              @remove="removeData"
+          />
+        </template>
+        <template v-if="pageType.includes('card-enum')">
+          <AdminDisplayCardEnum
+              :action="'edit'"
+              :item="pageEditData"
+              :is-image="pageType.includes('image')"
               @update-data="editData"
               @remove="removeData"
           />

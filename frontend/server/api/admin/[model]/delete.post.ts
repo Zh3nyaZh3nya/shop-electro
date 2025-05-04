@@ -1,6 +1,6 @@
 import { readBody, defineEventHandler } from 'h3'
-import { readFile, writeFile } from 'fs/promises'
-import { join } from 'path'
+import { readFile, writeFile, unlink } from 'fs/promises'
+import { join, resolve } from 'path'
 import { requireAdmin } from '~/utils/auth'
 
 export default defineEventHandler(async (event) => {
@@ -22,6 +22,19 @@ export default defineEventHandler(async (event) => {
         idsToDelete.push(...body.ids)
     } else if (typeof body.id !== 'undefined') {
         idsToDelete.push(body.id)
+    }
+
+    const itemsToDelete = data.filter((item: any) => idsToDelete.includes(item.id))
+
+    for (const item of itemsToDelete) {
+        if (item.image) {
+            const absolutePath = resolve('public', item.image.replace(/^\/+/, ''))
+            try {
+                await unlink(absolutePath)
+            } catch (err) {
+                console.warn(`Не удалось удалить файл: ${absolutePath}`, err)
+            }
+        }
     }
 
     data = data.filter((item: any) => !idsToDelete.includes(item.id))

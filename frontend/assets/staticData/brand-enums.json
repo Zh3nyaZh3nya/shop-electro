@@ -1,0 +1,100 @@
+[
+  {
+    "id": "1",
+    "key": "XIAOMI",
+    "value": "xiaomi",
+    "label": "Xiaomi",
+    "image": "/storage/brand-enums/xiaomi-1746377052305-1746377052349.webp"
+  },
+  {
+    "id": "2",
+    "key": "APPLE",
+    "value": "apple",
+    "label": "Apple",
+    "image": "/storage/brand-enums/apple-1746376724568-1746376724580.webp"
+  },
+  {
+    "id": "3",
+    "key": "SAMSUNG",
+    "value": "samsung",
+    "label": "Samsung",
+    "image": "/storage/brand-enums/samsung-1746377095208-1746377095521.webp"
+  },
+  {
+    "id": "4",
+    "key": "MSI",
+    "value": "msi",
+    "label": "Msi",
+    "image": "/storage/brand-enums/msi-1746377117880-1746377118189.webp"
+  },
+  {
+    "id": "5",
+    "key": "ASUS",
+    "value": "asus",
+    "label": "Asus",
+    "image": "/storage/brand-enums/asus-1746377137280-1746377137605.webp"
+  },
+  {
+    "id": "6",
+    "key": "HUAWEI",
+    "value": "huawei",
+    "label": "Huawei",
+    "image": "/storage/brand-enums/huawei-1746377158040-1746377158348.webp"
+  },
+  {
+    "id": "7",
+    "key": "LG",
+    "value": "lg",
+    "label": "lg",
+    "image": "/storage/brand-enums/lg-1746377179936-1746377180246.webp"
+  },
+  {
+    "id": "8",
+    "key": "AMD",
+    "value": "amd",
+    "label": "Amd",
+    "image": "/storage/brand-enums/amd-1746377212302-1746377212421.webp"
+  },
+  {
+    "id": "9",
+    "key": "POCO",
+    "value": "poco",
+    "label": "POCO",
+    "image": "/storage/brand-enums/poco-1746377233157-1746377233482.webp"
+  },
+  {
+    "id": "10",
+    "key": "ACER",
+    "value": "acer",
+    "label": "Acer",
+    "image": "/storage/brand-enums/acer-1746377267480-1746377267800.webp"
+  },
+  {
+    "id": "11",
+    "key": "INTEL",
+    "value": "intel",
+    "label": "Intel",
+    "image": "/storage/brand-enums/intel-1746377285977-1746377286432.webp"
+  },
+  {
+    "id": "12",
+    "key": "LOGITECH",
+    "value": "logitech",
+    "label": "Logitech",
+    "image": "/storage/brand-enums/logitech-1746377328587-1746377329034.webp"
+  },
+  {
+    "id": "13",
+    "key": "PHILIPS",
+    "value": "philips",
+    "label": "Philips",
+    "image": "/storage/brand-enums/philips-1746377351495-1746377351819.webp"
+  },
+  {
+    "id": "14",
+    "key": "TEFAL",
+    "value": "tefal",
+    "label": "Tefal",
+    "image": "/storage/brand-enums/tefal-1746377377192-1746377377503.webp"
+  }
+]

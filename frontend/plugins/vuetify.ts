@@ -6,6 +6,7 @@ import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import '@/assets/fonts/fonts.css';
 import { defaults } from '@/utils/vuetify/defaults'
+import { VFileUpload } from 'vuetify/labs/VFileUpload'
 
 export default defineNuxtPlugin((app) => {
     const vuetify = createVuetify({
@@ -42,7 +43,10 @@ export default defineNuxtPlugin((app) => {
                 mdi,
             },
         },
-        components,
+        components: {
+            ...components,
+            VFileUpload,
+        },
         directives,
         ssr: true,
     })
