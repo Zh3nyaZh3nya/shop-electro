@@ -50,23 +50,11 @@ export const useAdminMenu = () => {
                     link: 'main-banner',
                     type: ['card', 'image', 'video', 'link', 'for-main-page'],
                 },
-                {
-                    title: 'Инфо-блоки',
-                    icon: 'mdi-information-variant-circle-outline',
-                    link: 'info-blocks',
-                    type: ['card-color'],
-                },
             ],
         },
         {
             title: 'Справочники',
             list: [
-                {
-                    title: 'Бренды',
-                    icon: 'mdi-tag-multiple-outline',
-                    link: 'brand-enums',
-                    type: ['card-enum', 'image', 'for-main-page'],
-                },
                 {
                     icon: 'mdi-format-list-bulleted',
                     title: 'Категории',

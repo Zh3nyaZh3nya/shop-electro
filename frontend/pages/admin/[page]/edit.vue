@@ -148,6 +148,7 @@ definePageMeta({
               :is-image="pageType.includes('image')"
               :is_video="pageType.includes('video')"
               :is_for_main_page="pageType.includes('for-main-page')"
+              :is_link="pageType.includes('link')"
               @update-data="editData"
               @remove="removeData"
           />

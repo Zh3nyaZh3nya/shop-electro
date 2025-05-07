@@ -43,9 +43,9 @@ const active = ref<boolean>(isEdit ? itemData.active : true)
 const forMainPage = ref<boolean>(isEdit ? itemData.for_main_page ?? false : false)
 const fileImageOrVideo = ref<File | null>(null)
 const previewUrl = ref<string | null>(
-    isEdit && typeof itemData.image === 'string'
+    isEdit && typeof itemData.image === 'string' && itemData.image
         ? itemData.image
-        : isEdit && typeof itemData.video === 'string'
+        : isEdit && typeof itemData.video === 'string' && itemData.video
             ? itemData.video
             : null
 )

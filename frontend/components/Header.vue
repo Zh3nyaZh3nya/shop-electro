@@ -24,6 +24,7 @@ const { cities } = defineProps<{
 }>()
 
 const selectCity = ref<Cities>(cities[0])
+const isScrolledPastBanner = ref(false)
 const menu: IMenu[] = [
   {
     title: 'Покупателям',
@@ -72,16 +73,44 @@ const menu: IMenu[] = [
 function changeCity(value: Cities) {
   selectCity.value = value
 }
+
+onMounted(() => {
+  const banner = document.getElementById('mainBanner')
+  if (!banner) return
+
+  const observer = new IntersectionObserver(
+      ([entry]) => {
+        isScrolledPastBanner.value = !entry.isIntersecting
+      },
+      {
+        threshold: 0.01,
+      }
+  )
+
+  observer.observe(banner)
+})
 </script>
 
 <template>
-  <v-app-bar color="white" class="header d-flex flex-column" elevation="0" :height="mdAndUp ? 140 : 80">
+  <v-app-bar
+      color="white"
+      class="header d-flex flex-column"
+      elevation="0"
+      :height="mdAndUp ? 160 : 80"
+      :class="{ 'bg-transparent': !isScrolledPastBanner }"
+  >
     <v-container>
       <v-row>
         <v-col cols="12" class="d-flex align-center justify-space-between">
           <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }">
             <nuxt-link to="/">
-              <v-img src="/logo.png" width="60px" height="100%" cover />
+              <v-img
+                  :src="!isScrolledPastBanner ? '/logo-white.png' : `/logo.png`"
+                  width="60px"
+                  height="100%"
+                  cover
+                  class="logo"
+              />
             </nuxt-link>
             <v-btn
                 class="bg-dark-primary"
@@ -96,7 +125,7 @@ function changeCity(value: Cities) {
             </v-btn>
             <v-text-field
                 variant="outlined"
-                class="text-field"
+                class="text-field text-field-header"
                 :hide-details="true"
                 placeholder="Холодильник"
                 append-inner-icon="mdi-magnify"
@@ -130,16 +159,16 @@ function changeCity(value: Cities) {
                 </v-card>
               </v-menu>
             </div>
-            <v-divider :vertical="true" color="" />
+            <v-divider :vertical="true" color="white" :thickness="2" />
             <div>
-              <nuxt-link class="d-flex align-center ga-2 link-hover cursor-pointer text-caption">
+              <nuxt-link class="d-flex align-center ga-2 link-hover cursor-pointer text-caption text-white">
                 <v-icon icon="mdi-truck-delivery-outline" />
                 Бесплатная доставка по Казахстану
               </nuxt-link>
             </div>
-            <v-divider :vertical="true" color="" />
+            <v-divider :vertical="true" color="white" :thickness="2" />
             <div>
-              <a href="tel:87079169250" class="link-hover text-caption font-weight-bold">
+              <a href="tel:87079169250" class="link-hover text-caption font-weight-bold text-white">
                 8 (707) 916 92 50
               </a>
             </div>
@@ -151,12 +180,12 @@ function changeCity(value: Cities) {
               v-for="item in menu"
               :key="item.title"
             >
-              <v-menu :close-on-content-click="false" :offset="15">
+              <v-menu :close-on-content-click="false" :offset="28">
                 <template #activator="{ props, isActive }">
                   <div
                       v-bind="props"
                       class="text-body-2 text-uppercase link-hover d-flex align-center ga-1 header-link"
-                      :class="{ 'text-primary header-link-menu-active': isActive }"
+                      :class="[isActive ? 'text-primary header-link-menu-active' : 'text-white']"
                   >
                     <p>{{ item.title }}</p>
                     <v-icon icon="mdi-chevron-down" size="18px" />
@@ -181,7 +210,7 @@ function changeCity(value: Cities) {
           <div class="d-flex align-center ga-4">
             <div>
               <nuxt-link class="header-favorite link-hover cursor-pointer">
-                <v-icon icon="mdi-heart" size="32px" />
+                <v-icon icon="mdi-heart" size="32px" color="white" />
                 <div class="header-favorite-count-bg">
                   <p class="header-favorite-count text-caption">0</p>
                 </div>
@@ -203,6 +232,7 @@ function changeCity(value: Cities) {
 
         </v-col>
       </v-row>
+      <v-divider color="white" class="mt-4" />
     </v-container>
   </v-app-bar>
 </template>
@@ -218,6 +248,12 @@ function changeCity(value: Cities) {
       .v-icon {
         transform: rotate(180deg);
       }
+    }
+  }
+  .text-field-header {
+    color: #fff;
+    .v-field__overlay {
+      background: #1b1d22;
     }
   }
   &-favorite, &-favorite-cart {

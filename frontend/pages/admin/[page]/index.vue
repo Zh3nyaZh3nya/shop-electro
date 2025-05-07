@@ -143,16 +143,15 @@ async function updateActiveItem(payload: { id: number, active: boolean }) {
   })
 }
 
-async function removeSelectItem(payload: { id: number } | { id: number }[]) {
-  const ids = Array.isArray(payload) ? payload.map(item => item.id) : [payload.id]
-
+async function removeSelectItem(payload: { id: number }[]) {
   const formData = new FormData()
-  ids.forEach(id => formData.append('ids[]', String(id)))
 
   await useApi(`/admin/${route.params.page}/delete`, {
     method: 'POST',
-    body: formData,
     credentials: 'include',
+    body: {
+      ids: payload.map(item => item.id)
+    }
   })
 
   notifications.add({

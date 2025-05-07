@@ -2,30 +2,15 @@
 import { useAsyncData } from "#app";
 import { useApi } from "~/composables/useApi";
 
-interface infoBlocks {
-  title: string
-  description: string
-  color: string
-  id: string
-}
-
-interface Brand {
-  id: string
-  key: string
-  value: string
-  label: string
-  image: string
-}
-
-const { data: infoBlocksData, pending: infoBlocksPending } = await useAsyncData<infoBlocks[]>('main-page-info-blocks-data', async () => {
-      const { data: dataFetch } = await useApi<{ items: infoBlocks[] }>(`/info-blocks`, { method: 'GET' })
+const { data: bannersData, pending: bannersDataPending } = await useAsyncData<IBanner[]>('main-page-banners-data', async () => {
+      const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-banner?mainPage=true`, { method: 'GET' })
 
       return dataFetch?.value?.items || []
     }
 )
 
-const { data: brandData, pending: brandPending } = await useAsyncData<Brand[]>('main-page-brand-data', async () => {
-      const { data: dataFetch } = await useApi<{ items: Brand[] }>(`/brand-enums?mainPage=true`, { method: 'GET' })
+const { data: categoriesData, pending: categoriesDataPending } = await useAsyncData<IBanner[]>('main-page-categorie-data', async () => {
+      const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/categories?mainPage=true`, { method: 'GET' })
 
       return dataFetch?.value?.items || []
     }
@@ -34,7 +19,7 @@ const { data: brandData, pending: brandPending } = await useAsyncData<Brand[]>('
 
 <template>
   <v-overlay
-      :model-value="infoBlocksPending || brandPending"
+      :model-value="bannersDataPending || categoriesDataPending"
       class="align-center justify-center"
   >
     <v-progress-circular
@@ -43,6 +28,9 @@ const { data: brandData, pending: brandPending } = await useAsyncData<Brand[]>('
         indeterminate
     ></v-progress-circular>
   </v-overlay>
+  <section v-if="bannersData && bannersData.length" id="mainBanner">
+    <MainBanner :slides="bannersData" />
+  </section>
 <!--  <section v-if="infoBlocksData && infoBlocksData.length">-->
 <!--    <v-container>-->
 <!--      <v-row>-->

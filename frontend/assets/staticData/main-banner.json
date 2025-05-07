@@ -18,7 +18,10 @@
     "link_video": "",
     "for_main_page": true,
     "image": "",
-    "video": "/storage/main-banner/televizory-haier-1746636186034-1746636186378.webm"
+    "video": "/storage/main-banner/televizory-haier-1746636186034-1746636186378.webm",
+    "link": "/",
+    "link_external": false,
+    "link_text": "Перейти к выбору"
   },
   {
     "id": 3,
@@ -28,6 +31,9 @@
     "active": true,
     "link_video": "",
     "for_main_page": true,
-    "image": "/storage/main-banner/vse-grani-razvlecheniy-1746636309616-1746636309929.webp"
+    "image": "/storage/main-banner/vse-grani-razvlecheniy-1746636309616-1746636309929.webp",
+    "link": "/",
+    "link_external": false,
+    "link_text": "Выбрать телевизор"
   }
 ]

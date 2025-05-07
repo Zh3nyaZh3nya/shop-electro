@@ -121,6 +121,7 @@ definePageMeta({
               :is_video="pageType.includes('video')"
               :is-image="pageType.includes('image')"
               :is_for_main_page="pageType.includes('for-main-page')"
+              :is_link="pageType.includes('link')"
               @update-data="createData"
           />
         </template>
