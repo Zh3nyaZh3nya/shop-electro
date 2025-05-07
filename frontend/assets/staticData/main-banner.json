@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "Официальный магазин бытовой техники",
+    "slug": "ofitsialnyy-magazin-bytovoy-tekhniki",
+    "description": "SHOP-AUDIO",
+    "active": true,
+    "link_video": "",
+    "for_main_page": true,
+    "video": "/storage/main-banner/ofitsialnyy-magazin-bytovoy-tekhniki-1746636021490-1746636021504.webm"
+  },
+  {
+    "id": 2,
+    "title": "Телевизоры Haier",
+    "slug": "televizory-haier",
+    "description": "Смотри на мир шире",
+    "active": true,
+    "link_video": "",
+    "for_main_page": true,
+    "image": "",
+    "video": "/storage/main-banner/televizory-haier-1746636186034-1746636186378.webm"
+  },
+  {
+    "id": 3,
+    "title": "Все грани развлечений",
+    "slug": "vse-grani-razvlecheniy",
+    "description": "Смотрите и играйте. Новые телевизоры Haier Smart TV S7",
+    "active": true,
+    "link_video": "",
+    "for_main_page": true,
+    "image": "/storage/main-banner/vse-grani-razvlecheniy-1746636309616-1746636309929.webp"
+  }
+]

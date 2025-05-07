@@ -46,15 +46,37 @@ export default defineEventHandler(async (event) => {
         busboy.on('finish', async () => {
             if (filename && chunks.length) {
                 const buffer = Buffer.concat(chunks)
-                const nameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'image'
-                const webpFileName = `${nameWithoutExt}-${Date.now()}.webp`
-                const saveTo = join(uploadDir, webpFileName)
-                filePath = `/storage/${model}/${webpFileName}`
+                const ext = filename.split('.').pop()?.toLowerCase() || 'bin'
+                const nameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'file'
+                const timestamp = Date.now()
+                let finalFilename = `${nameWithoutExt}-${timestamp}`
+                let saveTo: string
 
-                try {
-                    await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
-                } catch (err) {
-                    return rejectUpload(err)
+                const isImage = ['jpg', 'jpeg', 'png', 'webp'].includes(ext)
+                const isVideo = ['mp4', 'webm', 'ogg'].includes(ext)
+
+                if (isImage) {
+                    finalFilename += '.webp'
+                    saveTo = join(uploadDir, finalFilename)
+                    filePath = `/storage/${model}/${finalFilename}`
+
+                    try {
+                        await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
+                    } catch (err) {
+                        return rejectUpload(err)
+                    }
+                } else if (isVideo) {
+                    finalFilename += `.${ext}`
+                    saveTo = join(uploadDir, finalFilename)
+                    filePath = `/storage/${model}/${finalFilename}`
+
+                    try {
+                        await writeFile(saveTo, buffer)
+                    } catch (err) {
+                        return rejectUpload(err)
+                    }
+                } else {
+                    return rejectUpload(new Error('Unsupported file type'))
                 }
             }
 
@@ -82,7 +104,11 @@ export default defineEventHandler(async (event) => {
     }
 
     if (filePath) {
-        newItem.image = filePath
+        if (['.jpg', '.jpeg', '.png', '.webp'].some(ext => filePath?.endsWith(ext))) {
+            newItem.image = filePath
+        } else if (['.mp4', '.webm', '.ogg'].some(ext => filePath?.endsWith(ext))) {
+            newItem.video = filePath
+        }
     }
 
     data.push(newItem)

@@ -1,11 +1,13 @@
 type TypeDisplay =
-    'card' |
-    'card-color' |
-    'index' |
-    'card-enum' |
-    'image' |
-    'for-main-page' |
-    'card-enum-subcategory'
+    'card' | //
+    'card-color' | // если нужно передать цвет
+    'index' | // главная страница в админке
+    'card-enum' | // энамы
+    'image' | // если нужно добавить изображения
+    'for-main-page' | // если нужно отобразить на главной (/api/:module?mainPage=true)
+    'card-enum-subcategory' | // если нужно добавить подкатегории
+    'video' | // если нужно добавить видео
+    'link' // если нужно добавить ссылки
 type AdminMenuItem =
     | {
     title: string
@@ -42,6 +44,12 @@ export const useAdminMenu = () => {
         {
             title: 'Главная страница',
             list: [
+                {
+                    title: 'Баннер',
+                    icon: 'mdi-folder-multiple-image',
+                    link: 'main-banner',
+                    type: ['card', 'image', 'video', 'link', 'for-main-page'],
+                },
                 {
                     title: 'Инфо-блоки',
                     icon: 'mdi-information-variant-circle-outline',

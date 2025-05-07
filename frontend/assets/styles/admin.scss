@@ -76,6 +76,16 @@
   .border-card {
     border: 1px solid rgb(var(--v-theme-admin-grey-light-2)) !important;
   }
+
+  .v-checkbox {
+    --v-input-control-height: 42px;
+    .v-selection-control--density-default {
+      --v-selection-control-size: 22px;
+    }
+    .v-selection-control__input > .v-icon {
+      opacity: 1;
+    }
+  }
 }
 
 .text-field-admin {

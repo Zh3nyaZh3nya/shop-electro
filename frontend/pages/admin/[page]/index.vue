@@ -23,7 +23,11 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
   if (!items.length || typeof items[0] !== 'object') return []
 
   const keys = Object.keys(items[0]).filter(
-      (key) => key !== 'key' && key !== 'value' && key !== 'for_main_page'
+      (key) => key !== 'key' &&
+          key !== 'value' &&
+          key !== 'for_main_page' &&
+          key !== 'slug' &&
+          key !== 'link_video'
   )
 
   const reorderedKeys: string[] = []
@@ -31,10 +35,10 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
   for (const key of keys) {
     if (key === 'id') {
       reorderedKeys.push('id')
-      if (keys.includes('image')) {
-        reorderedKeys.push('image')
+      if (keys.includes('image') || keys.includes('video')) {
+        reorderedKeys.push('media')
       }
-    } else if (key !== 'image' && key !== 'active') {
+    } else if (key !== 'image' && key !== 'active' && key !== 'video') {
       reorderedKeys.push(key)
     }
   }

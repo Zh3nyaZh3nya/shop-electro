@@ -201,8 +201,8 @@ watch(search, debounce(() => emit('search', search.value), 300))
           <template v-if="column.key === 'description'">
             <div v-if="item?.description">
               {{
-                item.description.replace(/<[^>]*>/g, '').slice(0, 30)
-              }}<span v-if="item.description.replace(/<[^>]*>/g, '').length > 30">...</span>
+                String(item.description).replace(/<[^>]*>/g, '').slice(0, 30)
+              }}<span v-if="String(item.description).replace(/<[^>]*>/g, '').length > 30">...</span>
             </div>
           </template>
           <template v-else-if="column.key === 'active'">
@@ -215,15 +215,24 @@ watch(search, debounce(() => emit('search', search.value), 300))
               />
             </div>
           </template>
-          <template v-else-if="column.key === 'image'">
+          <template v-else-if="column.key === 'media'">
             <div class="d-flex justify-center">
-              <v-img
-                  :src="item.image"
-                  rounded="lg"
-                  :max-width="160"
-                  :max-height="90"
-                  class="d-flex justify-center my-4"
-              />
+              <template v-if="item.video">
+                <video
+                    :src="item.video"
+                    muted
+                    style="width: 160px; height: 90px; border-radius: 8px;"
+                />
+              </template>
+              <template v-else-if="item.image">
+                <v-img
+                    :src="item.image"
+                    rounded="lg"
+                    :max-width="160"
+                    :max-height="90"
+                    class="d-flex justify-center my-4"
+                />
+              </template>
             </div>
           </template>
           <template v-else-if="column.key === 'subcategories'">

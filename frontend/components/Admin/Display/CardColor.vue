@@ -45,6 +45,7 @@ async function submitForm() {
   emit('updateData', {
     id: itemData.id,
     title: title.value,
+    slug: slugify(title.value),
     description: description.value,
     active: active.value,
     color: color.value,

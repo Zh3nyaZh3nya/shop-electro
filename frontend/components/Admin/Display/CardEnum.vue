@@ -164,6 +164,7 @@ watch(fileImage, (newFile) => {
           ]"
           accept="image/jpeg, image/png, image/webp"
           rounded="lg"
+          class="text-field-admin"
       />
     </div>
 

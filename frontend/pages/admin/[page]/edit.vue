@@ -141,6 +141,17 @@ definePageMeta({
               @remove="removeData"
           />
         </template>
+        <template v-else>
+          <AdminDisplayCard
+              :action="'edit'"
+              :item="pageEditData"
+              :is-image="pageType.includes('image')"
+              :is_video="pageType.includes('video')"
+              :is_for_main_page="pageType.includes('for-main-page')"
+              @update-data="editData"
+              @remove="removeData"
+          />
+        </template>
       </v-container>
     </section>
   </template>

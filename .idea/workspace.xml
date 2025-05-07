@@ -4,24 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add header, slider">
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add mobile menu, display card-enum-subcategory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/brand-enums.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/brand-enums.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/cities.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/cities.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardColor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/CardColor.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Table.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/MobileMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/MobileMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Main/Banner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Main/Banner.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" afterDir="false" />
     </list>
@@ -123,7 +118,7 @@
       <workItem from="1746457854431" duration="4615000" />
       <workItem from="1746513081998" duration="71000" />
       <workItem from="1746525723056" duration="7622000" />
-      <workItem from="1746609799234" duration="13580000" />
+      <workItem from="1746609799234" duration="24835000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -221,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746613941983</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: add mobile menu, display card-enum-subcategory">
+      <option name="closed" value="true" />
+      <created>1746624988566</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746624988566</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +257,7 @@
     <MESSAGE value="small fixes" />
     <MESSAGE value="feat: add brands" />
     <MESSAGE value="feat: add header, slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add header, slider" />
+    <MESSAGE value="feat: add mobile menu, display card-enum-subcategory" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add mobile menu, display card-enum-subcategory" />
   </component>
 </project>
