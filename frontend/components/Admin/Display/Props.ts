@@ -12,13 +12,22 @@ export interface BaseItemEnum {
     key: string
     value: string
     label: string
+    active: boolean
     for_main_page?: boolean
+    subcategories?: {
+        id: string | number
+        key: string
+        value: string
+        label: string
+        active: boolean
+    }[]
 }
 
 export interface DisplayProps<T extends BaseItem | BaseItemEnum = BaseItem> {
     action: 'create' | 'edit'
     is_for_main_page?: boolean
     isImage?: boolean
+    is_subcategory?: boolean
     last_id?: number | string
     item?: T
 }

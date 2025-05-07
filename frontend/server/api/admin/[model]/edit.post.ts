@@ -33,7 +33,12 @@ export default defineEventHandler(async (event) => {
         })
 
         busboy.on('field', (fieldname: any, val: any) => {
-            fields[fieldname] = autoCast(val)
+            try {
+                const parsed = JSON.parse(val)
+                fields[fieldname] = parsed
+            } catch {
+                fields[fieldname] = autoCast(val)
+            }
         })
 
         busboy.on('finish', async () => {

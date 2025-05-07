@@ -5,16 +5,22 @@ import { useAsyncData } from "#app";
 
 const { mdAndUp } = useDisplay()
 
-const { data: defaultData, pending: defaultPending, error } = await useAsyncData('default-data', async () => {
-  const { data: citiesData } = await useApi<{ items: any }>('/cities')
+const { data: citiesData, pending: citiesPending } = await useAsyncData('default-data-cities', async () => {
+  const { data: responseData } = await useApi<{ items: any }>('/cities')
 
-  return { cities: citiesData?.value?.items }
+  return { cities: responseData?.value?.items }
+})
+
+const { data: categoriesData, pending: categoriesPending } = await useAsyncData('default-data-categories', async () => {
+  const { data: responseData } = await useApi<{ items: any }>('/cities')
+
+  return { cities: responseData?.value?.items }
 })
 </script>
 
 <template>
   <v-overlay
-      :model-value="defaultPending"
+      :model-value="citiesPending || categoriesPending"
       class="align-center justify-center"
   >
     <v-progress-circular
@@ -24,7 +30,7 @@ const { data: defaultData, pending: defaultPending, error } = await useAsyncData
     ></v-progress-circular>
   </v-overlay>
   <v-app>
-    <Header :cities="defaultData?.cities" />
+    <Header :cities="citiesData?.cities" />
     <MobileMenu v-if="!mdAndUp" />
     <v-main>
       <NuxtPage />

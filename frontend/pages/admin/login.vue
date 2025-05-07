@@ -68,7 +68,7 @@ definePageMeta({
               <div class="mb-2">
                 <p class="text-body-2 mb-2">Адрес электронной почты<label class="text-admin-red text-body-1">*</label></p>
                 <v-text-field
-                    color="primary"
+                    color="admin-primary"
                     v-model="bodyData.login"
                     variant="outlined"
                     rounded="lg"
@@ -82,7 +82,7 @@ definePageMeta({
               <div class="mb-2">
                 <p class="text-body-2 mb-2">Пароль<label class="text-admin-red text-body-1">*</label></p>
                 <v-text-field
-                    color="primary"
+                    color="admin-primary"
                     v-model="bodyData.password"
                     type="password"
                     variant="outlined"

@@ -12,6 +12,7 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+  background: transparent;
 }
 
 .link-hover {
@@ -38,10 +39,6 @@ a {
   .swiper-button {
     pointer-events: auto;
   }
-}
-
-.border-card {
-  border: 1px solid rgb(var(--v-theme-admin-grey-light-2)) !important;
 }
 
 .rotate-left {

@@ -1,0 +1,240 @@
+[
+  {
+    "id": 1,
+    "key": "TELEVIZORY",
+    "value": "televizory",
+    "label": "Телевизоры",
+    "active": true,
+    "for_main_page": true,
+    "subcategories": [
+      {
+        "id": 1746622078524,
+        "key": "OLED",
+        "value": "oled",
+        "label": "OLED",
+        "active": true
+      },
+      {
+        "id": 1746622080935.5046,
+        "key": "HQLED",
+        "value": "hqled",
+        "label": "HQLED",
+        "active": true
+      },
+      {
+        "id": 1746622087020.2375,
+        "key": "LED",
+        "value": "led",
+        "label": "LED",
+        "active": true
+      },
+      {
+        "id": 1746622094872.0667,
+        "key": "MINI-LED",
+        "value": "mini-led",
+        "label": "MINI LED",
+        "active": true
+      }
+    ],
+    "image": "/storage/categories/test-1746621791696-1746621792021.webp"
+  },
+  {
+    "id": 2,
+    "key": "KOMPYUTERNAYA-TEKHNIKA",
+    "value": "kompyuternaya-tekhnika",
+    "label": "Компьютерная техника",
+    "active": true,
+    "for_main_page": true,
+    "subcategories": [
+      {
+        "id": 1746623121751,
+        "key": "IGROVYE-KOMPYUTERY",
+        "value": "igrovye-kompyutery",
+        "label": "Игровые компьютеры",
+        "active": true
+      },
+      {
+        "id": 1746623177176.5728,
+        "key": "IGROVYE-AKSSESUARY",
+        "value": "igrovye-akssesuary",
+        "label": "Игровые акссесуары",
+        "active": true
+      },
+      {
+        "id": 1746623184742.561,
+        "key": "IGROVYE-NOUTBUKI",
+        "value": "igrovye-noutbuki",
+        "label": "Игровые ноутбуки",
+        "active": true
+      },
+      {
+        "id": 1746623194110.855,
+        "key": "NOUTBUKI",
+        "value": "noutbuki",
+        "label": "Ноутбуки",
+        "active": true
+      }
+    ],
+    "image": "/storage/categories/kompyuternaya-tekhnika-1746623203120-1746623203429.webp"
+  },
+  {
+    "id": 3,
+    "key": "KRUPNAYA-BYTOVAYA-TEKHNIKA",
+    "value": "krupnaya-bytovaya-tekhnika",
+    "label": "Крупная бытовая техника ",
+    "active": true,
+    "for_main_page": true,
+    "subcategories": [
+      {
+        "id": 1746623205548,
+        "key": "STIRALNYE-MASHINY",
+        "value": "stiralnye-mashiny",
+        "label": "Стиральные машины",
+        "active": true
+      },
+      {
+        "id": 1746623225702.2073,
+        "key": "KHOLODILNIKI",
+        "value": "kholodilniki",
+        "label": "Холодильники",
+        "active": true
+      },
+      {
+        "id": 1746623232966.0588,
+        "key": "SUSHILNYE-MASHINY",
+        "value": "sushilnye-mashiny",
+        "label": "Сушильные машины",
+        "active": true
+      }
+    ],
+    "image": "/storage/categories/krupnaya-bytovaya-tekhnika-1746623252631-1746623252945.webp"
+  },
+  {
+    "id": 4,
+    "key": "VSTRAIVAEMAYA-TEKHNIKA",
+    "value": "vstraivaemaya-tekhnika",
+    "label": "Встраиваемая техника",
+    "active": true,
+    "for_main_page": true,
+    "subcategories": [
+      {
+        "id": 1746623312987,
+        "key": "DUKHOVYE-SHKAFY",
+        "value": "dukhovye-shkafy",
+        "label": "Духовые шкафы",
+        "active": true
+      },
+      {
+        "id": 1746623344783.2385,
+        "key": "VYTYAZHKI",
+        "value": "vytyazhki",
+        "label": "Вытяжки",
+        "active": true
+      },
+      {
+        "id": 1746623354757.037,
+        "key": "FILTRY-DLYA-VYTYAZHEK",
+        "value": "filtry-dlya-vytyazhek",
+        "label": "Фильтры для вытяжек",
+        "active": true
+      }
+    ],
+    "image": "/storage/categories/vstraivaemaya-tekhnika-1746623382311-1746623382627.webp"
+  },
+  {
+    "id": 5,
+    "key": "MALAYA-BYTOVAYA-TEKHNIKA",
+    "value": "malaya-bytovaya-tekhnika",
+    "label": "Малая бытовая техника",
+    "active": true,
+    "for_main_page": true,
+    "subcategories": [
+      {
+        "id": 1746623390613,
+        "key": "ELEKTROCHAYNIKI",
+        "value": "elektrochayniki",
+        "label": "Электрочайники",
+        "active": true
+      },
+      {
+        "id": 1746623531502.5366,
+        "key": "PYLESOSY",
+        "value": "pylesosy",
+        "label": "Пылесосы",
+        "active": true
+      },
+      {
+        "id": 1746623538486.4226,
+        "key": "GRIL",
+        "value": "gril",
+        "label": "Гриль",
+        "active": true
+      },
+      {
+        "id": 1746623541990.6726,
+        "key": "TOSTERY",
+        "value": "tostery",
+        "label": "Тостеры",
+        "active": true
+      },
+      {
+        "id": 1746623547543.5623,
+        "key": "SOKOVYZHIMALKI",
+        "value": "sokovyzhimalki",
+        "label": "Соковыжималки",
+        "active": true
+      }
+    ],
+    "image": "/storage/categories/malaya-bytovaya-tekhnika-1746623559680-1746623560001.webp"
+  },
+  {
+    "id": 6,
+    "key": "KLIMATICHESKAYA-TEKHNIKA",
+    "value": "klimaticheskaya-tekhnika",
+    "label": "Климатическая техника",
+    "active": true,
+    "for_main_page": true,
+    "subcategories": [
+      {
+        "id": 1746623564136,
+        "key": "KONDITSIONERY",
+        "value": "konditsionery",
+        "label": "Кондиционеры",
+        "active": true
+      },
+      {
+        "id": 1746623584878.689,
+        "key": "ELEKTRICHESKIE-VODONAGREVATELI",
+        "value": "elektricheskie-vodonagrevateli",
+        "label": "Электрические водонагреватели",
+        "active": true
+      }
+    ],
+    "image": "/storage/categories/klimaticheskaya-tekhnika-1746623599822-1746623599829.webp"
+  },
+  {
+    "id": 7,
+    "key": "AKSSESUARY",
+    "value": "akssesuary",
+    "label": "Акссесуары",
+    "active": true,
+    "for_main_page": true,
+    "subcategories": [
+      {
+        "id": 1746624126795,
+        "key": "FILTRY-DLYA-VYTYAZHEK",
+        "value": "filtry-dlya-vytyazhek",
+        "label": "Фильтры для вытяжек",
+        "active": true
+      },
+      {
+        "id": 1746624145329.7434,
+        "key": "AKSESSUARY-DLYA-PRIGOTOVLENIYA-PISHCHI",
+        "value": "aksessuary-dlya-prigotovleniya-pishchi",
+        "label": "Аксессуары для приготовления пищи",
+        "active": true
+      }
+    ],
+    "image": "/storage/categories/akssesuary-1746624152031-1746624152037.webp"
+  }
+]

@@ -216,13 +216,24 @@ watch(search, debounce(() => emit('search', search.value), 300))
             </div>
           </template>
           <template v-else-if="column.key === 'image'">
-            <v-img
-                :src="item.image"
-                rounded="lg"
-                :max-width="160"
-                :max-height="90"
-                class="d-flex justify-center my-4"
-            />
+            <div class="d-flex justify-center">
+              <v-img
+                  :src="item.image"
+                  rounded="lg"
+                  :max-width="160"
+                  :max-height="90"
+                  class="d-flex justify-center my-4"
+              />
+            </div>
+          </template>
+          <template v-else-if="column.key === 'subcategories'">
+            <div class="d-flex justify-center ga-2 flex-wrap">
+              <div v-for="(sub, index) in item.subcategories" :key="sub.id">
+                <span>{{ sub.label }}</span>
+                <label v-if="index !== item.subcategories.length - 1">;</label>
+                <label v-else>.</label>
+              </div>
+            </div>
           </template>
           <template v-else>
             {{ item[column.key] }}

@@ -4,16 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="small fixes">
-      <change afterPath="$PROJECT_DIR$/frontend/pages/brand/index.vue" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add header, slider">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/brand-enums.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/brand-enums.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/cities.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/cities.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/[model]/[id].get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/[model]/[id].get.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/[model]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/[model]/index.get.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/MobileMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/MobileMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +64,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/shop-electro/frontend/server/api/[model]&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/shop-electro/frontend/public&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -72,10 +82,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\public" />
+      <recent name="H:\shop-electro\frontend\.output\public" />
       <recent name="H:\shop-electro\frontend\server\api\[model]" />
       <recent name="H:\shop-electro\frontend\assets\staticData" />
       <recent name="H:\shop-electro\frontend\public\main" />
-      <recent name="H:\shop-electro\frontend\assets\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\shop-electro\frontend\pages\catalog\[category]\[subcategory]" />
@@ -107,7 +118,12 @@
       <workItem from="1737968437285" duration="19000" />
       <workItem from="1746340879017" duration="4572000" />
       <workItem from="1746345538623" duration="15194000" />
-      <workItem from="1746362707009" duration="17842000" />
+      <workItem from="1746362707009" duration="19022000" />
+      <workItem from="1746420993207" duration="37000" />
+      <workItem from="1746457854431" duration="4615000" />
+      <workItem from="1746513081998" duration="71000" />
+      <workItem from="1746525723056" duration="7622000" />
+      <workItem from="1746609799234" duration="13580000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -189,7 +205,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746380601582</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: add brands">
+      <option name="closed" value="true" />
+      <created>1746381656519</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746381656519</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: add header, slider">
+      <option name="closed" value="true" />
+      <created>1746613941983</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746613941983</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +252,8 @@
     <MESSAGE value="feat: add info blocks, upload files for api" />
     <MESSAGE value="feat: add card for enums, small fxies" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="feat: add brands" />
+    <MESSAGE value="feat: add header, slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add header, slider" />
   </component>
 </project>

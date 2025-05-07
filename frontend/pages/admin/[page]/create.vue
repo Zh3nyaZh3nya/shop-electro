@@ -51,6 +51,8 @@ async function createData<T extends object>(payload: T & BaseItem | BaseItemEnum
   for (const [key, value] of Object.entries(payload)) {
     if (value instanceof File) {
       formData.append(key, value)
+    } else if (Array.isArray(value) || typeof value === 'object') {
+      formData.append(key, JSON.stringify(value))
     } else if (value !== undefined && value !== null) {
       formData.append(key, String(value))
     }
@@ -102,11 +104,13 @@ definePageMeta({
               @update-data="createData"
           />
         </template>
-        <template v-if="pageType.includes('card-enum')">
+        <template v-if="pageType.includes('card-enum') || pageType.includes('card-enum-subcategory')">
           <AdminDisplayCardEnum
+              :action="'create'"
               :last_id="lastId?.value?.last_id"
               :is-image="pageType.includes('image')"
               :is_for_main_page="pageType.includes('for-main-page')"
+              :is_subcategory="pageType.includes('card-enum-subcategory')"
               @update-data="createData"
           />
         </template>

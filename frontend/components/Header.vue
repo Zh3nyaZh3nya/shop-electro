@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
+import { useDisplay } from "vuetify";
 
 interface IMenu {
   title: string,
@@ -15,6 +16,8 @@ interface Cities {
   value: string
   label: string
 }
+
+const { mdAndUp } = useDisplay()
 
 const { cities } = defineProps<{
   cities: Cities[]
@@ -72,11 +75,11 @@ function changeCity(value: Cities) {
 </script>
 
 <template>
-  <v-app-bar color="white" class="header d-flex flex-column" elevation="0" :height="140">
+  <v-app-bar color="white" class="header d-flex flex-column" elevation="0" :height="mdAndUp ? 140 : 80">
     <v-container>
       <v-row>
         <v-col cols="12" class="d-flex align-center justify-space-between">
-          <div class="d-flex align-center ga-4">
+          <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }">
             <nuxt-link to="/">
               <v-img src="/logo.png" width="60px" height="100%" cover />
             </nuxt-link>
@@ -84,6 +87,7 @@ function changeCity(value: Cities) {
                 class="bg-dark-primary"
                 size="large"
                 rounded="lg"
+                v-if="mdAndUp"
             >
               <div class="d-flex align-center ga-2 text-body-1 text-uppercase">
                 <v-icon icon="mdi-format-list-bulleted" />
@@ -96,13 +100,11 @@ function changeCity(value: Cities) {
                 :hide-details="true"
                 placeholder="Холодильник"
                 append-inner-icon="mdi-magnify"
-                width="240px"
+                :width="mdAndUp ? '240px' : '100%'"
                 rounded="lg"
-            >
-
-            </v-text-field>
+            />
           </div>
-          <div class="d-flex align-center ga-4">
+          <div class="d-flex align-center ga-4" v-if="mdAndUp">
             <div v-if="cities && cities.length">
               <v-menu>
                 <template #activator="{ props }">
@@ -143,7 +145,7 @@ function changeCity(value: Cities) {
             </div>
           </div>
         </v-col>
-        <v-col cols="12" class="d-flex align-center justify-space-between">
+        <v-col cols="12" class="d-flex align-center justify-space-between" v-if="mdAndUp">
           <div class="d-flex align-center ga-4">
             <div
               v-for="item in menu"

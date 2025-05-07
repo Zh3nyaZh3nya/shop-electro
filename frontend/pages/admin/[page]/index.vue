@@ -34,7 +34,7 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
       if (keys.includes('image')) {
         reorderedKeys.push('image')
       }
-    } else if (key !== 'image') {
+    } else if (key !== 'image' && key !== 'active') {
       reorderedKeys.push(key)
     }
   }
@@ -43,10 +43,10 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
     title: key.charAt(0).toUpperCase() + key.slice(1),
     key,
     align: 'center',
-    sortable: key !== 'active' && key !== 'image'
+    sortable: true
   }))
 
-  return [
+  const headers: TableHeader[] = [
     {
       title: '',
       key: 'select',
@@ -55,13 +55,25 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
       width: '50px'
     },
     ...baseHeaders,
-    {
-      title: '',
-      key: 'edit',
-      sortable: false,
-      align: 'end'
-    }
   ]
+
+  if (keys.includes('active')) {
+    headers.push({
+      title: 'Active',
+      key: 'active',
+      align: 'center',
+      sortable: false
+    })
+  }
+
+  headers.push({
+    title: '',
+    key: 'edit',
+    sortable: false,
+    align: 'end'
+  })
+
+  return headers
 }
 
 const { data: pageData, pending: pagePending, error: pageError, refresh } = await useAsyncData(
@@ -110,9 +122,13 @@ function onPaginationUpdate(p: {
 }
 
 async function updateActiveItem(payload: { id: number, active: boolean }) {
+  const formData = new FormData()
+  formData.append('id', String(payload.id))
+  formData.append('active', String(payload.active))
+
   await useApi(`/admin/${route.params.page}/edit`, {
     method: 'POST',
-    body: payload,
+    body: formData,
     credentials: 'include'
   })
 
@@ -123,15 +139,22 @@ async function updateActiveItem(payload: { id: number, active: boolean }) {
   })
 }
 
-async function removeSelectItem(payload: { id: number }[]) {
-  console.log(payload.map(item => item.id))
+async function removeSelectItem(payload: { id: number } | { id: number }[]) {
+  const ids = Array.isArray(payload) ? payload.map(item => item.id) : [payload.id]
 
-  await useApi(`/admin/${route.params.page}/delete`, { method: 'POST', credentials: 'include', body: { ids: payload.map(item => item.id) }})
+  const formData = new FormData()
+  ids.forEach(id => formData.append('ids[]', String(id)))
+
+  await useApi(`/admin/${route.params.page}/delete`, {
+    method: 'POST',
+    body: formData,
+    credentials: 'include',
+  })
 
   notifications.add({
-    title: 'Сохранено',
-    message: 'Данные сохранены',
-    type: 'success'
+    title: 'Удалено',
+    message: 'Данные удалены',
+    type: 'success',
   })
 
   await refresh()

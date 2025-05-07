@@ -3,18 +3,21 @@
     "id": 1,
     "key": "ALMATY",
     "value": "almaty",
-    "label": "Алматы"
+    "label": "Алматы",
+    "active": true
   },
   {
     "id": 2,
     "key": "SHYMKENT",
     "value": "shymkent",
-    "label": "Шымкент"
+    "label": "Шымкент",
+    "active": true
   },
   {
     "id": 3,
     "key": "ASTANA",
     "value": "astana",
-    "label": "Астана"
+    "label": "Астана",
+    "active": true
   }
 ]

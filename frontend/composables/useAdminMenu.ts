@@ -4,7 +4,8 @@ type TypeDisplay =
     'index' |
     'card-enum' |
     'image' |
-    'for-main-page'
+    'for-main-page' |
+    'card-enum-subcategory'
 type AdminMenuItem =
     | {
     title: string
@@ -35,7 +36,7 @@ export const useAdminMenu = () => {
         {
             icon: 'mdi-map-marker-outline',
             title: 'Города',
-            link: '/cities',
+            link: 'cities',
             type: ['card-enum'],
         },
         {
@@ -57,6 +58,12 @@ export const useAdminMenu = () => {
                     icon: 'mdi-tag-multiple-outline',
                     link: 'brand-enums',
                     type: ['card-enum', 'image', 'for-main-page'],
+                },
+                {
+                    icon: 'mdi-format-list-bulleted',
+                    title: 'Категории',
+                    link: 'categories',
+                    type: ['card-enum-subcategory', 'for-main-page', 'image'],
                 },
             ],
         },
