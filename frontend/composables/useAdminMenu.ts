@@ -33,6 +33,12 @@ export const useAdminMenu = () => {
             type: ['index'],
         },
         {
+            icon: 'mdi-map-marker-outline',
+            title: 'Города',
+            link: '/cities',
+            type: ['card-enum'],
+        },
+        {
             title: 'Главная страница',
             list: [
                 {

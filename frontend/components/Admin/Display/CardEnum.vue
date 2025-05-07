@@ -22,8 +22,8 @@ const itemData: BaseItemEnum = itemProps ?? {
 }
 
 const label = ref<string>(isEdit ? itemData.label : '')
-const key = computed(() => label.value.toUpperCase())
-const value = computed(() => label.value.toLowerCase())
+const key = computed(() => label.value)
+const value = computed(() => label.value)
 const image = ref<File | string | null>(isEdit ? itemData.image : null)
 const previewUrl = ref<string | null>(null)
 const forMainPage = ref<boolean>(isEdit ? itemData.for_main_page : true)
@@ -43,12 +43,11 @@ async function submitForm() {
 
   emit('updateData', {
     id: itemData.id,
-    key: key.value,
-    value: value.value,
+    key: slugify(key.value).toUpperCase(),
+    value: slugify(value.value).toLowerCase(),
     label: label.value,
     ...(isImage && file ? { image: file } : {}),
     ...(is_for_main_page ? { for_main_page: forMainPage.value } : {})
-
   })
 }
 
@@ -90,7 +89,7 @@ watch(image, (newFile) => {
     ref="formRef"
     @submit.prevent="submitForm"
   >
-    <div class="w-100 mb-2">
+    <div class="w-100 mb-2" v-if="isImage">
       <p class="mb-2 text-body-1">Изображение<label class="text-admin-red text-body-1">*</label></p>
       <v-file-input
           v-model="image"
@@ -122,7 +121,7 @@ watch(image, (newFile) => {
             variant="outlined"
             class="text-field-admin"
             rounded="lg"
-            color="primary"
+            color="admin-primary"
             :rules="[rules.required]"
         >
         </v-text-field>

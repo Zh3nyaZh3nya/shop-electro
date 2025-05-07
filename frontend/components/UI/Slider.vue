@@ -10,13 +10,20 @@ const {
   perView = 4,
   mobilePerView = 1.1,
   overflowHidden = false,
-  spaceBetween = 40
+  spaceBetween = 40,
+  breakpoints
 } = defineProps<{
   slides: T[]
   perView?: number
   mobilePerView?: number
   overflowHidden?: boolean
-  spaceBetween?: number
+  spaceBetween?: number,
+  breakpoints?: {
+    [width: string]: {
+      slidesPerView: number
+      spaceBetween: number
+    }
+  }
 }>()
 </script>
 
@@ -26,7 +33,7 @@ const {
         :class="{ overflowHidden: overflowHidden }"
         :slides-per-view="mobilePerView"
         :modules="[Autoplay, EffectCreative, Navigation, Pagination]"
-        :breakpoints="{
+        :breakpoints="breakpoints ?? {
           '960': {
             slidesPerView: perView,
             spaceBetween: spaceBetween,
@@ -42,7 +49,7 @@ const {
           nextEl: '.UI-Slider__swiper-nav-el-next',
           prevEl: '.UI-Slider__swiper-nav-el-prev',
         }"
-        class="UI-Slider__swiper position-relative"
+        class="UI-Slider UI-Slider__swiper position-relative"
     >
       <swiper-slide
           v-for="(slide, index) in slides"
@@ -99,6 +106,12 @@ const {
 <style lang="scss">
 .UI-Slider {
   position: relative;
+  &:hover {
+    .UI-Slider__swiper-nav {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
   &__swiper {
     &.overflowHidden {
       @media (min-width: 960px) {
@@ -114,10 +127,14 @@ const {
       align-items: center;
       height: 100%;
       pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
       &-container {
         position: absolute;
         top: 0;
         height: 100%;
+        pointer-events: none;
       }
       &-el {
         pointer-events: auto;

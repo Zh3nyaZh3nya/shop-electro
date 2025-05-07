@@ -15,9 +15,10 @@ export default defineNuxtPlugin((app) => {
             themes: {
                 dark: {
                     colors: {
-                        primary: '#FF6F00',
-                        'lite-primary': '#f79448',
-                        secondary: '#333',
+                        primary: '#22b0f3',
+                        'dark-primary': '#4238f5',
+                        'light-primary': '#34beff',
+                        secondary: '#212121',
                         background: '#f7f7f7',
                         surface: '#F7F8FA',
                         error: '#DC3545',

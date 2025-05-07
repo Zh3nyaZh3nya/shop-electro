@@ -3,93 +3,202 @@ import { ref } from "vue"
 
 interface IMenu {
   title: string,
-  link: string
+  menu: {
+    title: string
+    link: string
+  }[]
 }
 
+interface Cities {
+  id: number
+  key: string
+  value: string
+  label: string
+}
+
+const { cities } = defineProps<{
+  cities: Cities[]
+}>()
+
+const selectCity = ref<Cities>(cities[0])
 const menu: IMenu[] = [
   {
-    title: 'Акции',
-    link: '/',
+    title: 'Покупателям',
+    menu: [
+      {
+        title: 'Оплата и доставка',
+        link: ''
+      },
+      {
+        title: 'Сервис и поддержка',
+        link: ''
+      },
+      {
+        title: 'Гарантия',
+        link: ''
+      },
+      {
+        title: 'Вопросы и ответы',
+        link: ''
+      },
+      {
+        title: 'Контакты',
+        link: ''
+      },
+    ]
   },
   {
     title: 'Магазины',
-    link: '/',
-  },
-  {
-    title: 'Доставка',
-    link: '/',
-  },
-  {
-    title: 'Покупателям',
-    link: '/',
-  },
-  {
-    title: 'Юридическим',
-    link: '/',
+    menu: [
+      {
+        title: 'Все акции',
+        link: ''
+      },
+      {
+        title: 'Весеннее обновление дома',
+        link: ''
+      },
+      {
+        title: 'Поврежденная упаковка',
+        link: ''
+      },
+    ]
   },
 ]
-const cities = ref<string[]>(['Алматы', 'Астана'])
-const city = ref<string>('Алматы')
+
+function changeCity(value: Cities) {
+  selectCity.value = value
+}
 </script>
 
 <template>
-  <v-app-bar color="white" class="py-2 header" elevation="0" height="208">
-    <v-container class="header-top py-0">
+  <v-app-bar color="white" class="header d-flex flex-column" elevation="0" :height="140">
+    <v-container>
       <v-row>
-        <v-col cols="12" md="3" class="d-flex align-center text-body-2">
-          <v-select
-              v-model="city"
-              :items="cities"
-              variant="solo"
-              class="select-cities"
-              max-width="150px"
-              :hide-details="true"
-              prepend-inner-icon="mdi-map-marker-outline"
-              menu-icon="mdi-chevron-down"
-          >
-          </v-select>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex align-center">
-          <ul class="d-flex align-center ga-6 text-body-2">
-            <li v-for="item in menu" :key="item.title">
-              <nuxt-link :to="item.link" class="link-hover">{{ item.title }}</nuxt-link>
-            </li>
-          </ul>
-        </v-col>
-        <v-col cols="12" md="3" class="d-flex align-center justify-end text-body-2">
-          <a type="number" class="cursor-pointer">8 (707) 916 92 50 (с 10:00 до 22:00)</a>
-        </v-col>
-      </v-row>
-
-    </v-container>
-    <v-container class="header-bot">
-      <v-row>
-        <v-col cols="12" md="3">
-          <v-card rounded="lg" height="64" class="pa-4 d-flex justify-space-between align-center" elevation="0" color="primary">
-            <nuxt-link :to="'/'" class="w-100">
-              <v-img src="/img.png" max-width="56" width="100%" height="100%" cover />
+        <v-col cols="12" class="d-flex align-center justify-space-between">
+          <div class="d-flex align-center ga-4">
+            <nuxt-link to="/">
+              <v-img src="/logo.png" width="60px" height="100%" cover />
             </nuxt-link>
-            <v-btn variant="outlined" class="bg-primary text-none text-body-1 d-flex align-center">
-              Каталог
-              <v-icon icon="mdi-chevron-down" style="margin-top: 2px" size="18"></v-icon>
+            <v-btn
+                class="bg-dark-primary"
+                size="large"
+                rounded="lg"
+            >
+              <div class="d-flex align-center ga-2 text-body-1 text-uppercase">
+                <v-icon icon="mdi-format-list-bulleted" />
+                <p>Каталог</p>
+              </div>
             </v-btn>
-          </v-card>
-        </v-col>
-        <v-col cols="12" md="9" class="d-flex align-center justify-end">
-          <div class="d-flex ga-4">
-            <v-btn class="text-caption custom-hover-btn" height="60" stacked>
-              <v-icon icon="mdi-heart-outline" class="mb-1"></v-icon>
-              Избранное
-            </v-btn>
-            <v-btn class="text-caption custom-hover-btn" height="60" stacked>
-              <v-icon icon="mdi-cart-variant" class="mb-1"></v-icon>
-              Корзина
-            </v-btn>
-            <v-btn class="text-caption custom-hover-btn" height="60" stacked>
-              <v-icon icon="mdi-account-circle-outline" class="mb-1"></v-icon>
-              Вход
-            </v-btn>
+            <v-text-field
+                variant="outlined"
+                class="text-field"
+                :hide-details="true"
+                placeholder="Холодильник"
+                append-inner-icon="mdi-magnify"
+                width="240px"
+                rounded="lg"
+            >
+
+            </v-text-field>
           </div>
+          <div class="d-flex align-center ga-4">
+            <div v-if="cities && cities.length">
+              <v-menu>
+                <template #activator="{ props }">
+                  <v-btn
+                      v-bind="props"
+                      variant="text"
+                  >
+                    <div class="d-flex align-center text-caption text-light-primary ga-1 font-weight-medium">
+                      <v-icon icon="mdi-map-marker-outline" size="14px"/>
+                      <p>{{ selectCity.label || 'Алматы' }}</p>
+                    </div>
+                  </v-btn>
+                </template>
+                <v-card
+                    rounded="lg"
+                    color="white"
+                    class="pa-4"
+                >
+                  <p class="text-body-1 font-weight-bold mb-2">Выберите город</p>
+                  <p v-for="city in cities" :key="city.id" @click="changeCity(city)" class="cursor-pointer link-hover text-body-1 mb-1">
+                    {{ city.label }}
+                  </p>
+                </v-card>
+              </v-menu>
+            </div>
+            <v-divider :vertical="true" color="" />
+            <div>
+              <nuxt-link class="d-flex align-center ga-2 link-hover cursor-pointer text-caption">
+                <v-icon icon="mdi-truck-delivery-outline" />
+                Бесплатная доставка по Казахстану
+              </nuxt-link>
+            </div>
+            <v-divider :vertical="true" color="" />
+            <div>
+              <a href="tel:87079169250" class="link-hover text-caption font-weight-bold">
+                8 (707) 916 92 50
+              </a>
+            </div>
+          </div>
+        </v-col>
+        <v-col cols="12" class="d-flex align-center justify-space-between">
+          <div class="d-flex align-center ga-4">
+            <div
+              v-for="item in menu"
+              :key="item.title"
+            >
+              <v-menu :close-on-content-click="false" :offset="15">
+                <template #activator="{ props, isActive }">
+                  <div
+                      v-bind="props"
+                      class="text-body-2 text-uppercase link-hover d-flex align-center ga-1 header-link"
+                      :class="{ 'text-primary header-link-menu-active': isActive }"
+                  >
+                    <p>{{ item.title }}</p>
+                    <v-icon icon="mdi-chevron-down" size="18px" />
+                  </div>
+                </template>
+                <v-card
+                    class="pa-4 d-flex flex-column ga-3"
+                    rounded="lg"
+                >
+                  <nuxt-link
+                      v-for="link in item.menu"
+                      :key="link.link"
+                      :to="link.link"
+                      class="link-hover text-body-2 text-uppercase cursor-pointer"
+                  >
+                    {{ link.title }}
+                  </nuxt-link>
+                </v-card>
+              </v-menu>
+            </div>
+          </div>
+          <div class="d-flex align-center ga-4">
+            <div>
+              <nuxt-link class="header-favorite link-hover cursor-pointer">
+                <v-icon icon="mdi-heart" size="32px" />
+                <div class="header-favorite-count-bg">
+                  <p class="header-favorite-count text-caption">0</p>
+                </div>
+              </nuxt-link>
+            </div>
+            <div>
+              <v-btn
+                class="bg-primary"
+                size="large"
+                rounded="lg"
+              >
+                <div class="d-flex align-center">
+                  <v-icon icon="mdi-cart" size="32px" />
+                  <p>0 ₸</p>
+                </div>
+              </v-btn>
+            </div>
+          </div>
+
         </v-col>
       </v-row>
     </v-container>
@@ -98,30 +207,40 @@ const city = ref<string>('Алматы')
 
 <style lang="scss">
 .header {
-  .v-toolbar__content {
-    display: flex;
-    flex-direction: column;
-    height: 100% !important;
-  }
-  .v-field--variant-solo, .v-field--variant-solo-filled {
-    box-shadow: none;
-  }
-  .v-select__selection-text {
-    font-size: 14px !important;
-    text-align: center;
-  }
-  .v-field__input {
-    display: flex;
-    justify-content: end;
-  }
-  .select-cities {
-    .v-field {
-      background: transparent;
+  &-link {
+    .v-icon {
+      transition: transform 0.3s ease;
+    }
+
+    &-menu-active {
+      .v-icon {
+        transform: rotate(180deg);
+      }
     }
   }
-}
-.custom-hover-btn:hover {
-  background: rgb(var(--v-theme-primary));
-  color: #fff;
+  &-favorite, &-favorite-cart {
+    position: relative;
+    z-index: 1;
+    &-count-bg {
+      position: absolute;
+      right: 1px;
+      bottom: -7px;
+      z-index: 2;
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-count {
+      background: rgb(var(--v-theme-primary));
+      color: #fff;
+      border-radius: 50px;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
 </style>

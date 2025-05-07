@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "key": "ALMATY",
+    "value": "almaty",
+    "label": "Алматы"
+  },
+  {
+    "id": 2,
+    "key": "SHYMKENT",
+    "value": "shymkent",
+    "label": "Шымкент"
+  },
+  {
+    "id": 3,
+    "key": "ASTANA",
+    "value": "astana",
+    "label": "Астана"
+  }
+]

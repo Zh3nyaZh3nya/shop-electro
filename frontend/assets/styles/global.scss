@@ -47,3 +47,11 @@ a {
 .rotate-left {
   transform: rotate(.5turn);
 }
+
+.text-field {
+  --v-input-control-height: 44px !important;
+  --v-input-padding-top: 4px !important;
+  .v-field {
+    --v-field-padding-bottom: 4px !important;
+  }
+}
