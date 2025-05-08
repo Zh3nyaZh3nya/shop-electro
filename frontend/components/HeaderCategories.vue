@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { useStore } from '~/stores/store'
+import { useDisplay } from "vuetify";
 import type { Ref } from "vue";
 
 const store = useStore()
+const { mdAndUp } = useDisplay()
+
 const { categories } = storeToRefs(store) as {
   categories: Ref<ICategory[]>
 }
@@ -14,8 +17,8 @@ const activeCategory = ref<Required<ICategory> | null>(
 </script>
 
 <template>
-  <v-sheet color="white" class="d-flex" rounded="0">
-    <v-card class="px-10 py-12" color="white" elevation="0" min-width="300px">
+  <v-sheet color="white" class="d-flex" rounded="0" v-if="mdAndUp">
+    <v-card class="px-10 py-12" color="white" elevation="0" min-width="350px">
       <ul>
         <li
             v-for="category in categories"

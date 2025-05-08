@@ -267,6 +267,28 @@ onMounted(() => {
           </div>
 
         </v-col>
+        <v-col cols="12" class="d-flex align-center justify-space-between" v-if="isScrolledPastBanner">
+          <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }">
+            <nuxt-link to="/">
+              <v-img
+                  :src="!isScrolledPastBanner ? '/logo-white.png' : `/logo.png`"
+                  width="60px"
+                  height="100%"
+                  cover
+                  class="logo"
+              />
+            </nuxt-link>
+            <v-text-field
+                variant="outlined"
+                class="text-field"
+                :hide-details="true"
+                placeholder="Холодильник"
+                append-inner-icon="mdi-magnify"
+                :width="mdAndUp ? '240px' : '100%'"
+                rounded="lg"
+            />
+          </div>
+        </v-col>
       </v-row>
       <v-divider color="white" class="mt-4" v-if="!isScrolledPastBanner" />
     </v-container>
