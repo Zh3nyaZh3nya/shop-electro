@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Autoplay, EffectCreative } from 'swiper/modules'
+import { Navigation, EffectCreative, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-creative'
+import 'swiper/css/pagination';
 
 const { slides } = defineProps<{
   slides: IBanner[] | IBannerOnlyImage[]
@@ -17,12 +18,16 @@ const { slides } = defineProps<{
         :slides-per-view="1"
         :direction="'horizontal'"
         class="banner position-relative"
+        :pagination="{
+          el: '.banner-pagination',
+          clickable: true
+        }"
         :effect="'creative'"
         :navigation="{
           nextEl: '.banner-nav-el-next',
           prevEl: '.banner-nav-el-prev',
         }"
-        :modules="[Navigation, EffectCreative]"
+        :modules="[Navigation, EffectCreative, Pagination]"
         :creative-effect="{
           prev: {
             shadow: false,
@@ -39,25 +44,28 @@ const { slides } = defineProps<{
       >
         <div class="position-relative d-flex justify-center align-center">
           <template v-if="slide.video">
-            <video
-                :src="slide.video"
-                muted
-                autoplay
-                playsinline
-                loop
-                style="width: 100%; height: 100%;"
-            ></video>
+            <div class="banner-video-wrapper">
+              <video
+                  :src="slide.video"
+                  muted
+                  autoplay
+                  playsinline
+                  loop
+                  class="banner-video"
+              ></video>
+            </div>
           </template>
           <template v-if="slide.image">
             <v-img
                 :src="slide.image"
-                width="100%"
-                height="100%"
+                aspect-ratio="16/9"
+                class="banner-image"
+                cover
             />
           </template>
-          <v-container class="banner-container mt-8">
-            <p class="text-h4 text-white text-uppercase lh-normal mb-2" style="max-width: 500px">{{ slide.title }}</p>
-            <div v-html="slide.description" class="text-white text-h6 lh-normal mb-4"></div>
+          <v-container class="banner-container d-flex flex-column justify-center align-center text-center text-sm-start d-sm-block mt-8">
+            <p class="text-h6 text-sm-h4 text-white text-uppercase lh-normal mb-2" style="max-width: 500px">{{ slide.title }}</p>
+            <div v-html="slide.description" class="text-white text-body-1 text-sm-h6 lh-normal mb-4" style="max-width: 350px"></div>
             <v-btn
                 v-if="slide.link"
                 :to="slide.link"
@@ -76,7 +84,7 @@ const { slides } = defineProps<{
 
       <v-container
           v-if="slides.length > 1"
-          class="banner-nav-container d-flex justify-end mx-auto"
+          class="banner-nav-container d-none d-sm-flex justify-end mx-auto"
       >
         <div class="banner-nav d-flex align-center ga-3">
           <div class="banner-nav-el-prev banner-nav-el">
@@ -115,6 +123,9 @@ const { slides } = defineProps<{
           </div>
         </div>
       </v-container>
+      <div class="banner-pagination-container d-flex justify-center w-100 mb-6 d-sm-none">
+        <div class="banner-pagination d-flex justify-center align-center ga-6" />
+      </div>
 
     </swiper>
   </client-only>
@@ -123,6 +134,44 @@ const { slides } = defineProps<{
 <style lang="scss">
 .banner {
   position: relative;
+  &-video-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    aspect-ratio: 16/9;
+    min-height: 322px;
+    max-height: 500px;
+    @media (min-width: 0px) {
+      min-height: 400px;
+    }
+    @media (min-width: 767px) {
+      min-height: 480px;
+    }
+  }
+  &-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &-image {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    min-height: 322px;
+    @media (min-width: 0px) {
+      min-height: 400px;
+    }
+    @media (min-width: 767px) {
+      min-height: 480px;
+    }
+    @media (min-width: 900px) {
+      min-height: 500px;
+    }
+  }
   &-container {
     position: absolute;
     margin: 0 auto;
@@ -154,6 +203,42 @@ const { slides } = defineProps<{
       }
       &-prev {
         transform: scaleX(-1);
+      }
+    }
+  }
+  &-pagination {
+    &-container {
+      position: absolute;
+      bottom: 0;
+      z-index: 3;
+    }
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgb(var(--v-theme-grey));
+      background: transparent;
+      opacity: 1;
+      position: relative;
+      z-index: 1;
+
+      &-active {
+        background: rgb(var(--v-theme-grey));
+        z-index: 2;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          border: 2px solid rgb(var(--v-theme-primary));
+          background: transparent;
+          z-index: -1;
+        }
       }
     }
   }

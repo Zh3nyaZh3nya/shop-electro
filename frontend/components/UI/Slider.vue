@@ -12,7 +12,8 @@ const {
   overflowHidden = false,
   spaceBetween = 40,
   breakpoints,
-  loop
+  loop,
+  pagination
 } = defineProps<{
   slides: IBannerOnlyImage[]
   perView?: number
@@ -20,6 +21,7 @@ const {
   overflowHidden?: boolean
   spaceBetween?: number,
   loop?: boolean
+  pagination?: boolean
   breakpoints?: {
     [width: string]: {
       slidesPerView: number
@@ -35,6 +37,10 @@ const {
         :class="{ overflowHidden: overflowHidden }"
         :slides-per-view="mobilePerView"
         :modules="[Autoplay, EffectCreative, Navigation, Pagination]"
+        :pagination="pagination ? {
+          el: '.custom-swiper-pagination',
+          clickable: true
+        } : false"
         :breakpoints="breakpoints ?? {
           '960': {
             slidesPerView: perView,
@@ -103,6 +109,8 @@ const {
           </div>
         </div>
       </v-container>
+
+      <div class="custom-swiper-pagination d-flex justify-center mt-4" />
     </swiper>
   </client-only>
 </template>
@@ -169,5 +177,21 @@ const {
       box-sizing: border-box;
     }
   }
+  .custom-swiper-pagination {
+    display: flex;
+    align-items: center;
+    .swiper-pagination-bullet {
+      background: transparent;
+      border: 1px solid rgb(var(--v-theme-grey));
+      opacity: 1;
+      &-active {
+        background: rgb(var(--v-theme-primary));
+        width: 10px;
+        height: 10px;
+        border: 1px solid transparent;
+      }
+    }
+  }
+
 }
 </style>

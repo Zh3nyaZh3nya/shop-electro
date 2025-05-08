@@ -93,12 +93,14 @@ onMounted(() => {
       color="white"
       class="header d-flex flex-column"
       elevation="0"
-      :height="mdAndUp ? 160 : 80"
-      :class="{ 'bg-transparent': !isScrolledPastBanner }"
+      :height="mdAndUp ? !isScrolledPastBanner ? 160 : 76 : 80"
+      :class="[
+        !isScrolledPastBanner ? 'bg-transparent' : ''
+      ]"
   >
     <v-container>
       <v-row>
-        <v-col cols="12" class="d-flex align-center justify-space-between">
+        <v-col cols="12" class="d-flex align-center justify-space-between" v-if="!isScrolledPastBanner">
           <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }">
             <nuxt-link to="/">
               <v-img
@@ -173,6 +175,28 @@ onMounted(() => {
         </v-col>
         <v-col cols="12" class="d-flex align-center justify-space-between" v-if="mdAndUp">
           <div class="d-flex align-center ga-4">
+            <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }" v-if="isScrolledPastBanner">
+              <nuxt-link to="/">
+                <v-img
+                    :src="!isScrolledPastBanner ? '/logo-white.png' : `/logo.png`"
+                    width="60px"
+                    height="100%"
+                    cover
+                    class="logo"
+                />
+              </nuxt-link>
+              <v-btn
+                  class="bg-dark-primary"
+                  size="large"
+                  rounded="lg"
+                  v-if="mdAndUp"
+              >
+                <div class="d-flex align-center ga-2 text-body-1 text-uppercase">
+                  <v-icon icon="mdi-format-list-bulleted" />
+                  <p>Каталог</p>
+                </div>
+              </v-btn>
+            </div>
             <div
               v-for="item in menu"
               :key="item.title"
@@ -182,7 +206,7 @@ onMounted(() => {
                   <div
                       v-bind="props"
                       class="text-body-2 text-uppercase link-hover d-flex align-center ga-1 header-link"
-                      :class="[isActive ? 'text-primary header-link-menu-active' : 'text-white']"
+                      :class="[isActive ? 'text-primary header-link-menu-active' : !isScrolledPastBanner ? 'text-white' : 'text-black']"
                   >
                     <p>{{ item.title }}</p>
                     <v-icon icon="mdi-chevron-down" size="18px" />
@@ -207,7 +231,7 @@ onMounted(() => {
           <div class="d-flex align-center ga-4">
             <div>
               <nuxt-link class="header-favorite link-hover cursor-pointer">
-                <v-icon icon="mdi-heart" size="32px" color="white" />
+                <v-icon icon="mdi-heart" size="32px" :color="isScrolledPastBanner ? 'grey' : 'white'" />
                 <div class="header-favorite-count-bg">
                   <p class="header-favorite-count text-caption">0</p>
                 </div>
@@ -229,13 +253,14 @@ onMounted(() => {
 
         </v-col>
       </v-row>
-      <v-divider color="white" class="mt-4" />
+      <v-divider color="white" class="mt-4" v-if="!isScrolledPastBanner" />
     </v-container>
   </v-app-bar>
 </template>
 
 <style lang="scss">
 .header {
+  transition: height 0.3s ease, background-color 0.3s ease;
   &-link {
     .v-icon {
       transition: transform 0.3s ease;

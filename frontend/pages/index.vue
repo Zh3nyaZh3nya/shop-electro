@@ -50,12 +50,30 @@ const { data: offersData, pending: offersDataPending } = await useAsyncData<IBan
   <section v-if="bannersData && bannersData.length" id="mainBanner">
     <UIBanner :slides="bannersData" />
   </section>
-  <section v-if="categoriesData && categoriesData.length" class="mb-8">
+  <section v-if="categoriesData && categoriesData.length">
     <v-container>
       <UISlider
         :slides="categoriesData"
         :per-view="6.6"
         :space-between="20"
+        :breakpoints="{
+          '375': {
+            slidesPerView: 1.3,
+            spaceBetween: 20
+          },
+          '475': {
+            slidesPerView: 2.3,
+            spaceBetween: 20
+          },
+           '760': {
+            slidesPerView: 3.3,
+            spaceBetween: 20
+          },
+          '1100': {
+            slidesPerView: 4.6,
+            spaceBetween: 20
+          }
+        }"
       >
         <template #default="{ slide, index }">
           <v-card
@@ -74,30 +92,33 @@ const { data: offersData, pending: offersDataPending } = await useAsyncData<IBan
       </UISlider>
     </v-container>
   </section>
-  <section v-if="offersData && offersData.length" class="rounded-lg">
+  <section v-if="offersData && offersData.length" class="rounded-lg mb-8">
     <v-container class="rounded-lg">
       <UISlider
           :slides="offersData"
           :per-view="1.2"
-          :space-between="20"
+          :space-between="5"
+          :pagination="true"
       >
         <template #default="{ slide, index }">
           <div class="position-relative h-100 w-100">
             <v-img
                 :src="slide.image"
-                max-height="352px"
                 width="100%"
                 height="100%"
                 rounded="lg"
+                class="offers-image"
                 cover
             />
             <v-container class="slider-container">
-              <p class="text-h4 font-weight-regular mb-2" style="max-width: 400px">{{ slide.title }}</p>
-              <div v-html="slide.description" class="text-body-1 font-weight-bold lh-normal mb-4"></div>
+              <p class="text-h5 text-md-h4 font-weight-regular mb-2" style="max-width: 400px">{{ slide.title }}</p>
+              <div v-html="slide.description" class="text-body-2 text-md-body-1 font-weight-bold lh-normal mb-4"></div>
               <v-btn
                   color="primary"
                   size="large"
                   rounded="lg"
+                  class="text-body-2"
+                  elevation="0"
               >
                 {{ slide.link_text }}
               </v-btn>
@@ -203,6 +224,7 @@ const { data: offersData, pending: offersDataPending } = await useAsyncData<IBan
       background: #fff7da url('/main/enter.png') no-repeat bottom right;
     }
   }
+
 }
 
 .slider-container {
@@ -215,5 +237,21 @@ const { data: offersData, pending: offersDataPending } = await useAsyncData<IBan
   align-items: start;
   margin-left: 80px;
   height: 100%;
+  @media (max-width: 960px) {
+    margin-left: 60px;
+  }
+  @media (max-width: 600px) {
+    margin-left: 20px;
+  }
+}
+
+.offers-image {
+  @media (min-width: 0px) {
+    min-height: 430px;
+  }
+  @media (min-width: 960px) {
+    max-height: 352px;
+    min-height: 300px;
+  }
 }
 </style>
