@@ -2,8 +2,10 @@
 import { useDisplay } from "vuetify";
 import { useApi } from "~/composables/useApi";
 import { useAsyncData } from "#app";
+import { storeToRefs } from "pinia";
 
 const { mdAndUp } = useDisplay()
+const store = useStore()
 
 const { data: citiesData, pending: citiesPending } = await useAsyncData('default-data-cities', async () => {
   const { data: responseData } = await useApi<{ items: any }>('/cities')
@@ -11,10 +13,8 @@ const { data: citiesData, pending: citiesPending } = await useAsyncData('default
   return { cities: responseData?.value?.items }
 })
 
-const { data: categoriesData, pending: categoriesPending } = await useAsyncData('default-data-categories', async () => {
-  const { data: responseData } = await useApi<{ items: any }>('/cities')
-
-  return { cities: responseData?.value?.items }
+const { data: categoriesData, pending: categoriesPending } = await useAsyncData<ICategory[]>('main-page-categories-data', async () => {
+  await store.fetchCategories()
 })
 </script>
 

@@ -111,17 +111,24 @@ onMounted(() => {
                   class="logo"
               />
             </nuxt-link>
-            <v-btn
-                class="bg-dark-primary"
-                size="large"
-                rounded="lg"
-                v-if="mdAndUp"
-            >
-              <div class="d-flex align-center ga-2 text-body-1 text-uppercase">
-                <v-icon icon="mdi-format-list-bulleted" />
-                <p>Каталог</p>
-              </div>
-            </v-btn>
+            <v-menu :close-on-content-click="false" offset="88">
+              <template #activator="{ props }">
+                <v-btn
+                    class="bg-dark-primary"
+                    size="large"
+                    rounded="lg"
+                    v-if="mdAndUp"
+                    v-bind="props"
+                >
+                  <div class="d-flex align-center ga-2 text-body-1 text-uppercase">
+                    <v-icon icon="mdi-format-list-bulleted" />
+                    <p>Каталог</p>
+                  </div>
+                </v-btn>
+              </template>
+
+              <HeaderCategories />
+            </v-menu>
             <v-text-field
                 variant="outlined"
                 class="text-field text-field-header"
@@ -185,17 +192,25 @@ onMounted(() => {
                     class="logo"
                 />
               </nuxt-link>
-              <v-btn
-                  class="bg-dark-primary"
-                  size="large"
-                  rounded="lg"
-                  v-if="mdAndUp"
-              >
-                <div class="d-flex align-center ga-2 text-body-1 text-uppercase">
-                  <v-icon icon="mdi-format-list-bulleted" />
-                  <p>Каталог</p>
-                </div>
-              </v-btn>
+              <v-menu :close-on-content-click="false" offset="18">
+                <template #activator="{ props }">
+                  <v-btn
+                      class="bg-dark-primary"
+                      size="large"
+                      rounded="lg"
+                      v-if="mdAndUp"
+                      v-bind="props"
+                  >
+                    <div class="d-flex align-center ga-2 text-body-1 text-uppercase">
+                      <v-icon icon="mdi-format-list-bulleted" />
+                      <p>Каталог</p>
+                    </div>
+                  </v-btn>
+                </template>
+
+                <HeaderCategories />
+              </v-menu>
+
             </div>
             <div
               v-for="item in menu"

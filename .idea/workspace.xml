@@ -4,20 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add banner &amp; small fixes">
-      <change afterPath="$PROJECT_DIR$/frontend/pages/categories/[category]/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/stores/store.ts" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add adaptive">
+      <change afterPath="$PROJECT_DIR$/frontend/components/HeaderCategories.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Main/Banner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Banner.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/brand/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/categories/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/[model]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/[model]/index.get.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/stores/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/stores/store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,10 +76,11 @@
       <recent name="H:\shop-electro\frontend\public\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\components" />
+      <recent name="H:\shop-electro\frontend\components\UI\Card" />
       <recent name="H:\shop-electro\frontend\components\UI" />
       <recent name="H:\shop-electro\frontend\pages\catalog\[category]\[subcategory]" />
       <recent name="H:\shop-electro\frontend\pages\catalog\[category]" />
-      <recent name="H:\shop-electro\frontend\utils\vuetify" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -119,7 +113,7 @@
       <workItem from="1746513081998" duration="71000" />
       <workItem from="1746525723056" duration="7622000" />
       <workItem from="1746609799234" duration="30922000" />
-      <workItem from="1746707788111" duration="8096000" />
+      <workItem from="1746707788111" duration="18156000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -241,7 +235,23 @@
       <option name="project" value="LOCAL" />
       <updated>1746642670220</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: add category, slider">
+      <option name="closed" value="true" />
+      <created>1746716726892</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746716726892</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: add adaptive">
+      <option name="closed" value="true" />
+      <created>1746733678747</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746733678747</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +298,8 @@
     <MESSAGE value="feat: add mobile menu, display card-enum-subcategory" />
     <MESSAGE value="feat: add new display card, upload videos" />
     <MESSAGE value="feat: add banner &amp; small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add banner &amp; small fixes" />
+    <MESSAGE value="feat: add category, slider" />
+    <MESSAGE value="feat: add adaptive" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add adaptive" />
   </component>
 </project>
