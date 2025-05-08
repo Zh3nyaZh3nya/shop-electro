@@ -6,7 +6,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/effect-creative'
 
 const { slides } = defineProps<{
-  slides: IBanner[]
+  slides: IBanner[] | IBannerOnlyImage[]
 }>()
 </script>
 
@@ -57,7 +57,7 @@ const { slides } = defineProps<{
           </template>
           <v-container class="banner-container mt-8">
             <p class="text-h4 text-white text-uppercase lh-normal mb-2" style="max-width: 500px">{{ slide.title }}</p>
-            <p class="text-white mb-2" :class="[index === 0 ? 'text-h4 font-weight-bold' : 'text-h6 font-weight-regular']">{{ slide.description }}</p>
+            <div v-html="slide.description" class="text-white text-h6 lh-normal mb-4"></div>
             <v-btn
                 v-if="slide.link"
                 :to="slide.link"
@@ -76,7 +76,7 @@ const { slides } = defineProps<{
 
       <v-container
           v-if="slides.length > 1"
-          class="banner-nav-container d-flex justify-end"
+          class="banner-nav-container d-flex justify-end mx-auto"
       >
         <div class="banner-nav d-flex align-center ga-3">
           <div class="banner-nav-el-prev banner-nav-el">
@@ -125,15 +125,16 @@ const { slides } = defineProps<{
   position: relative;
   &-container {
     position: absolute;
-    left: 0;
+    margin: 0 auto;
+    padding-left: 32px;
   }
   &-nav {
+    position: absolute;
+    bottom: 70px;
+    z-index: 3;
     &-container {
-      position: absolute;
-      right: 0;
-      bottom: 30px;
-      z-index: 3;
       pointer-events: none;
+      width: 100%;
     }
     &-el {
       border-radius: 50px;

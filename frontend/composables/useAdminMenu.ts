@@ -50,6 +50,12 @@ export const useAdminMenu = () => {
                     link: 'main-banner',
                     type: ['card', 'image', 'video', 'link', 'for-main-page'],
                 },
+                {
+                    title: 'Предложения',
+                    icon: 'mdi-offer',
+                    link: 'main-offer',
+                    type: ['card', 'image', 'link', 'for-main-page'],
+                },
             ],
         },
         {

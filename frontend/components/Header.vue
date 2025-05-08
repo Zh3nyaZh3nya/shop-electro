@@ -75,19 +75,16 @@ function changeCity(value: Cities) {
 }
 
 onMounted(() => {
-  const banner = document.getElementById('mainBanner')
-  if (!banner) return
+  const handleScroll = () => {
+    isScrolledPastBanner.value = window.scrollY > 1
+  }
 
-  const observer = new IntersectionObserver(
-      ([entry]) => {
-        isScrolledPastBanner.value = !entry.isIntersecting
-      },
-      {
-        threshold: 0.01,
-      }
-  )
+  handleScroll()
+  window.addEventListener('scroll', handleScroll)
 
-  observer.observe(banner)
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+  })
 })
 </script>
 

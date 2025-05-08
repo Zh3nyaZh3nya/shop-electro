@@ -56,3 +56,25 @@ a {
 .lh-normal {
   line-height: normal !important;
 }
+
+.elevation-light {
+  box-shadow: rgba(0, 0, 0, 0.06) 0 0 10px 0 !important;
+}
+
+.card-hover {
+  i, span, p {
+    transition: color .3s;
+    color: rgb(var(--v-theme-secondary));
+  }
+  .v-card__overlay {
+    transition: background-color .3s;
+  }
+  &:hover {
+    i, span, p {
+      color: rgb(var(--v-theme-primary));
+    }
+    .v-card__overlay {
+      background-color: rgb(var(--v-theme-primary));
+    }
+  }
+}

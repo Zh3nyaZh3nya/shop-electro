@@ -20,10 +20,26 @@ export default defineEventHandler(async (event) => {
         let data = JSON.parse(content)
 
         data = data.filter((item: any) => {
-            const isActive = 'active' in item ? item.active === true : true
+            const isActive = checkActive(item)
             const isForMainPage = !filterByMainPage || item.for_main_page === true
             return isActive && isForMainPage
         })
+
+        function checkActive(obj: any): boolean {
+            if (!obj || typeof obj !== 'object') return true
+
+            if ('active' in obj && obj.active === false) return false
+
+            for (const key in obj) {
+                if (Array.isArray(obj[key])) {
+                    for (const child of obj[key]) {
+                        if (!checkActive(child)) return false
+                    }
+                }
+            }
+
+            return true
+        }
 
         data = data.map(({ active, for_main_page, ...rest }: any) => rest)
 

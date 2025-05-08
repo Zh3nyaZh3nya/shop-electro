@@ -4,35 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add new display card, upload videos">
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add banner &amp; small fixes">
+      <change afterPath="$PROJECT_DIR$/frontend/pages/categories/[category]/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/stores/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/brand-enums.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/info-blocks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/main-banner.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/main-banner.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Card.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Main/Banner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Main/Banner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Main/Banner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Banner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/brand/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/categories/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/acer-1746377267480-1746377267800.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/amd-1746377212302-1746377212421.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/apple-1746376724568-1746376724580.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/asus-1746377137280-1746377137605.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/huawei-1746377158040-1746377158348.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/intel-1746377285977-1746377286432.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/lg-1746377179936-1746377180246.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/logitech-1746377328587-1746377329034.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/msi-1746377117880-1746377118189.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/philips-1746377351495-1746377351819.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/poco-1746377233157-1746377233482.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/samsung-1746377095208-1746377095521.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/tefal-1746377377192-1746377377503.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/brand-enums/xiaomi-1746377052305-1746377052349.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/[model]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/[model]/index.get.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,6 +83,7 @@
       <recent name="H:\shop-electro\frontend\public\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\components\UI" />
       <recent name="H:\shop-electro\frontend\pages\catalog\[category]\[subcategory]" />
       <recent name="H:\shop-electro\frontend\pages\catalog\[category]" />
       <recent name="H:\shop-electro\frontend\utils\vuetify" />
@@ -133,7 +118,8 @@
       <workItem from="1746457854431" duration="4615000" />
       <workItem from="1746513081998" duration="71000" />
       <workItem from="1746525723056" duration="7622000" />
-      <workItem from="1746609799234" duration="30825000" />
+      <workItem from="1746609799234" duration="30922000" />
+      <workItem from="1746707788111" duration="8096000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -247,7 +233,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746636589458</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: add banner &amp; small fixes">
+      <option name="closed" value="true" />
+      <created>1746642670220</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1746642670220</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,6 +287,7 @@
     <MESSAGE value="feat: add header, slider" />
     <MESSAGE value="feat: add mobile menu, display card-enum-subcategory" />
     <MESSAGE value="feat: add new display card, upload videos" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add new display card, upload videos" />
+    <MESSAGE value="feat: add banner &amp; small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add banner &amp; small fixes" />
   </component>
 </project>

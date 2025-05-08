@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Больше чем комфорт и прохлада",
+    "slug": "bolshe-chem-komfort-i-prokhlada",
+    "description": "Выбери свой кондиционер",
+    "active": true,
+    "for_main_page": true,
+    "link": "/klimaticheskaya-tekhnika",
+    "link_external": false,
+    "link_text": "Перейти к выбору",
+    "image": "/storage/main-offer/bolshe-chem-komfort-i-prokhlada-1746712959446-1746712959779.webp"
+  },
+  {
+    "id": 2,
+    "title": "Поврежденная упаковка",
+    "slug": "povrezhdennaya-upakovka",
+    "description": "Выгодные предложения на товары<div>с повреждениями упаковки</div>",
+    "active": true,
+    "for_main_page": true,
+    "link": "/",
+    "link_external": false,
+    "link_text": "Перейти к выбору",
+    "image": "/storage/main-offer/povrezhdennaya-upakovka-1746713102430-1746713102441.webp"
+  },
+  {
+    "id": 3,
+    "title": "Покупайте в рассрочку",
+    "slug": "pokupayte-v-rassrochku",
+    "description": "Без переплат",
+    "active": true,
+    "for_main_page": true,
+    "link": "Выбери свой",
+    "link_external": false,
+    "link_text": "Подробнее",
+    "image": "/storage/main-offer/pokupayte-v-rassrochku-1746713186110-1746713186424.webp"
+  },
+  {
+    "id": 4,
+    "title": "Телевизоры OLED",
+    "slug": "televizory-oled",
+    "description": "Мир ярче чем вы думали!",
+    "active": true,
+    "for_main_page": true,
+    "link": "/",
+    "link_external": false,
+    "link_text": "Выбери свой",
+    "image": "/storage/main-offer/televizory-oled-1746713236830-1746713237149.webp"
+  }
+]

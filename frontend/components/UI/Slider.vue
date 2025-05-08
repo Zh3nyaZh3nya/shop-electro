@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T extends object">
+<script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, EffectCreative, Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css';
@@ -11,13 +11,15 @@ const {
   mobilePerView = 1.1,
   overflowHidden = false,
   spaceBetween = 40,
-  breakpoints
+  breakpoints,
+  loop
 } = defineProps<{
-  slides: T[]
+  slides: IBannerOnlyImage[]
   perView?: number
   mobilePerView?: number
   overflowHidden?: boolean
   spaceBetween?: number,
+  loop?: boolean
   breakpoints?: {
     [width: string]: {
       slidesPerView: number
@@ -45,6 +47,7 @@ const {
         }"
         :direction="'horizontal'"
         :space-between="spaceBetween"
+        :loop="loop"
         :navigation="{
           nextEl: '.UI-Slider__swiper-nav-el-next',
           prevEl: '.UI-Slider__swiper-nav-el-prev',
@@ -53,7 +56,8 @@ const {
     >
       <swiper-slide
           v-for="(slide, index) in slides"
-          :key="slide.id"
+          :key="slide?.id"
+          class="h-auto d-flex"
       >
         <slot :slide="slide" :index="index" />
       </swiper-slide>

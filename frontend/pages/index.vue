@@ -1,25 +1,44 @@
 <script setup lang="ts">
 import { useAsyncData } from "#app";
 import { useApi } from "~/composables/useApi";
+import { useStore } from "~/stores/store";
+import { storeToRefs } from "pinia";
+
+const store = useStore()
 
 const { data: bannersData, pending: bannersDataPending } = await useAsyncData<IBanner[]>('main-page-banners-data', async () => {
-      const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-banner?mainPage=true`, { method: 'GET' })
+  const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-banner?mainPage=true`, { method: 'GET' })
 
-      return dataFetch?.value?.items || []
+  return dataFetch?.value?.items || []
+})
+
+const { data: categoriesData, pending: categoriesDataPending } = await useAsyncData<IBannerOnlyImage[]>('main-page-categories-data', async () => {
+  await store.fetchCategories(true)
+  const { categoriesMain } = storeToRefs(store)
+
+  const data = categoriesMain.value.map((item: ICategory): IBannerOnlyImage => {
+    return {
+      id: item.id,
+      image: item.image,
+      title: item.label,
+      link: item.value,
+      slug: item.value
     }
-)
+  })
 
-const { data: categoriesData, pending: categoriesDataPending } = await useAsyncData<IBanner[]>('main-page-categorie-data', async () => {
-      const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/categories?mainPage=true`, { method: 'GET' })
+  return data
+})
 
-      return dataFetch?.value?.items || []
-    }
-)
+const { data: offersData, pending: offersDataPending } = await useAsyncData<IBannerOnlyImage[]>('main-page-offers-data', async () => {
+  const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-offer?mainPage=true`, { method: 'GET' })
+
+  return dataFetch?.value?.items || []
+})
 </script>
 
 <template>
   <v-overlay
-      :model-value="bannersDataPending || categoriesDataPending"
+      :model-value="bannersDataPending || categoriesDataPending || offersDataPending"
       class="align-center justify-center"
   >
     <v-progress-circular
@@ -29,7 +48,64 @@ const { data: categoriesData, pending: categoriesDataPending } = await useAsyncD
     ></v-progress-circular>
   </v-overlay>
   <section v-if="bannersData && bannersData.length" id="mainBanner">
-    <MainBanner :slides="bannersData" />
+    <UIBanner :slides="bannersData" />
+  </section>
+  <section v-if="categoriesData && categoriesData.length" class="mb-8">
+    <v-container>
+      <UISlider
+        :slides="categoriesData"
+        :per-view="6.6"
+        :space-between="20"
+      >
+        <template #default="{ slide, index }">
+          <v-card
+              class="d-flex flex-column align-center border my-2 text-center pa-4 w-100 card-hover"
+              :to="`/categories/${slide.link}`"
+              elevation="light"
+              rounded="lg"
+          >
+            <v-img :src="slide.image" width="150" max-height="72" height="100%" class="mb-2" />
+            <p class="text-body-2 font-weight-bold" style="max-width: 140px">
+              {{ slide.title }}
+              <v-icon icon="mdi-chevron-right" size="16px"></v-icon>
+            </p>
+          </v-card>
+        </template>
+      </UISlider>
+    </v-container>
+  </section>
+  <section v-if="offersData && offersData.length" class="rounded-lg">
+    <v-container class="rounded-lg">
+      <UISlider
+          :slides="offersData"
+          :per-view="1.2"
+          :space-between="20"
+      >
+        <template #default="{ slide, index }">
+          <div class="position-relative h-100 w-100">
+            <v-img
+                :src="slide.image"
+                max-height="352px"
+                width="100%"
+                height="100%"
+                rounded="lg"
+                cover
+            />
+            <v-container class="slider-container">
+              <p class="text-h4 font-weight-regular mb-2" style="max-width: 400px">{{ slide.title }}</p>
+              <div v-html="slide.description" class="text-body-1 font-weight-bold lh-normal mb-4"></div>
+              <v-btn
+                  color="primary"
+                  size="large"
+                  rounded="lg"
+              >
+                {{ slide.link_text }}
+              </v-btn>
+            </v-container>
+          </div>
+        </template>
+      </UISlider>
+    </v-container>
   </section>
 <!--  <section v-if="infoBlocksData && infoBlocksData.length">-->
 <!--    <v-container>-->
@@ -110,7 +186,7 @@ const { data: categoriesData, pending: categoriesDataPending } = await useAsyncD
 <!--              class="d-flex align-center justify-center pa-4 my-1"-->
 <!--              width="132px"-->
 <!--              height="68px"-->
-<!--              :to="`/brand/${slide.value}`"-->
+<!--              :to="`/categories/${slide.value}`"-->
 <!--          >-->
 <!--            <v-img :src="slide.image"  />-->
 <!--          </v-card>-->
@@ -127,5 +203,17 @@ const { data: categoriesData, pending: categoriesDataPending } = await useAsyncD
       background: #fff7da url('/main/enter.png') no-repeat bottom right;
     }
   }
+}
+
+.slider-container {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-left: 80px;
+  height: 100%;
 }
 </style>

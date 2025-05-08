@@ -27,7 +27,10 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
           key !== 'value' &&
           key !== 'for_main_page' &&
           key !== 'slug' &&
-          key !== 'link_video'
+          key !== 'link_video' &&
+          key !== 'link' &&
+          key !== 'link_external' &&
+          key !== 'link_text'
   )
 
   const reorderedKeys: string[] = []
