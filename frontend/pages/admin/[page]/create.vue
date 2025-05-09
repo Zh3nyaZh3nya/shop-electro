@@ -114,6 +114,16 @@ definePageMeta({
               @update-data="createData"
           />
         </template>
+        <template v-if="pageType.includes('product')">
+          <AdminDisplayProduct
+              :action="'create'"
+              :last_id="lastId?.value?.last_id"
+              :is-image="pageType.includes('image')"
+              :is_for_main_page="pageType.includes('for-main-page')"
+              :is_subcategory="pageType.includes('card-enum-subcategory')"
+              @update-data="createData"
+          />
+        </template>
         <template v-else>
           <AdminDisplayCard
               :action="'create'"

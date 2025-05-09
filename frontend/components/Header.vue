@@ -267,7 +267,7 @@ onMounted(() => {
           </div>
 
         </v-col>
-        <v-col cols="12" class="d-flex align-center justify-space-between" v-if="isScrolledPastBanner">
+        <v-col cols="12" class="d-flex align-center justify-space-between" v-if="!mdAndUp && isScrolledPastBanner">
           <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }">
             <nuxt-link to="/">
               <v-img

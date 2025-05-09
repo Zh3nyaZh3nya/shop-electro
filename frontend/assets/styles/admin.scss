@@ -86,6 +86,15 @@
       opacity: 1;
     }
   }
+  .v-expansion-panel-text__wrapper {
+    padding: 0;
+  }
+  .v-expansion-panel {
+    background: transparent;
+  }
+  .v-expansion-panel-title {
+    padding: 16px;
+  }
 }
 
 .text-field-admin {

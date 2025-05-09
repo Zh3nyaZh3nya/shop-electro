@@ -5,7 +5,7 @@ import { defineEventHandler } from 'h3'
 import Busboy from 'busboy'
 import sharp from 'sharp'
 import { requireAdmin } from '~/utils/auth'
-import { autoCast } from "~/server/utils/autoCast";
+import { autoCast } from '~/server/utils/autoCast'
 
 export default defineEventHandler(async (event) => {
     requireAdmin(event)
@@ -15,22 +15,23 @@ export default defineEventHandler(async (event) => {
     await mkdir(uploadDir, { recursive: true })
 
     const fields: Record<string, string> = {}
-    let filePath: string | null = null
+    const fileBuffers: { filename: string; buffer: Buffer }[] = []
 
     const busboy = Busboy({ headers: event.node.req.headers })
 
-    const chunks: Buffer[] = []
-    let filename: string | null = null
-
     const fileUploadPromise = new Promise<void>((resolveUpload, rejectUpload) => {
         busboy.on('file', (fieldname: any, file: any, info: any) => {
-            if (!info.filename) {
+            const { filename } = info
+            if (!filename) {
                 file.resume()
                 return
             }
 
-            filename = info.filename
+            const chunks: Buffer[] = []
             file.on('data', (chunk: any) => chunks.push(chunk))
+            file.on('end', () => {
+                fileBuffers.push({ filename, buffer: Buffer.concat(chunks) })
+            })
             file.on('error', rejectUpload)
         })
 
@@ -43,50 +44,38 @@ export default defineEventHandler(async (event) => {
             }
         })
 
-        busboy.on('finish', async () => {
-            if (filename && chunks.length) {
-                const buffer = Buffer.concat(chunks)
-                const ext = filename.split('.').pop()?.toLowerCase() || 'bin'
-                const nameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'file'
-                const timestamp = Date.now()
-                let finalFilename = `${nameWithoutExt}-${timestamp}`
-                let saveTo: string
-
-                const isImage = ['jpg', 'jpeg', 'png', 'webp'].includes(ext)
-                const isVideo = ['mp4', 'webm', 'ogg'].includes(ext)
-
-                if (isImage) {
-                    finalFilename += '.webp'
-                    saveTo = join(uploadDir, finalFilename)
-                    filePath = `/storage/${model}/${finalFilename}`
-
-                    try {
-                        await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
-                    } catch (err) {
-                        return rejectUpload(err)
-                    }
-                } else if (isVideo) {
-                    finalFilename += `.${ext}`
-                    saveTo = join(uploadDir, finalFilename)
-                    filePath = `/storage/${model}/${finalFilename}`
-
-                    try {
-                        await writeFile(saveTo, buffer)
-                    } catch (err) {
-                        return rejectUpload(err)
-                    }
-                } else {
-                    return rejectUpload(new Error('Unsupported file type'))
-                }
-            }
-
-            resolveUpload()
-        })
-
+        busboy.on('finish', () => resolveUpload())
         event.node.req.pipe(busboy)
     })
 
     await fileUploadPromise
+
+    const filePaths: string[] = []
+
+    for (const { filename, buffer } of fileBuffers) {
+        const ext = filename.split('.').pop()?.toLowerCase() || 'bin'
+        const nameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'file'
+        const timestamp = Date.now()
+        const isImage = ['jpg', 'jpeg', 'png', 'webp'].includes(ext)
+        const isVideo = ['mp4', 'webm', 'ogg'].includes(ext)
+
+        if (!isImage && !isVideo) continue
+
+        let finalFilename = `${nameWithoutExt}-${timestamp}`
+        let saveTo: string
+
+        if (isImage) {
+            finalFilename += '.webp'
+            saveTo = join(uploadDir, finalFilename)
+            await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
+        } else {
+            finalFilename += `.${ext}`
+            saveTo = join(uploadDir, finalFilename)
+            await writeFile(saveTo, buffer)
+        }
+
+        filePaths.push(`/storage/${model}/${finalFilename}`)
+    }
 
     const dataPath = resolve('assets/staticData', `${model}.json`)
     let data: any[] = []
@@ -100,19 +89,19 @@ export default defineEventHandler(async (event) => {
 
     const newItem: Record<string, any> = {
         id: Date.now(),
-        ...fields
+        ...fields,
     }
 
-    if (filePath) {
-        if (['.jpg', '.jpeg', '.png', '.webp'].some(ext => filePath?.endsWith(ext))) {
-            newItem.image = filePath
-        } else if (['.mp4', '.webm', '.ogg'].some(ext => filePath?.endsWith(ext))) {
-            newItem.video = filePath
-        }
-    }
+    const images = filePaths.filter((path) => path.endsWith('.webp'))
+    const videos = filePaths.filter((path) => path.match(/\.(mp4|webm|ogg)$/))
+
+    if (images.length === 1) newItem.image = images[0]
+    else if (images.length > 1) newItem.images = images
+
+    if (videos.length === 1) newItem.video = videos[0]
+    else if (videos.length > 1) newItem.videos = videos
 
     data.push(newItem)
-
     await writeFile(dataPath, JSON.stringify(data, null, 2), 'utf-8')
 
     return { success: true }

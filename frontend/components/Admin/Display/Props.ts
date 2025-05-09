@@ -13,6 +13,39 @@ export interface BaseItem {
     link_video?: string
 }
 
+export interface BaseItemProduct {
+    id: string | number
+    preview_images: (File | string)[]
+    images: (File | string)[]
+    title: string
+    slug: string
+    description: string
+    discount: boolean
+    discount_percent: number
+    price: number
+    rating: number
+    delivery: boolean
+    count: number
+    specifications: {
+        title: string
+        specification: {
+          title: string
+          description: string
+        }[]
+    }[]
+    installment: {
+        active: boolean
+        periods: string[]
+    }
+    reviews?: {
+        id: string | number
+        name: string
+        rating: number
+        description: string
+        published_at: string
+    }[]
+}
+
 export interface BaseItemEnum {
     id: string | number
     image?: File | string | null
@@ -30,7 +63,7 @@ export interface BaseItemEnum {
     }[]
 }
 
-export interface DisplayProps<T extends BaseItem | BaseItemEnum = BaseItem> {
+export interface DisplayProps<T extends BaseItem | BaseItemEnum | BaseItemProduct = BaseItem> {
     action: 'create' | 'edit'
     is_for_main_page?: boolean
     isImage?: boolean
@@ -63,7 +96,7 @@ export const rules = {
     }
 }
 
-export type BaseEmitFn<T = BaseItem | BaseItemEnum> = {
+export type BaseEmitFn<T = BaseItem | BaseItemEnum | BaseItemProduct> = {
     (e: 'updateData', value: T): void
     (e: 'remove', value: { id: string | number }): void
 }

@@ -25,7 +25,6 @@ const itemData: BaseItemEnum = itemProps ?? {
   value: '',
   label: '',
   active: true,
-  for_main_page: true,
   ...(isImage ? { image: null } : {}),
   ...(is_for_main_page ? { for_main_page: true } : {}),
   ...(is_subcategory ? {

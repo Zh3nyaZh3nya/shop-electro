@@ -4,10 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add catalog for header">
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="small fixes">
+      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Product.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Drawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Drawer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/HeaderCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/HeaderCategories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/categories/[category]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/categories/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,35 +53,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/shop-electro/frontend/public&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;H:\\shop-electro\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "H:/shop-electro/frontend/pages/catalog/[category]",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "H:\\shop-electro\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Composition API Component&quot;
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\pages\catalog\[category]" />
       <recent name="H:\shop-electro\frontend\public" />
       <recent name="H:\shop-electro\frontend\.output\public" />
       <recent name="H:\shop-electro\frontend\server\api\[model]" />
       <recent name="H:\shop-electro\frontend\assets\staticData" />
-      <recent name="H:\shop-electro\frontend\public\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\shop-electro\frontend\components" />
@@ -110,7 +121,8 @@
       <workItem from="1746513081998" duration="71000" />
       <workItem from="1746525723056" duration="7622000" />
       <workItem from="1746609799234" duration="30922000" />
-      <workItem from="1746707788111" duration="18614000" />
+      <workItem from="1746707788111" duration="19211000" />
+      <workItem from="1746779315049" duration="7792000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -256,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746737161481</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="small fixes">
+      <option name="closed" value="true" />
+      <created>1746737607598</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1746737607598</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +317,6 @@
     <MESSAGE value="feat: add create, new api method for get model's last id" />
     <MESSAGE value="feat: add info blocks, upload files for api" />
     <MESSAGE value="feat: add card for enums, small fxies" />
-    <MESSAGE value="small fixes" />
     <MESSAGE value="feat: add brands" />
     <MESSAGE value="feat: add header, slider" />
     <MESSAGE value="feat: add mobile menu, display card-enum-subcategory" />
@@ -306,6 +325,7 @@
     <MESSAGE value="feat: add category, slider" />
     <MESSAGE value="feat: add adaptive" />
     <MESSAGE value="feat: add catalog for header" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add catalog for header" />
+    <MESSAGE value="small fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
   </component>
 </project>

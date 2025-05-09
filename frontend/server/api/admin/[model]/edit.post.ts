@@ -5,7 +5,7 @@ import { defineEventHandler } from 'h3'
 import Busboy from 'busboy'
 import sharp from 'sharp'
 import { requireAdmin } from '~/utils/auth'
-import { autoCast } from "~/server/utils/autoCast";
+import { autoCast } from '~/server/utils/autoCast'
 
 export default defineEventHandler(async (event) => {
     requireAdmin(event)
@@ -14,105 +14,96 @@ export default defineEventHandler(async (event) => {
     const uploadDir = resolve('public/storage', model)
     await mkdir(uploadDir, { recursive: true })
 
-    const busboy = Busboy({ headers: event.node.req.headers })
     const fields: Record<string, string> = {}
-    const chunks: Buffer[] = []
-    let filename: string | null = null
-    let filePath: string | null = null
+    const files: { filename: string; buffer: Buffer }[] = []
+
+    const busboy = Busboy({ headers: event.node.req.headers })
 
     const fileUploadPromise = new Promise<void>((resolveUpload, rejectUpload) => {
-        busboy.on('file', (fieldname: any, file: any, info: any) => {
-            filename = info.filename
+        busboy.on('file', (fieldname, file, info) => {
+            const { filename } = info
             if (!filename) {
                 file.resume()
                 return
             }
 
-            file.on('data', (chunk: any) => chunks.push(chunk))
+            const chunks: Buffer[] = []
+            file.on('data', (chunk) => chunks.push(chunk))
+            file.on('end', () => {
+                files.push({ filename, buffer: Buffer.concat(chunks) })
+            })
             file.on('error', rejectUpload)
         })
 
-        busboy.on('field', (fieldname: any, val: any) => {
+        busboy.on('field', (fieldname, val) => {
             try {
-                const parsed = JSON.parse(val)
-                fields[fieldname] = parsed
+                fields[fieldname] = JSON.parse(val)
             } catch {
                 fields[fieldname] = autoCast(val)
             }
         })
 
-        busboy.on('finish', async () => {
-            if (filename && chunks.length) {
-                const buffer = Buffer.concat(chunks)
-                const ext = filename.split('.').pop()?.toLowerCase() || 'bin'
-                const nameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'file'
-                const timestamp = Date.now()
-                let finalFilename = `${nameWithoutExt}-${timestamp}`
-                let saveTo: string
-
-                const isImage = ['jpg', 'jpeg', 'png', 'webp'].includes(ext)
-                const isVideo = ['mp4', 'webm', 'ogg'].includes(ext)
-
-                if (isImage) {
-                    finalFilename += '.webp'
-                    saveTo = join(uploadDir, finalFilename)
-                    filePath = `/storage/${model}/${finalFilename}`
-
-                    try {
-                        await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
-                    } catch (err) {
-                        return rejectUpload(err)
-                    }
-                } else if (isVideo) {
-                    finalFilename += `.${ext}`
-                    saveTo = join(uploadDir, finalFilename)
-                    filePath = `/storage/${model}/${finalFilename}`
-
-                    try {
-                        await writeFile(saveTo, buffer)
-                    } catch (err) {
-                        return rejectUpload(err)
-                    }
-                } else {
-                    return rejectUpload(new Error('Unsupported file type'))
-                }
-            }
-
-            resolveUpload()
-        })
-
+        busboy.on('finish', () => resolveUpload())
         event.node.req.pipe(busboy)
     })
 
     await fileUploadPromise
 
+    const savedPaths: { image?: string; video?: string }[] = []
+
+    for (const { filename, buffer } of files) {
+        const ext = filename.split('.').pop()?.toLowerCase() || 'bin'
+        const nameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'file'
+        const timestamp = Date.now()
+
+        let finalFilename = `${nameWithoutExt}-${timestamp}`
+        const isImage = ['jpg', 'jpeg', 'png', 'webp'].includes(ext)
+        const isVideo = ['mp4', 'webm', 'ogg'].includes(ext)
+
+        if (!isImage && !isVideo) continue
+
+        if (isImage) {
+            finalFilename += '.webp'
+            const saveTo = join(uploadDir, finalFilename)
+            await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
+            savedPaths.push({ image: `/storage/${model}/${finalFilename}` })
+        } else if (isVideo) {
+            finalFilename += `.${ext}`
+            const saveTo = join(uploadDir, finalFilename)
+            await writeFile(saveTo, buffer)
+            savedPaths.push({ video: `/storage/${model}/${finalFilename}` })
+        }
+    }
+
     const dataPath = resolve('assets/staticData', `${model}.json`)
-    let data = []
+    let data: any[] = []
+
     try {
         const content = await readFile(dataPath, 'utf-8')
         data = JSON.parse(content)
     } catch {}
 
     const id = Number(fields.id)
-    const index = data.findIndex((item: any) => Number(item.id) === id)
+    const index = data.findIndex((item) => Number(item.id) === id)
 
     if (index !== -1) {
         const updated = {
             ...data[index],
-            ...fields,
+            ...fields
         }
 
-        if (filePath) {
-            const isImageFile = ['.jpg', '.jpeg', '.png', '.webp'].some(ext => filePath?.endsWith(ext))
-            const isVideoFile = ['.mp4', '.webm', '.ogg'].some(ext => filePath?.endsWith(ext))
-
-            if (isImageFile) {
-                updated.image = filePath
+        if (savedPaths.length === 1) {
+            const { image, video } = savedPaths[0]
+            if (image) {
+                updated.image = image
                 updated.video = ''
-            } else if (isVideoFile) {
-                updated.video = filePath
+            } else if (video) {
+                updated.video = video
                 updated.image = ''
             }
+        } else if (savedPaths.length > 1) {
+            updated.images = savedPaths.filter(p => p.image).map(p => p.image!)
+            updated.videos = savedPaths.filter(p => p.video).map(p => p.video!)
         }
 
         data[index] = updated
