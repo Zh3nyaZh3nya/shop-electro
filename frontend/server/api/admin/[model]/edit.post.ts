@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
     await mkdir(uploadDir, { recursive: true })
 
     const fields: Record<string, string> = {}
-    const files: { filename: string; buffer: Buffer }[] = []
+    const files: { fieldname: string; filename: string; buffer: Buffer }[] = []
 
     const busboy = Busboy({ headers: event.node.req.headers })
 
@@ -28,9 +28,9 @@ export default defineEventHandler(async (event) => {
             }
 
             const chunks: Buffer[] = []
-            file.on('data', (chunk) => chunks.push(chunk))
+            file.on('data', chunk => chunks.push(chunk))
             file.on('end', () => {
-                files.push({ filename, buffer: Buffer.concat(chunks) })
+                files.push({ fieldname, filename, buffer: Buffer.concat(chunks) })
             })
             file.on('error', rejectUpload)
         })
@@ -49,9 +49,9 @@ export default defineEventHandler(async (event) => {
 
     await fileUploadPromise
 
-    const savedPaths: { image?: string; video?: string }[] = []
+    const fileGroups: Record<string, string[]> = {}
 
-    for (const { filename, buffer } of files) {
+    for (const { fieldname, filename, buffer } of files) {
         const ext = filename.split('.').pop()?.toLowerCase() || 'bin'
         const nameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'file'
         const timestamp = Date.now()
@@ -66,13 +66,17 @@ export default defineEventHandler(async (event) => {
             finalFilename += '.webp'
             const saveTo = join(uploadDir, finalFilename)
             await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
-            savedPaths.push({ image: `/storage/${model}/${finalFilename}` })
-        } else if (isVideo) {
+        } else {
             finalFilename += `.${ext}`
             const saveTo = join(uploadDir, finalFilename)
             await writeFile(saveTo, buffer)
-            savedPaths.push({ video: `/storage/${model}/${finalFilename}` })
         }
+
+        const filePath = `/storage/${model}/${finalFilename}`
+        const baseField = fieldname.replace(/\[\]$/, '')
+
+        if (!fileGroups[baseField]) fileGroups[baseField] = []
+        fileGroups[baseField].push(filePath)
     }
 
     const dataPath = resolve('assets/staticData', `${model}.json`)
@@ -87,23 +91,23 @@ export default defineEventHandler(async (event) => {
     const index = data.findIndex((item) => Number(item.id) === id)
 
     if (index !== -1) {
+        const original = data[index]
+
         const updated = {
-            ...data[index],
-            ...fields
+            ...original,
+            ...fields,
         }
 
-        if (savedPaths.length === 1) {
-            const { image, video } = savedPaths[0]
-            if (image) {
-                updated.image = image
-                updated.video = ''
-            } else if (video) {
-                updated.video = video
-                updated.image = ''
-            }
-        } else if (savedPaths.length > 1) {
-            updated.images = savedPaths.filter(p => p.image).map(p => p.image!)
-            updated.videos = savedPaths.filter(p => p.video).map(p => p.video!)
+        if ('video' in fileGroups && 'image' in updated) {
+            updated.image = null
+        }
+
+        if ('image' in fileGroups && 'video' in updated) {
+            updated.video = null
+        }
+
+        for (const [key, paths] of Object.entries(fileGroups)) {
+            updated[key] = paths.length === 1 ? paths[0] : paths
         }
 
         data[index] = updated

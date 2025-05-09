@@ -27,8 +27,15 @@ export default defineEventHandler(async (event) => {
     const itemsToDelete = data.filter((item: any) => idsToDelete.includes(item.id))
 
     for (const item of itemsToDelete) {
-        if (item.image) {
-            const absolutePath = resolve('public', item.image.replace(/^\/+/, ''))
+        const allPaths: string[] = []
+
+        if (typeof item.image === 'string') allPaths.push(item.image)
+        if (Array.isArray(item.images)) allPaths.push(...item.images)
+        if (typeof item.video === 'string') allPaths.push(item.video)
+        if (Array.isArray(item.videos)) allPaths.push(...item.videos)
+
+        for (const path of allPaths) {
+            const absolutePath = resolve('public', path.replace(/^\/+/, ''))
             try {
                 await unlink(absolutePath)
             } catch (err) {

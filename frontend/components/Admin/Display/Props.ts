@@ -8,8 +8,8 @@ export interface BaseItem {
     link?: string
     link_text?: string
     link_external?: boolean
-    image?: File | string
-    video?: File | string
+    image?: File | string | null
+    video?: File | string | null
     link_video?: string
 }
 
@@ -26,6 +26,7 @@ export interface BaseItemProduct {
     rating: number
     delivery: boolean
     count: number
+    active: boolean
     specifications: {
         title: string
         specification: {

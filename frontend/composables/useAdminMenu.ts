@@ -1,6 +1,5 @@
 type TypeDisplay =
     'card' | //
-    'card-color' | // если нужно передать цвет
     'index' | // главная страница в админке
     'card-enum' | // энамы
     'image' | // если нужно добавить изображения
@@ -66,49 +65,49 @@ export const useAdminMenu = () => {
                     title: 'Телевизоры',
                     icon: 'mdi-television',
                     link: 'televizory',
-                    type: ['product', 'for-main-page'],
+                    type: ['product', 'for-main-page', 'image'],
                     enums: ['categories'],
                 },
                 {
                     title: 'Компьютерная техника',
                     icon: 'mdi-laptop',
                     link: 'kompyuternaya-tekhnika',
-                    type: ['product', 'for-main-page'],
+                    type: ['product', 'for-main-page', 'image'],
                     enums: ['categories'],
                 },
                 {
                     title: 'Крупная бытовая техника',
                     icon: 'mdi-fridge-industrial',
                     link: 'krupnaya-bytovaya-tekhnika',
-                    type: ['product', 'for-main-page'],
+                    type: ['product', 'for-main-page', 'image'],
                     enums: ['categories'],
                 },
                 {
                     title: 'Встраиваемая техника',
                     icon: 'mdi-washing-machine',
                     link: 'vstraivaemaya-tekhnika',
-                    type: ['product', 'for-main-page'],
+                    type: ['product', 'for-main-page', 'image'],
                     enums: ['categories'],
                 },
                 {
                     title: 'Малая бытовая техника',
                     icon: 'mdi-kettle-steam-outline',
                     link: 'malaya-bytovaya-tekhnika',
-                    type: ['product', 'for-main-page'],
+                    type: ['product', 'for-main-page', 'image'],
                     enums: ['categories'],
                 },
                 {
                     title: 'Климатическая техника',
                     icon: 'mdi-hvac',
                     link: 'klimaticheskaya-tekhnika',
-                    type: ['product', 'for-main-page'],
+                    type: ['product', 'for-main-page', 'image'],
                     enums: ['categories'],
                 },
                 {
                     title: 'Акссесуары',
                     icon: 'mdi-bag-personal-outline',
                     link: 'akssesuary',
-                    type: ['product', 'for-main-page'],
+                    type: ['product', 'for-main-page', 'image'],
                     enums: ['categories'],
                 },
             ],

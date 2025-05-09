@@ -4,21 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="small fixes">
-      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Product.vue" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add new display product, opportunity upload multiple images">
+      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/FormActions.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/Header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/ImageOrVideoGallery.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/MainBlock.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/Specifications.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/utils/processFile.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/main-banner.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/main-banner.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardColor.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/CardEnum.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Product.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Drawer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Drawer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Editor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/Editor.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/categories/[category]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/categories/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/delete.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/delete.post.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/utils/slugify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/utils/slugify.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +42,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="TypeScript File" />
         <option value="Vue Composition API Component" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -59,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "H:/shop-electro/frontend/pages/catalog/[category]",
+    "last_opened_file_path": "H:/shop-electro/frontend/components/Admin/Fields",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -77,18 +85,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\components\Admin\Fields" />
       <recent name="H:\shop-electro\frontend\pages\catalog\[category]" />
       <recent name="H:\shop-electro\frontend\public" />
       <recent name="H:\shop-electro\frontend\.output\public" />
       <recent name="H:\shop-electro\frontend\server\api\[model]" />
-      <recent name="H:\shop-electro\frontend\assets\staticData" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\components\Admin\Fields" />
       <recent name="H:\shop-electro\frontend\components" />
       <recent name="H:\shop-electro\frontend\components\UI\Card" />
       <recent name="H:\shop-electro\frontend\components\UI" />
       <recent name="H:\shop-electro\frontend\pages\catalog\[category]\[subcategory]" />
-      <recent name="H:\shop-electro\frontend\pages\catalog\[category]" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -122,7 +130,8 @@
       <workItem from="1746525723056" duration="7622000" />
       <workItem from="1746609799234" duration="30922000" />
       <workItem from="1746707788111" duration="19211000" />
-      <workItem from="1746779315049" duration="7792000" />
+      <workItem from="1746779315049" duration="7987000" />
+      <workItem from="1746819928811" duration="10575000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -276,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746737607598</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: add new display product, opportunity upload multiple images">
+      <option name="closed" value="true" />
+      <created>1746788402965</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1746788402965</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,6 +343,7 @@
     <MESSAGE value="feat: add adaptive" />
     <MESSAGE value="feat: add catalog for header" />
     <MESSAGE value="small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="small fixes" />
+    <MESSAGE value="feat: add new display product, opportunity upload multiple images" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add new display product, opportunity upload multiple images" />
   </component>
 </project>

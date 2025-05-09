@@ -16,6 +16,7 @@ menu.forEach((item) => {
   <v-navigation-drawer
     color="admin-background"
     class="pl-4 pr-1 py-6 drawer-admin"
+    width="300"
   >
     <ul>
       <li v-for="item in menu" :key="item.title">

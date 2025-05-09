@@ -122,14 +122,6 @@ definePageMeta({
     </section>
     <section v-if="pageEditData && Object.keys(pageEditData).length">
       <v-container>
-        <template v-if="pageType.includes('card-color')">
-          <AdminDisplayCardColor
-              :action="'edit'"
-              :item="pageEditData"
-              @update-data="editData"
-              @remove="removeData"
-          />
-        </template>
         <template v-if="pageType.includes('card-enum') || pageType.includes('card-enum-subcategory')">
           <AdminDisplayCardEnum
               :action="'edit'"
@@ -141,7 +133,17 @@ definePageMeta({
               @remove="removeData"
           />
         </template>
-        <template v-else>
+        <template v-if="pageType.includes('product')">
+          <AdminDisplayProduct
+              :action="'edit'"
+              :item="pageEditData"
+              :is-image="pageType.includes('image')"
+              :is_for_main_page="pageType.includes('for-main-page')"
+              @update-data="editData"
+              @remove="removeData"
+          />
+        </template>
+        <template v-if="pageType.includes('card')">
           <AdminDisplayCard
               :action="'edit'"
               :item="pageEditData"

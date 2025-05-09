@@ -51,6 +51,10 @@ async function createData<T extends object>(payload: T & BaseItem | BaseItemEnum
   for (const [key, value] of Object.entries(payload)) {
     if (value instanceof File) {
       formData.append(key, value)
+    } else if (Array.isArray(value) && value.every(v => v instanceof File)) {
+      value.forEach((file, index) => {
+        formData.append(`${key}[]`, file)
+      })
     } else if (Array.isArray(value) || typeof value === 'object') {
       formData.append(key, JSON.stringify(value))
     } else if (value !== undefined && value !== null) {
@@ -97,13 +101,6 @@ definePageMeta({
     </section>
     <section>
       <v-container>
-        <template v-if="pageType.includes('card-color')">
-          <AdminDisplayCardColor
-              :action="'create'"
-              :last_id="lastId?.value?.last_id"
-              @update-data="createData"
-          />
-        </template>
         <template v-if="pageType.includes('card-enum') || pageType.includes('card-enum-subcategory')">
           <AdminDisplayCardEnum
               :action="'create'"
@@ -124,7 +121,7 @@ definePageMeta({
               @update-data="createData"
           />
         </template>
-        <template v-else>
+        <template v-if="pageType.includes('card')">
           <AdminDisplayCard
               :action="'create'"
               :last_id="lastId?.value?.last_id"

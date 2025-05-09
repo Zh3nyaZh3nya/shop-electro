@@ -1,4 +1,12 @@
-export function slugify(str: string): string {
+export function slugify(str: unknown): string {
+    if (typeof str !== 'string') {
+        try {
+            str = String(str ?? '')
+        } catch {
+            return ''
+        }
+    }
+
     const map: Record<string, string> = {
         "А": 'A', "Б": 'B', "В": 'V', "Г": 'G', "Д": 'D', "Е": 'E', "Ё": 'E', "Ж": 'Zh', "З": 'Z', "И": 'I',
         "Й": 'Y', "К": 'K', "Л": 'L', "М": 'M', "Н": 'N', "О": 'O', "П": 'P', "Р": 'R', "С": 'S', "Т": 'T',
@@ -16,11 +24,11 @@ export function slugify(str: string): string {
         .join('')
 
     return transliterated
-        .normalize('NFD')                       // разбивает символы с диакритикой
-        .replace(/[\u0300-\u036f]/g, '')        // убирает диакритику
-        .replace(/[^a-zA-Z0-9\s.-]/g, '')       // удаляет всё, кроме латиницы, цифр, пробелов, точек и дефисов
-        .replace(/[.\s]+/g, '-')                // заменяет пробелы и точки на дефисы
-        .replace(/-+/g, '-')                    // сжимает повторяющиеся дефисы
-        .replace(/^-+|-+$/g, '')                // убирает дефисы по краям
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-zA-Z0-9\s.-]/g, '')
+        .replace(/[.\s]+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-+|-+$/g, '')
         .toLowerCase()
 }
