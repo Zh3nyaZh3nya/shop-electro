@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     const uploadDir = resolve('public/storage', model)
     await mkdir(uploadDir, { recursive: true })
 
-    const fields: Record<string, string> = {}
+    const fields: Record<string, any> = {}
     const fileBuffers: { fieldname: string; filename: string; buffer: Buffer }[] = []
 
     const busboy = Busboy({ headers: event.node.req.headers })
@@ -35,12 +35,21 @@ export default defineEventHandler(async (event) => {
             file.on('error', rejectUpload)
         })
 
-        busboy.on('field', (fieldname: any, val: any) => {
-            try {
-                const parsed = JSON.parse(val)
-                fields[fieldname] = parsed
-            } catch {
-                fields[fieldname] = autoCast(val)
+        busboy.on('field', (fieldname: string, val: string) => {
+            if (fieldname === 'multipleFields') {
+                try {
+                    const parsed = JSON.parse(val || '[]')
+                    fields.multipleFields = Array.isArray(parsed) ? parsed : []
+                } catch (err) {
+                    console.warn('Ошибка при парсинге multipleFields:', err)
+                    fields.multipleFields = []
+                }
+            } else {
+                try {
+                    fields[fieldname] = JSON.parse(val)
+                } catch {
+                    fields[fieldname] = autoCast(val)
+                }
             }
         })
 
@@ -85,10 +94,13 @@ export default defineEventHandler(async (event) => {
 
     try {
         const content = await readFile(dataPath, 'utf-8')
-        data = JSON.parse(content)
+        data = content.trim() ? JSON.parse(content) : []
     } catch (err: any) {
         if (err.code !== 'ENOENT') throw err
     }
+
+    const multipleFields: string[] = fields.multipleFields ?? []
+    delete fields.multipleFields
 
     const newItem: Record<string, any> = {
         id: Date.now(),
@@ -97,7 +109,16 @@ export default defineEventHandler(async (event) => {
 
     for (const [field, paths] of Object.entries(groupedPaths)) {
         const key = field.replace(/\[\]$/, '')
-        newItem[key] = paths.length === 1 ? paths[0] : paths
+        const cleaned = paths.filter(p => typeof p === 'string' && p.trim())
+        newItem[key] = multipleFields.includes(key)
+            ? cleaned
+            : (cleaned.length === 1 ? cleaned[0] : cleaned)
+    }
+
+    for (const key of multipleFields) {
+        if (!Object.prototype.hasOwnProperty.call(newItem, key)) {
+            newItem[key] = []
+        }
     }
 
     data.push(newItem)

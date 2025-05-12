@@ -24,6 +24,8 @@ const emit = defineEmits<{
   (e: 'update:forMainPage', value: boolean): void
 }>()
 
+const editRef = ref()
+
 const localTitle = ref(props.title)
 const localDescription = ref(props.description)
 const active = ref(props.active)
@@ -59,6 +61,7 @@ watch(forMainPage, (val) => emit('update:forMainPage', val))
 
     <div class="mb-4" v-if="is_description">
       <AdminFieldsEditor
+          ref="editRef"
           v-model="localDescription"
           :rules="[rules.required]"
       />

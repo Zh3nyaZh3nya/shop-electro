@@ -1,0 +1,455 @@
+[
+  {
+    "id": 1,
+    "title": "Игровой компьютер Thunderobot Warrior Super RL1",
+    "slug": "igrovoy-kompyuter-thunderobot-warrior-super-rl1",
+    "description": "Оптимальный игровой ПК с видеокартой RTX 4060",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 649999,
+    "rating": 0,
+    "delivery": true,
+    "count": 300,
+    "category": {
+      "id": 2,
+      "key": "KOMPYUTERNAYA-TEKHNIKA",
+      "value": "kompyuternaya-tekhnika",
+      "label": "Компьютерная техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/kompyuternaya-tekhnika-1746623203120-1746623203429.webp"
+    },
+    "subcategory": {
+      "id": 1746623121751,
+      "key": "IGROVYE-KOMPYUTERY",
+      "value": "igrovye-kompyutery",
+      "label": "Игровые компьютеры",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Процессор",
+        "specification": [
+          {
+            "title": "Семейство процессоров",
+            "description": "Intel Core i5"
+          },
+          {
+            "title": "Процессор",
+            "description": "Intel Core i5 14400"
+          },
+          {
+            "title": "Охлаждение процессора",
+            "description": "Воздух"
+          }
+        ]
+      },
+      {
+        "title": "Оперативная память",
+        "specification": [
+          {
+            "title": "Объем оперативной памяти",
+            "description": "16 ГБ"
+          },
+          {
+            "title": "Тип оперативной памяти",
+            "description": "DDR4"
+          }
+        ]
+      },
+      {
+        "title": "Видеокарта",
+        "specification": [
+          {
+            "title": "Графический контроллер",
+            "description": "NVIDIA RTX 4060"
+          },
+          {
+            "title": "Объем видеопамяти",
+            "description": "8 ГБ"
+          }
+        ]
+      },
+      {
+        "title": "Жесткий диск",
+        "specification": [
+          {
+            "title": "Объем HDD",
+            "description": "Нет"
+          },
+          {
+            "title": "Общий объём накопителя SSD",
+            "description": "1 ТБ"
+          }
+        ]
+      },
+      {
+        "title": "Интерфейсы материнской платы",
+        "specification": [
+          {
+            "title": "Материнская плата",
+            "description": "H610"
+          },
+          {
+            "title": "Поддержка Gigabit LAN",
+            "description": "Да"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12213712838-1747067996138-1747067996483.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12213727137-1747067996138-1747067996551.webp"
+    ],
+    "images": [
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12213716135-1747067996138-1747067996628.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12213728863-1747067996138-1747067996693.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12213739116-1747067996139-1747067996770.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12213749922-1747067996139-1747067996828.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12213801757-1747067996139-1747067996883.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12213821685-1747067996139-1747067996950.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 2,
+    "title": "Игровая проводная мышь Thunderobot MG701",
+    "slug": "igrovaya-provodnaya-mysh-thunderobot-mg701",
+    "description": "<b>MG701</b><div><b>Возьми контроль в свои руки</b></div><div>Проводная игровая мышь с симметричным дизайном и точным сенсором</div><div><br></div><div><b>Сохраняйте превосходство</b></div><div>Низкий профиль и нескользящие вставки позволят сохранить свое превосходство даже в самых ожесточенных боях.</div><div><br></div><div><b>Сенсор игрового уровня PAW 3519</b></div><div>Поддержка DPI до 4200. Легкое и точное наведение на цель во время игры. Как бы далеко ни был враг, победа в ваших руках.</div><div><br></div><div><b>Четкие переключатели с ресурсом нажатий 20 млн кликов</b></div><div>В стандартной MOBA-игре показатель CPM — 100. Это означает, что ресурс мыши — 6000 игр (при продолжительности сессии около 30 минут).</div><div><br></div><div>Отличная эргономика. Эргономичный дизайн позволяет использовать любую руку с любым типом хвата.</div><div>Подходит для любого хвата: Пальцевый, когтевой, ладонный.</div><div><br></div><div>Игровая мышь среднего класса с расширенными функциями для серьезных геймеров. Она может похвастаться настраиваемой системой подсветки, регулируемыми настройками разрешения до 4200 DPI и высокоточным оптическим датчиком, что делает его идеальным для соревновательных игр.</div>",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 9990,
+    "rating": 0,
+    "delivery": true,
+    "count": 50,
+    "category": {
+      "id": 2,
+      "key": "KOMPYUTERNAYA-TEKHNIKA",
+      "value": "kompyuternaya-tekhnika",
+      "label": "Компьютерная техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/kompyuternaya-tekhnika-1746623203120-1746623203429.webp"
+    },
+    "subcategory": {
+      "id": 1746623177176.5728,
+      "key": "IGROVYE-AKSSESUARY",
+      "value": "igrovye-akssesuary",
+      "label": "Игровые акссесуары",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Общие спецификации",
+        "specification": [
+          {
+            "title": "Материал корпуса",
+            "description": "Soft-touch пластик"
+          },
+          {
+            "title": "Срок службы",
+            "description": "12 месяцев"
+          },
+          {
+            "title": "Страна производства",
+            "description": "Китай"
+          },
+          {
+            "title": "Цвет",
+            "description": "Черный, серебристый"
+          },
+          {
+            "title": "Тип подключения",
+            "description": "Проводное"
+          },
+          {
+            "title": "Тип мыши",
+            "description": "Оптическая"
+          },
+          {
+            "title": "Количество кнопок",
+            "description": "6"
+          },
+          {
+            "title": "Сенсор",
+            "description": "Pixart PAW 3519"
+          },
+          {
+            "title": "Оптическое разрешение (макс.)",
+            "description": "4200 DPI"
+          },
+          {
+            "title": "Дизайн корпуса мыши",
+            "description": "Симметричный"
+          },
+          {
+            "title": "Цвет подсветки корпуса",
+            "description": "Настраиваемая, 6 цветов"
+          },
+          {
+            "title": "Длина кабеля",
+            "description": "1.6 м"
+          },
+          {
+            "title": "Максимальная частота опроса USB шины",
+            "description": "1000 Гц"
+          },
+          {
+            "title": "Скорость отслеживания",
+            "description": "До 48 ips"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214301774-1747068328307-1747068328630.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214313864-1747068328307-1747068328654.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214351426-1747068328307-1747068328686.webp"
+    ],
+    "images": [
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214304309-1747068328307-1747068328734.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214315879-1747068328308-1747068328759.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214349372-1747068328308-1747068328790.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 3,
+    "title": "ИГРОВОЙ НОУТБУК THUNDEROBOT 911S CORE D",
+    "slug": "igrovoy-noutbuk-thunderobot-911s-core-d",
+    "description": "<b>Мощный процессор 12-го поколения Intel® Core®i5-12450H</b><div>4&nbsp;производительных ядра и 4 энергоэффективных ядра. Одновременная обработка 12 потоков.</div><div><b>Игровой экран с разрешением 1080p и углом обзора до 170°</b></div><div>Насыщенные цвета для комфортного просмотра и впечатляющей игры.</div><div><b>Высокая частота смены кадров</b></div><div>Частота обновления дисплея 144 Гц — это преимущество в динамичных играх. Высокая частота смены кадров обеспечивает плавность изображения и великолепный игровой процесс. Это позволяет быстрее реагировать на события в игре, повышая шансы на безоговорочную победу.</div><div><b>Дискретная видеокарта NVIDIA® GeForce RTX™ 3050 Laptop GPU</b></div><div>Новые многопоточные ядра RT Core, Tensor Core и SM для стабильной и быстрой работы в играх.</div><div><br></div><div>Игровой ноутбук с Thunderobot c видеокартой RTX 3050 4GB, которая поддерживает технологии DLSS и рейтрейсинга для увеличенной производительности во всех сценариях работы и игры. Получите ещё больше FPS без потери качества, ведь кадры решают всё.</div><div><br></div><div>Высокую производительность и быструю скорость работы обеспечивают процессор Intel® Core® i5-12450H и 16 ГБ оперативной памяти. Быстрый SSD 512 ГБ отвечает за молниеносную работу с файлами. Устройство поставляется без ОС.</div>",
+    "discount": true,
+    "discount_percent": 12,
+    "price": 369990,
+    "rating": 0,
+    "delivery": true,
+    "count": 123,
+    "category": {
+      "id": 2,
+      "key": "KOMPYUTERNAYA-TEKHNIKA",
+      "value": "kompyuternaya-tekhnika",
+      "label": "Компьютерная техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/kompyuternaya-tekhnika-1746623203120-1746623203429.webp"
+    },
+    "subcategory": {
+      "id": 1746623184742.561,
+      "key": "IGROVYE-NOUTBUKI",
+      "value": "igrovye-noutbuki",
+      "label": "Игровые ноутбуки",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Параметры дисплея",
+        "specification": [
+          {
+            "title": "Диагональ экрана",
+            "description": "15.6″ (39.62 см)"
+          },
+          {
+            "title": "Разрешение матрицы, px",
+            "description": "1920 x 1080"
+          },
+          {
+            "title": "Тип матрицы",
+            "description": "AHVA IPS"
+          },
+          {
+            "title": "Частота обновления дисплея",
+            "description": "144 Гц"
+          }
+        ]
+      },
+      {
+        "title": "Процессор",
+        "specification": [
+          {
+            "title": "Семейство процессоров",
+            "description": "Intel Core i5"
+          },
+          {
+            "title": "Процессор",
+            "description": "Intel Core i5-12450H"
+          },
+          {
+            "title": "Тактовая частота",
+            "description": "2.0 ГГц – 4.4 ГГц (TDP 45 Вт)"
+          },
+          {
+            "title": "Количество ядер",
+            "description": "8 ядер (4P+4E), 12 потоков"
+          }
+        ]
+      },
+      {
+        "title": "Оперативная память",
+        "specification": [
+          {
+            "title": "Объем оперативной памяти",
+            "description": "16 ГБ"
+          }
+        ]
+      },
+      {
+        "title": "Габариты",
+        "specification": [
+          {
+            "title": "Толщина (мм)",
+            "description": "25"
+          },
+          {
+            "title": "Размер (мм)",
+            "description": "361 x 241 x 25"
+          }
+        ]
+      },
+      {
+        "title": "Жесткий диск",
+        "specification": [
+          {
+            "title": "Общий объём накопителя SSD",
+            "description": "512 ГБ"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "2.15"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "3.57"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214855016-1747068714802-1747068715139.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214918704-1747068714802-1747068715247.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214931209-1747068714802-1747068715376.webp"
+    ],
+    "images": [
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214856895-1747068714802-1747068715507.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214920057-1747068714802-1747068715626.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214932814-1747068714802-1747068715756.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214941448-1747068714803-1747068715892.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12214951530-1747068714803-1747068715973.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215001858-1747068714803-1747068716032.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 4,
+    "title": "НОУТБУК MACHCREATOR ONE R5",
+    "slug": "noutbuk-machcreator-one-r5",
+    "description": "<b>Дисплей 15.6\"FHD IPS</b><div>Размер дисплея обеспечивает идеальный баланс между компактностью устройства и удобством работы. Яркая IPS-матрица с разрешением Full HD (1920×1080) отлично подойдет для работы и развлечений.</div><div><b>Металлическая крышка</b></div><div>Верхняя крышка ноутбука выполнена из прочного металлического сплава с технологичными элементами дизайна, выполненными с помощью CNC-машины. Корпус устройства имеет высокую прочность и стильный вид.</div>",
+    "discount": true,
+    "discount_percent": 15,
+    "price": 269990,
+    "rating": 0,
+    "delivery": true,
+    "count": 432,
+    "category": {
+      "id": 2,
+      "key": "KOMPYUTERNAYA-TEKHNIKA",
+      "value": "kompyuternaya-tekhnika",
+      "label": "Компьютерная техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/kompyuternaya-tekhnika-1746623203120-1746623203429.webp"
+    },
+    "subcategory": {
+      "id": 1746623194110.855,
+      "key": "NOUTBUKI",
+      "value": "noutbuki",
+      "label": "Ноутбуки",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Параметры дисплея",
+        "specification": [
+          {
+            "title": "Диагональ экрана",
+            "description": "15.6″ (39.62 см)"
+          },
+          {
+            "title": "Разрешение матрицы, px",
+            "description": "1920 x 1080"
+          },
+          {
+            "title": "Тип матрицы",
+            "description": "IPS"
+          }
+        ]
+      },
+      {
+        "title": "Процессор",
+        "specification": [
+          {
+            "title": "Процессор",
+            "description": "AMD Ryzen 5 7430U"
+          },
+          {
+            "title": "Количество ядер",
+            "description": "6 ядер, 12 потоков"
+          },
+          {
+            "title": "Тактовая частота",
+            "description": "2.3 ГГц – 4.3 ГГц (TDP 15 Вт)"
+          }
+        ]
+      },
+      {
+        "title": "Оперативная память",
+        "specification": [
+          {
+            "title": "Объем оперативной памяти",
+            "description": "16 ГБ"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес брутто (кг)",
+            "description": "3"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215402433-1747069017441-1747069017775.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215413460-1747069017441-1747069017887.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215422673-1747069017441-1747069017991.webp"
+    ],
+    "images": [
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215438353-1747069017441-1747069018090.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215446717-1747069017442-1747069018195.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215452803-1747069017442-1747069018295.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215501237-1747069017442-1747069018394.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215509151-1747069017442-1747069018500.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215519590-1747069017443-1747069018610.webp",
+      "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215535692-1747069017443-1747069018674.webp"
+    ],
+    "reviews": []
+  }
+]

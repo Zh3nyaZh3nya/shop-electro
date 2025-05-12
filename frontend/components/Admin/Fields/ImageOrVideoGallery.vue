@@ -2,20 +2,23 @@
 import { ref, watch, computed } from 'vue'
 
 const props = defineProps<{
-  modelValue: (File | string)[]
+  modelValue: (File | string)[] | File | string
   label?: string
   required?: boolean
   multiple?: boolean
   accept?: string
   isEdit?: boolean
+  isOpenPanel: boolean
 }>()
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: (File | string)[]): void
+  (e: 'update:modelValue', value: (File | string)[] | File | string): void
 }>()
 
 const localFiles = ref<(File | string)[]>([])
 const dummyInput = ref<File[] | File | null>(null)
+
+const panelOpenIndexes = ref<number[]>([])
 
 function handleFileInput(newInput: File[] | File | null) {
   const files: File[] = newInput instanceof File ? [newInput] :
@@ -87,11 +90,23 @@ watch(() => props.modelValue, (val) => {
 
   dummyInput.value = null
 }, { immediate: true })
+
+watch(() => props.isOpenPanel, (val) => {
+  if (val) {
+    panelOpenIndexes.value = [0]
+  } else {
+    panelOpenIndexes.value = []
+  }
+}, { immediate: true })
 </script>
 
 <template>
   <div class="mb-4">
-    <v-expansion-panels color="admin-grey-dark-1" elevation="0">
+    <v-expansion-panels
+        color="admin-grey-dark-1"
+        elevation="0"
+        v-model="panelOpenIndexes"
+    >
       <v-expansion-panel color="admin-grey-dark-1" rounded="lg" elevation="0">
         <v-expansion-panel-title>
           <p class="text-body-1">
@@ -138,6 +153,7 @@ watch(() => props.modelValue, (val) => {
                       :src="file"
                       controls
                       width="300"
+                      height="100%"
                       class="rounded"
                   />
                 </template>

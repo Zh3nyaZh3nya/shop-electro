@@ -23,14 +23,20 @@ function generateHeadersFromData(items: any[]): TableHeader[] {
   if (!items.length || typeof items[0] !== 'object') return []
 
   const keys = Object.keys(items[0]).filter(
-      (key) => key !== 'key' &&
+      (key) =>
+          key !== 'key' &&
           key !== 'value' &&
           key !== 'for_main_page' &&
           key !== 'slug' &&
           key !== 'link_video' &&
           key !== 'link' &&
           key !== 'link_external' &&
-          key !== 'link_text'
+          key !== 'link_text' &&
+          key !== 'discount' &&
+          key !== 'specifications' &&
+          key !== 'installment' &&
+          key !== 'preview_images' &&
+          key !== 'images'
   )
 
   const reorderedKeys: string[] = []

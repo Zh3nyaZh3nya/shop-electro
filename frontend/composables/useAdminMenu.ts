@@ -134,5 +134,15 @@ export const useAdminMenu = () => {
         return flat.find(i => i.link === slug)
     }
 
-    return { menu, flat, getByPage }
+    const isHaveEnum = (slug: string | undefined): boolean => {
+        const item = flat.find(i => i.link === slug)
+        return Array.isArray(item?.enums) && item.enums.length > 0
+    }
+
+    const getEnumsByPage = (slug: string | undefined): string[] => {
+        const item = getByPage(slug)
+        return Array.isArray(item?.enums) ? item.enums : []
+    }
+
+    return { menu, flat, getByPage, isHaveEnum, getEnumsByPage }
 }

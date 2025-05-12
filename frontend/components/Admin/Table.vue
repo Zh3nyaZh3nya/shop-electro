@@ -174,13 +174,15 @@ watch(search, debounce(() => emit('search', search.value), 300))
       sort-desc-icon="mdi-chevron-down"
   >
     <template #header.select>
-      <v-checkbox
-          :model-value="items.length && items.every(i => selected.includes(i.id))"
-          :indeterminate="selected.length > 0 && selected.length < items.length"
-          @update:model-value="() => toggleSelectAll()"
-          color="admin-primary"
-          hide-details
-      />
+      <div style="width: 27px;">
+        <v-checkbox
+            :model-value="items.length && items.every(i => selected.includes(i.id))"
+            :indeterminate="selected.length > 0 && selected.length < items.length"
+            @update:model-value="() => toggleSelectAll()"
+            color="admin-primary"
+            hide-details
+        />
+      </div>
     </template>
     <template v-slot:item="{ item, props: rowProps }">
       <tr v-bind="rowProps" :class="[ selected.includes(item.id) ? 'row-selected' :  'row' ]">
@@ -196,13 +198,30 @@ watch(search, debounce(() => emit('search', search.value), 300))
         <td
             v-for="column in header.filter(h => h.key !== 'select' && h.key !== 'edit')"
             :key="column.key"
-            class="v-data-table__td v-data-table-column--align-center"
+            class="v-data-table__td v-data-table-column--align-center py-4"
         >
           <template v-if="column.key === 'description'">
             <div v-if="item?.description">
               {{
-                String(item.description).replace(/<[^>]*>/g, '').slice(0, 30)
-              }}<span v-if="String(item.description).replace(/<[^>]*>/g, '').length > 30">...</span>
+                String(item.description)
+                    .replace(/<[^>]*>/g, '')
+                    .replace(/&nbsp;/g, ' ')
+                    .replace(/\u00A0/g, ' ')
+                    .replace(/&[a-z]+;/gi, ' ')
+                    .slice(0, 30)
+              }}<span
+                  v-if="String(item.description)
+                    .replace(/<[^>]*>/g, '')
+                    .replace(/&nbsp;/g, ' ')
+                    .replace(/\u00A0/g, ' ')
+                    .replace(/&[a-z]+;/gi, ' ')
+                    .length > 30"
+              >…</span>
+            </div>
+          </template>
+          <template v-else-if="column.key === 'title'">
+            <div v-if="item?.title" style="width: 200px">
+              {{ item.title }}
             </div>
           </template>
           <template v-else-if="column.key === 'active'">
@@ -244,8 +263,17 @@ watch(search, debounce(() => emit('search', search.value), 300))
               </div>
             </div>
           </template>
+          <template v-else-if="column.key === 'reviews'">
+            {{ item.reviews.length  }}
+          </template>
+          <template v-else-if="column.key === 'category'">
+            {{ item.category.label  }}
+          </template>
+          <template v-else-if="column.key === 'subcategory'">
+            {{ item.subcategory.label  }}
+          </template>
           <template v-else>
-            {{ item[column.key] }}
+            {{ typeof item[column.key] === 'boolean' ? (item[column.key] ? 'Да' : 'Нет') : item[column.key] }}
           </template>
         </td>
 

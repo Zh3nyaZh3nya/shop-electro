@@ -1,5 +1,5 @@
 import { mkdir, readFile, writeFile } from 'fs/promises'
-import { join, resolve } from 'path'
+import { join, resolve, basename } from 'path'
 import { defineEventHandler } from 'h3'
 // @ts-ignore
 import Busboy from 'busboy'
@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     const uploadDir = resolve('public/storage', model)
     await mkdir(uploadDir, { recursive: true })
 
-    const fields: Record<string, string> = {}
+    const fields: Record<string, any> = {}
     const files: { fieldname: string; filename: string; buffer: Buffer }[] = []
 
     const busboy = Busboy({ headers: event.node.req.headers })
@@ -55,24 +55,21 @@ export default defineEventHandler(async (event) => {
         const ext = filename.split('.').pop()?.toLowerCase() || 'bin'
         const nameWithoutExt = filename.split('.').slice(0, -1).join('.') || 'file'
         const timestamp = Date.now()
-
-        let finalFilename = `${nameWithoutExt}-${timestamp}`
         const isImage = ['jpg', 'jpeg', 'png', 'webp'].includes(ext)
         const isVideo = ['mp4', 'webm', 'ogg'].includes(ext)
 
         if (!isImage && !isVideo) continue
 
+        let finalFilename = `${nameWithoutExt}-${timestamp}`
+        const saveTo = join(uploadDir, isImage ? `${finalFilename}.webp` : `${finalFilename}.${ext}`)
+
         if (isImage) {
-            finalFilename += '.webp'
-            const saveTo = join(uploadDir, finalFilename)
             await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
         } else {
-            finalFilename += `.${ext}`
-            const saveTo = join(uploadDir, finalFilename)
             await writeFile(saveTo, buffer)
         }
 
-        const filePath = `/storage/${model}/${finalFilename}`
+        const filePath = `/storage/${model}/${basename(saveTo)}`
         const baseField = fieldname.replace(/\[\]$/, '')
 
         if (!fileGroups[baseField]) fileGroups[baseField] = []
@@ -84,30 +81,50 @@ export default defineEventHandler(async (event) => {
 
     try {
         const content = await readFile(dataPath, 'utf-8')
-        data = JSON.parse(content)
-    } catch {}
+        data = content.trim() ? JSON.parse(content) : []
+    } catch (err: any) {
+        if (err.code !== 'ENOENT') throw err
+    }
 
     const id = Number(fields.id)
     const index = data.findIndex((item) => Number(item.id) === id)
 
     if (index !== -1) {
-        const original = data[index]
+        const multipleFields: string[] = fields.multipleFields ?? []
+        delete fields.multipleFields
 
-        const updated = {
+        const original = data[index]
+        const updated: Record<string, any> = {
             ...original,
             ...fields,
         }
 
-        if ('video' in fileGroups && 'image' in updated) {
-            updated.image = null
-        }
+        // image/video conflict
+        if ('video' in fileGroups && 'image' in updated) updated.image = null
+        if ('image' in fileGroups && 'video' in updated) updated.video = null
 
-        if ('image' in fileGroups && 'video' in updated) {
-            updated.video = null
-        }
-
+        // apply uploaded files
         for (const [key, paths] of Object.entries(fileGroups)) {
-            updated[key] = paths.length === 1 ? paths[0] : paths
+            const cleaned = paths.filter(p => typeof p === 'string' && p.trim())
+
+            if (multipleFields.includes(key)) {
+                const prev = Array.isArray(updated[key]) ? updated[key] : []
+                updated[key] = [...prev, ...cleaned].filter(
+                    (v, i, self) => typeof v === 'string' && v.trim() && self.indexOf(v) === i
+                )
+            } else {
+                updated[key] = cleaned.length === 1 ? cleaned[0] : cleaned
+            }
+        }
+
+        // final cleanup for known media arrays
+        const mediaFields = ['preview_images', 'images', 'reviews']
+        for (const key of mediaFields) {
+            if (Array.isArray(updated[key])) {
+                updated[key] = updated[key].filter(
+                    v => typeof v === 'string' && v.trim().startsWith('/')
+                )
+            }
         }
 
         data[index] = updated

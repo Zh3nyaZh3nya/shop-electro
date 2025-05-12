@@ -6,7 +6,7 @@ import { useNotificationStore } from "~/stores/notifications";
 import type {BaseItem, BaseItemEnum} from "~/components/Admin/Display/Props";
 
 const route = useRoute()
-const { getByPage } = useAdminMenu()
+const { getByPage, getEnumsByPage, isHaveEnum } = useAdminMenu()
 const notifications = useNotificationStore()
 
 const pageConfig = computed(() => getByPage(route.params.page as string))
@@ -14,7 +14,7 @@ const pageTitle = computed(() => pageConfig.value?.title ?? 'Без назван
 const pageType = computed(() => pageConfig.value?.type ?? 'card')
 
 const { data: lastId, pending: lastIdPending, error: lastIdError } = await useAsyncData(
-    `admin-${route.params.page}-data-create`,
+    `admin-${route.params.page}-last-id-create`,
     async () => {
       const { data: dataFetch } = await useApi(`/admin/${route.params.page}/last-id`, {
         method: 'GET',
@@ -22,6 +22,22 @@ const { data: lastId, pending: lastIdPending, error: lastIdError } = await useAs
       })
 
       return dataFetch
+    },
+)
+
+const { data: enumsData, pending: enumsDataPending, error: enumsDataError } = await useAsyncData(
+    `admin-${route.params.page}-enums-create`,
+    async () => {
+      if(isHaveEnum(route.params.page as string)) {
+        const { data: dataFetch } = await useApi(`/admin/${getEnumsByPage(route.params.page as string)}`, {
+          method: 'GET',
+          credentials: 'include',
+        })
+
+        return dataFetch?.value?.items.filter(item => item.value === route.params.page)
+      }
+
+      return []
     },
 )
 
@@ -47,6 +63,7 @@ async function createData<T extends object>(payload: T & BaseItem | BaseItemEnum
   if (!payload) return
 
   const formData = new FormData()
+  const multipleKeys: string[] = []
 
   for (const [key, value] of Object.entries(payload)) {
     if (value instanceof File) {
@@ -55,12 +72,15 @@ async function createData<T extends object>(payload: T & BaseItem | BaseItemEnum
       value.forEach((file, index) => {
         formData.append(`${key}[]`, file)
       })
+      multipleKeys.push(key)
     } else if (Array.isArray(value) || typeof value === 'object') {
       formData.append(key, JSON.stringify(value))
     } else if (value !== undefined && value !== null) {
       formData.append(key, String(value))
     }
   }
+
+  formData.append('multipleFields', JSON.stringify(multipleKeys))
 
   await useApi(`/admin/${route.params.page}/add`, {
     method: 'POST',
@@ -83,10 +103,10 @@ definePageMeta({
 </script>
 
 <template>
-  <template v-if="!lastIdError">
+  <template v-if="!lastIdError && !enumsDataPending">
     <section>
       <v-overlay
-          :model-value="lastIdPending"
+          :model-value="lastIdPending && enumsDataPending"
           class="align-center justify-center"
       >
         <v-progress-circular
@@ -118,6 +138,7 @@ definePageMeta({
               :is-image="pageType.includes('image')"
               :is_for_main_page="pageType.includes('for-main-page')"
               :is_subcategory="pageType.includes('card-enum-subcategory')"
+              :enums="enumsData"
               @update-data="createData"
           />
         </template>

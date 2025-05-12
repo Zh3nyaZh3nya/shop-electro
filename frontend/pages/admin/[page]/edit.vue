@@ -6,7 +6,7 @@ import { useNotificationStore } from "~/stores/notifications";
 import type {BaseItem, BaseItemEnum} from "~/components/Admin/Display/Props";
 
 const route = useRoute()
-const { getByPage } = useAdminMenu()
+const { getByPage, isHaveEnum, getEnumsByPage } = useAdminMenu()
 const notifications = useNotificationStore()
 
 const pageConfig = computed(() => getByPage(route.params.page as string))
@@ -24,6 +24,22 @@ const { data: pageEditData, pending: pageEditPending, error: pageEditError } = a
       const { item } = dataFetch.value
 
       return item
+    },
+)
+
+const { data: enumsData, pending: enumsDataPending, error: enumsDataError } = await useAsyncData(
+    `admin-${route.params.page}-enums`,
+    async () => {
+      if(isHaveEnum(route.params.page as string)) {
+        const { data: dataFetch } = await useApi(`/admin/${getEnumsByPage(route.params.page as string)}`, {
+          method: 'GET',
+          credentials: 'include',
+        })
+
+        return dataFetch?.value?.items.filter(item => item.value === route.params.page)
+      }
+
+      return []
     },
 )
 
@@ -54,16 +70,42 @@ async function editData<T extends object>(payload: T & (BaseItem | BaseItemEnum)
   if (!payload) return
 
   const formData = new FormData()
+  const multipleKeys: string[] = []
 
   for (const [key, value] of Object.entries(payload)) {
     if (value instanceof File) {
       formData.append(key, value)
-    } else if (Array.isArray(value) || typeof value === 'object') {
+    }
+
+    else if (Array.isArray(value)) {
+      const files: File[] = []
+      const rest: unknown[] = []
+
+      for (const item of value) {
+        if (item instanceof File) files.push(item)
+        else rest.push(item)
+      }
+
+      if (files.length) {
+        files.forEach(f => formData.append(`${key}[]`, f))
+        multipleKeys.push(key)
+      }
+
+      if (rest.length) {
+        formData.append(key, JSON.stringify(rest))
+      }
+    }
+
+    else if (typeof value === 'object' && value !== null) {
       formData.append(key, JSON.stringify(value))
-    } else if (value !== undefined && value !== null) {
+    }
+
+    else if (value !== undefined && value !== null) {
       formData.append(key, String(value))
     }
   }
+
+  formData.append('multipleFields', JSON.stringify(multipleKeys))
 
   await useApi(`/admin/${route.params.page}/edit`, {
     method: 'POST',
@@ -104,9 +146,9 @@ definePageMeta({
 </script>
 
 <template>
-  <template v-if="!pageEditError || !route.query.id">
+  <template v-if="!pageEditError || !route.query.id || !enumsDataError">
     <v-overlay
-        :model-value="pageEditPending"
+        :model-value="pageEditPending && pageEditData"
         class="align-center justify-center"
     >
       <v-progress-circular
@@ -139,6 +181,7 @@ definePageMeta({
               :item="pageEditData"
               :is-image="pageType.includes('image')"
               :is_for_main_page="pageType.includes('for-main-page')"
+              :enums="enumsData"
               @update-data="editData"
               @remove="removeData"
           />

@@ -3,13 +3,15 @@ import { ref } from "vue";
 import { slugify } from "~/utils/slugify";
 import { rules } from "~/components/Admin/Display/Props";
 import { processFiles } from "~/utils/processFile";
-import type { BaseEmitFn, BaseItemProduct, DisplayProps } from "~/components/Admin/Display/Props";
+import omit from "lodash-es/omit";
+import type { BaseEmitFn, BaseItemProduct, DisplayProps, BaseItemEnum } from "~/components/Admin/Display/Props";
 
 const {
   action,
   item: itemProps,
   last_id,
   is_for_main_page,
+  enums
 } = defineProps<
     DisplayProps<BaseItemProduct>
 >()
@@ -32,6 +34,8 @@ const itemData: BaseItemProduct = itemProps ?? {
   delivery: true,
   count: 0,
   active: true,
+  category: { id: '', key: '', value: '', label: '', active: false },
+  subcategory: null,
   specifications: [
     {
       title: '',
@@ -43,10 +47,7 @@ const itemData: BaseItemProduct = itemProps ?? {
       ]
     }
   ],
-  installment: {
-    active: false,
-    periods: ['']
-  },
+  installment: false,
   reviews: [],
   ...(is_for_main_page ? { for_main_page: true } : {}),
 }
@@ -56,12 +57,12 @@ const images = ref<(File | string)[]>(isEdit ? itemData.images : [])
 const title = ref<string>(isEdit ? itemData.title : '')
 const description = ref<string>(isEdit ? itemData.description : '')
 const discount = ref<boolean>(isEdit ? itemData.discount : false)
-const discount_percent = ref<number>(isEdit ? itemData.discount_percent : 0)
-const price = ref<number>(isEdit ? itemData.price : 0)
+const discount_percent = ref<number | null>(isEdit ? itemData.discount_percent : null)
+const price = ref<number | null>(isEdit ? itemData.price : null)
 const rating = ref<number>(isEdit ? itemData.rating : 0)
 const delivery = ref<boolean>(isEdit ? itemData.delivery : true)
 const active = ref<boolean>(isEdit ? itemData.active : true)
-const count = ref<number>(isEdit ? itemData.count : 0)
+const count = ref<number | null>(isEdit ? itemData.count : null)
 const specifications = ref<BaseItemProduct['specifications']>(isEdit ? itemData.specifications : [
   {
     title: '',
@@ -73,15 +74,36 @@ const specifications = ref<BaseItemProduct['specifications']>(isEdit ? itemData.
     ]
   }
 ])
-const installment = ref<BaseItemProduct['installment']>(isEdit ? itemData.installment : [])
+const installment = ref<BaseItemProduct['installment']>(isEdit ? itemData.installment : true)
 const forMainPage = ref<boolean>(false)
+const selectCategory = ref<{
+  category: BaseItemEnum | null
+  subcategory?: BaseItemEnum['subcategories'] | null
+}>({
+  category: isEdit ? itemData.category : null,
+  subcategory: isEdit ? itemData.subcategory : null,
+})
+const empty = ref()
 
 async function submitForm() {
   const { valid } = await formRef.value?.validate?.() ?? { valid: true }
-  if (!valid) return
+  if (
+      !valid &&
+      !previewImages.value.length ||
+      !images.value.length ||
+      !specifications.value.length
+  ) {
+    empty.value = true
+    return
+  }
 
   const processedPreviewImages = processFiles(previewImages.value, 'preview')
   const processedImages = processFiles(images.value, 'image')
+
+  const rawCategory = selectCategory.value?.category || null
+  const rawSubcategory = selectCategory.value?.subcategory || null
+
+  const finalCategory = rawCategory ? omit(rawCategory, ['subcategories']) : null
 
   const payload: BaseItemProduct = {
     id: itemData.id,
@@ -91,12 +113,23 @@ async function submitForm() {
     slug: slugify(title.value),
     description: description.value,
     discount: discount.value,
-    discount_percent: discount_percent.value,
-    price: price.value,
+    discount_percent: discount_percent.value || 0,
+    price: price.value || 0,
     rating: rating.value,
     delivery: delivery.value,
-    count: count.value,
-    specifications: specifications.value,
+    count: count.value || 0,
+    category: finalCategory,
+    subcategory: rawSubcategory,
+    specifications: specifications.value
+      .map(block => ({
+        title: block.title.trim(),
+        specification: block.specification.filter(
+            s => s.title.trim() || s.description.trim()
+        )
+      }))
+      .filter(block =>
+          block.title.trim() || block.specification.length > 0
+      ),
     installment: installment.value,
     reviews: itemData.reviews ?? [],
     active: active.value,
@@ -115,6 +148,7 @@ function removeItem() {
 
 <template>
   <AdminFieldsHeader
+    v-if="title"
     :title="title"
     :is-edit="isEdit"
     @remove="removeItem"
@@ -139,6 +173,7 @@ function removeItem() {
                     v-model="price"
                     variant="outlined"
                     class="text-field-admin"
+                    type="number"
                     rounded="lg"
                     color="admin-primary"
                     :rules="[rules.required]"
@@ -151,10 +186,11 @@ function removeItem() {
               <p class="mb-2 text-body-1">Количество<label class="text-admin-red text-body-1">*</label></p>
               <div class="d-flex ga-4">
                 <v-text-field
-                    v-model="price"
+                    v-model="count"
                     variant="outlined"
                     class="text-field-admin"
                     rounded="lg"
+                    type="number"
                     color="admin-primary"
                     :rules="[rules.required]"
                     width="100%"
@@ -177,8 +213,10 @@ function removeItem() {
                       class="text-field-admin"
                       rounded="lg"
                       color="admin-primary"
+                      type="number"
                       :rules="[
-                        (v) => discount ? rules.required(v) : true
+                        v => discount ? rules.required(v) : true,
+                        v => discount && (v < 1 || v > 100) ? 'от 1 до 100' : true
                       ]"
                       width="118px"
                       :disabled="!discount"
@@ -188,7 +226,7 @@ function removeItem() {
 
               </div>
             </div>
-            <div style="max-width: 200px; width: 100%;">
+            <div style="max-width: 100px; width: 100%;">
               <p class="mb-2 text-body-1">Доставка</p>
               <div class="d-flex ga-4">
                 <v-checkbox
@@ -197,7 +235,24 @@ function removeItem() {
                 />
               </div>
             </div>
-
+            <div style="max-width: 100px; width: 100%;">
+              <p class="mb-2 text-body-1">Рассрочка</p>
+              <div class="d-flex ga-4">
+                <v-checkbox
+                    v-model="installment"
+                    color="admin-primary"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="mb-4 text-body-1">Категория<label class="text-admin-red text-body-1">*</label></p>
+            <AdminFieldsSelect
+                v-model="selectCategory"
+                label="Категории"
+                :items="enums"
+                :rules="[rules.required]"
+            />
           </div>
         </template>
       </AdminFieldsMainBlock>
@@ -209,6 +264,7 @@ function removeItem() {
         :required="true"
         :multiple="true"
         accept="image/jpeg, image/png, image/webp"
+        :is-open-panel="empty"
     />
 
     <AdminFieldsImageOrVideoGallery
@@ -218,9 +274,14 @@ function removeItem() {
         :required="true"
         :multiple="true"
         accept="image/jpeg, image/png, image/webp"
+        :is-open-panel="empty"
     />
 
-    <AdminFieldsSpecifications v-model="specifications" />
+    <AdminFieldsSpecifications
+        v-if="specifications.length"
+        v-model="specifications"
+        :is-open-panel="empty"
+    />
 
     <AdminFieldsFormActions />
   </v-form>

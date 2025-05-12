@@ -1,0 +1,320 @@
+[
+  {
+    "id": 1,
+    "title": "Стиральная машина Haier HW60-BP10919A",
+    "slug": "stiralnaya-mashina-haier-hw60-bp10919a",
+    "description": "<b>Инверторный мотор с гарантией 12 лет</b><div>Современный бесщёточный мотор: тихий и долговечный, благодаря уменьшению точек трения. Инверторный контроль мощности снижает расход электроэнергии. Гарантия — 12 лет.</div><div><b>Барабан Pillow</b></div><div>Внутренняя поверхность стирального барабана имеет форму подушечек. Ткань легко скользит по ним — вещи стираются очень бережно, но эффективно. Даже самые деликатные.</div><div><b>Антибактериальная&nbsp;обработка ABT</b></div><div>Благодаря антибактериальной обработке манжеты люка и кюветы для стирального порошка соблюдается гигиена: не развиваются плесень и грибок.</div>",
+    "discount": true,
+    "discount_percent": 20,
+    "price": 199990,
+    "rating": 0,
+    "delivery": true,
+    "count": 322,
+    "category": {
+      "id": 3,
+      "key": "KRUPNAYA-BYTOVAYA-TEKHNIKA",
+      "value": "krupnaya-bytovaya-tekhnika",
+      "label": "Крупная бытовая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/krupnaya-bytovaya-tekhnika-1746623252631-1746623252945.webp"
+    },
+    "subcategory": {
+      "id": 1746623205548,
+      "key": "STIRALNYE-MASHINY",
+      "value": "stiralnye-mashiny",
+      "label": "Стиральные машины",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Функции",
+        "specification": [
+          {
+            "title": "Стирка с паром",
+            "description": "Да"
+          },
+          {
+            "title": "Дисплей",
+            "description": "LED"
+          },
+          {
+            "title": "Автовзвешивание",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Размеры",
+        "specification": [
+          {
+            "title": "Размеры (Ш х В х Г см)",
+            "description": "59.5 x 85 x 39.4"
+          },
+          {
+            "title": "Ширина х Высота х Глубина в упаковке (см)",
+            "description": "64.4 x 89.2 x 52.5"
+          },
+          {
+            "title": "Глубина с учётом дверцы",
+            "description": "46 см"
+          },
+          {
+            "title": "Ширина х Высота х Фактическая глубина (см)",
+            "description": "59.5 x 85 x 46"
+          }
+        ]
+      },
+      {
+        "title": "Опции",
+        "specification": [
+          {
+            "title": "Дополнительное полоскание",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "56"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "58"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220430827-1747069521612-1747069522000.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220442672-1747069521612-1747069522256.webp"
+    ],
+    "images": [
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220432793-1747069521612-1747069522559.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220444617-1747069521612-1747069522828.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220457876-1747069521612-1747069523134.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220507081-1747069521613-1747069523194.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220515505-1747069521613-1747069523428.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 2,
+    "title": "Холодильник Haier CEF537AWD",
+    "slug": "kholodilnik-haier-cef537awd",
+    "description": "<b>Внутреннее LED освещение</b><div>Яркое светодиодное освещение обеспечивает отличный обзор внутри холодильника. Светодиоды экономичней и долговечней ламп накаливания и не влияют на температуру в холодильнике.</div><div><br></div><div><b>Технология MultiFlow</b></div><div>Равномерное распределение воздушных потоков по холодильному отделению и точное поддержание оптимальной температуры для хранения продуктов.</div><div><br></div><div><b>LED-дисплей</b></div><div>Благодаря LED-дисплею и управлению на дверце, можно не открывать холодильник для смены настроек. Внутрь не попадает тёплый воздух — лучше сохранность продуктов и меньше расход электроэнергии.</div><div><br></div><div><b>Total NoFrost</b></div><div>Никакого инея и льда в холодильнике. Благодаря постоянной циркуляции холодного воздуха, в холодильном и морозильном отделении создаются оптимальные условия хранения продуктов.</div>",
+    "discount": true,
+    "discount_percent": 23,
+    "price": 319990,
+    "rating": 0,
+    "delivery": true,
+    "count": 543,
+    "category": {
+      "id": 3,
+      "key": "KRUPNAYA-BYTOVAYA-TEKHNIKA",
+      "value": "krupnaya-bytovaya-tekhnika",
+      "label": "Крупная бытовая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/krupnaya-bytovaya-tekhnika-1746623252631-1746623252945.webp"
+    },
+    "subcategory": {
+      "id": 1746623225702.2073,
+      "key": "KHOLODILNIKI",
+      "value": "kholodilniki",
+      "label": "Холодильники",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Общие спецификации",
+        "specification": [
+          {
+            "title": "Общий полезный объем, л",
+            "description": "368"
+          },
+          {
+            "title": "Срок службы",
+            "description": "7 лет"
+          },
+          {
+            "title": "Технология охлаждения морозильной камеры",
+            "description": "No Frost"
+          }
+        ]
+      },
+      {
+        "title": "Объем камер",
+        "specification": [
+          {
+            "title": "Объем холодильной камеры, л",
+            "description": "263"
+          },
+          {
+            "title": "Объем морозильной камеры, л",
+            "description": "105"
+          }
+        ]
+      },
+      {
+        "title": "Прочие функциональные возможности",
+        "specification": [
+          {
+            "title": "Перенавешиваемые двери",
+            "description": "Да"
+          },
+          {
+            "title": "Сигнал открытой двери",
+            "description": "Да"
+          },
+          {
+            "title": "Система освещения",
+            "description": "LED"
+          }
+        ]
+      },
+      {
+        "title": "Ящики и полки",
+        "specification": [
+          {
+            "title": "Ящики для овощей",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "70"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "76"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220731379-1747069795150-1747069795469.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220744154-1747069795150-1747069795605.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220759089-1747069795150-1747069795775.webp"
+    ],
+    "images": [
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220733500-1747069795151-1747069795947.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220746145-1747069795151-1747069796104.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220800873-1747069795151-1747069796275.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220811293-1747069795151-1747069796446.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12220821467-1747069795152-1747069796623.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 3,
+    "title": "Сушильная машина Haier HD90-A2979S",
+    "slug": "sushilnaya-mashina-haier-hd90-a2979s",
+    "description": "<b>Программа подогрева одежды</b><div>На программе «Подогрев» машина сделает вещи теплыми. Положите одежду в сушильную машину перед выходом на улицу зимой.</div><div><br></div><div><b>Четырехслойный фильтр</b></div><div>Собирает мелкие частицы пыли, ворс, пух и пыльцу растений. Фильтр удобно чистить — для этого достаньте его из передней части барабана и промойте проточной водой.</div><div><b>Антиаллергенная опция</b></div><div>Постоянная высокая температура около 60 ℃ в течение примерно 60 минут после окончания основного цикла сушки эффективно убивает бактерии и клещей глубоко в волокнах, обеспечивая гигиеническую защиту.</div><div><b>Функция антисминания</b></div><div>За счет реверсивного вращения барабана машинка равномерно просушивает и разглаживает вещи. На одежде не образуются складки.</div><div><b>Полка для сушки</b></div><div>Для бережной и эффективной сушки головных уборов, обуви и детских игрушек предусмотрена специальная программа статичной сушки без вращения барабана.Ваши любимые вещи будут равномерно высушены без потери формы или дефектов ткани.</div>",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 429990,
+    "rating": 0,
+    "delivery": true,
+    "count": 50,
+    "category": {
+      "id": 3,
+      "key": "KRUPNAYA-BYTOVAYA-TEKHNIKA",
+      "value": "krupnaya-bytovaya-tekhnika",
+      "label": "Крупная бытовая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/krupnaya-bytovaya-tekhnika-1746623252631-1746623252945.webp"
+    },
+    "subcategory": {
+      "id": 1746623232966.0588,
+      "key": "SUSHILNYE-MASHINY",
+      "value": "sushilnye-mashiny",
+      "label": "Сушильные машины",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Размеры",
+        "specification": [
+          {
+            "title": "Размеры (Ш х В х Г см)",
+            "description": "59.5 x 84.5 x 60"
+          },
+          {
+            "title": "Ширина х Высота х Глубина в упаковке (см)",
+            "description": "66.8 x 89 x 74.8"
+          }
+        ]
+      },
+      {
+        "title": "Функции",
+        "specification": [
+          {
+            "title": "Защита от перегрева двигателя",
+            "description": "Да"
+          },
+          {
+            "title": "Отложенный старт",
+            "description": "Да"
+          },
+          {
+            "title": "Блокировка от детей",
+            "description": "Да"
+          },
+          {
+            "title": "Ворсовый фильтр",
+            "description": "Да"
+          },
+          {
+            "title": "Предотвращение сминания",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "51"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "57"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221156744-1747070041095-1747070041430.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221210115-1747070041095-1747070041723.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221225084-1747070041095-1747070042033.webp"
+    ],
+    "images": [
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221206610-1747070041095-1747070042336.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221211302-1747070041095-1747070042593.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221226814-1747070041096-1747070042894.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221236627-1747070041096-1747070043198.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221244727-1747070041096-1747070043485.webp",
+      "/storage/krupnaya-bytovaya-tekhnika/izobrazhenie2025-05-12221253439-1747070041096-1747070043770.webp"
+    ],
+    "reviews": []
+  }
+]

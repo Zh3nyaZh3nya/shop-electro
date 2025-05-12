@@ -27,6 +27,8 @@ export interface BaseItemProduct {
     delivery: boolean
     count: number
     active: boolean
+    category: Omit<BaseItemEnum, 'subcategories'>
+    subcategory: BaseItemEnum['subcategories'] | null
     specifications: {
         title: string
         specification: {
@@ -34,10 +36,7 @@ export interface BaseItemProduct {
           description: string
         }[]
     }[]
-    installment: {
-        active: boolean
-        periods: string[]
-    }
+    installment: boolean
     reviews?: {
         id: string | number
         name: string
@@ -71,6 +70,7 @@ export interface DisplayProps<T extends BaseItem | BaseItemEnum | BaseItemProduc
     is_video?: boolean
     is_link?: boolean
     is_subcategory?: boolean
+    enums?: BaseItemEnum
     last_id?: number | string
     item?: T
 }
