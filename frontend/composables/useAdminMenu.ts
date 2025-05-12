@@ -103,13 +103,6 @@ export const useAdminMenu = () => {
                     type: ['product', 'for-main-page', 'image'],
                     enums: ['categories'],
                 },
-                {
-                    title: 'Акссесуары',
-                    icon: 'mdi-bag-personal-outline',
-                    link: 'akssesuary',
-                    type: ['product', 'for-main-page', 'image'],
-                    enums: ['categories'],
-                },
             ],
         },
         {

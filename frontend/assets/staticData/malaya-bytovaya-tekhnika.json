@@ -1,0 +1,589 @@
+[
+  {
+    "id": 1,
+    "title": "Чайник Haier HK-502",
+    "slug": "chaynik-haier-hk-502",
+    "description": "<b>Выбор температуры</b><div>Выбор температурных режимов 80/90/100 °C позволит приготовить различные напитки.</div><div><br></div><div>Изящный чайник из термостойкого стекла с подсветкой позволит Вам наблюдать за процессом кипячения воды. Технология бесшумного кипячения создаст комфорт и тишину в Вашем доме. Также чайник оснащен функцией выбора температуры и съемным металлическим фильтром от накипи, который удобно мыть под струей воды. Широко открывающаяся крышка облегчит процесс наполнения водой и чистку внутренней части корпуса.</div>",
+    "discount": true,
+    "discount_percent": 17,
+    "price": 34990,
+    "rating": 0,
+    "delivery": true,
+    "count": 563,
+    "category": {
+      "id": 5,
+      "key": "MALAYA-BYTOVAYA-TEKHNIKA",
+      "value": "malaya-bytovaya-tekhnika",
+      "label": "Малая бытовая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/malaya-bytovaya-tekhnika-1746623559680-1746623560001.webp"
+    },
+    "subcategory": {
+      "id": 1746623390613,
+      "key": "ELEKTROCHAYNIKI",
+      "value": "elektrochayniki",
+      "label": "Электрочайники",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Общие спецификации",
+        "specification": [
+          {
+            "title": "Срок службы",
+            "description": "3 года"
+          },
+          {
+            "title": "Страна производства",
+            "description": "Китай"
+          },
+          {
+            "title": "Цвет",
+            "description": "Нержавеющая сталь"
+          },
+          {
+            "title": "Материал корпуса",
+            "description": "Термостойкое стекло"
+          },
+          {
+            "title": "Фильтр от накипи",
+            "description": "Нержавеющая сталь"
+          },
+          {
+            "title": "Индикация уровня воды",
+            "description": "Двусторонняя"
+          },
+          {
+            "title": "Объем",
+            "description": "1.7 л"
+          }
+        ]
+      },
+      {
+        "title": "Технические характеристики",
+        "specification": [
+          {
+            "title": "Частота, Гц",
+            "description": "50/60 Гц"
+          },
+          {
+            "title": "Напряжение",
+            "description": "220-240 В"
+          },
+          {
+            "title": "Потребляемая мощность",
+            "description": "1850-2200 Вт"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "1.3"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "1.7"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": false,
+    "preview_images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224706921-1747072059523-1747072059894.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224718314-1747072059523-1747072060208.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224731437-1747072059524-1747072060485.webp"
+    ],
+    "images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224709142-1747072059524-1747072060786.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224720244-1747072059524-1747072061095.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224729304-1747072059524-1747072061373.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 2,
+    "title": "Вертикальный пылесос Haier HVC400B",
+    "slug": "vertikalnyy-pylesos-haier-hvc400b",
+    "description": "<b>Время работы</b><div>Режим работы на скорости «Турбо» 15-20 минут, «Автомат» 18-25 минут, «Эко» 35-45 минут.</div>",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 87990,
+    "rating": 0,
+    "delivery": true,
+    "count": 555,
+    "category": {
+      "id": 5,
+      "key": "MALAYA-BYTOVAYA-TEKHNIKA",
+      "value": "malaya-bytovaya-tekhnika",
+      "label": "Малая бытовая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/malaya-bytovaya-tekhnika-1746623559680-1746623560001.webp"
+    },
+    "subcategory": {
+      "id": 1746623531502.5366,
+      "key": "PYLESOSY",
+      "value": "pylesosy",
+      "label": "Пылесосы",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Режимы работы",
+        "specification": [
+          {
+            "title": "Сухая уборка",
+            "description": "Да"
+          },
+          {
+            "title": "Количество режимов работы",
+            "description": "3"
+          },
+          {
+            "title": "Турборежим",
+            "description": "Да"
+          },
+          {
+            "title": "Плавный запуск двигателя",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Корпус",
+        "specification": [
+          {
+            "title": "Материал корпуса",
+            "description": "Алюминий / поликарбонат / пластик"
+          },
+          {
+            "title": "Отсоединяемый портативный пылесос",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Уровень шума",
+        "specification": [
+          {
+            "title": "Максимальный уровень шума, дБ",
+            "description": "75"
+          }
+        ]
+      },
+      {
+        "title": "Система сбора пыли и грязи",
+        "specification": [
+          {
+            "title": "Объём пылесборника, л",
+            "description": "0.8"
+          },
+          {
+            "title": "Циклоническая система",
+            "description": "Да"
+          },
+          {
+            "title": "Объем контейнера, л",
+            "description": "0.8"
+          }
+        ]
+      },
+      {
+        "title": "Фильтры",
+        "specification": [
+          {
+            "title": "Выходной фильтр",
+            "description": "Сменный моющийся H12"
+          },
+          {
+            "title": "Моторный фильтр",
+            "description": "Да"
+          },
+          {
+            "title": "Моющийся моторный фильтр",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Комплектация",
+        "specification": [
+          {
+            "title": "Количество блоков питания",
+            "description": "1 шт."
+          },
+          {
+            "title": "Количество зарядных устройств",
+            "description": "1"
+          },
+          {
+            "title": "Подставка для вертикальной установки",
+            "description": "Отсутствует"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "1.5"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": false,
+    "preview_images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224904563-1747072324392-1747072324729.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224922146-1747072324393-1747072324791.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224932838-1747072324393-1747072324966.webp"
+    ],
+    "images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224912363-1747072324393-1747072325120.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224919798-1747072324393-1747072325189.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224935611-1747072324393-1747072325370.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12224949626-1747072324394-1747072325521.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 3,
+    "title": "Гриль Haier HG-701",
+    "slug": "gril-haier-hg-701",
+    "description": "Съемные рабочие панели<div>Гриль оснащен съемными рабочими панелями, которые можно мыть в посудомоечной машине. Нагревательные элементы интегрированы непосредственно внутрь панелей, а не в корпус гриля. Благодаря этому температура поверхности будет равномерной, а нагрев быстрым, что является важнейшими факторами для идеальной жарки</div><div><br></div><div>Гриль с ярким, современным сенсорным дисплеем прост и удобен в управлении. Широкий диапазон температур 80-240° подойдет для приготовления практически всех блюд, а встроенный термощуп поможет Вам достичь желаемой степени прожарки продукта. Благодаря антипригарному покрытию панелей Вы можете готовить здоровую и полезную пищу без добавления масла. Панели легко снимаются и их можно мыть в посудомоечной машине.</div>",
+    "discount": true,
+    "discount_percent": 23,
+    "price": 149990,
+    "rating": 0,
+    "delivery": true,
+    "count": 50,
+    "category": {
+      "id": 5,
+      "key": "MALAYA-BYTOVAYA-TEKHNIKA",
+      "value": "malaya-bytovaya-tekhnika",
+      "label": "Малая бытовая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/malaya-bytovaya-tekhnika-1746623559680-1746623560001.webp"
+    },
+    "subcategory": {
+      "id": 1746623538486.4226,
+      "key": "GRIL",
+      "value": "gril",
+      "label": "Гриль",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Технические характеристики",
+        "specification": [
+          {
+            "title": "Частота, Гц",
+            "description": "50/60 Гц"
+          },
+          {
+            "title": "Максимальная мощность",
+            "description": "2000 Вт"
+          },
+          {
+            "title": "Напряжение",
+            "description": "220-240 В"
+          }
+        ]
+      },
+      {
+        "title": "Комплектация",
+        "specification": [
+          {
+            "title": "Термощуп",
+            "description": "1 шт"
+          },
+          {
+            "title": "Гриль",
+            "description": "1 шт"
+          },
+          {
+            "title": "Съемная рифленая панель",
+            "description": "1 шт"
+          },
+          {
+            "title": "Съемная плоская панель",
+            "description": "1 шт"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "8.2"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "8.6"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": false,
+    "preview_images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225409059-1747072580591-1747072580925.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225421691-1747072580591-1747072581278.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225436151-1747072580592-1747072581570.webp"
+    ],
+    "images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225411170-1747072580592-1747072581842.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225423035-1747072580592-1747072582188.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225437554-1747072580592-1747072582478.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225449381-1747072580593-1747072582744.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225500390-1747072580593-1747072583036.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 4,
+    "title": "Тостер Haier HT-600",
+    "slug": "toster-haier-ht-600",
+    "description": "Современный и стильный дизайн тостера прекрасно впишется в интерьер Вашей кухни. Прибор оснащен яркой световой индикацией панели управления, которая также отобразит статус поджаривания. Увеличенное расстояние между стенками тостера и нагревательным элементом не дадут корпусу сильно нагреться, что делает использование прибора более безопасным.",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 35990,
+    "rating": 0,
+    "delivery": true,
+    "count": 60,
+    "category": {
+      "id": 5,
+      "key": "MALAYA-BYTOVAYA-TEKHNIKA",
+      "value": "malaya-bytovaya-tekhnika",
+      "label": "Малая бытовая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/malaya-bytovaya-tekhnika-1746623559680-1746623560001.webp"
+    },
+    "subcategory": {
+      "id": 1746623541990.6726,
+      "key": "TOSTERY",
+      "value": "tostery",
+      "label": "Тостеры",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Общие спецификации",
+        "specification": [
+          {
+            "title": "Срок службы",
+            "description": "3 года"
+          },
+          {
+            "title": "Страна производства",
+            "description": "Китай"
+          },
+          {
+            "title": "Цвет",
+            "description": "Белый"
+          },
+          {
+            "title": "Материал корпуса",
+            "description": "Нержавеющая сталь"
+          },
+          {
+            "title": "Световая индикация работы",
+            "description": "Есть"
+          },
+          {
+            "title": "Режим подогрева",
+            "description": "Есть"
+          },
+          {
+            "title": "Размер отсеков",
+            "description": "14х3.5 см"
+          },
+          {
+            "title": "Количество отсеков",
+            "description": "2"
+          },
+          {
+            "title": "Режим разморозки",
+            "description": "Есть"
+          },
+          {
+            "title": "Термоизолированный корпус",
+            "description": "Есть"
+          },
+          {
+            "title": "Регулировка прожаривания",
+            "description": "7 степеней"
+          }
+        ]
+      },
+      {
+        "title": "Технические характеристики",
+        "specification": [
+          {
+            "title": "Частота, Гц",
+            "description": "50/60 Гц"
+          },
+          {
+            "title": "Напряжение",
+            "description": "220-240 В"
+          },
+          {
+            "title": "Потребляемая мощность",
+            "description": "900 Вт"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "1.6"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "2.4"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225731988-1747072788126-1747072788451.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225747238-1747072788126-1747072788797.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225804118-1747072788127-1747072789276.webp"
+    ],
+    "images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225734938-1747072788127-1747072789581.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225748878-1747072788127-1747072789923.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12225802127-1747072788127-1747072790394.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 5,
+    "title": "Цитрусовая соковыжималка Haier HJ-700",
+    "slug": "tsitrusovaya-sokovyzhimalka-haier-hj-700",
+    "description": "Современный и стильный дизайн соковыжималки прекрасно впишется в интерьер Вашей кухни. Инновационная система отжима сочетает в себе механический пресс и электрический привод. Корпус соковыжималки сделан из нержавеющей стали, что сделает уход за ней более легким и обеспечит продолжительную работу прибора. Благодаря двойному положению носика и функции капля-стоп Вы сможете смешивать различные соки внутри накопителя.",
+    "discount": true,
+    "discount_percent": 30,
+    "price": 49990,
+    "rating": 0,
+    "delivery": true,
+    "count": 55,
+    "category": {
+      "id": 5,
+      "key": "MALAYA-BYTOVAYA-TEKHNIKA",
+      "value": "malaya-bytovaya-tekhnika",
+      "label": "Малая бытовая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/malaya-bytovaya-tekhnika-1746623559680-1746623560001.webp"
+    },
+    "subcategory": {
+      "id": 1746623547543.5623,
+      "key": "SOKOVYZHIMALKI",
+      "value": "sokovyzhimalki",
+      "label": "Соковыжималки",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Общие спецификации",
+        "specification": [
+          {
+            "title": "Срок службы",
+            "description": "3 года"
+          },
+          {
+            "title": "Страна производства",
+            "description": "Китай"
+          },
+          {
+            "title": "Цвет",
+            "description": "Белый"
+          },
+          {
+            "title": "Материал корпуса",
+            "description": "Нержавеющая сталь"
+          }
+        ]
+      },
+      {
+        "title": "Технические характеристики",
+        "specification": [
+          {
+            "title": "Частота, Гц",
+            "description": "50/60 Гц"
+          },
+          {
+            "title": "Носик с функцией капля-стоп",
+            "description": "Да"
+          },
+          {
+            "title": "Прорезиненная рукоятка",
+            "description": "Да"
+          },
+          {
+            "title": "Прорезиненное основание",
+            "description": "Да"
+          },
+          {
+            "title": "Напряжение",
+            "description": "220-240 В"
+          },
+          {
+            "title": "Фильтр для мякоти",
+            "description": "Нержавеющая сталь"
+          },
+          {
+            "title": "Потребляемая мощность",
+            "description": "100 Вт"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "2.4"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "3.4"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": false,
+    "preview_images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12231050775-1747073611948-1747073612280.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12231107671-1747073611948-1747073612488.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12231117541-1747073611948-1747073612732.webp"
+    ],
+    "images": [
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12231053117-1747073611949-1747073613009.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12231105897-1747073611949-1747073613205.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12231119901-1747073611949-1747073613443.webp",
+      "/storage/malaya-bytovaya-tekhnika/izobrazhenie2025-05-12231130407-1747073611949-1747073613714.webp"
+    ],
+    "reviews": []
+  }
+]

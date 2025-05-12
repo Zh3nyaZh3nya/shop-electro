@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add new display product, opportunity upload multiple images">
-      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/Select.vue" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: update api methods &amp; small fixes &amp; add new components, new data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/categories.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/admin.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Fields/ImageOrVideoGallery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/ImageOrVideoGallery.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Fields/MainBlock.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/MainBlock.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Fields/Specifications.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/Specifications.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Table.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/add.post.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/admin/[model]/edit.post.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/storage/categories/akssesuary-1746624152031-1746624152037.webp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +117,7 @@
       <workItem from="1746864825637" duration="9148000" />
       <workItem from="1746963626456" duration="18200000" />
       <workItem from="1747044512646" duration="73000" />
-      <workItem from="1747057668313" duration="3897000" />
+      <workItem from="1747057668313" duration="6345000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -291,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746788402965</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="feat: update api methods &amp; small fixes &amp; add new components, new data">
+      <option name="closed" value="true" />
+      <created>1747070133430</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1747070133430</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,6 +338,7 @@
     <MESSAGE value="feat: add catalog for header" />
     <MESSAGE value="small fixes" />
     <MESSAGE value="feat: add new display product, opportunity upload multiple images" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add new display product, opportunity upload multiple images" />
+    <MESSAGE value="feat: update api methods &amp; small fixes &amp; add new components, new data" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update api methods &amp; small fixes &amp; add new components, new data" />
   </component>
 </project>

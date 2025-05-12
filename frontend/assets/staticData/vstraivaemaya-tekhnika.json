@@ -1,0 +1,314 @@
+[
+  {
+    "id": 1,
+    "title": "Духовой шкаф Haier HOD-P08WGB",
+    "slug": "dukhovoy-shkaf-haier-hod-p08wgb",
+    "description": "<b>Современные утапливаемые переключатели</b><div>Простота управления, легкий уход за духовкой, дополнительная безопасность и защита от случайного изменения настроек — все это благодаря утапливаемым переключателям режимов и температуры.</div><div><b>8 режимов нагрева</b></div><div>В духовке 8 режимов нагрева, включая классический нагрев сверху и снизу, режимы конвекции с принудительным перемешиванием горячего воздуха, гриль, специальный режим для размораживания и даже специальный режим для выпечки пиццы. Любые блюда готовятся просто и получаются превосходно — для каждого случая найдётся оптимальный режим.</div><div><b>5 уровней приготовления</b></div><div>Легко готовить так, как этого требует рецепт: благодаря 5 уровням установки противней обеспечивается идеальное пропекание и подрумянивание. Есть возможность использовать сразу несколько уровней.</div><div><b>Электронное устройство программирования</b></div><div>С помощью электронного устройства программирования с сенсорными полями управления можно задать нужное время начала и окончания приготовления с автоматическим отключением духовки по истечении установленного времени или просто установить таймер со звуковым оповещением.</div><div><b>Система очистки Aquactiva</b></div><div>Стенки духовки покрыты эмалью легкой очистки, также для более легкого удаления загрязнений предусмотрен специальный режим очистки Aquactiva.</div><div><br></div><div>Духовой шкаф HOD-P08WGB имеет современный и лаконичный дизайн. 8 режимов приготовления, включая режимы с конвекцией, и большой внутренний объём позволят Вам с лёгкостью готовить любимые блюда, неизменно получая отличные результаты. Также Вы непременно оцените лёгкость очистки этой духовки благодаря съёмным направляющим для противней, эмали лёгкой очистки и специальному режиму аквачистки.</div>",
+    "discount": true,
+    "discount_percent": 11,
+    "price": 169990,
+    "rating": 0,
+    "delivery": true,
+    "count": 321,
+    "category": {
+      "id": 4,
+      "key": "VSTRAIVAEMAYA-TEKHNIKA",
+      "value": "vstraivaemaya-tekhnika",
+      "label": "Встраиваемая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/vstraivaemaya-tekhnika-1746623382311-1746623382627.webp"
+    },
+    "subcategory": {
+      "id": 1746623312987,
+      "key": "DUKHOVYE-SHKAFY",
+      "value": "dukhovye-shkafy",
+      "label": "Духовые шкафы",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Технические характеристики",
+        "specification": [
+          {
+            "title": "Напряжение/Частота",
+            "description": "220-240 В / 50 Гц"
+          },
+          {
+            "title": "Наличие внутреннего освещения",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Комплектация",
+        "specification": [
+          {
+            "title": "Количество стекол в двери",
+            "description": "2"
+          },
+          {
+            "title": "Количество уровней приготовления",
+            "description": "5"
+          },
+          {
+            "title": "Решетка",
+            "description": "Да"
+          },
+          {
+            "title": "Плавное закрывание дверцы духовки",
+            "description": "Нет"
+          },
+          {
+            "title": "Съемные направляющие духовки",
+            "description": "Да"
+          },
+          {
+            "title": "Телескопические направляющие",
+            "description": "Нет"
+          }
+        ]
+      },
+      {
+        "title": "Габариты",
+        "specification": [
+          {
+            "title": "Размеры ниши для встраивания (ШхГ) (см)",
+            "description": "59 x 56"
+          },
+          {
+            "title": "Размер продукта (ШхГхВ) (см)",
+            "description": "59.5 x 56.8 х 59.5"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес брутто (кг)",
+            "description": "29.9"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12222544123-1747071014056-1747071014423.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12222558071-1747071014056-1747071014809.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12222612368-1747071014056-1747071014972.webp"
+    ],
+    "images": [
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12222546689-1747071014056-1747071015147.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12222556416-1747071014056-1747071015520.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12222614625-1747071014057-1747071015690.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12222623987-1747071014057-1747071015863.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12222632321-1747071014057-1747071016070.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 2,
+    "title": "Вытяжка Haier HVX-T671X",
+    "slug": "vytyazhka-haier-hvx-t671x",
+    "description": "<b>Мощность 700 м³ в час</b><div>Даже в большом помещении всегда будет свежий воздух благодаря наличию встроенного вентилятора с мощностью 700 м³ в час. Просто включите соответствующий режим и наслаждайтесь процессом готовки</div><div><b>Телескопическая вытяжка</b></div><div>Чтобы вытяжка работала максимально эффективно, нужно лишь потянуть на себя выдвижную панель на телескопических направляющих. Когда готовка окончена — просто задвиньте её обратно. Отличный вариант для любой кухни.</div><div><b>Эффективная фильтрация</b></div><div>Чистый воздух в помещении обеспечивается благодаря наличию инновационных фильтров. Быстрое удаление неприятных запахов, дыма и пара.</div><div><br></div><div><b>Светодиодное освещение</b></div><div>Светодиоды работают гораздо дольше обычных ламп накаливания, они ярче светят и тратят меньше электроэнергии. Поэтому мы используем их в передовых моделях вытяжек Haier.</div>",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 56990,
+    "rating": 0,
+    "delivery": true,
+    "count": 40,
+    "category": {
+      "id": 4,
+      "key": "VSTRAIVAEMAYA-TEKHNIKA",
+      "value": "vstraivaemaya-tekhnika",
+      "label": "Встраиваемая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/vstraivaemaya-tekhnika-1746623382311-1746623382627.webp"
+    },
+    "subcategory": {
+      "id": 1746623344783.2385,
+      "key": "VYTYAZHKI",
+      "value": "vytyazhki",
+      "label": "Вытяжки",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Отличительные особенности",
+        "specification": [
+          {
+            "title": "Уровень шума, дБ",
+            "description": "58"
+          },
+          {
+            "title": "Мощность освещения",
+            "description": "2 * 1 Вт"
+          },
+          {
+            "title": "Тип освещения",
+            "description": "Светодиодное LED"
+          },
+          {
+            "title": "Автоматическое открывание",
+            "description": "Нет"
+          },
+          {
+            "title": "Mощность, м³/ч",
+            "description": "700"
+          },
+          {
+            "title": "Тип вытяжки",
+            "description": "Телескопическая"
+          },
+          {
+            "title": "Материал передней панели",
+            "description": "Металл"
+          }
+        ]
+      },
+      {
+        "title": "Общие спецификации",
+        "specification": [
+          {
+            "title": "Срок службы",
+            "description": "7 лет"
+          },
+          {
+            "title": "Страна производства",
+            "description": "Китай"
+          },
+          {
+            "title": "Цвет",
+            "description": "Нержавеющая сталь"
+          },
+          {
+            "title": "Тип управления",
+            "description": "Механическое"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес нетто (кг)",
+            "description": "5.8"
+          },
+          {
+            "title": "Вес брутто (кг)",
+            "description": "7.1"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12223216112-1747071289594-1747071289915.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12223242839-1747071289595-1747071290146.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12223252558-1747071289595-1747071290236.webp"
+    ],
+    "images": [
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12223230528-1747071289595-1747071290386.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12223244696-1747071289595-1747071290612.webp",
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12223254027-1747071289595-1747071290700.webp"
+    ],
+    "reviews": []
+  },
+  {
+    "id": 3,
+    "title": "Фильтр для вытяжки Haier HAX-22",
+    "slug": "filtr-dlya-vytyazhki-haier-hax-22",
+    "description": "<b>9 уровней мощности</b><div>Выбор именно той интенсивности нагрева, которая необходима для приготовления: точный контроль благодаря девяти уровням мощности.</div>",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 3390,
+    "rating": 0,
+    "delivery": true,
+    "count": 45,
+    "category": {
+      "id": 4,
+      "key": "VSTRAIVAEMAYA-TEKHNIKA",
+      "value": "vstraivaemaya-tekhnika",
+      "label": "Встраиваемая техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/vstraivaemaya-tekhnika-1746623382311-1746623382627.webp"
+    },
+    "subcategory": {
+      "id": 1746623354757.037,
+      "key": "FILTRY-DLYA-VYTYAZHEK",
+      "value": "filtry-dlya-vytyazhek",
+      "label": "Фильтры для вытяжек",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Общие спецификации",
+        "specification": [
+          {
+            "title": "Кол-во фильтров в комплекте",
+            "description": "1 шт"
+          },
+          {
+            "title": "Тип вытяжки",
+            "description": "Наклонная, каминная, полностью встраиваемая, потолочная, цилиндрическая"
+          },
+          {
+            "title": "Наклонная",
+            "description": "Да"
+          },
+          {
+            "title": "Каминная",
+            "description": "Да"
+          },
+          {
+            "title": "Полностью встраиваемая",
+            "description": "Да"
+          },
+          {
+            "title": "Потолочная",
+            "description": "Да"
+          },
+          {
+            "title": "Цилиндрическая",
+            "description": "Да"
+          }
+        ]
+      },
+      {
+        "title": "Габариты",
+        "specification": [
+          {
+            "title": "Габариты прибора (ВхШхГ), мм",
+            "description": "175 х 175 х 30"
+          }
+        ]
+      },
+      {
+        "title": "Вес",
+        "specification": [
+          {
+            "title": "Вес брутто (кг)",
+            "description": "0.192"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": false,
+    "preview_images": [
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12223626702-1747071464543-1747071464867.webp"
+    ],
+    "images": [
+      "/storage/vstraivaemaya-tekhnika/izobrazhenie2025-05-12223629167-1747071464543-1747071465003.webp"
+    ],
+    "reviews": []
+  }
+]

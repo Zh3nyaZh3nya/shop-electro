@@ -211,30 +211,5 @@
       }
     ],
     "image": "/storage/categories/klimaticheskaya-tekhnika-1746623599822-1746623599829.webp"
-  },
-  {
-    "id": 7,
-    "key": "AKSSESUARY",
-    "value": "akssesuary",
-    "label": "Акссесуары",
-    "active": true,
-    "for_main_page": true,
-    "subcategories": [
-      {
-        "id": 1746624126795,
-        "key": "FILTRY-DLYA-VYTYAZHEK",
-        "value": "filtry-dlya-vytyazhek",
-        "label": "Фильтры для вытяжек",
-        "active": true
-      },
-      {
-        "id": 1746624145329.7434,
-        "key": "AKSESSUARY-DLYA-PRIGOTOVLENIYA-PISHCHI",
-        "value": "aksessuary-dlya-prigotovleniya-pishchi",
-        "label": "Аксессуары для приготовления пищи",
-        "active": true
-      }
-    ],
-    "image": "/storage/categories/akssesuary-1746624152031-1746624152037.webp"
   }
 ]
