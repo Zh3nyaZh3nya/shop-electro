@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: update api methods &amp; small fixes &amp; add new components, new data">
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add new data">
+      <change afterPath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/UI/SliderImage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/[id].get.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/index.get.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/index.get.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/main.get.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/categories.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/categories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/klimaticheskaya-tekhnika.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/kompyuternaya-tekhnika.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/krupnaya-bytovaya-tekhnika.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/malaya-bytovaya-tekhnika.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/televizory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/vstraivaemaya-tekhnika.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/storage/categories/akssesuary-1746624152031-1746624152037.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/stores/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/stores/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,11 +89,11 @@
       <recent name="H:\shop-electro\frontend\server\api\[model]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\server\api\catalog" />
+      <recent name="H:\shop-electro\frontend\server\api\catalog\[category]\[subcategory]" />
+      <recent name="H:\shop-electro\frontend\server\api\catalog\[category]" />
       <recent name="H:\shop-electro\frontend\components\Admin\Fields" />
       <recent name="H:\shop-electro\frontend\components" />
-      <recent name="H:\shop-electro\frontend\components\UI\Card" />
-      <recent name="H:\shop-electro\frontend\components\UI" />
-      <recent name="H:\shop-electro\frontend\pages\catalog\[category]\[subcategory]" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -117,7 +132,7 @@
       <workItem from="1746864825637" duration="9148000" />
       <workItem from="1746963626456" duration="18200000" />
       <workItem from="1747044512646" duration="73000" />
-      <workItem from="1747057668313" duration="6345000" />
+      <workItem from="1747057668313" duration="12868000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -287,7 +302,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747070133430</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: add new data">
+      <option name="closed" value="true" />
+      <created>1747074253024</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1747074253024</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,6 +362,7 @@
     <MESSAGE value="small fixes" />
     <MESSAGE value="feat: add new display product, opportunity upload multiple images" />
     <MESSAGE value="feat: update api methods &amp; small fixes &amp; add new components, new data" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update api methods &amp; small fixes &amp; add new components, new data" />
+    <MESSAGE value="feat: add new data" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add new data" />
   </component>
 </project>

@@ -34,3 +34,46 @@ interface ICategory {
         value: string
     }
 }
+
+interface IProductCard {
+    id: number
+    title: string
+    slug: string,
+    discount: boolean,
+    discount_percent: number,
+    price: number,
+    rating: number,
+    category: {
+        id: number
+        key: string
+        value: string
+        label: string
+        active: boolean
+        for_main_page: boolean
+        image: string
+    }
+    subcategory: {
+        id: number
+        key: string
+        value: string
+        label: string
+        active: boolean
+    }
+    preview_images: string[],
+    reviews: [],
+}
+
+interface IProduct extends IProductCard {
+    description: string
+    count: number
+    delivery: boolean
+    specifications: {
+        title: string
+        specification: {
+            title: string
+            description: string
+        }[]
+    }[]
+    installment: boolean
+    images: string[]
+}

@@ -7,16 +7,19 @@ export const useStore = defineStore('store', () => {
     const categoriesMain = ref<Omit<ICategory, 'subcategories'>[]>([])
 
     async function fetchCategories(isMain?: boolean) {
-        const { data: dataFetch } = await useApi<{ items: ICategory[] }>(
-            `/categories${isMain ? '?mainPage=true' : ''}`,
-            { method: 'GET' }
-        )
+        if(!categories.value.length || !categoriesMain.value.length) {
+            const { data: dataFetch } = await useApi<{ items: ICategory[] }>(
+                `/categories${isMain ? '?mainPage=true' : ''}`,
+                { method: 'GET' }
+            )
 
-        if(isMain) {
-            categoriesMain.value = dataFetch?.value?.items.map(({ subcategories, ...rest }) => rest) || []
-        } else {
-            categories.value = dataFetch?.value?.items || []
+            if(isMain) {
+                categoriesMain.value = dataFetch?.value?.items.map(({ subcategories, ...rest }) => rest) || []
+            } else {
+                categories.value = dataFetch?.value?.items || []
+            }
         }
+
     }
 
     return {
