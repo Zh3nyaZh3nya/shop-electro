@@ -23,6 +23,7 @@ export default defineNuxtPlugin((app) => {
                         'grey-light-1': '#f5f4f4',
                         'grey-light-2': "#ebedf2",
                         'grey-light-3': '#f4f4f4',
+                        'grey-light-4': '#e9e9e9',
                         'grey-dark-1': '#808093',
                         secondary: '#212121',
                         background: '#f6f6f6',

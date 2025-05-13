@@ -44,12 +44,13 @@ const { data, is_main } = defineProps<{
       </div>
     </div>
 
-    <div class="d-flex align-center ga-2 mt-4">
+    <div class="d-flex align-center ga-2 mt-4 w-100">
       <v-btn
         rounded="lg"
         color="primary"
         elevation="0"
-        block
+        class="flex-grow-1"
+        size="large"
       >
         В корзину
       </v-btn>
@@ -57,6 +58,7 @@ const { data, is_main } = defineProps<{
         rounded="lg"
         color="grey-light-2"
         elevation="0"
+        size="large"
       >
         <v-icon icon="mdi-heart-plus" color="grey-dark-1">
 
