@@ -22,7 +22,7 @@ export default defineEventHandler(async (event) => {
         const files = await fs.readdir(dirPath)
 
         const productFiles = files.filter(file =>
-            file.startsWith('product-') && file.endsWith('.json')
+            file.startsWith('catalog-') && file.endsWith('.json')
         )
 
         for (const file of productFiles) {

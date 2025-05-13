@@ -14,7 +14,7 @@ type AdminMenuItem =
     icon: string
     link: string
     type: TypeDisplay[]
-    enums?: string[] // <- Какие энамы нужны для модуля (берутся из item'а у которого в link есть приписка enums)
+    enums?: string[] // <- Какие энамы нужны для модуля (берутся из item'а enum'а)
 }
     | {
     title: string
@@ -23,7 +23,7 @@ type AdminMenuItem =
         icon: string
         link: string
         type: TypeDisplay[]
-        enums?: string[] // <- Какие энамы нужны для модуля (берутся из item'а у которого в link есть приписка enums)
+        enums?: string[] // <- Какие энамы нужны для модуля (берутся из item'а enum'а)
     }[]
 }
 
@@ -54,6 +54,12 @@ export const useAdminMenu = () => {
                     title: 'Предложения',
                     icon: 'mdi-offer',
                     link: 'main-offer',
+                    type: ['card', 'image', 'link', 'for-main-page'],
+                },
+                {
+                    title: 'Технологии',
+                    icon: 'mdi-cog-outline',
+                    link: 'main-technology',
                     type: ['card', 'image', 'link', 'for-main-page'],
                 },
             ],

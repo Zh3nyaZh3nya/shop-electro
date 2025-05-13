@@ -200,7 +200,10 @@ watch(search, debounce(() => emit('search', search.value), 300))
             :key="column.key"
             class="v-data-table__td v-data-table-column--align-center py-4"
         >
-          <template v-if="column.key === 'description'">
+          <template v-if="column.key === 'title'">
+            <p class="text-center">{{ item.title }}</p>
+          </template>
+          <template v-else-if="column.key === 'description'">
             <div v-if="item?.description">
               {{
                 String(item.description)

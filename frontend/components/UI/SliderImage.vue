@@ -21,7 +21,7 @@ function scrollTo(index: number) {
 </script>
 
 <template>
-  <div class="card-swiper-wrapper">
+  <div class="card-swiper-wrapper position-relative">
     <swiper
         ref="swiperRef"
         :slides-per-view="1"
@@ -33,7 +33,7 @@ function scrollTo(index: number) {
         :allow-touch-move="false"
         :simulate-touch="false"
         :mousewheel="false"
-        class="card-swiper-images"
+        class="card-swiper-images w-100"
         @swiper="swiperInstance = $event"
         @slideChange="activeIndex = swiperInstance.activeIndex"
         style="height: 180px"
@@ -52,7 +52,7 @@ function scrollTo(index: number) {
       </swiper-slide>
     </swiper>
 
-    <div class="card-swiper-images-pagination">
+    <div class="card-swiper-images-pagination" v-if="images.length > 1">
       <div
           v-for="(slide, index) in images"
           :key="'pag-' + index"
@@ -71,6 +71,8 @@ function scrollTo(index: number) {
 
 <style lang="scss">
 .card-swiper-wrapper {
+  max-width: 100%;
+
   .card-swiper-images {
     position: relative;
   }
@@ -94,7 +96,7 @@ function scrollTo(index: number) {
       justify-content: center;
       cursor: pointer;
       height: 100%;
-      width: 10px;
+      width: 20px;
       margin-bottom: 10px;
     }
 

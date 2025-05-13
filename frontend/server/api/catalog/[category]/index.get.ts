@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
     const files = await fs.readdir(dirPath)
 
-    const productFiles = files.filter(file => file.startsWith('product-') && file.endsWith('.json'))
+    const productFiles = files.filter(file => file.startsWith('catalog-') && file.endsWith('.json'))
 
     let allProducts: any[] = []
 
@@ -39,6 +39,7 @@ export default defineEventHandler(async (event) => {
             subcategory: item.subcategory,
             preview_images: item.preview_images,
             reviews: item.reviews,
+            installment: item.installment,
         }
     })
 

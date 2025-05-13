@@ -61,6 +61,7 @@ interface IProductCard {
     }
     preview_images: string[],
     reviews: [],
+    installment: boolean
 }
 
 interface IProduct extends IProductCard {
@@ -74,6 +75,5 @@ interface IProduct extends IProductCard {
             description: string
         }[]
     }[]
-    installment: boolean
     images: string[]
 }

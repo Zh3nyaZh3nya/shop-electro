@@ -140,51 +140,6 @@
     }
   },
   {
-    "id": 2,
-    "title": "Телевизор Haier 43 Smart TV S3 RU",
-    "slug": "televizor-haier-43-smart-tv-s3-ru",
-    "description": "<b>Телевизор Haier S3</b><div>Полное погружение в контент</div><div><br></div><div><b>HQLED-экран — миллиард оттенков цвета</b></div><div>Наслаждайтесь бесконечной палитрой цвета с максимальной контрастностью и яркостью, благодаря HQLED дисплею. Телевизор показывает сцены с четкой детализацией как в самых ярких, так и в самых темных условиях.</div><div><br></div><div><b>4K UHD Upscaling</b></div><div>Проводите незабываемое время за любимыми фильмами, сериалами и играми в максимальном качестве. Технология Upscaling анализирует каждый кадр и пересчитывает пиксели для создания оптимального изображения в формате 4K.</div><div><br></div><div><b>Технология Dolby Vision</b></div><div>Идеальный контраст существует. Чтобы добиться его, система цветокоррекции воспроизводит изображение с различными уровнями насыщенности цветов и освещенности. Это позволяет создать четкое изображение вашего любимого контента.</div><div><br></div><div><b>Технология MEMC. Меньше размытости, больше четкости в каждой сцене</b></div><div>Вы точно не пропустите зрелищные моменты даже в самых динамичных сценах. Технология MEMC оценивает скорость сюжета и увеличивает плотность кадров.</div>",
-    "discount": false,
-    "discount_percent": 0,
-    "price": 219990,
-    "rating": 0,
-    "delivery": true,
-    "count": 1000,
-    "category": {
-      "id": 1,
-      "key": "TELEVIZORY",
-      "value": "televizory",
-      "label": "Телевизоры",
-      "active": true,
-      "for_main_page": true,
-      "image": "/storage/categories/test-1746621791696-1746621792021.webp"
-    },
-    "subcategory": {
-      "id": 1746622080935.5046,
-      "key": "HQLED",
-      "value": "hqled",
-      "label": "HQLED",
-      "active": true
-    },
-    "installment": true,
-    "specifications": [
-      {
-        "title": "Параметры дисплея",
-        "specification": [
-          {
-            "title": "Диагональ экрана",
-            "description": "32″"
-          }
-        ]
-      }
-    ],
-    "active": true,
-    "for_main_page": false,
-    "preview_images": [],
-    "images": [],
-    "reviews": []
-  },
-  {
     "id": 3,
     "title": "ТЕЛЕВИЗОР HAIER 43 SMART TV S2",
     "slug": "televizor-haier-43-smart-tv-s2",
@@ -328,7 +283,7 @@
     ],
     "installment": true,
     "active": true,
-    "for_main_page": true,
+    "for_main_page": false,
     "preview_images": [
       "/storage/televizory/izobrazhenie2025-05-12211904068-1747067189967-1747067190323.webp",
       "/storage/televizory/izobrazhenie2025-05-12212039578-1747067189968-1747067190505.webp",

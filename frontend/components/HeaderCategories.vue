@@ -43,7 +43,7 @@ const activeCategory = ref<Required<ICategory> | null>(
     <v-card
         class="pa-12 d-flex flex-column justify-space-between align-stretch"
         elevation="0"
-        color="grey-light"
+        color="grey-light-1"
         v-if="activeCategory?.subcategories?.length"
         max-width="650px"
         min-width="450px"

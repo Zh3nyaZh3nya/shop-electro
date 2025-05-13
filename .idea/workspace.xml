@@ -5,24 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add new data">
-      <change afterPath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/UI/SliderImage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/[id].get.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/index.get.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/index.get.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/main.get.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Futura/FuturaCyrillicBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Futura/FuturaCyrillicBook.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Futura/FuturaCyrillicDemi.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Futura/FuturaCyrillicExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Futura/FuturaCyrillicHeavy.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Futura/FuturaCyrillicLight.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/assets/fonts/Futura/FuturaCyrillicMedium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/Footer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/klimaticheskaya-tekhnika.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/kompyuternaya-tekhnika.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/krupnaya-bytovaya-tekhnika.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/malaya-bytovaya-tekhnika.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/televizory.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/vstraivaemaya-tekhnika.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/fonts/Montserrat/Montserrat-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/fonts/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/fonts/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/product-klimaticheskaya-tekhnika.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/catalog-klimaticheskaya-tekhnika.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/product-kompyuternaya-tekhnika.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/catalog-kompyuternaya-tekhnika.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/product-krupnaya-bytovaya-tekhnika.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/catalog-krupnaya-bytovaya-tekhnika.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/product-malaya-bytovaya-tekhnika.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/catalog-malaya-bytovaya-tekhnika.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/product-televizory.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/catalog-televizory.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/product-vstraivaemaya-tekhnika.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/catalog-vstraivaemaya-tekhnika.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Card.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Card.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Table.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Table.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/HeaderCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/HeaderCategories.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/UI/SliderImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/SliderImage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/layouts/default.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/plugins/vuetify.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/stores/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/stores/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/[id].get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/[id].get.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/index.get.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/index.get.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/main.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/main.get.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,11 +108,11 @@
       <recent name="H:\shop-electro\frontend\server\api\[model]" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\shop-electro\frontend\assets\fonts\Montserrat" />
       <recent name="H:\shop-electro\frontend\server\api\catalog" />
       <recent name="H:\shop-electro\frontend\server\api\catalog\[category]\[subcategory]" />
       <recent name="H:\shop-electro\frontend\server\api\catalog\[category]" />
       <recent name="H:\shop-electro\frontend\components\Admin\Fields" />
-      <recent name="H:\shop-electro\frontend\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -133,6 +152,7 @@
       <workItem from="1746963626456" duration="18200000" />
       <workItem from="1747044512646" duration="73000" />
       <workItem from="1747057668313" duration="12868000" />
+      <workItem from="1747133386895" duration="18481000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

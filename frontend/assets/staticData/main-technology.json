@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "T.ABT",
+    "slug": "t-abt",
+    "description": "Обеспечивает ионизацию и обеззараживание воздуха.&nbsp;<div>Это избавляет от неприятных запахов, обеспечивает более&nbsp;</div><div>гигиеничное и, значит, более длительное хранение</div><div>продуктов.</div>",
+    "active": true,
+    "video": null,
+    "for_main_page": true,
+    "link": "/",
+    "link_external": false,
+    "link_text": "Выбрать модели",
+    "image": "/storage/main-technology/t-abt-1747162326142-1747162326153.webp"
+  },
+  {
+    "id": 2,
+    "title": "Дисплей HQLED",
+    "slug": "displey-hqled",
+    "description": "Дисплей с квантовыми точками позволяет наслаждаться<div>более чистыми и чёткими цветами на экране телевизора,&nbsp;</div><div>максимально приближая изображение к реальности.</div>",
+    "active": true,
+    "video": null,
+    "for_main_page": true,
+    "link": "/",
+    "link_external": false,
+    "link_text": "Смотреть детали",
+    "image": "/storage/main-technology/displey-hqled-1747162431759-1747162431765.webp"
+  },
+  {
+    "id": 3,
+    "title": "Технология Antistain",
+    "slug": "tekhnologiya-antistain",
+    "description": "Автоматическое удаление даже самых сложных пятен.&nbsp;<div>Удаление пятен разного происхождения: от травы, вина,&nbsp;</div><div>крови, косметики, пота и других.</div>",
+    "active": true,
+    "video": null,
+    "for_main_page": true,
+    "link": "/",
+    "link_external": false,
+    "link_text": "Выбрать модели",
+    "image": "/storage/main-technology/tekhnologiya-antistain-1747162525366-1747162525373.webp"
+  },
+  {
+    "id": 4,
+    "title": "Приготовление с паром",
+    "slug": "prigotovlenie-s-parom",
+    "description": "Подача пара в духовых шкафах, точный контроль<div>температуры (до 1 градуса), а также автоматические&nbsp;</div><div>программы обеспечат идеальный результат.</div>",
+    "active": true,
+    "video": null,
+    "for_main_page": true,
+    "link": "/",
+    "link_external": false,
+    "link_text": "Выбрать модели",
+    "image": "/storage/main-technology/prigotovlenie-s-parom-1747162610830-1747162611152.webp"
+  },
+  {
+    "id": 5,
+    "title": "Таймер отключения",
+    "slug": "taymer-otklyucheniya",
+    "description": "Таймер автоматического отключения конфорок<div>по заданному времени с сенсорным управлением.</div>",
+    "active": true,
+    "video": null,
+    "for_main_page": true,
+    "link": "/",
+    "link_external": false,
+    "link_text": "Выбрать модели",
+    "image": "/storage/main-technology/taymer-otklyucheniya-1747162763638-1747162763952.webp"
+  },
+  {
+    "id": 6,
+    "title": "Ноутбуки Thunderobot",
+    "slug": "noutbuki-thunderobot",
+    "description": "Мощные видеокарты — реалистичные игровые эффекты&nbsp;<div>и плавность игры с Nvidia RTX.</div>",
+    "active": true,
+    "video": null,
+    "for_main_page": true,
+    "link": "/",
+    "link_external": false,
+    "link_text": "Выбрать модели",
+    "image": "/storage/main-technology/noutbuki-thunderobot-1747162871749-1747162872073.webp"
+  }
+]

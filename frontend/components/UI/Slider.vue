@@ -15,7 +15,7 @@ const {
   loop,
   pagination
 } = defineProps<{
-  slides: IBannerOnlyImage[] | IProductCard[]
+  slides: IBannerOnlyImage[] | IProductCard[] | IBanner[]
   perView?: number
   mobilePerView?: number
   overflowHidden?: boolean
@@ -39,7 +39,12 @@ const {
         :modules="[Autoplay, EffectCreative, Navigation, Pagination]"
         :pagination="pagination ? {
           el: '.custom-swiper-pagination',
-          clickable: true
+          clickable: true,
+          renderBullet: (index, className) => {
+            const total = slides.length + (loop ? 1 : 0)
+            if (index >= total) return ''
+            return `<span class='${className}'></span>`
+          }
         } : false"
         :breakpoints="breakpoints ?? {
           '960': {
@@ -58,11 +63,19 @@ const {
           nextEl: '.UI-Slider__swiper-nav-el-next',
           prevEl: '.UI-Slider__swiper-nav-el-prev',
         }"
-        class="UI-Slider UI-Slider__swiper position-relative"
+        :creative-effect="{
+          prev: {
+            opacity: 0.3,
+          },
+          next: {
+            translate: ['100%', 0, 0],
+          },
+        }"
+        class="UI-Slider UI-Slider__swiper position-relative w-100"
     >
       <swiper-slide
           v-for="(slide, index) in slides"
-          :key="slide?.id"
+          :key="slide?.slug"
           class="h-auto d-flex"
       >
         <slot :slide="slide" :index="index" />

@@ -119,7 +119,7 @@ function removeItem() {
       <template #default>
         <div class="d-flex justify-space-between w-100 ga-4">
           <div class="w-100">
-            <p class="mb-2 text-body-1">Ссылка</p>
+            <p class="mb-2 text-body-1">Ссылка<label class="text-admin-red text-body-1">*</label></p>
             <v-text-field
                 v-model="link"
                 variant="outlined"
@@ -131,7 +131,7 @@ function removeItem() {
             />
           </div>
           <div class="w-100">
-            <p class="mb-2 text-body-1">Текст ссылки</p>
+            <p class="mb-2 text-body-1">Текст ссылки<label class="text-admin-red text-body-1">*</label></p>
             <v-text-field
                 v-model="linkText"
                 variant="outlined"

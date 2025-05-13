@@ -6,6 +6,29 @@ import { storeToRefs } from "pinia";
 
 const store = useStore()
 
+const info: { title: string, icon: string, description: string }[] = [
+  {
+    title: 'Выгода при покупке',
+    icon: 'mdi-credit-card',
+    description: 'Совершите первый заказ и получите клубную скидку'
+  },
+  {
+    title: 'Расширенная гарантия',
+    icon: 'mdi-text-box',
+    description: 'при покупке на haieronline.kz и в фирменных магазинах Haier'
+  },
+  {
+    title: 'Бесплатная доставка',
+    icon: 'mdi-truck-fast',
+    description: 'до двери'
+  },
+  {
+    title: 'Бесплатная установка',
+    icon: 'mdi-gift',
+    description: 'стиральных машин, стирально-сушильных машин и cушильных машин',
+  }
+]
+
 const { data: bannersData, pending: bannersDataPending } = await useAsyncData<IBanner[]>('main-page-banners-data', async () => {
   const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-banner?mainPage=true`, { method: 'GET' })
 
@@ -40,11 +63,23 @@ const { data: catalogData, pending: catalogDataPending } = await useAsyncData<IP
 
   return dataFetch?.value || []
 })
+
+const { data: techData, pending: techDataPending } = await useAsyncData<IBanner[]>('main-page-tech-data', async () => {
+  const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-technology?mainPage=true`, { method: 'GET' })
+
+  return dataFetch?.value?.items || []
+})
 </script>
 
 <template>
   <v-overlay
-      :model-value="bannersDataPending || categoriesDataPending || offersDataPending || catalogDataPending"
+      :model-value="
+        bannersDataPending ||
+        categoriesDataPending ||
+        offersDataPending ||
+        catalogDataPending ||
+        techDataPending
+      "
       class="align-center justify-center"
   >
     <v-progress-circular
@@ -84,7 +119,7 @@ const { data: catalogData, pending: catalogDataPending } = await useAsyncData<IP
         <template #default="{ slide, index }">
           <v-card
               class="d-flex flex-column align-center border my-2 text-center pa-4 w-100 card-hover"
-              :to="`/categories/${slide.link}`"
+              :to="`/catalog/${slide.link}`"
               elevation="light"
               rounded="lg"
           >
@@ -134,9 +169,9 @@ const { data: catalogData, pending: catalogDataPending } = await useAsyncData<IP
       </UISlider>
     </v-container>
   </section>
-  <section v-if="catalogData && catalogData.length">
+  <section v-if="catalogData && catalogData.length" class="mb-10">
     <v-container>
-      <h2 class="text-h4 font-weight-medium mb-4">Выгодные предложения</h2>
+      <h2 class="text-h4 font-weight-medium mb-8">Выгодные предложения</h2>
       <UISlider
           :slides="catalogData"
           :per-view="5"
@@ -152,6 +187,73 @@ const { data: catalogData, pending: catalogDataPending } = await useAsyncData<IP
         </template>
       </UISlider>
 
+    </v-container>
+  </section>
+  <section class="mb-4">
+    <v-container>
+      <v-row>
+        <v-col
+            v-for="card in info"
+            :key="card.title"
+            cols="12"
+            md="6"
+            lg="3"
+        >
+          <v-card
+              rounded="lg"
+              height="232px"
+              width="100%"
+              elevation="0"
+              class="pt-8 px-8 pb-10"
+              style="background: radial-gradient(149.65% 34.67% at 50% -9.17%,hsla(0,0%,100%,.3) 0,hsla(0,0%,100%,0) 100%),#0f0f0f"
+          >
+            <div class="d-flex flex-column align-center">
+              <div class="rounded-lg d-flex justify-center align-center mb-4" style="background: linear-gradient(314.8deg,#333 45.91%,#c1c1c1 153.69%); width: 46px; height: 46px;">
+                <v-icon :icon="card.icon" color="white" />
+              </div>
+              <p class="text-body-2 text-white text-center mb-2">{{ card.title }}</p>
+              <p class="text-body-2 text-grey text-center">{{ card.description }}</p>
+            </div>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </section>
+  <section v-if="techData && techData.length" class="mb-8">
+    <v-container>
+      <h3 class="text-h4 font-weight-medium mb-8">Технологии</h3>
+      <UISlider
+          :slides="techData"
+          :per-view="3.2"
+          :space-between="15"
+          :pagination="true"
+          :loop="true"
+          key="tech"
+      >
+        <template #default="{ slide, index }">
+          <v-card
+            elevation="0"
+            :style="{
+              backgroundImage: `url('${slide?.image}')`,
+              backgroundPosition: 'center',
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat'
+            }"
+            height="420px"
+            width="100%"
+            rounded="lg"
+            class="d-flex flex-column align-center justify-end"
+            :to="slide.link"
+          >
+            <p class="text-h6 font-weight-bold" :class="index === 0 ? 'text-black' : 'text-white'">{{ slide.title }}</p>
+            <div v-html="slide.description" class="text-center text-body-2 text-grey mb-8"></div>
+            <div class="d-flex align-center ga-1 text-primary mb-6 font-weight-medium">
+              <p>{{ slide.link_text }}</p>
+              <v-icon icon="mdi-chevron-right" size="18" style="margin-top: 1px" />
+            </div>
+          </v-card>
+        </template>
+      </UISlider>
     </v-container>
   </section>
 </template>

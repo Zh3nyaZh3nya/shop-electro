@@ -1,6 +1,6 @@
 html {
   * {
-    font-family: "Montserrat", sans-serif !important;
+    font-family: "Futura PT", sans-serif !important;
   }
 }
 
@@ -76,5 +76,31 @@ a {
     .v-card__overlay {
       background-color: rgb(var(--v-theme-primary));
     }
+  }
+}
+
+.text-line {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: rgb(var(--v-theme-red));
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: white;
+    transform: translate(-50%, -50%);
+    top: 47%;
+    left: 50%;
+    z-index: 10;
   }
 }
