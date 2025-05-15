@@ -93,18 +93,20 @@ onMounted(() => {
       color="white"
       class="header d-flex flex-column"
       elevation="0"
-      :height="mdAndUp ? !isScrolledPastBanner ? 160 : 76 : 80"
+      :height="mdAndUp ? !isScrolledPastBanner ? 154 : 76 : 80"
       :class="[
-        !isScrolledPastBanner ? 'bg-transparent' : ''
+         (!isScrolledPastBanner ? 'bg-transparent' : 'bg-white')
       ]"
   >
-    <v-container>
+    <v-container :class="!isScrolledPastBanner ? 'pb-0' : ''">
       <v-row>
         <v-col cols="12" class="d-flex align-center justify-space-between" v-if="!isScrolledPastBanner">
           <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }">
             <nuxt-link to="/">
               <v-img
-                  :src="!isScrolledPastBanner ? '/logo-white.png' : `/logo.png`"
+                  :src="($route.path === '/' || $route.params.category === 'televizory')
+                    ? (!isScrolledPastBanner ? '/logo-white.png' : '/logo.png')
+                    : '/logo.png'"
                   width="60px"
                   height="100%"
                   cover
@@ -158,23 +160,40 @@ onMounted(() => {
                     color="white"
                     class="pa-4"
                 >
-                  <p class="text-body-1 font-weight-bold mb-2">Выберите город</p>
+                  <p class="text-body-1 font-weight-bold mb-2">
+                    Выберите город
+                  </p>
                   <p v-for="city in cities" :key="city.id" @click="changeCity(city)" class="cursor-pointer link-hover text-body-1 mb-1">
                     {{ city.label }}
                   </p>
                 </v-card>
               </v-menu>
             </div>
-            <v-divider :vertical="true" color="white" :thickness="2" />
+            <v-divider
+                :vertical="true"
+                :color="($route.path === '/' || $route.params.category === 'televizory') ? 'white' : 'black'"
+                :thickness="2"
+            />
             <div>
-              <nuxt-link class="d-flex align-center ga-2 link-hover cursor-pointer text-caption text-white">
+              <nuxt-link
+                  class="d-flex align-center ga-2 link-hover cursor-pointer text-caption"
+                  :class="($route.path === '/' || $route.params.category === 'televizory') ? 'text-white' : 'text-black'"
+              >
                 <v-icon icon="mdi-truck-delivery-outline" />
                 Бесплатная доставка по Казахстану
               </nuxt-link>
             </div>
-            <v-divider :vertical="true" color="white" :thickness="2" />
+            <v-divider
+                :vertical="true"
+                :color="($route.path === '/' || $route.params.category === 'televizory') ? 'white' : 'black'"
+                :thickness="2"
+            />
             <div>
-              <a href="tel:87079169250" class="link-hover text-caption font-weight-bold text-white">
+              <a
+                  href="tel:87079169250"
+                  class="link-hover text-caption font-weight-bold"
+                  :class="($route.path === '/' || $route.params.category === 'televizory') ? 'text-white' : 'text-black'"
+              >
                 8 (707) 916 92 50
               </a>
             </div>
@@ -221,7 +240,10 @@ onMounted(() => {
                   <div
                       v-bind="props"
                       class="text-body-2 text-uppercase link-hover d-flex align-center ga-1 header-link"
-                      :class="[isActive ? 'text-primary header-link-menu-active' : !isScrolledPastBanner ? 'text-white' : 'text-black']"
+                      :class="[
+                          isActive ? 'text-primary header-link-menu-active' :
+                          ($route.path === '/' || $route.params.category === 'televizory') ? !isScrolledPastBanner ? 'text-white' : 'text-black' : 'text-black'
+                      ]"
                   >
                     <p>{{ item.title }}</p>
                     <v-icon icon="mdi-chevron-down" size="18px" />
@@ -246,7 +268,11 @@ onMounted(() => {
           <div class="d-flex align-center ga-4">
             <div>
               <nuxt-link class="header-favorite link-hover cursor-pointer">
-                <v-icon icon="mdi-heart" size="32px" :color="isScrolledPastBanner ? 'grey' : 'white'" />
+                <v-icon
+                    icon="mdi-heart"
+                    size="32px"
+                    :color="($route.path === '/' || $route.params.category === 'televizory') ? !isScrolledPastBanner ? 'grey' : 'grey' : 'grey'"
+                />
                 <div class="header-favorite-count-bg">
                   <p class="header-favorite-count text-caption">0</p>
                 </div>
@@ -290,7 +316,11 @@ onMounted(() => {
           </div>
         </v-col>
       </v-row>
-      <v-divider color="white" class="mt-4" v-if="!isScrolledPastBanner" />
+      <v-divider
+          :color="($route.path === '/' || $route.params.category === 'televizory') ? !isScrolledPastBanner ? 'white' : 'black' : 'black'"
+          class="mt-4"
+          v-if="!isScrolledPastBanner"
+      />
     </v-container>
   </v-app-bar>
 </template>
