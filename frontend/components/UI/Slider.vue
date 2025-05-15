@@ -15,7 +15,12 @@ const {
   loop,
   pagination
 } = defineProps<{
-  slides: IBannerOnlyImage[] | IProductCard[] | IBanner[]
+  slides:
+      IBannerOnlyImage[] |
+      IProductCard[] |
+      IBanner[] |
+      ICategory[] |
+      ICategory['subcategories']
   perView?: number
   mobilePerView?: number
   overflowHidden?: boolean

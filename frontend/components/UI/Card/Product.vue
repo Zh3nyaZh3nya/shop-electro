@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { data, is_main } = defineProps<{
   data: IProductCard,
-  is_main: boolean
+  is_main?: boolean
 }>()
 </script>
 
@@ -17,12 +17,13 @@ const { data, is_main } = defineProps<{
         elevation="0"
         color="dark-primary"
         variant="outlined"
-        class="text-caption text-uppercase font-weight-medium"
+        class="text-caption text-uppercase font-weight-medium mb-4"
     >
       Рассрочка
     </v-chip>
     <UISliderImage
       :images="data.preview_images"
+      :is_main="is_main"
     />
     <div class="d-flex flex-column h-100 mt-4 px-2">
       <div>

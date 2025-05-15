@@ -39,7 +39,7 @@ const menuSecond: { title: string, link: string }[] = [
             lg="1"
             class="d-none d-sm-block"
         >
-          <nuxt-link>
+          <nuxt-link to="/">
             <v-img src="/logo.png" height="80px" />
           </nuxt-link>
         </v-col>

@@ -114,3 +114,11 @@ input[type=number] {
     z-index: 10;
   }
 }
+
+.v-card {
+  box-shadow: #0000000f 0 0 12px !important;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}

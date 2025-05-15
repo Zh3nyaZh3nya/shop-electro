@@ -5,8 +5,9 @@ import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 
-const { images } = defineProps<{
+const { images, is_main } = defineProps<{
   images: string[]
+  is_main?: boolean
 }>()
 
 const swiperRef = ref<any>(null)
@@ -21,11 +22,11 @@ function scrollTo(index: number) {
 </script>
 
 <template>
-  <div class="card-swiper-wrapper position-relative">
+  <div class="card-swiper-wrapper position-relative w-100">
     <swiper
         ref="swiperRef"
         :slides-per-view="1"
-        :space-between="12"
+        :space-between="0"
         :modules="[Navigation, Pagination]"
         :speed="500"
         grab-cursor
@@ -36,17 +37,15 @@ function scrollTo(index: number) {
         class="card-swiper-images w-100"
         @swiper="swiperInstance = $event"
         @slideChange="activeIndex = swiperInstance.activeIndex"
-        style="height: 180px"
     >
       <swiper-slide
           v-for="(slide, index) in images"
           :key="slide"
-          class="custom-slide pa-4"
+          class="custom-slide d-block w-100"
       >
         <v-img
           :src="slide"
-          max-height="131"
-          height="100%"
+          :height="is_main ? '180px' : '200px'"
           width="100%"
         />
       </swiper-slide>
@@ -56,7 +55,7 @@ function scrollTo(index: number) {
       <div
           v-for="(slide, index) in images"
           :key="'pag-' + index"
-          class="pagination-item-wrapper"
+          class="pagination-item-wrapper cursor-default"
           @mouseenter="scrollTo(index)"
       >
         <div
@@ -97,7 +96,7 @@ function scrollTo(index: number) {
       cursor: pointer;
       height: 100%;
       width: 20px;
-      margin-bottom: 10px;
+      margin-bottom: -15px;
     }
 
     .pagination-item {

@@ -27,7 +27,7 @@ const activeCategory = ref<Required<ICategory> | null>(
             :class="{ 'text-primary': category.id === activeCategory?.id }"
             @mouseenter="activeCategory = category"
         >
-          <nuxt-link :to="`/categories/${category.value}`">
+          <nuxt-link :to="`/catalog/${category.value}`">
             {{ category.label }}
           </nuxt-link>
         </li>
@@ -56,7 +56,7 @@ const activeCategory = ref<Required<ICategory> | null>(
               :key="sub.id"
               class="py-2 text-body-1 link-hover cursor-pointer"
           >
-            <nuxt-link :to="`/categories/${sub.value}`" class="d-inline-block" style="max-width: 200px">
+            <nuxt-link :to="`/catalog/${activeCategory.value}/${sub.value}`" class="d-inline-block" style="max-width: 200px">
               {{ sub.label }}
             </nuxt-link>
           </li>

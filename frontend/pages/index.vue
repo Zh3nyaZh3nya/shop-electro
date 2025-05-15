@@ -29,13 +29,13 @@ const info: { title: string, icon: string, description: string }[] = [
   }
 ]
 
-const { data: bannersData, pending: bannersDataPending } = await useAsyncData<IBanner[]>('main-page-banners-data', async () => {
+const { data: bannersData, pending: bannersDataPending } = await useAsyncData('main-page-banners-data', async () => {
   const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-banner?mainPage=true`, { method: 'GET' })
 
   return dataFetch?.value?.items || []
 })
 
-const { data: categoriesData, pending: categoriesDataPending } = await useAsyncData<IBannerOnlyImage[]>('main-page-categories-data', async () => {
+const { data: categoriesData, pending: categoriesDataPending } = await useAsyncData('main-page-categories-data', async () => {
   await store.fetchCategories(true)
   const { categoriesMain } = storeToRefs(store)
 
@@ -52,19 +52,19 @@ const { data: categoriesData, pending: categoriesDataPending } = await useAsyncD
   return data
 })
 
-const { data: offersData, pending: offersDataPending } = await useAsyncData<IBannerOnlyImage[]>('main-page-offers-data', async () => {
+const { data: offersData, pending: offersDataPending } = await useAsyncData('main-page-offers-data', async () => {
   const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-offer?mainPage=true`, { method: 'GET' })
 
   return dataFetch?.value?.items || []
 })
 
-const { data: catalogData, pending: catalogDataPending } = await useAsyncData<IProductCard[]>('main-page-catalog-data', async () => {
+const { data: catalogData, pending: catalogDataPending } = await useAsyncData('main-page-catalog-data', async () => {
   const { data: dataFetch } = await useApi<IProductCard[]>(`/catalog/main`, { method: 'GET' })
 
   return dataFetch?.value || []
 })
 
-const { data: techData, pending: techDataPending } = await useAsyncData<IBanner[]>('main-page-tech-data', async () => {
+const { data: techData, pending: techDataPending } = await useAsyncData('main-page-tech-data', async () => {
   const { data: dataFetch } = await useApi<{ items: IBanner[] }>(`/main-technology?mainPage=true`, { method: 'GET' })
 
   return dataFetch?.value?.items || []

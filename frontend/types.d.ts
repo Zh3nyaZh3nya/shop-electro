@@ -32,7 +32,13 @@ interface ICategory {
         key: string
         label: string
         value: string
-    }
+    }[]
+}
+
+interface IBreadcrumbs {
+    title: string
+    disabled: boolean
+    href: string
 }
 
 interface IProductCard {
@@ -76,4 +82,11 @@ interface IProduct extends IProductCard {
         }[]
     }[]
     images: string[]
+}
+
+interface IMeta {
+    total: number
+    page: number
+    perPage: number
+    totalPages: number
 }
