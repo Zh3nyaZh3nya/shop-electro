@@ -122,3 +122,17 @@ input[type=number] {
 .pointer-events-none {
   pointer-events: none;
 }
+
+.accordion {
+  background: transparent !important;
+  .v-expansion-panel-title__icon {
+    color: rgb(var(--v-theme-primary))
+  }
+}
+
+.v-expansion-panels, .v-expansion-panel__shadow, .v-expansion-panel {
+  background: transparent !important;
+}
+.v-expansion-panel-title:hover > .v-expansion-panel-title__overlay {
+  background: transparent !important;
+}

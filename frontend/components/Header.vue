@@ -104,7 +104,7 @@ onMounted(() => {
           <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }">
             <nuxt-link to="/">
               <v-img
-                  :src="($route.path === '/' || $route.params.category === 'televizory')
+                  :src="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug))
                     ? (!isScrolledPastBanner ? '/logo-white.png' : '/logo.png')
                     : '/logo.png'"
                   width="60px"
@@ -171,13 +171,13 @@ onMounted(() => {
             </div>
             <v-divider
                 :vertical="true"
-                :color="($route.path === '/' || $route.params.category === 'televizory') ? 'white' : 'black'"
+                :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'white' : 'black'"
                 :thickness="2"
             />
             <div>
               <nuxt-link
                   class="d-flex align-center ga-2 link-hover cursor-pointer text-caption"
-                  :class="($route.path === '/' || $route.params.category === 'televizory') ? 'text-white' : 'text-black'"
+                  :class="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'text-white' : 'text-black'"
               >
                 <v-icon icon="mdi-truck-delivery-outline" />
                 Бесплатная доставка по Казахстану
@@ -185,14 +185,14 @@ onMounted(() => {
             </div>
             <v-divider
                 :vertical="true"
-                :color="($route.path === '/' || $route.params.category === 'televizory') ? 'white' : 'black'"
+                :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'white' : 'black'"
                 :thickness="2"
             />
             <div>
               <a
                   href="tel:87079169250"
                   class="link-hover text-caption font-weight-bold"
-                  :class="($route.path === '/' || $route.params.category === 'televizory') ? 'text-white' : 'text-black'"
+                  :class="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'text-white' : 'text-black'"
               >
                 8 (707) 916 92 50
               </a>
@@ -242,7 +242,7 @@ onMounted(() => {
                       class="text-body-2 text-uppercase link-hover d-flex align-center ga-1 header-link"
                       :class="[
                           isActive ? 'text-primary header-link-menu-active' :
-                          ($route.path === '/' || $route.params.category === 'televizory') ? !isScrolledPastBanner ? 'text-white' : 'text-black' : 'text-black'
+                          ($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? !isScrolledPastBanner ? 'text-white' : 'text-black' : 'text-black'
                       ]"
                   >
                     <p>{{ item.title }}</p>
@@ -271,7 +271,7 @@ onMounted(() => {
                 <v-icon
                     icon="mdi-heart"
                     size="32px"
-                    :color="($route.path === '/' || $route.params.category === 'televizory') ? !isScrolledPastBanner ? 'grey' : 'grey' : 'grey'"
+                    :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? !isScrolledPastBanner ? 'grey' : 'grey' : 'grey'"
                 />
                 <div class="header-favorite-count-bg">
                   <p class="header-favorite-count text-caption">0</p>
@@ -317,7 +317,7 @@ onMounted(() => {
         </v-col>
       </v-row>
       <v-divider
-          :color="($route.path === '/' || $route.params.category === 'televizory') ? !isScrolledPastBanner ? 'white' : 'black' : 'black'"
+          :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? !isScrolledPastBanner ? 'white' : 'black' : 'black'"
           class="mt-4"
           v-if="!isScrolledPastBanner"
       />

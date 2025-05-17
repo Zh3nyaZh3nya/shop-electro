@@ -6,15 +6,14 @@ import { defineEventHandler, createError } from "h3"
 
 export default defineEventHandler(async (event) => {
     try {
-        const { category, subcategory, id } = event.context.params as {
+        const { category, subcategory, slug } = event.context.params as {
             category: string
             subcategory: string
-            id: string
+            slug: string
         }
 
-        const numericId = parseInt(id)
-        if (isNaN(numericId)) {
-            throw new Error('Некорректный ID')
+        if (!slug) {
+            throw new Error('Некорректный slug')
         }
 
         // @ts-ignore
@@ -32,7 +31,7 @@ export default defineEventHandler(async (event) => {
 
             const found = products.find(
                 (p: any) =>
-                    p.id === numericId &&
+                    p.slug === slug &&
                     p.category?.value === category &&
                     p.subcategory?.value === subcategory &&
                     p.active

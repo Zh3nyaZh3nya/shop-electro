@@ -4,25 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add breadcrumbs &amp; small fixes">
-      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/filters.get.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/index.get.ts" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: catalog for category and subcategories, new methods api">
+      <change afterPath="$PROJECT_DIR$/frontend/components/UI/SliderDouble.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/catalog-televizory.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/catalog-televizory.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Fields/Editor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/Editor.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Fields/Select.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/Select.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Filters.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Filters.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Slider.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UI/SliderImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/SliderImage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/index.get.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/[id].get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/[slug].get.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="Vue Composition API Component" />
         <option value="TypeScript File" />
+        <option value="Vue Composition API Component" />
       </list>
     </option>
   </component>
@@ -138,6 +126,7 @@
       <workItem from="1747387587673" duration="26000" />
       <workItem from="1747400844910" duration="3862000" />
       <workItem from="1747419795256" duration="5045000" />
+      <workItem from="1747508868080" duration="9034000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -355,7 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747305206331</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feat: catalog for category and subcategories, new methods api">
+      <option name="closed" value="true" />
+      <created>1747509221347</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1747509221347</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,8 +381,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add notifications, global styles for admin, edit data &amp; small fixes" />
-    <MESSAGE value="feat: add remove item" />
     <MESSAGE value="feat: add remove select item" />
     <MESSAGE value="feat: add search" />
     <MESSAGE value="feat: add search for table" />
@@ -409,6 +404,8 @@
     <MESSAGE value="feat: add filters" />
     <MESSAGE value="fix: color in header" />
     <MESSAGE value="feat: add breadcrumbs &amp; small fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add breadcrumbs &amp; small fixes" />
+    <MESSAGE value="feat: catalog for category and subcategories" />
+    <MESSAGE value="feat: catalog for category and subcategories, new methods api" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: catalog for category and subcategories, new methods api" />
   </component>
 </project>
