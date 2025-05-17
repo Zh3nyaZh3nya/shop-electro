@@ -31,7 +31,6 @@ function handleSelect(value: string) {
     if (sub) {
       emit('update:modelValue', { category: cat, subcategory: sub })
       selected.value = sub.value
-      // Закрыть меню вручную
       selectRef.value?.blur?.()
       return
     }

@@ -30,7 +30,8 @@ const menuSecond: { title: string, link: string }[] = [
 </script>
 
 <template>
-  <v-footer color="grey-light-2">
+  <v-footer class="d-flex flex-column pt-0 px-0" color="grey-light-4">
+    <v-divider class="w-100"></v-divider>
     <v-container class="px-10 pt-10 py-16 py-md-10 ">
       <v-row>
         <v-col

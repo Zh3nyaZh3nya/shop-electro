@@ -141,6 +141,9 @@ defineExpose({ validate })
   border: 1px solid rgb(var(--v-theme-admin-grey-light-2));
   border-top: none;
   margin-top: -2px;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
   &-error {
     border: 1px solid rgb(var(--v-theme-error))
   }

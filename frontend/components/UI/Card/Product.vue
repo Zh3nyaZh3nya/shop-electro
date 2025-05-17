@@ -10,6 +10,7 @@ const { data, is_main } = defineProps<{
     elevation="1"
     rounded="lg"
     class="pa-2 card-product h-100 w-100 position-relative d-flex flex-column align-start justify-start"
+    v-if="data"
   >
     <v-chip
         rounded="lg"
@@ -21,24 +22,25 @@ const { data, is_main } = defineProps<{
     >
       Рассрочка
     </v-chip>
+    <div v-else style="height: 105px"></div>
     <UISliderImage
       :images="data.preview_images"
       :is_main="is_main"
     />
     <div class="d-flex flex-column h-100 mt-4 px-2">
       <div>
-        <p class="text-caption text-grey mb-2">{{ data.reviews.length }} отзывов</p>
-        <nuxt-link :to="`/catalog/${data.category.value}/${data.subcategory.value}/${data.slug}`" class="link-hover">
+        <p class="text-caption text-grey mb-2">{{ data?.reviews?.length }} отзывов</p>
+        <nuxt-link :to="`/catalog/${data?.category?.value}/${data?.subcategory?.value}/${data.slug}`" class="link-hover">
           <p class="text-body-1 font-weight-medium mb-2">{{ data.title }}</p>
         </nuxt-link>
       </div>
 
       <div v-if="!data.discount" class="mt-auto">
-        <p class="text-h5 font-weight-bold">{{ data.price.toLocaleString('ru-RU') }} ₸</p>
+        <p class="text-h5 font-weight-bold">{{ data?.price?.toLocaleString('ru-RU') }} ₸</p>
       </div>
       <div v-else class="mt-auto">
         <div class="text-body-2 d-flex ga-2">
-          <p class="text-line">{{ data.price.toLocaleString('ru-RU') }} ₸</p>
+          <p class="text-line">{{ data?.price?.toLocaleString('ru-RU') }} ₸</p>
           <label class="bg-red px-1 rounded text-caption">-{{ data.discount_percent }}%</label>
         </div>
         <p class="text-h5 font-weight-bold text-red">{{ Math.floor(data.price - (data.price / data.discount_percent)).toLocaleString('ru-RU') }} ₸</p>

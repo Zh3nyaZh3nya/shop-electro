@@ -1,17 +1,39 @@
 <script setup lang="ts">
 import { ref, watch, watchEffect, computed } from "vue";
 import { useDisplay } from "vuetify";
+import debounce from 'lodash-es/debounce'
 
 const { mdAndUp } = useDisplay()
 
-const isInstallment = ref<boolean>(false)
-const isDiscount = ref<boolean>(false)
-const isCount = ref<boolean>(false)
-const prices = [79990, 2200990]
-const rangePrice = ref<number[]>([...prices])
+const props = defineProps<{
+  minPrice: number
+  maxPrice: number
+  modelValue: {
+    installment: boolean
+    discount: boolean
+    inStock: boolean
+    priceRange: [number, number]
+  }
+}>()
 
-const rawFromPrice = ref<number>(prices[0])
-const rawToPrice = ref<number>(prices[1])
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: {
+    installment: boolean
+    discount: boolean
+    inStock: boolean
+    priceRange: [number, number]
+  }): void
+}>()
+
+const isInstallment = ref<boolean>(props.modelValue.installment)
+const isDiscount = ref<boolean>(props.modelValue.discount)
+const isCount = ref<boolean>(props.modelValue.inStock)
+
+const prices = [props.minPrice, props.maxPrice]
+const rangePrice = ref<number[]>([...props.modelValue.priceRange])
+
+const rawFromPrice = ref<number>(rangePrice.value[0])
+const rawToPrice = ref<number>(rangePrice.value[1])
 
 function formatNumberWithSpaces(val: number): string {
   return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')
@@ -60,6 +82,14 @@ function onTypeTo(e: Event) {
   }
 }
 
+function resetFilters() {
+  isInstallment.value = false
+  isDiscount.value = false
+  isCount.value = false
+  rawFromPrice.value = prices[0]
+  rawToPrice.value = prices[1]
+}
+
 watchEffect(() => {
   rangePrice.value = [rawFromPrice.value, rawToPrice.value]
 })
@@ -68,13 +98,26 @@ watch(rangePrice, (val) => {
   rawFromPrice.value = val[0]
   rawToPrice.value = val[1]
 })
+
+const debouncedEmit = debounce(() => {
+  emit('update:modelValue', {
+    installment: isInstallment.value,
+    discount: isDiscount.value,
+    inStock: isCount.value,
+    priceRange: [...rangePrice.value] as [number, number],
+  })
+}, 300)
+
+watch([isInstallment, isDiscount, isCount, rangePrice], () => {
+  debouncedEmit()
+})
 </script>
 
 <template>
   <v-navigation-drawer
       class="position-relative filters"
       style="height: 100%; top: 0;"
-      :style="{transform: mdAndUp ? 'translateX(0px);' : 'translateX(-325px);'}"
+      :style="{transform: !mdAndUp ? 'translateX(0px);' : 'translateX(-325px);'}"
       width="325"
       color="grey-light-4"
   >
@@ -90,6 +133,7 @@ watch(rangePrice, (val) => {
               class="px-0"
               min-width="0"
               color="primary"
+              @click="resetFilters"
           >
             Сбросить
           </v-btn>
@@ -187,7 +231,7 @@ watch(rangePrice, (val) => {
             v-model="rangePrice"
             :min="prices[0]"
             :max="prices[1]"
-            :step="50000"
+            :step="5"
             hide-details
             color="primary"
             class="slider-range"

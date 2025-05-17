@@ -34,7 +34,8 @@ const { data: enumsData, pending: enumsDataPending, error: enumsDataError } = aw
           credentials: 'include',
         })
 
-        return dataFetch?.value?.items.filter(item => item.value === route.params.page)
+
+        return dataFetch?.value?.items.filter(item => item.value === String(route.params.page).replace('catalog-', ''))
       }
 
       return []

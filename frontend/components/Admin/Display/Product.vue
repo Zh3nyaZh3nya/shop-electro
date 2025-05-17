@@ -88,12 +88,15 @@ const empty = ref()
 async function submitForm() {
   const { valid } = await formRef.value?.validate?.() ?? { valid: true }
   if (
-      !valid &&
       !previewImages.value.length ||
       !images.value.length ||
       !specifications.value.length
   ) {
     empty.value = true
+    return
+  }
+
+  if (!valid) {
     return
   }
 

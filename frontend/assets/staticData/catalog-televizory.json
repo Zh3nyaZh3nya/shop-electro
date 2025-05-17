@@ -424,5 +424,104 @@
       "/storage/televizory/izobrazhenie2025-05-12213146887-1747067606128-1747067607758.webp"
     ],
     "reviews": []
+  },
+  {
+    "id": 5,
+    "title": "Телевизор Haier 55 OLED S9",
+    "slug": "televizor-haier-55-oled-s9",
+    "description": "<div><b>Телевизор Haier OLED S9</b></div><div>OLED-экран обеспечивает превосходное качество изображения с высоким контрастом, насыщенными цветами и широким углом обзора. Трехмерный звук с технологией Dolby Atmos и умные функции Smart TV — позволяют ощутить максимальный эффект погружения в происходящее на экране.</div><div><b>OLED-экран — премиальное качество изображения</b></div><div>Экраны OLED — это глубокий черный цвет, абсолютная яркость, бесконечная контрастность. Принцип их работы заключается в наличии независимой подсветки для каждого пикселя. Это означает, что каждый пиксель может отключаться самостоятельно, независимо от других, чтобы передать максимально глубокий черный цвет.</div><div><b>Безрамочный экран</b></div><div>Ощутите максимальный эффект погружения в происходящее на экране. Безрамочный дизайн делает телевизор более аккуратным и изящным, расширяя визуальный диапазон и привнося в вашу жизнь захватывающие впечатления от просмотра.</div><div><b>100% точность цветопередачи</b></div><div>OLED-экран обеспечивает непревзойденную точность цветов.&nbsp;<span style=\"color: inherit; font-size: inherit;\">От самых темных ночных сцен до ярких кадров — цвета остаются яркими и реалистичными. Все, что вы видите на экране, выглядит именно так, как задумал автор.</span></div>",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 549990,
+    "rating": 0,
+    "delivery": true,
+    "count": 1,
+    "category": {
+      "id": 1,
+      "key": "TELEVIZORY",
+      "value": "televizory",
+      "label": "Телевизоры",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/test-1746621791696-1746621792021.webp"
+    },
+    "subcategory": {
+      "id": 1746622078524,
+      "key": "OLED",
+      "value": "oled",
+      "label": "OLED",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Параметры дисплея",
+        "specification": [
+          {
+            "title": "Диагональ экрана",
+            "description": "55″"
+          },
+          {
+            "title": "Технология экрана",
+            "description": "OLED"
+          },
+          {
+            "title": "Время отклика (мс)",
+            "description": "8"
+          },
+          {
+            "title": "Соотношение сторон",
+            "description": "16:9"
+          },
+          {
+            "title": "Контрастность",
+            "description": "135000:1"
+          },
+          {
+            "title": "Тип подсветки",
+            "description": "OLED"
+          },
+          {
+            "title": "Частота обновления (Гц)",
+            "description": "60"
+          },
+          {
+            "title": "Яркость (кд/м²)",
+            "description": "800"
+          },
+          {
+            "title": "Угол обзора °",
+            "description": "178/178"
+          },
+          {
+            "title": "Разрешение",
+            "description": "4K UHD 3840 х 2160"
+          }
+        ]
+      }
+    ],
+    "installment": false,
+    "active": true,
+    "for_main_page": false,
+    "preview_images": [
+      "/storage/catalog-televizory/izobrazhenie2025-05-17002942384-1747424128119-1747424128462.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003111583-1747424128120-1747424128560.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003125855-1747424128120-1747424128611.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003142422-1747424128120-1747424128656.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003154798-1747424128120-1747424128712.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003211476-1747424128120-1747424128754.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003248752-1747424128121-1747424128789.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003305088-1747424128121-1747424128887.webp"
+    ],
+    "images": [
+      "/storage/catalog-televizory/izobrazhenie2025-05-17002945304-1747424128121-1747424128988.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003116087-1747424128121-1747424129065.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003127805-1747424128121-1747424129117.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003143927-1747424128121-1747424129164.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003157275-1747424128122-1747424129218.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003209457-1747424128122-1747424129264.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003250810-1747424128122-1747424129302.webp",
+      "/storage/catalog-televizory/izobrazhenie2025-05-17003302742-1747424128122-1747424129396.webp"
+    ],
+    "reviews": []
   }
 ]

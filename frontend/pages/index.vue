@@ -83,7 +83,7 @@ const { data: techData, pending: techDataPending } = await useAsyncData('main-pa
       class="align-center justify-center"
   >
     <v-progress-circular
-        color="admin-primary"
+        color="primary"
         size="64"
         indeterminate
     ></v-progress-circular>
@@ -115,6 +115,7 @@ const { data: techData, pending: techDataPending } = await useAsyncData('main-pa
             spaceBetween: 20
           }
         }"
+        :slider-id="'category-main'"
       >
         <template #default="{ slide, index }">
           <v-card
@@ -140,6 +141,7 @@ const { data: techData, pending: techDataPending } = await useAsyncData('main-pa
           :per-view="1.2"
           :space-between="5"
           :pagination="true"
+          :slider-id="'category-offers'"
       >
         <template #default="{ slide, index }">
           <div class="position-relative h-100 w-100">
@@ -177,7 +179,7 @@ const { data: techData, pending: techDataPending } = await useAsyncData('main-pa
           :per-view="5"
           :space-between="15"
           :pagination="true"
-          key="catalog"
+          :slider-id="'category-offers'"
       >
         <template #default="{ slide, index }">
           <UICardProduct
@@ -228,7 +230,7 @@ const { data: techData, pending: techDataPending } = await useAsyncData('main-pa
           :space-between="15"
           :pagination="true"
           :loop="true"
-          key="tech"
+          :slider-id="'category-tech'"
       >
         <template #default="{ slide, index }">
           <v-card

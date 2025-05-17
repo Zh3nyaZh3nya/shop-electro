@@ -7,13 +7,14 @@ import 'swiper/css/pagination';
 
 const {
   slides,
-  perView = 4,
+  perView = 1,
   mobilePerView = 1.1,
   overflowHidden = false,
   spaceBetween = 40,
   breakpoints,
   loop,
-  pagination
+  pagination,
+  sliderId = 'default'
 } = defineProps<{
   slides:
       IBannerOnlyImage[] |
@@ -33,6 +34,7 @@ const {
       spaceBetween: number
     }
   }
+  sliderId?: number | string
 }>()
 </script>
 
@@ -43,7 +45,7 @@ const {
         :slides-per-view="mobilePerView"
         :modules="[Autoplay, EffectCreative, Navigation, Pagination]"
         :pagination="pagination ? {
-          el: '.custom-swiper-pagination',
+          el: `.custom-swiper-pagination-${sliderId}`,
           clickable: true,
           renderBullet: (index, className) => {
             const total = slides.length + (loop ? 1 : 0)
@@ -65,8 +67,8 @@ const {
         :space-between="spaceBetween"
         :loop="loop"
         :navigation="{
-          nextEl: '.UI-Slider__swiper-nav-el-next',
-          prevEl: '.UI-Slider__swiper-nav-el-prev',
+          nextEl: `.swiper-button-next-${sliderId}`,
+          prevEl: `.swiper-button-prev-${sliderId}`,
         }"
         :creative-effect="{
           prev: {
@@ -91,7 +93,7 @@ const {
           class="UI-Slider__swiper-nav-container d-flex"
       >
         <div class="UI-Slider__swiper-nav w-100">
-          <div class="UI-Slider__swiper-nav-el-prev UI-Slider__swiper-nav-el">
+          <div :class="`swiper-button-prev-${sliderId} UI-Slider__swiper-nav-el UI-Slider__swiper-nav-el-prev`">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8"
@@ -108,7 +110,7 @@ const {
               />
             </svg>
           </div>
-          <div class="UI-Slider__swiper-nav-el-next UI-Slider__swiper-nav-el">
+          <div :class="`swiper-button-next-${sliderId} UI-Slider__swiper-nav-el UI-Slider__swiper-nav-el-next`">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="8"
@@ -128,7 +130,7 @@ const {
         </div>
       </v-container>
 
-      <div class="custom-swiper-pagination d-flex justify-center mt-4" />
+      <div :class="`custom-swiper-pagination-${sliderId} custom-swiper-pagination d-flex justify-center mt-4`" />
     </swiper>
   </client-only>
 </template>

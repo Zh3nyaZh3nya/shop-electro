@@ -51,7 +51,7 @@ function scrollTo(index: number) {
       </swiper-slide>
     </swiper>
 
-    <div class="card-swiper-images-pagination" v-if="images.length > 1">
+    <div class="card-swiper-images-pagination" v-if="images?.length > 1">
       <div
           v-for="(slide, index) in images"
           :key="'pag-' + index"

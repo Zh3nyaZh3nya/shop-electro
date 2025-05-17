@@ -30,7 +30,7 @@ const { data: categoriesData, pending: categoriesDataPending } = await useAsyncD
   return categories.value.find(item => item.value === route.params.category) || []
 })
 
-const crumbs: IBreadcrumbs = [
+const crumbs: IBreadcrumbs[] = [
   {
     title: 'Главная',
     href: '/',
@@ -42,7 +42,7 @@ const crumbs: IBreadcrumbs = [
     disabled: false,
   },
   {
-    title: categoriesData.value.label,
+    title: categoriesData?.value?.label || [],
     href: '/',
     disabled: true,
   }
@@ -56,7 +56,7 @@ const crumbs: IBreadcrumbs = [
       class="align-center justify-center"
   >
     <v-progress-circular
-        color="admin-primary"
+        color="primary"
         size="64"
         indeterminate
     ></v-progress-circular>
@@ -64,13 +64,15 @@ const crumbs: IBreadcrumbs = [
   <section v-if="$route.params.category === 'televizory'">
     <UIBanner :slides="banner" />
   </section>
-  <v-main class="pl-0" :class="$route.params.category === 'televizory' ? 'pt-0' : ''">
-    <v-container>
-      <UIBreadcrumbs :crumbs="crumbs" />
-      <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory'">{{ categoriesData.label }}</h1>
-    </v-container>
+  <v-main class="pl-0 pt-0">
+    <section>
+      <v-container>
+        <UIBreadcrumbs :crumbs="crumbs" />
+        <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory'">{{ categoriesData?.label || 'Категория' }}</h1>
+      </v-container>
+    </section>
   </v-main>
-  <section class="d-flex position-relative">
+  <section class="d-flex position-relative" v-if="categoriesData && categoriesData.subcategories && productsData && productsData?.data?.length && productsData?.meta">
     <v-navigation-drawer
         class="position-relative filters"
         style="height: 100%; top: 0;"
@@ -79,7 +81,7 @@ const crumbs: IBreadcrumbs = [
         color="grey-light-4"
     >
       <v-container>
-        <div class="mb-2">
+        <div>
           <nuxt-link to="/catalog" class="d-flex align-center text-body-1 text-primary">
             <v-icon icon="mdi-chevron-left" size="18" />
             <p>Весь каталог</p>
@@ -105,9 +107,9 @@ const crumbs: IBreadcrumbs = [
       </v-container>
     </v-navigation-drawer>
     <div class="d-flex flex-grow-1" style="min-width: 0">
-      <v-container v-if="productsData && productsData?.data?.length">
+      <v-container>
         <div class="d-flex justify-space-between mb-4">
-          <p class="text-body-2 text-grey">Найдено {{ productsData.meta.total }} товара</p>
+          <p class="text-body-2 text-grey">Найдено {{ productsData?.meta.total }} товара</p>
         </div>
         <v-row>
           <v-col
@@ -123,8 +125,33 @@ const crumbs: IBreadcrumbs = [
               </nuxt-link>
             </div>
 
+            <v-divider class="my-4"></v-divider>
+
             <UISlider
                 :slides="productsData.data.filter(p => p.subcategory.value === sub.value)"
+                :per-view="4"
+                :breakpoints="{
+                  0: {
+                    slidesPerView: 1,
+                    spaceBetween: 15
+                  },
+                  760: {
+                    slidesPerView: 2,
+                    spaceBetween: 15
+                  },
+                  960: {
+                    slidesPerView: 3,
+                    spaceBetween: 15
+                  },
+                  1400: {
+                    slidesPerView: 4,
+                    spaceBetween: 15
+                  },
+                  1700: {
+                    slidesPerView: 5,
+                    spaceBetween: 15
+                  },
+                }"
             >
               <template #default="{ slide, index }">
                 <UICardProduct :data="slide" />
