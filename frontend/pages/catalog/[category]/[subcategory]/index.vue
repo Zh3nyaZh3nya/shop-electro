@@ -105,7 +105,7 @@ watch(filters, () => {
   <section v-if="$route.params.category === 'televizory'">
     <UIBanner :slides="banner" />
   </section>
-  <v-main class="pl-0 pt-0">
+  <v-main  class="pl-0" :class="$route.params.category === 'televizory' ? 'pt-0' : ''">
     <section>
       <v-container>
         <UIBreadcrumbs :crumbs="crumbs" />
@@ -161,11 +161,18 @@ watch(filters, () => {
       </v-container>
 
     </div>
-    <v-container class="text-center py-10" v-else>
-      <v-icon size="48" color="grey">mdi-package-variant-remove</v-icon>
-      <p class="text-h6 mt-4">Товары не найдены</p>
-      <p class="text-body-2 text-grey-darken-1">Попробуйте изменить параметры фильтрации</p>
-    </v-container>
+    <div
+        v-else
+        class="d-flex flex-grow-1"
+        style="min-width: 0"
+    >
+      <v-container class="text-center py-10" >
+        <v-icon size="48" color="grey">mdi-package-variant-remove</v-icon>
+        <p class="text-h6 mt-4">Товары не найдены</p>
+        <p class="text-body-2 text-grey-darken-1">Попробуйте изменить параметры фильтрации</p>
+      </v-container>
+    </div>
+
   </section>
 
 </template>

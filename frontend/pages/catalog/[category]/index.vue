@@ -64,7 +64,7 @@ const crumbs: IBreadcrumbs[] = [
   <section v-if="$route.params.category === 'televizory'">
     <UIBanner :slides="banner" />
   </section>
-  <v-main class="pl-0 pt-0">
+  <v-main class="pl-0" :class="$route.params.category === 'televizory' ? 'pt-0' : ''">
     <section>
       <v-container>
         <UIBreadcrumbs :crumbs="crumbs" />

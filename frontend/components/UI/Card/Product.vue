@@ -29,9 +29,9 @@ const { data, is_main } = defineProps<{
     />
     <div class="d-flex flex-column h-100 mt-4 px-2">
       <div>
-        <p class="text-caption text-grey mb-2">{{ data?.reviews?.length }} отзывов</p>
+<!--        <p class="text-caption text-grey mb-2">{{ data?.reviews?.length }} отзывов</p>-->
         <nuxt-link :to="`/catalog/${data?.category?.value}/${data?.subcategory?.value}/${data.slug}`" class="link-hover">
-          <p class="text-body-1 font-weight-medium mb-2">{{ data.title }}</p>
+          <p class="text-body-1 font-weight-medium my-2">{{ data.title }}</p>
         </nuxt-link>
       </div>
 

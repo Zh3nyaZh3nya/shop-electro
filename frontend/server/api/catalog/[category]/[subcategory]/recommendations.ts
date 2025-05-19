@@ -2,9 +2,12 @@
 import fs from 'fs/promises'
 // @ts-ignore
 import path from 'path'
-import { defineEventHandler } from 'h3'
+import { defineEventHandler, getQuery } from 'h3'
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
+    const query = getQuery(event)
+    const currentProductId = parseInt(query.id as string)
+
     const dirPath = path.resolve('assets/staticData')
     const files = await fs.readdir(dirPath)
 
@@ -23,8 +26,27 @@ export default defineEventHandler(async () => {
         }
     }
 
-    const filtered = allProducts
-        .filter(p => p.active && p.for_main_page)
+    const activeProducts = allProducts.filter(p => p.active)
+
+    const currentProduct = activeProducts.find(p => p.id === currentProductId)
+    if (!currentProduct) {
+        return { data: [] }
+    }
+
+    // Критерии подбора
+    const { category, subcategory, price } = currentProduct
+    const minPrice = price * 0.5
+    const maxPrice = price * 3
+
+    const recommended = activeProducts
+        .filter(p =>
+            Number(p.id) !== Number(currentProductId) &&
+            p.subcategory?.value === subcategory?.value &&
+            p.active &&
+            p.price >= minPrice &&
+            p.price <= maxPrice
+        )
+        .slice(0, 10)
         .map(item => ({
             id: item.id,
             title: item.title,
@@ -40,5 +62,5 @@ export default defineEventHandler(async () => {
             installment: item.installment,
         }))
 
-    return filtered
+    return { data: recommended }
 })

@@ -74,17 +74,17 @@ function changeCity(value: Cities) {
   selectCity.value = value
 }
 
-onMounted(() => {
-  const handleScroll = () => {
-    isScrolledPastBanner.value = window.scrollY > 1
-  }
+const handleScroll = () => {
+  isScrolledPastBanner.value = window.scrollY > 1
+}
 
+onMounted(() => {
   handleScroll()
   window.addEventListener('scroll', handleScroll)
+})
 
-  onUnmounted(() => {
-    window.removeEventListener('scroll', handleScroll)
-  })
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 

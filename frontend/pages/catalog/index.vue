@@ -106,7 +106,7 @@ const crumbs: IBreadcrumbs[] = [
               cols="12"
           >
             <div class="d-flex justify-space-between align-center">
-              <p class="text-h5">{{ category.label }}</p>
+              <p class="text-h5 font-weight-bold">{{ category.label }}</p>
               <nuxt-link class="d-flex align-center text-primary text-h6" :to="`/catalog/${category.value}`">
                 Перейти в категорию
                 <v-icon icon="mdi-chevron-right" size="20" class="d-inline-block" />

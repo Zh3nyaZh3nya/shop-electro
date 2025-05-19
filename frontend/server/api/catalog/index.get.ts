@@ -36,7 +36,7 @@ export default defineEventHandler(async (event) => {
             category: item.category,
             subcategory: item.subcategory,
             preview_images: item.preview_images,
-            reviews: item.reviews,
+            // reviews: item.reviews,
             installment: item.installment,
         }))
 

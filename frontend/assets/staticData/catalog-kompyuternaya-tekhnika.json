@@ -451,5 +451,143 @@
       "/storage/kompyuternaya-tekhnika/izobrazhenie2025-05-12215535692-1747069017443-1747069018674.webp"
     ],
     "reviews": []
+  },
+  {
+    "id": 5,
+    "title": " Игровой компьютер Thunderobot Black Warrior IV Max 7",
+    "slug": "igrovoy-kompyuter-thunderobot-black-warrior-iv-max-7",
+    "description": "<b>Быстрый SSD — 1 ТБ</b><div>Скорость работы диска по NVMe (PCI-e) — до 2000 МБ/c</div><div><br></div><div><b>Мощь без ограничений и проводов</b></div><div>Беспроводное подключение к Интернету с помощью технологии следующего поколения WiFi-6.</div><div><br></div><div><b>Блок питания 750 Вт</b></div><div>Оптимальная мощность блока питания для эффективной работы рекордно мощной видеокарты, производительного процессора и периферийных устройств.</div><div><br></div><div><b>Материнская платаASRock® B660M-HDV</b></div><div>— Дроссели питания «Premium»</div><div>— Печатная плата Sapphire Black</div><div>— ASRock Full Spike Protection (для всех разъёмов USB, Audio и LAN)</div><div>— ASRock Hyper M.2 (PCIe Gen4×4)</div><div>— Поддержка 12-го поколения Intel® Core™ (LGA1700)</div><div>— 6 фаз питания</div><div>— Чипсет Intel® B660</div><div>— Двухканальная память DDR4</div><div>— Максимальный объем памяти: 64 GB</div><div><br></div><div><b>32 GB оперативной памяти DDR4 c RGB-подсветкой</b></div><div>Двухканальная высокочастотная память 32 GB DDR4 3200 МГц</div><div><br></div><div><b>Сменная панель«Flex Front»</b></div><div>Новый стиль за считанные секунды — передняя панель легко снимается для моддинга или очистки поверхности.</div><div><br></div><div><b>Платформа Black Warrior IV</b></div><div>Ваша новая боевая станция. Это практичный корпус с высокотехнологичным дизайном, панорамной боковой панелью из закаленного стекла и одноцветной Ambient-подсветкой. В нем есть все необходимое для установки любых компонентов, будь то SSD/HDD или вертикальная GPU любого размера.</div><div><b>Встроенная беспроводнаяQi-зарядка</b></div><div>Инновационная беспроводная зарядка встроена в верхнюю панель системного блока. Подходит для цифровых устройств, таких как мобильные телефоны/цифровые камеры/мыши/наушники, которые поддерживают зарядку по стандарту Qi.</div><div><b>Логотип Thunderobot — кнопка включения с подсветкой</b></div><div>Нажмите на логотип для квантового скачка в захватывающий многомерный игровой мир.</div><div><b>Подсветка корпуса«‎Ambient Mobius»</b></div><div>Неоновая подсветка в знаковых цветах Thunderobot для создания уникальной атмосферы вашего игрового места.</div>",
+    "discount": false,
+    "discount_percent": 0,
+    "price": 699990,
+    "rating": 0,
+    "delivery": true,
+    "count": 10,
+    "category": {
+      "id": 2,
+      "key": "KOMPYUTERNAYA-TEKHNIKA",
+      "value": "kompyuternaya-tekhnika",
+      "label": "Компьютерная техника",
+      "active": true,
+      "for_main_page": true,
+      "image": "/storage/categories/kompyuternaya-tekhnika-1746623203120-1746623203429.webp"
+    },
+    "subcategory": {
+      "id": 1746623121751,
+      "key": "IGROVYE-KOMPYUTERY",
+      "value": "igrovye-kompyutery",
+      "label": "Игровые компьютеры",
+      "active": true
+    },
+    "specifications": [
+      {
+        "title": "Габариты",
+        "specification": [
+          {
+            "title": "Ширина, см",
+            "description": "21"
+          },
+          {
+            "title": "Габаритные размеры (В x Ш x Г), см",
+            "description": "51.2 x 21 x 52.2"
+          },
+          {
+            "title": "Высота, см",
+            "description": "51.2"
+          },
+          {
+            "title": "Глубина, см",
+            "description": "52.2"
+          },
+          {
+            "title": "Габаритные размеры упаковки (В x Ш x Г), см",
+            "description": "62 x 35 x 63.5"
+          }
+        ]
+      },
+      {
+        "title": "Процессор",
+        "specification": [
+          {
+            "title": "Количество потоков",
+            "description": "20"
+          },
+          {
+            "title": "Максимальная тактовая частота",
+            "description": "4.9 ГГц"
+          },
+          {
+            "title": "Кэш-память",
+            "description": "25 МБ"
+          },
+          {
+            "title": "Сокет",
+            "description": "LGA1700"
+          },
+          {
+            "title": "Семейство процессоров",
+            "description": "Intel Core i7"
+          },
+          {
+            "title": "Процессор",
+            "description": " Intel Core i7 12700"
+          },
+          {
+            "title": "Базовая тактовая частота ядра Performance-core",
+            "description": "2.1 ГГц"
+          },
+          {
+            "title": "Охлаждение процессора",
+            "description": "Водяное AIO 240 мм с RGB"
+          },
+          {
+            "title": "Количество ядер",
+            "description": "12 (8P+4E)"
+          }
+        ]
+      },
+      {
+        "title": "Память",
+        "specification": [
+          {
+            "title": "Частота оперативной памяти",
+            "description": "3200 МГц"
+          }
+        ]
+      },
+      {
+        "title": "Жесткий диск",
+        "specification": [
+          {
+            "title": "Объем HDD",
+            "description": "Нет"
+          },
+          {
+            "title": "Общий объём накопителя SSD",
+            "description": "1 ТБ"
+          }
+        ]
+      }
+    ],
+    "installment": true,
+    "active": true,
+    "for_main_page": true,
+    "preview_images": [
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234557135-1747680664257-1747680664652.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234613438-1747680664258-1747680664759.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234629242-1747680664258-1747680664849.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234645331-1747680664258-1747680664926.webp"
+    ],
+    "images": [
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234559100-1747680664258-1747680664988.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234611758-1747680664258-1747680665100.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234630805-1747680664259-1747680665189.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234642966-1747680664259-1747680665267.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234659258-1747680664259-1747680665328.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234715860-1747680664259-1747680665506.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234729347-1747680664259-1747680665711.webp",
+      "/storage/catalog-kompyuternaya-tekhnika/izobrazhenie2025-05-19234748868-1747680664260-1747680665833.webp"
+    ],
+    "reviews": []
   }
 ]

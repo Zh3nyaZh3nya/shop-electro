@@ -13,6 +13,12 @@ const { data: productsData, pending: productsDataPending } = await useAsyncData(
   return dataFetch?.value
 })
 
+const { data: recomData, pending: recomDataPending } = await useAsyncData(`recom-data-slug`, async () => {
+  const { data: dataFetch } = await useApi<IProduct[]>(`/catalog/${route.params.category}/${route.params.subcategory}/recommendations?id=${productsData?.value?.id}`)
+
+  return dataFetch?.value?.data || []
+})
+
 const { data: categoriesData, pending: categoriesDataPending } = await useAsyncData('categories-data', async () => {
   await store.fetchCategories()
   const { categories } = storeToRefs(store)
@@ -54,7 +60,7 @@ const crumbs: IBreadcrumbs[] = [
 
 <template>
   <v-overlay
-      :model-value="productsDataPending || categoriesDataPending"
+      :model-value="productsDataPending || categoriesDataPending || recomDataPending"
       class="align-center justify-center"
   >
     <v-progress-circular
@@ -82,10 +88,10 @@ const crumbs: IBreadcrumbs[] = [
             </v-chip>
           </div>
           <div class="d-flex align-center ga-4">
-            <div>
-              <p v-if="productsData.reviews.length" class="text-body-2 text-grey">{{ productsData.reviews.length }}</p>
-              <p class="text-body-2 text-grey">Пока нет отзывов</p>
-            </div>
+<!--            <div>-->
+<!--              <p v-if="productsData.reviews.length" class="text-body-2 text-grey">{{ productsData.reviews.length }}</p>-->
+<!--              <p class="text-body-2 text-grey">Пока нет отзывов</p>-->
+<!--            </div>-->
             <div>
               <v-btn
                 elevation="0"
@@ -214,10 +220,9 @@ const crumbs: IBreadcrumbs[] = [
           >
             <v-tab value="desc" class="text-h6">Подробнее о модели</v-tab>
             <v-tab value="specifications" class="text-h6">Характеристики</v-tab>
-            <v-tab value="reviews" class="text-h6">Отзывы</v-tab>
+<!--            <v-tab value="reviews" class="text-h6">Отзывы</v-tab>-->
           </v-tabs>
         </v-container>
-
 
         <v-tabs-window v-model="tab">
           <v-tabs-window-item value="desc" class="py-4">
@@ -259,9 +264,50 @@ const crumbs: IBreadcrumbs[] = [
               </v-expansion-panels>
             </v-container>
           </v-tabs-window-item>
-          <v-tabs-window-item value="reviews"></v-tabs-window-item>
+<!--          <v-tabs-window-item value="reviews"></v-tabs-window-item>-->
         </v-tabs-window>
       </div>
+    </section>
+    <section>
+      <v-container>
+        <h2 class="text-h4 text-secondary font-weight-bold mb-4">Смотрите также</h2>
+        <UISlider
+            v-if="recomData && recomData.length"
+            :breakpoints="{
+                '375': {
+                  slidesPerView: 1.3,
+                  spaceBetween: 20
+                },
+                '475': {
+                  slidesPerView: 2.3,
+                  spaceBetween: 20
+                },
+                 '760': {
+                  slidesPerView: 3.3,
+                  spaceBetween: 20
+                },
+                '1100': {
+                  slidesPerView: 4.6,
+                  spaceBetween: 20
+                }
+            }"
+            :slider-id="1"
+            :slides="recomData"
+        >
+          <template #default="{slide, index}">
+            <UICardProduct
+                :data="slide"
+            />
+          </template>
+        </UISlider>
+        <div
+            v-else
+            class="d-flex justify-center align-center flex-column text-center my-4"
+        >
+          <p class="text-h5 font-weight-bold">Пока нет похожих товаров.</p>
+          <p class="text-body-1" style="max-width: 400px">Мы не нашли других товаров, соответствующих текущему предложению. Попробуйте посмотреть другие категории или воспользоваться поиском.</p>
+        </div>
+      </v-container>
     </section>
   </v-main>
 </template>
