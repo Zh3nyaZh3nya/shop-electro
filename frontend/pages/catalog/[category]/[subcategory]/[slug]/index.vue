@@ -94,11 +94,23 @@ const crumbs: IBreadcrumbs[] = [
 <!--            </div>-->
             <div>
               <v-btn
-                elevation="0"
+                  v-if="!store.favorites.find(p => p.id === productsData?.id)"
+                  elevation="0"
+                  @click="store.addProduct('favorite', productsData)"
               >
                 <div class="d-flex align-center ga-2">
                   <v-icon icon="mdi-heart" color="grey" size="18" />
                   <p class="text-body-1 text-light-primary">В избранное</p>
+                </div>
+              </v-btn>
+              <v-btn
+                  v-else
+                  elevation="0"
+                  @click="store.removeProduct('favorite', productsData.id)"
+              >
+                <div class="d-flex align-center ga-2">
+                  <v-icon icon="mdi-heart-broken" color="primary" size="18" />
+                  <p class="text-body-1 text-light-primary">В избранном</p>
                 </div>
               </v-btn>
             </div>
@@ -155,14 +167,28 @@ const crumbs: IBreadcrumbs[] = [
                   <p class="text-body-2">Доставим в любое удобное время!</p>
                 </div>
                 <v-btn
+                    v-if="!store.cart.find(p => p.id === productsData?.id)"
                     class="mt-4"
                     color="primary"
                     elevation="0"
                     size="x-large"
                     block
                     rounded="lg"
+                    @click="store.addProduct('cart', productsData)"
                 >
                   Добавить в корзину
+                </v-btn>
+                <v-btn
+                    v-else
+                    class="mt-4"
+                    color="red"
+                    elevation="0"
+                    size="x-large"
+                    block
+                    rounded="lg"
+                    @click="store.removeProduct('cart', productsData.id)"
+                >
+                  Удалить
                 </v-btn>
               </v-sheet>
               <v-row>

@@ -49,6 +49,7 @@ interface IProductCard {
     discount_percent: number,
     price: number,
     rating: number,
+    count_cart?: number
     category: {
         id: number
         key: string
@@ -68,11 +69,11 @@ interface IProductCard {
     preview_images: string[],
     reviews: [],
     installment: boolean
+    count: number
 }
 
 interface IProduct extends IProductCard {
     description: string
-    count: number
     delivery: boolean
     specifications: {
         title: string

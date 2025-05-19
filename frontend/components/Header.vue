@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import { useDisplay } from "vuetify";
+import {BaseItemProduct} from "./Admin/Display/Props";
+import Product from "./Admin/Display/Product.vue";
 
 interface IMenu {
   title: string,
@@ -18,6 +20,7 @@ interface Cities {
 }
 
 const { mdAndUp } = useDisplay()
+const { favorites, cart } = storeToRefs(useStore())
 
 const { cities } = defineProps<{
   cities: Cities[]
@@ -267,14 +270,14 @@ onUnmounted(() => {
           </div>
           <div class="d-flex align-center ga-4">
             <div>
-              <nuxt-link class="header-favorite link-hover cursor-pointer">
+              <nuxt-link to="/favorite" class="header-favorite link-hover cursor-pointer">
                 <v-icon
                     icon="mdi-heart"
                     size="32px"
                     :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? !isScrolledPastBanner ? 'grey' : 'grey' : 'grey'"
                 />
                 <div class="header-favorite-count-bg">
-                  <p class="header-favorite-count text-caption">0</p>
+                  <p class="header-favorite-count text-caption">{{ favorites.length }}</p>
                 </div>
               </nuxt-link>
             </div>
@@ -283,10 +286,17 @@ onUnmounted(() => {
                 class="bg-primary"
                 size="large"
                 rounded="lg"
+                to="/cart"
               >
-                <div class="d-flex align-center">
-                  <v-icon icon="mdi-cart" size="32px" />
-                  <p>0 ₸</p>
+                <div class="d-flex align-center ga-2">
+                  <v-icon icon="mdi-cart" size="24px" />
+                  <p class="text-body-2">
+                    {{
+                      cart.reduce((acc, i: IProductCard) => {
+                        return acc += i.price
+                      }, 0).toLocaleString('ru-RU')
+                    }} ₸
+                  </p>
                 </div>
               </v-btn>
             </div>

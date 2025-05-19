@@ -63,6 +63,21 @@ input[type=number] {
   }
 }
 
+.text-field-count {
+  --v-input-control-height: 40px !important;
+  --v-input-padding-top: 4px !important;
+  .v-field {
+    --v-field-padding-bottom: 4px !important;
+  }
+  .v-field__overlay {
+    background: rgb(var(--v-theme-grey-light-2));
+    border-radius: 4px;
+  }
+  .v-field__input {
+    text-align: center;
+  }
+}
+
 .lh-normal {
   line-height: normal !important;
 }
@@ -117,6 +132,10 @@ input[type=number] {
 
 .v-card {
   box-shadow: #0000000f 0 0 12px !important;
+}
+
+.v-card-not-shadow {
+  box-shadow: none !important;
 }
 
 .pointer-events-none {

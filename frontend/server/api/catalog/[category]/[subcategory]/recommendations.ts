@@ -36,15 +36,17 @@ export default defineEventHandler(async (event) => {
     // Критерии подбора
     const { category, subcategory, price } = currentProduct
     const minPrice = price * 0.5
-    const maxPrice = price * 3
+    const maxPrice = price * 2
 
     const recommended = activeProducts
         .filter(p =>
             Number(p.id) !== Number(currentProductId) &&
             p.subcategory?.value === subcategory?.value &&
             p.active &&
-            p.price >= minPrice &&
-            p.price <= maxPrice
+            (
+                p.price >= minPrice ||
+                p.price <= maxPrice
+            )
         )
         .slice(0, 10)
         .map(item => ({

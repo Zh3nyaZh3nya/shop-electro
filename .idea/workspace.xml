@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: catalog for category and subcategories, new methods api">
-      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/recommendations.ts" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add recommendations">
+      <change afterPath="$PROJECT_DIR$/frontend/components/UI/Card/Cart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/cart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/favorite.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/catalog-kompyuternaya-tekhnika.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/catalog-kompyuternaya-tekhnika.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/index.get.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/index.get.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/index.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/index.get.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/main.get.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/main.get.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/recommendations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/recommendations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/stores/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/stores/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +31,27 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="Vue Composition API Component" />
         <option value="TypeScript File" />
+        <option value="Vue Composition API Component" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Zh3nyaZh3nya"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="0a2ef860-8c3e-412f-a21e-6267c50fee25" />
+        <option name="url" value="https://github.com/Zh3nyaZh3nya/shop-electro.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -136,7 +148,7 @@
       <workItem from="1747508868080" duration="9034000" />
       <workItem from="1747631938491" duration="1851000" />
       <workItem from="1747663793195" duration="550000" />
-      <workItem from="1747678758219" duration="2808000" />
+      <workItem from="1747678758219" duration="10203000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -362,7 +374,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747509221347</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="feat: add recommendations">
+      <option name="closed" value="true" />
+      <created>1747681721793</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1747681721793</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +411,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add remove select item" />
     <MESSAGE value="feat: add search" />
     <MESSAGE value="feat: add search for table" />
     <MESSAGE value="feat: add create" />
@@ -416,6 +435,7 @@
     <MESSAGE value="feat: add breadcrumbs &amp; small fixes" />
     <MESSAGE value="feat: catalog for category and subcategories" />
     <MESSAGE value="feat: catalog for category and subcategories, new methods api" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: catalog for category and subcategories, new methods api" />
+    <MESSAGE value="feat: add recommendations" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add recommendations" />
   </component>
 </project>

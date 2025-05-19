@@ -1,4 +1,7 @@
 <script setup lang="ts">
+const { favorites, cart } = storeToRefs(useStore())
+const { addProduct, removeProduct } = useStore()
+
 const { data, is_main } = defineProps<{
   data: IProductCard,
   is_main?: boolean
@@ -49,23 +52,46 @@ const { data, is_main } = defineProps<{
 
     <div class="d-flex align-center ga-2 mt-4 w-100">
       <v-btn
-        rounded="lg"
-        color="primary"
-        elevation="0"
-        class="flex-grow-1"
-        size="large"
+          v-if="!cart.find(p => p.id === data.id)"
+          rounded="lg"
+          color="primary"
+          elevation="0"
+          class="flex-grow-1"
+          size="large"
+          @click="addProduct('cart', data)"
       >
         В корзину
       </v-btn>
       <v-btn
-        rounded="lg"
-        color="grey-light-2"
-        elevation="0"
-        size="large"
+          v-else
+          rounded="lg"
+          color="red"
+          elevation="0"
+          class="flex-grow-1"
+          size="large"
+          @click="removeProduct('cart', data.id)"
       >
-        <v-icon icon="mdi-heart-plus" color="grey-dark-1">
-
-        </v-icon>
+        Удалить
+      </v-btn>
+      <v-btn
+          v-if="!favorites.find(p => p.id === data.id)"
+          rounded="lg"
+          color="grey-light-2"
+          elevation="0"
+          size="large"
+          @click="addProduct('favorite', data)"
+      >
+        <v-icon icon="mdi-heart-plus" color="grey-dark-1"></v-icon>
+      </v-btn>
+      <v-btn
+          v-else
+          rounded="lg"
+          color="grey-light-2"
+          elevation="0"
+          size="large"
+          @click="removeProduct('favorite', data.id)"
+      >
+        <v-icon icon="mdi-heart-broken" color="primary"></v-icon>
       </v-btn>
     </div>
 
