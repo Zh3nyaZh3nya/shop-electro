@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add recommendations">
-      <change afterPath="$PROJECT_DIR$/frontend/components/UI/Card/Cart.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/cart.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/favorite.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/HeaderSearch.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/search.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/server/api/catalog/search.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Card/Product.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/recommendations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/server/api/catalog/[category]/[subcategory]/recommendations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/stores/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/stores/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +33,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Zh3nyaZh3nya"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Zh3nyaZh3nya&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -149,6 +143,8 @@
       <workItem from="1747631938491" duration="1851000" />
       <workItem from="1747663793195" duration="550000" />
       <workItem from="1747678758219" duration="10203000" />
+      <workItem from="1747727521323" duration="3152000" />
+      <workItem from="1747749264746" duration="1741000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />

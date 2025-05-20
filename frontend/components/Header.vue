@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import { useDisplay } from "vuetify";
-import {BaseItemProduct} from "./Admin/Display/Props";
-import Product from "./Admin/Display/Product.vue";
 
 interface IMenu {
   title: string,
@@ -134,15 +132,7 @@ onUnmounted(() => {
 
               <HeaderCategories />
             </v-menu>
-            <v-text-field
-                variant="outlined"
-                class="text-field text-field-header"
-                :hide-details="true"
-                placeholder="Холодильник"
-                append-inner-icon="mdi-magnify"
-                :width="mdAndUp ? '240px' : '100%'"
-                rounded="lg"
-            />
+            <HeaderSearch />
           </div>
           <div class="d-flex align-center ga-4" v-if="mdAndUp">
             <div v-if="cities && cities.length">
@@ -314,15 +304,7 @@ onUnmounted(() => {
                   class="logo"
               />
             </nuxt-link>
-            <v-text-field
-                variant="outlined"
-                class="text-field"
-                :hide-details="true"
-                placeholder="Холодильник"
-                append-inner-icon="mdi-magnify"
-                :width="mdAndUp ? '240px' : '100%'"
-                rounded="lg"
-            />
+            <HeaderSearch />
           </div>
         </v-col>
       </v-row>
