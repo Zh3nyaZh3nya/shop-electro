@@ -19,6 +19,7 @@ interface Cities {
 
 const { mdAndUp } = useDisplay()
 const { favorites, cart } = storeToRefs(useStore())
+const route = useRoute()
 
 const { cities } = defineProps<{
   cities: Cities[]
@@ -36,7 +37,7 @@ const menu: IMenu[] = [
       },
       {
         title: 'Сервис и поддержка',
-        link: ''
+        link: '/terms/support'
       },
       {
         title: 'Гарантия',
@@ -70,6 +71,11 @@ const menu: IMenu[] = [
     ]
   },
 ]
+const rule = (
+    route.path === '/' ||
+    (route.params.category === 'televizory' && !route.params.slug) ||
+    route.path === '/terms/support'
+)
 
 function changeCity(value: Cities) {
   selectCity.value = value
@@ -105,7 +111,7 @@ onUnmounted(() => {
           <div class="d-flex align-center ga-4" :class="{ 'w-100': !mdAndUp }">
             <nuxt-link to="/">
               <v-img
-                  :src="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug))
+                  :src="rule
                     ? (!isScrolledPastBanner ? '/logo-white.png' : '/logo.png')
                     : '/logo.png'"
                   width="60px"
@@ -164,14 +170,14 @@ onUnmounted(() => {
             </div>
             <v-divider
                 :vertical="true"
-                :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'white' : 'black'"
+                :color="rule ? 'white' : 'black'"
                 :thickness="2"
             />
             <div>
               <nuxt-link
                   to="/terms/payment-and-delivery"
                   class="d-flex align-center ga-2 link-hover cursor-pointer text-caption"
-                  :class="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'text-white' : 'text-black'"
+                  :class="rule ? 'text-white' : 'text-black'"
               >
                 <v-icon icon="mdi-truck-delivery-outline" />
                 Бесплатная доставка по Казахстану
@@ -179,14 +185,14 @@ onUnmounted(() => {
             </div>
             <v-divider
                 :vertical="true"
-                :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'white' : 'black'"
+                :color="rule ? 'white' : 'black'"
                 :thickness="2"
             />
             <div>
               <a
                   href="tel:87079169250"
                   class="link-hover text-caption font-weight-bold"
-                  :class="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'text-white' : 'text-black'"
+                  :class="rule ? 'text-white' : 'text-black'"
               >
                 8 (707) 916 92 50
               </a>
@@ -236,7 +242,7 @@ onUnmounted(() => {
                       class="text-body-2 text-uppercase link-hover d-flex align-center ga-1 header-link"
                       :class="[
                           isActive ? 'text-primary header-link-menu-active' :
-                          ($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? !isScrolledPastBanner ? 'text-white' : 'text-black' : 'text-black'
+                          rule ? !isScrolledPastBanner ? 'text-white' : 'text-black' : 'text-black'
                       ]"
                   >
                     <p>{{ item.title }}</p>
@@ -265,7 +271,7 @@ onUnmounted(() => {
                 <v-icon
                     icon="mdi-heart"
                     size="32px"
-                    :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? !isScrolledPastBanner ? 'grey' : 'grey' : 'grey'"
+                    :color="rule ? !isScrolledPastBanner ? 'grey' : 'grey' : 'grey'"
                 />
                 <div class="header-favorite-count-bg">
                   <p class="header-favorite-count text-caption">{{ favorites.length }}</p>
@@ -310,7 +316,7 @@ onUnmounted(() => {
         </v-col>
       </v-row>
       <v-divider
-          :color="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? !isScrolledPastBanner ? 'white' : 'black' : 'black'"
+          :color="rule ? !isScrolledPastBanner ? 'white' : 'black' : 'black'"
           class="mt-4"
           v-if="!isScrolledPastBanner"
       />

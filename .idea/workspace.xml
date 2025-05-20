@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: adaptive[1]">
-      <change afterPath="$PROJECT_DIR$/frontend/pages/terms/payment-and-delivery.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/payment-and-delivery/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/payment-and-delivery/kaspi.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/payment-and-delivery/mastercard.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/payment-and-delivery/visa-svgrepo-com.svg" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add payment and delivery">
+      <change afterPath="$PROJECT_DIR$/frontend/pages/terms/support.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/bg-support.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/public/support-img.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/styles/global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/HeaderCategories.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/HeaderCategories.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/UI/SliderImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/SliderImage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +146,7 @@
       <workItem from="1747678758219" duration="10203000" />
       <workItem from="1747727521323" duration="3152000" />
       <workItem from="1747749264746" duration="5537000" />
-      <workItem from="1747756774918" duration="3877000" />
+      <workItem from="1747756774918" duration="6728000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -401,7 +396,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747753901172</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="feat: add payment and delivery">
+      <option name="closed" value="true" />
+      <created>1747761824866</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1747761824866</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +433,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add create" />
     <MESSAGE value="feat: add create, new api method for get model's last id" />
     <MESSAGE value="feat: add info blocks, upload files for api" />
     <MESSAGE value="feat: add card for enums, small fxies" />
@@ -455,6 +457,7 @@
     <MESSAGE value="feat: add recommendations" />
     <MESSAGE value="feat: add search" />
     <MESSAGE value="feat: adaptive[1]" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adaptive[1]" />
+    <MESSAGE value="feat: add payment and delivery" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add payment and delivery" />
   </component>
 </project>

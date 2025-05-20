@@ -155,3 +155,19 @@ input[type=number] {
 .v-expansion-panel-title:hover > .v-expansion-panel-title__overlay {
   background: transparent !important;
 }
+
+.card-hover-shadow {
+  box-shadow: 0 0 0 hsla(0,0%,70.6%,0) !important;
+  transition: .3s;
+  cursor: pointer;
+  .card-hover-shadow-arrow {
+    transition: .3s;
+  }
+  &:hover {
+    box-shadow: 0 10px 35px hsla(0,0%,70.6%,.25) !important;
+    background-color: white !important;
+    .card-hover-shadow-arrow {
+      transform: translateX(5px);
+    }
+  }
+}
