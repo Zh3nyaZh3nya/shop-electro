@@ -221,6 +221,7 @@ const crumbs: IBreadcrumbs[] = [
                       elevation="0"
                       color="grey-light-4"
                       width="100%"
+                      to="/terms/warranty"
                   >
                     <v-icon icon="mdi-shield-half-full" color="grey" class="mb-1" />
                     <p class="text-caption text-grey text-center lh-normal">

@@ -41,7 +41,7 @@ const menu: IMenu[] = [
       },
       {
         title: 'Гарантия',
-        link: ''
+        link: '/terms/warranty'
       },
       {
         title: 'Вопросы и ответы',
@@ -49,7 +49,7 @@ const menu: IMenu[] = [
       },
       {
         title: 'Контакты',
-        link: ''
+        link: '/terms/contacts'
       },
     ]
   },

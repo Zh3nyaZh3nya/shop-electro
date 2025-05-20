@@ -20,11 +20,11 @@ const menuSecond: { title: string, link: string }[] = [
   },
   {
     title: 'Контакты',
-    link: '/'
+    link: '/terms/contacts'
   },
   {
     title: 'Гарантия',
-    link: '/'
+    link: '/terms/warranty'
   },
 ]
 </script>
