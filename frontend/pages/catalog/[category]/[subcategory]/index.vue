@@ -2,10 +2,14 @@
 import { useAsyncData } from "#app";
 import { useApi } from "~/composables/useApi";
 import { storeToRefs } from "pinia";
+import { useDisplay } from "vuetify";
 
 const route = useRoute()
 const store = useStore()
+const { mdAndUp } = useDisplay()
+
 const page = ref(1)
+const drawer = ref(false)
 const perPage = 12
 const banner: IBanner[] = [
   {
@@ -105,11 +109,18 @@ watch(filters, () => {
   <section v-if="$route.params.category === 'televizory'">
     <UIBanner :slides="banner" />
   </section>
-  <v-main  class="pl-0" :class="$route.params.category === 'televizory' ? 'pt-0' : ''">
+  <v-main  class="pl-0 pb-0" :class="$route.params.category === 'televizory' ? 'pt-0' : ''">
     <section>
       <v-container>
         <UIBreadcrumbs :crumbs="crumbs" />
-        <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory'">{{ categoriesData?.label || 'Категория' }}</h1>
+        <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory' && mdAndUp">{{ categoriesData?.label || 'Категория' }}</h1>
+        <div class="d-flex align-center justify-space-between" v-else>
+          <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory'">{{ categoriesData?.label || 'Категория' }}</h1>
+          <div class="d-flex align-center ga-2 cursor-pointer" @click="drawer = !drawer">
+            <v-icon icon="mdi-tune-variant" />
+            <p>Фильтры</p>
+          </div>
+        </div>
       </v-container>
     </section>
   </v-main>
@@ -124,6 +135,7 @@ watch(filters, () => {
     <UIFilters
         v-if="filtersData && filtersData?.data"
         v-model="filters"
+        v-model:drawer-value="drawer"
         :min-price="filtersData.data.minPrice"
         :max-price="filtersData.data.maxPrice"
     />

@@ -45,7 +45,7 @@ const crumbs: IBreadcrumbs[] = [
         indeterminate
     ></v-progress-circular>
   </v-overlay>
-  <v-main class="pl-0">
+  <v-main class="pl-0 pb-0">
     <v-container>
       <UIBreadcrumbs :crumbs="crumbs" />
       <h1 class="text-center text-secondary">Каталог</h1>
@@ -105,9 +105,9 @@ const crumbs: IBreadcrumbs[] = [
               :key="category.id"
               cols="12"
           >
-            <div class="d-flex justify-space-between align-center">
-              <p class="text-h5 font-weight-bold">{{ category.label }}</p>
-              <nuxt-link class="d-flex align-center text-primary text-h6" :to="`/catalog/${category.value}`">
+            <div class="d-flex flex-column flex-sm-row justify-space-between align-sm-center flex-wrap">
+              <p class="text-h6 text-sm-h5 font-weight-bold lh-normal">{{ category.label }}</p>
+              <nuxt-link class="d-flex align-center text-primary text-body-1 text-sm-h6" :to="`/catalog/${category.value}`">
                 Перейти в категорию
                 <v-icon icon="mdi-chevron-right" size="20" class="d-inline-block" />
               </nuxt-link>

@@ -64,7 +64,7 @@ const crumbs: IBreadcrumbs[] = [
   <section v-if="$route.params.category === 'televizory'">
     <UIBanner :slides="banner" />
   </section>
-  <v-main class="pl-0" :class="$route.params.category === 'televizory' ? 'pt-0' : ''">
+  <v-main class="pl-0 pb-0" :class="$route.params.category === 'televizory' ? 'pt-0' : ''">
     <section>
       <v-container>
         <UIBreadcrumbs :crumbs="crumbs" />
@@ -117,7 +117,7 @@ const crumbs: IBreadcrumbs[] = [
               :key="sub.id"
               cols="12"
           >
-            <div class="d-flex justify-space-between align-center mb-4">
+            <div class="d-flex flex-column flex-sm-row justify-space-between align-sm-center mb-4">
               <p class="text-h5">{{ sub.label }}</p>
               <nuxt-link class="d-flex align-center text-primary text-h6" :to="`/catalog/${categoriesData.value}/${sub.value}`">
                 Перейти в категорию

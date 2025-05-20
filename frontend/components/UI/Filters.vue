@@ -8,6 +8,7 @@ const { mdAndUp } = useDisplay()
 const props = defineProps<{
   minPrice: number
   maxPrice: number
+  drawerValue: boolean
   modelValue: {
     installment: boolean
     discount: boolean
@@ -22,12 +23,18 @@ const emit = defineEmits<{
     discount: boolean
     inStock: boolean
     priceRange: [number, number]
-  }): void
+  }): void,
+  (e: 'update:drawerValue', value: boolean): void
 }>()
 
 const isInstallment = ref<boolean>(props.modelValue.installment)
 const isDiscount = ref<boolean>(props.modelValue.discount)
 const isCount = ref<boolean>(props.modelValue.inStock)
+
+const localDrawer = computed({
+  get: () => props.drawerValue,
+  set: (val: boolean) => emit('update:drawerValue', val)
+})
 
 const prices = [props.minPrice, props.maxPrice]
 const rangePrice = ref<number[]>([...props.modelValue.priceRange])
@@ -115,13 +122,19 @@ watch([isInstallment, isDiscount, isCount, rangePrice], () => {
 
 <template>
   <v-navigation-drawer
-      class="position-relative filters"
-      style="height: 100%; top: 0;"
-      :style="{transform: !mdAndUp ? 'translateX(0px);' : 'translateX(-325px);'}"
+      v-model="localDrawer"
+      :temporary="!mdAndUp"
+      class="filters"
+      :class="mdAndUp ? 'position-relative' : ''"
+      :style="[mdAndUp ? 'height: 100%; top: 0;' : 'height: 100%; top: 0; padding-top: 80px; width: 100%;', localDrawer ? '' : 'transform: translateX(-100%) !important']"
+      location="left"
       width="325"
       color="grey-light-4"
   >
     <v-container>
+      <div class="d-flex align-center justify-end mb-4" v-if="!mdAndUp">
+        <v-icon icon="mdi-close" @click="localDrawer = !localDrawer" />
+      </div>
       <div class="d-flex align-center justify-space-between">
         <div class="d-flex align-center ga-2">
           <v-icon icon="mdi-tune-variant" size="20" />
@@ -239,8 +252,6 @@ watch([isInstallment, isDiscount, isCount, rangePrice], () => {
 
         </v-range-slider>
       </div>
-
-      <v-divider style="background: #afbbc680" class="mb-1"></v-divider>
 
     </v-container>
   </v-navigation-drawer>

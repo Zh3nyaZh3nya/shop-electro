@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
+import { useDisplay } from "vuetify";
 import { Navigation, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+
+const { mdAndUp } = useDisplay()
 
 const { images, is_main } = defineProps<{
   images: string[]
@@ -31,9 +34,10 @@ function scrollTo(index: number) {
         :speed="500"
         grab-cursor
         pagination
-        :allow-touch-move="false"
-        :simulate-touch="false"
+        :allow-touch-move="!mdAndUp"
+        :simulate-touch="!mdAndUp"
         :mousewheel="false"
+        :nested="true"
         class="card-swiper-images w-100"
         @swiper="swiperInstance = $event"
         @slideChange="activeIndex = swiperInstance.activeIndex"
@@ -64,6 +68,16 @@ function scrollTo(index: number) {
         >
         </div>
       </div>
+    </div>
+
+    <div class="card-swiper-click-zones" v-if="images?.length > 1">
+      <div
+          v-for="(slide, index) in images"
+          :key="'zone-' + index"
+          class="click-zone"
+          @click="scrollTo(index)"
+          :style="{ width: `${100 / images.length}%`, left: `${(100 / images.length) * index}%` }"
+      />
     </div>
   </div>
 </template>
@@ -113,6 +127,22 @@ function scrollTo(index: number) {
         margin-bottom: 0px;
       }
     }
+  }
+}
+
+.card-swiper-click-zones {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+
+  .click-zone {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    cursor: pointer;
   }
 }
 </style>

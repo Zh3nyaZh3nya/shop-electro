@@ -79,6 +79,9 @@ const {
           },
         }"
         class="UI-Slider UI-Slider__swiper position-relative w-100"
+        :touch-start-prevent-default="false"
+        :touch-start-force-prevent-default="false"
+        :touch-ratio=".5"
     >
       <swiper-slide
           v-for="(slide, index) in slides"

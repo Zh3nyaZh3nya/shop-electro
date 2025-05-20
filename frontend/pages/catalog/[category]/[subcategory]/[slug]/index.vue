@@ -276,12 +276,12 @@ const crumbs: IBreadcrumbs[] = [
                     <div
                         v-for="s in spec.specification"
                         :key="s.title"
-                        class="d-flex justify-space-between align-center text-h6 mb-2 px-16 font-weight-regular"
+                        class="d-flex justify-space-between align-center text-h6 mb-2 px-2 px-sm-16 font-weight-regular"
                     >
-                      <p>
+                      <p class="text-body-2 text-sm-body-1">
                         {{ s.title }}
                       </p>
-                      <p>
+                      <p class="text-body-2 text-sm-body-1">
                         {{ s.description }}
                       </p>
                     </div>
