@@ -34,7 +34,10 @@ const activeCategory = ref<Required<ICategory> | null>(
       </ul>
       <v-divider class="mt-4 mb-6"></v-divider>
       <div>
-        <nuxt-link class="d-flex align-center ga-2 link-hover cursor-pointer text-caption text-black">
+        <nuxt-link
+            to="/terms/payment-and-delivery"
+            class="d-flex align-center ga-2 link-hover cursor-pointer text-caption text-black"
+        >
           <v-icon icon="mdi-truck-delivery-outline" color="light-primary" />
           Бесплатная доставка по Казахстану
         </nuxt-link>

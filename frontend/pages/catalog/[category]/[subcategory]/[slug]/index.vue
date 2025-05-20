@@ -197,11 +197,12 @@ const crumbs: IBreadcrumbs[] = [
                     class="pr-1"
                 >
                   <v-card
-                      class="pa-8 d-flex flex-column align-center"
+                      class="pa-8 d-flex flex-column align-center link-hover"
                       rounded="lg"
                       elevation="0"
                       color="grey-light-4"
                       width="100%"
+                      to="/terms/payment-and-delivery"
                   >
                     <v-icon icon="mdi-truck-fast" color="grey" class="mb-1" />
                     <p class="text-caption text-grey text-center lh-normal">

@@ -2,7 +2,7 @@
 const menuFirst: { title: string, link: string }[] = [
   {
     title: 'Оплата и доставка',
-    link: '/'
+    link: '/terms/payment-and-delivery'
   },
   {
     title: 'Вопросы и ответы',

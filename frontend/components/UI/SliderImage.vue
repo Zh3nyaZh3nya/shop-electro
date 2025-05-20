@@ -76,6 +76,7 @@ function scrollTo(index: number) {
           :key="'zone-' + index"
           class="click-zone"
           @click="scrollTo(index)"
+          @mouseenter="scrollTo(index)"
           :style="{ width: `${100 / images.length}%`, left: `${(100 / images.length) * index}%` }"
       />
     </div>

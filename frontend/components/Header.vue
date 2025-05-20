@@ -32,7 +32,7 @@ const menu: IMenu[] = [
     menu: [
       {
         title: 'Оплата и доставка',
-        link: ''
+        link: '/terms/payment-and-delivery'
       },
       {
         title: 'Сервис и поддержка',
@@ -169,6 +169,7 @@ onUnmounted(() => {
             />
             <div>
               <nuxt-link
+                  to="/terms/payment-and-delivery"
                   class="d-flex align-center ga-2 link-hover cursor-pointer text-caption"
                   :class="($route.path === '/' || ($route.params.category === 'televizory' && !$route.params.slug)) ? 'text-white' : 'text-black'"
               >
