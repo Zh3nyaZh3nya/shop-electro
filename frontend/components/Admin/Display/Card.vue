@@ -110,11 +110,12 @@ function removeItem() {
     />
 
     <AdminFieldsMainBlock
-      v-model:title="title"
-      v-model:description="description"
-      v-model:active="active"
-      v-model:for-main-page="forMainPage"
-      :is_for_main_page="is_for_main_page"
+        v-if="title"
+        v-model:title="title"
+        v-model:description="description"
+        v-model:active="active"
+        v-model:for-main-page="forMainPage"
+        :is_for_main_page="is_for_main_page"
     >
       <template #default>
         <div class="d-flex justify-space-between w-100 ga-4">

@@ -35,7 +35,7 @@ const drawer = computed({
           <v-icon icon="mdi-chevron-left" size="32" color="grey" />
         </v-btn>
         <div>
-          <p class="text-h6 text-secondary font-weight-medium">SHOP-AUDIO</p>
+          <p class="text-h6 text-secondary font-weight-medium">SHOP-ELECTRO</p>
         </div>
         <div>
         </div>
