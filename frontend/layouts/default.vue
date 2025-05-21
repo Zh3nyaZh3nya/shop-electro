@@ -33,7 +33,7 @@ const { data: categoriesData, pending: categoriesPending } = await useAsyncData<
     <Header :cities="citiesData?.cities" />
     <MobileMenu v-if="!mdAndUp" />
     <NuxtPage />
-    <Footer />
+    <Footer :cities="citiesData?.cities" />
   </v-app>
 </template>
 

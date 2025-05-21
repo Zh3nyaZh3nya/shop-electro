@@ -2,21 +2,6 @@
 import { ref } from "vue"
 import { useDisplay } from "vuetify";
 
-interface IMenu {
-  title: string,
-  menu: {
-    title: string
-    link: string
-  }[]
-}
-
-interface Cities {
-  id: number
-  key: string
-  value: string
-  label: string
-}
-
 const { mdAndUp } = useDisplay()
 const { favorites, cart } = storeToRefs(useStore())
 const route = useRoute()

@@ -99,3 +99,19 @@ interface IMeta {
     perPage: number
     totalPages: number
 }
+
+interface IMenu {
+    title: string,
+    link?: string
+    menu?: {
+        title: string
+        link: string
+    }[]
+}
+
+interface Cities {
+    id: number
+    key: string
+    value: string
+    label: string
+}
