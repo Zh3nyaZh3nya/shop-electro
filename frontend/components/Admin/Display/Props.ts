@@ -63,7 +63,17 @@ export interface BaseItemEnum {
     }[]
 }
 
-export interface DisplayProps<T extends BaseItem | BaseItemEnum | BaseItemProduct = BaseItem> {
+export interface News {
+    id: string | number
+    image: File | string | null
+    active: boolean
+    title: string
+    slug: string
+    description: string
+    for_main_page?: boolean
+}
+
+export interface DisplayProps<T extends BaseItem | BaseItemEnum | BaseItemProduct | News = BaseItem> {
     action: 'create' | 'edit'
     is_for_main_page?: boolean
     isImage?: boolean
@@ -97,7 +107,7 @@ export const rules = {
     }
 }
 
-export type BaseEmitFn<T = BaseItem | BaseItemEnum | BaseItemProduct> = {
+export type BaseEmitFn<T = BaseItem | BaseItemEnum | BaseItemProduct | News> = {
     (e: 'updateData', value: T): void
     (e: 'remove', value: { id: string | number }): void
 }

@@ -44,10 +44,6 @@ const menu: IMenu[] = [
         link: '/terms/warranty'
       },
       {
-        title: 'Вопросы и ответы',
-        link: ''
-      },
-      {
         title: 'Контакты',
         link: '/terms/contacts'
       },
@@ -58,10 +54,6 @@ const menu: IMenu[] = [
     menu: [
       {
         title: 'Все акции',
-        link: ''
-      },
-      {
-        title: 'Весеннее обновление дома',
         link: ''
       },
       {

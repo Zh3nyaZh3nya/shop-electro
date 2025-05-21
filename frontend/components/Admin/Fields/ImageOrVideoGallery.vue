@@ -80,12 +80,12 @@ const inputRules = computed(() => {
 })
 
 watch(() => props.modelValue, (val) => {
-  if (val == null) {
+  if (!val || val === '') {
     localFiles.value = []
   } else if (Array.isArray(val)) {
-    localFiles.value = val
+    localFiles.value = val.filter(Boolean)
   } else {
-    localFiles.value = [val]
+    localFiles.value = [val].filter(Boolean)
   }
 
   dummyInput.value = null
@@ -177,6 +177,7 @@ watch(() => props.isOpenPanel, (val) => {
                 </template>
 
                 <v-btn
+                    v-if="localFiles"
                     icon
                     size="x-small"
                     class="position-absolute bg-transparent"

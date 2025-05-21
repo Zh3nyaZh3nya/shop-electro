@@ -7,7 +7,8 @@ type TypeDisplay =
     'card-enum-subcategory' | // если нужно добавить подкатегории
     'video' | // если нужно добавить видео
     'link' | // если нужно добавить ссылки
-    'product'
+    'product' |
+    'news'
 type AdminMenuItem =
     | {
     title: string
@@ -40,6 +41,12 @@ export const useAdminMenu = () => {
             title: 'Города',
             link: 'cities',
             type: ['card-enum'],
+        },
+        {
+            icon: 'mdi-percent-box-outline',
+            title: 'Акции',
+            link: 'content-promo',
+            type: ['news', "image", 'for-main-page'],
         },
         {
             title: 'Главная страница',

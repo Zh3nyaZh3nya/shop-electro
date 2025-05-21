@@ -198,6 +198,18 @@ definePageMeta({
               @remove="removeData"
           />
         </template>
+        <template v-if="pageType.includes('news')">
+          <AdminDisplayNews
+              :action="'edit'"
+              :item="pageEditData"
+              :is-image="pageType.includes('image')"
+              :is_video="pageType.includes('video')"
+              :is_for_main_page="pageType.includes('for-main-page')"
+              :is_link="pageType.includes('link')"
+              @update-data="editData"
+              @remove="removeData"
+          />
+        </template>
       </v-container>
     </section>
   </template>

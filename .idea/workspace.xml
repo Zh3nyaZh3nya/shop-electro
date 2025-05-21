@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add support page">
-      <change afterPath="$PROJECT_DIR$/frontend/pages/terms/contacts.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/terms/warranty.vue" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add warranty and contacts">
+      <change afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/News.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Display/Props.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Admin/Fields/ImageOrVideoGallery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Admin/Fields/ImageOrVideoGallery.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Footer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/[slug]/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/composables/useAdminMenu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/admin/[page]/edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/terms/payment-and-delivery.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/terms/payment-and-delivery.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,28 +63,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "H:/shop-electro/frontend/public/payment-and-delivery",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "H:\\shop-electro\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/shop-electro/frontend/public/payment-and-delivery&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;H:\\shop-electro\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "vue.recent.templates": [
-      "Vue Composition API Component"
+  &quot;keyToStringList&quot;: {
+    &quot;vue.recent.templates&quot;: [
+      &quot;Vue Composition API Component&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\shop-electro\frontend\public\payment-and-delivery" />
@@ -146,7 +150,10 @@
       <workItem from="1747678758219" duration="10203000" />
       <workItem from="1747727521323" duration="3152000" />
       <workItem from="1747749264746" duration="5537000" />
-      <workItem from="1747756774918" duration="7904000" />
+      <workItem from="1747756774918" duration="8707000" />
+      <workItem from="1747818958188" duration="18000" />
+      <workItem from="1747834174800" duration="22000" />
+      <workItem from="1747834658702" duration="2309000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -412,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747768598394</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="feat: add warranty and contacts">
+      <option name="closed" value="true" />
+      <created>1747769787934</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1747769787934</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +456,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add info blocks, upload files for api" />
     <MESSAGE value="feat: add card for enums, small fxies" />
     <MESSAGE value="feat: add brands" />
     <MESSAGE value="feat: add header, slider" />
@@ -466,6 +480,7 @@
     <MESSAGE value="feat: adaptive[1]" />
     <MESSAGE value="feat: add payment and delivery" />
     <MESSAGE value="feat: add support page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add support page" />
+    <MESSAGE value="feat: add warranty and contacts" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add warranty and contacts" />
   </component>
 </project>

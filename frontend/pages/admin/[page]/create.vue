@@ -154,6 +154,17 @@ definePageMeta({
               @update-data="createData"
           />
         </template>
+        <template v-if="pageType.includes('news')">
+          <AdminDisplayNews
+              :action="'create'"
+              :last_id="lastId?.value?.last_id"
+              :is_video="pageType.includes('video')"
+              :is-image="pageType.includes('image')"
+              :is_for_main_page="pageType.includes('for-main-page')"
+              :is_link="pageType.includes('link')"
+              @update-data="createData"
+          />
+        </template>
       </v-container>
     </section>
   </template>

@@ -5,19 +5,15 @@ const menuFirst: { title: string, link: string }[] = [
     link: '/terms/payment-and-delivery'
   },
   {
-    title: 'Вопросы и ответы',
-    link: '/'
-  },
-  {
     title: 'Рассрочка',
     link: '/'
   },
-]
-const menuSecond: { title: string, link: string }[] = [
   {
     title: 'Монтаж и настройка',
     link: '/'
   },
+]
+const menuSecond: { title: string, link: string }[] = [
   {
     title: 'Контакты',
     link: '/terms/contacts'
