@@ -113,9 +113,9 @@ watch(filters, () => {
     <section>
       <v-container>
         <UIBreadcrumbs :crumbs="crumbs" />
-        <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory' && mdAndUp">{{ categoriesData?.label || 'Категория' }}</h1>
+        <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory' && mdAndUp">{{ categoriesData?.category.label || 'Категория' }}</h1>
         <div class="d-flex align-center justify-space-between" v-else-if="!mdAndUp">
-          <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory'">{{ categoriesData?.label || 'Категория' }}</h1>
+          <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory'">{{ categoriesData?.category.label || 'Категория' }}</h1>
           <div class="d-flex align-center ga-2 cursor-pointer" @click="drawer = !drawer">
             <v-icon icon="mdi-tune-variant" />
             <p>Фильтры</p>
@@ -124,14 +124,7 @@ watch(filters, () => {
       </v-container>
     </section>
   </v-main>
-  <section
-      class="d-flex position-relative"
-      v-if="
-        categoriesData &&
-        categoriesData.category &&
-        categoriesData.subcategory
-      "
-  >
+  <section class="d-flex position-relative">
     <UIFilters
         v-if="filtersData && filtersData?.data"
         v-model="filters"

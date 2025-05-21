@@ -7,7 +7,7 @@
     "active": true,
     "video": null,
     "for_main_page": true,
-    "link": "/",
+    "link": "/catalog/krupnaya-bytovaya-tekhnika/stiralnye-mashiny",
     "link_external": false,
     "link_text": "Выбрать модели",
     "image": "/storage/main-technology/t-abt-1747162326142-1747162326153.webp"
@@ -20,7 +20,7 @@
     "active": true,
     "video": null,
     "for_main_page": true,
-    "link": "/",
+    "link": "/catalog/televizory/hqled",
     "link_external": false,
     "link_text": "Смотреть детали",
     "image": "/storage/main-technology/displey-hqled-1747162431759-1747162431765.webp"
@@ -33,7 +33,7 @@
     "active": true,
     "video": null,
     "for_main_page": true,
-    "link": "/",
+    "link": "/catalog/krupnaya-bytovaya-tekhnika/stiralnye-mashiny",
     "link_external": false,
     "link_text": "Выбрать модели",
     "image": "/storage/main-technology/tekhnologiya-antistain-1747162525366-1747162525373.webp"
@@ -46,23 +46,10 @@
     "active": true,
     "video": null,
     "for_main_page": true,
-    "link": "/",
+    "link": "/catalog/vstraivaemaya-tekhnika/dukhovye-shkafy",
     "link_external": false,
     "link_text": "Выбрать модели",
     "image": "/storage/main-technology/prigotovlenie-s-parom-1747162610830-1747162611152.webp"
-  },
-  {
-    "id": 5,
-    "title": "Таймер отключения",
-    "slug": "taymer-otklyucheniya",
-    "description": "Таймер автоматического отключения конфорок<div>по заданному времени с сенсорным управлением.</div>",
-    "active": true,
-    "video": null,
-    "for_main_page": true,
-    "link": "/",
-    "link_external": false,
-    "link_text": "Выбрать модели",
-    "image": "/storage/main-technology/taymer-otklyucheniya-1747162763638-1747162763952.webp"
   },
   {
     "id": 6,
@@ -72,7 +59,7 @@
     "active": true,
     "video": null,
     "for_main_page": true,
-    "link": "/",
+    "link": "/catalog/kompyuternaya-tekhnika/igrovye-noutbuki",
     "link_external": false,
     "link_text": "Выбрать модели",
     "image": "/storage/main-technology/noutbuki-thunderobot-1747162871749-1747162872073.webp"

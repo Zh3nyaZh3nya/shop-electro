@@ -32,7 +32,7 @@ const isDiscount = ref<boolean>(props.modelValue.discount)
 const isCount = ref<boolean>(props.modelValue.inStock)
 
 const localDrawer = computed({
-  get: () => props.drawerValue,
+  get: () => mdAndUp.value ? true : props.drawerValue,
   set: (val: boolean) => emit('update:drawerValue', val)
 })
 
@@ -126,7 +126,10 @@ watch([isInstallment, isDiscount, isCount, rangePrice], () => {
       :temporary="!mdAndUp"
       class="filters"
       :class="mdAndUp ? 'position-relative' : ''"
-      :style="[mdAndUp ? 'height: 100%; top: 0;' : 'height: 100%; top: 0; padding-top: 80px; width: 100%;', localDrawer ? '' : 'transform: translateX(-100%) !important']"
+      :style="[
+        mdAndUp ? 'height: 100%; top: 0;' : 'height: 100%; top: 0; padding-top: 80px; width: 100%;',
+        localDrawer ? '' : 'transform: translateX(-100%) !important'
+      ]"
       location="left"
       width="325"
       color="grey-light-4"

@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add menu with links for mobile menu">
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add new links for menus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/MobileMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/MobileMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/main-offer.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/main-offer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/assets/staticData/main-technology.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/assets/staticData/main-technology.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/UI/Filters.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/UI/Filters.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/storage/main-technology/taymer-otklyucheniya-1747162763638-1747162763952.webp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +149,7 @@
       <workItem from="1747756774918" duration="8707000" />
       <workItem from="1747818958188" duration="18000" />
       <workItem from="1747834174800" duration="22000" />
-      <workItem from="1747834658702" duration="11048000" />
+      <workItem from="1747834658702" duration="11803000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -452,7 +455,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747851644991</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="feat: add new links for menus">
+      <option name="closed" value="true" />
+      <created>1747851777278</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1747851777278</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +492,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add new display card, upload videos" />
     <MESSAGE value="feat: add banner &amp; small fixes" />
     <MESSAGE value="feat: add category, slider" />
     <MESSAGE value="feat: add catalog for header" />
@@ -506,6 +516,7 @@
     <MESSAGE value="feat: add promo" />
     <MESSAGE value="feat: add catalog for mobile menu" />
     <MESSAGE value="feat: add menu with links for mobile menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add menu with links for mobile menu" />
+    <MESSAGE value="feat: add new links for menus" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add new links for menus" />
   </component>
 </project>
