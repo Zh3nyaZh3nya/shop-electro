@@ -114,7 +114,7 @@ watch(filters, () => {
       <v-container>
         <UIBreadcrumbs :crumbs="crumbs" />
         <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory' && mdAndUp">{{ categoriesData?.label || 'Категория' }}</h1>
-        <div class="d-flex align-center justify-space-between" v-else>
+        <div class="d-flex align-center justify-space-between" v-else-if="!mdAndUp">
           <h1 class="text-center text-secondary" v-if="$route.params.category !== 'televizory'">{{ categoriesData?.label || 'Категория' }}</h1>
           <div class="d-flex align-center ga-2 cursor-pointer" @click="drawer = !drawer">
             <v-icon icon="mdi-tune-variant" />

@@ -100,6 +100,7 @@ onUnmounted(() => {
       :class="[
          (!isScrolledPastBanner ? 'bg-transparent' : 'bg-white')
       ]"
+      style="z-index: 1009"
   >
     <v-container :class="!isScrolledPastBanner ? 'pb-0' : ''">
       <v-row>

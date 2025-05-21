@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add new type news for admin panel">
-      <change afterPath="$PROJECT_DIR$/frontend/pages/content/promo/[id]/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/pages/content/promo/index.vue" afterDir="false" />
+    <list default="true" id="5504bb63-c53d-4bae-a958-28375ac5447d" name="Changes" comment="feat: add promo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/MobileMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/MobileMenu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pages/catalog/[category]/[subcategory]/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +147,7 @@
       <workItem from="1747756774918" duration="8707000" />
       <workItem from="1747818958188" duration="18000" />
       <workItem from="1747834174800" duration="22000" />
-      <workItem from="1747834658702" duration="4439000" />
+      <workItem from="1747834658702" duration="8872000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -430,7 +429,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747837136424</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="feat: add promo">
+      <option name="closed" value="true" />
+      <created>1747840534921</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1747840534921</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +466,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add brands" />
     <MESSAGE value="feat: add header, slider" />
     <MESSAGE value="feat: add mobile menu, display card-enum-subcategory" />
     <MESSAGE value="feat: add new display card, upload videos" />
@@ -484,6 +490,7 @@
     <MESSAGE value="feat: add support page" />
     <MESSAGE value="feat: add warranty and contacts" />
     <MESSAGE value="feat: add new type news for admin panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add new type news for admin panel" />
+    <MESSAGE value="feat: add promo" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add promo" />
   </component>
 </project>
