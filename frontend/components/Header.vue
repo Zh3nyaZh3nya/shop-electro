@@ -54,7 +54,7 @@ const menu: IMenu[] = [
     menu: [
       {
         title: 'Все акции',
-        link: ''
+        link: '/content/promo'
       },
       {
         title: 'Поврежденная упаковка',
@@ -63,11 +63,15 @@ const menu: IMenu[] = [
     ]
   },
 ]
-const rule = (
-    route.path === '/' ||
-    (route.params.category === 'televizory' && !route.params.slug) ||
-    route.path === '/terms/support'
-)
+const rule = computed(() => {
+  const path = route.path.replace(/\/$/, '')
+  const isHome = path === ''
+  const isTelevizoryMain = path === '/televizory' || (route.params.category === 'televizory' && !route.params.slug)
+  const isSupport = path === '/terms/support'
+
+  return isHome || isTelevizoryMain || isSupport
+})
+
 
 function changeCity(value: Cities) {
   selectCity.value = value

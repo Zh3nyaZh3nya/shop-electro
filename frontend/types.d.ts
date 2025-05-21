@@ -72,6 +72,14 @@ interface IProductCard {
     count: number
 }
 
+interface IPromo {
+    id: number
+    description: string
+    image: string
+    slug: string
+    title: string
+}
+
 interface IProduct extends IProductCard {
     description: string
     delivery: boolean
