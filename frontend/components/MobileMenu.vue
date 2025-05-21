@@ -50,7 +50,11 @@ const menuData: IMenu[] = [
       },
       {
         title: 'Поврежденная упаковка',
-        link: ''
+        link: '/content/promo/1'
+      },
+      {
+        title: 'Скидки на технику до 50%',
+        link: '/content/promo/2'
       },
     ]
   },
