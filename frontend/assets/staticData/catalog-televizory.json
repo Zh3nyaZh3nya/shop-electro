@@ -110,16 +110,16 @@
     "active": true,
     "for_main_page": true,
     "preview_images": [
-      "/storage/televizory/izobrazhenie2025-05-10153055306-1746873200406-1746873200425.webp",
-      "/storage/televizory/izobrazhenie2025-05-11234218961-1746989242279-1746989242619.webp",
-      "/storage/televizory/izobrazhenie2025-05-11234252556-1746989242279-1746989242745.webp"
+      "/uploads/televizory/izobrazhenie2025-05-10153055306-1746873200406-1746873200425.webp",
+      "/uploads/televizory/izobrazhenie2025-05-11234218961-1746989242279-1746989242619.webp",
+      "/uploads/televizory/izobrazhenie2025-05-11234252556-1746989242279-1746989242745.webp"
     ],
     "images": [
-      "/storage/televizory/izobrazhenie2025-05-10153110627-1746873200407-1746873200556.webp",
-      "/storage/televizory/izobrazhenie2025-05-11234304523-1746989242280-1746989242861.webp",
-      "/storage/televizory/izobrazhenie2025-05-11234329970-1746989242280-1746989242972.webp",
-      "/storage/televizory/izobrazhenie2025-05-11234349217-1746989242280-1746989243124.webp",
-      "/storage/televizory/izobrazhenie2025-05-11234410466-1746989242280-1746989243293.webp"
+      "/uploads/televizory/izobrazhenie2025-05-10153110627-1746873200407-1746873200556.webp",
+      "/uploads/televizory/izobrazhenie2025-05-11234304523-1746989242280-1746989242861.webp",
+      "/uploads/televizory/izobrazhenie2025-05-11234329970-1746989242280-1746989242972.webp",
+      "/uploads/televizory/izobrazhenie2025-05-11234349217-1746989242280-1746989243124.webp",
+      "/uploads/televizory/izobrazhenie2025-05-11234410466-1746989242280-1746989243293.webp"
     ],
     "reviews": [],
     "category": {
@@ -129,7 +129,7 @@
       "label": "Телевизоры",
       "active": true,
       "for_main_page": true,
-      "image": "/storage/categories/test-1746621791696-1746621792021.webp"
+      "image": "/uploads/categories/test-1746621791696-1746621792021.webp"
     },
     "subcategory": {
       "id": 1746622078524,
@@ -157,7 +157,7 @@
       "label": "Телевизоры",
       "active": true,
       "for_main_page": true,
-      "image": "/storage/categories/test-1746621791696-1746621792021.webp"
+      "image": "/uploads/categories/test-1746621791696-1746621792021.webp"
     },
     "subcategory": {
       "id": 1746622087020.2375,
@@ -285,20 +285,20 @@
     "active": true,
     "for_main_page": false,
     "preview_images": [
-      "/storage/televizory/izobrazhenie2025-05-12211904068-1747067189967-1747067190323.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212039578-1747067189968-1747067190505.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212051058-1747067189968-1747067190544.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212103288-1747067189968-1747067190602.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212113310-1747067189968-1747067190644.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212125431-1747067189968-1747067190697.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212147097-1747067189968-1747067190734.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212200469-1747067189969-1747067190800.webp"
+      "/uploads/televizory/izobrazhenie2025-05-12211904068-1747067189967-1747067190323.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212039578-1747067189968-1747067190505.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212051058-1747067189968-1747067190544.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212103288-1747067189968-1747067190602.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212113310-1747067189968-1747067190644.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212125431-1747067189968-1747067190697.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212147097-1747067189968-1747067190734.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212200469-1747067189969-1747067190800.webp"
     ],
     "images": [
-      "/storage/televizory/izobrazhenie2025-05-12212229018-1747067189969-1747067190856.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212240424-1747067189969-1747067190981.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212302014-1747067189969-1747067191100.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212319565-1747067189969-1747067191274.webp"
+      "/uploads/televizory/izobrazhenie2025-05-12212229018-1747067189969-1747067190856.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212240424-1747067189969-1747067190981.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212302014-1747067189969-1747067191100.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212319565-1747067189969-1747067191274.webp"
     ],
     "reviews": []
   },
@@ -320,7 +320,7 @@
       "label": "Телевизоры",
       "active": true,
       "for_main_page": true,
-      "image": "/storage/categories/test-1746621791696-1746621792021.webp"
+      "image": "/uploads/categories/test-1746621791696-1746621792021.webp"
     },
     "subcategory": {
       "id": 1746622094872.0667,
@@ -405,23 +405,23 @@
     "active": true,
     "for_main_page": true,
     "preview_images": [
-      "/storage/televizory/izobrazhenie2025-05-12212722068-1747067606125-1747067606469.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212736881-1747067606126-1747067606574.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212746200-1747067606126-1747067606647.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212755449-1747067606126-1747067606726.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212804827-1747067606126-1747067606781.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212815010-1747067606127-1747067606828.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212827722-1747067606127-1747067606880.webp",
-      "/storage/televizory/izobrazhenie2025-05-12212837568-1747067606127-1747067606941.webp"
+      "/uploads/televizory/izobrazhenie2025-05-12212722068-1747067606125-1747067606469.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212736881-1747067606126-1747067606574.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212746200-1747067606126-1747067606647.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212755449-1747067606126-1747067606726.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212804827-1747067606126-1747067606781.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212815010-1747067606127-1747067606828.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212827722-1747067606127-1747067606880.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12212837568-1747067606127-1747067606941.webp"
     ],
     "images": [
-      "/storage/televizory/izobrazhenie2025-05-12212957989-1747067606127-1747067606981.webp",
-      "/storage/televizory/izobrazhenie2025-05-12213013177-1747067606127-1747067607150.webp",
-      "/storage/televizory/izobrazhenie2025-05-12213026025-1747067606128-1747067607324.webp",
-      "/storage/televizory/izobrazhenie2025-05-12213037005-1747067606128-1747067607493.webp",
-      "/storage/televizory/izobrazhenie2025-05-12213100160-1747067606128-1747067607637.webp",
-      "/storage/televizory/izobrazhenie2025-05-12213114604-1747067606128-1747067607669.webp",
-      "/storage/televizory/izobrazhenie2025-05-12213146887-1747067606128-1747067607758.webp"
+      "/uploads/televizory/izobrazhenie2025-05-12212957989-1747067606127-1747067606981.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12213013177-1747067606127-1747067607150.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12213026025-1747067606128-1747067607324.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12213037005-1747067606128-1747067607493.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12213100160-1747067606128-1747067607637.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12213114604-1747067606128-1747067607669.webp",
+      "/uploads/televizory/izobrazhenie2025-05-12213146887-1747067606128-1747067607758.webp"
     ],
     "reviews": []
   },
@@ -443,7 +443,7 @@
       "label": "Телевизоры",
       "active": true,
       "for_main_page": true,
-      "image": "/storage/categories/test-1746621791696-1746621792021.webp"
+      "image": "/uploads/categories/test-1746621791696-1746621792021.webp"
     },
     "subcategory": {
       "id": 1746622078524,
@@ -503,24 +503,24 @@
     "active": true,
     "for_main_page": false,
     "preview_images": [
-      "/storage/catalog-televizory/izobrazhenie2025-05-17002942384-1747424128119-1747424128462.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003111583-1747424128120-1747424128560.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003125855-1747424128120-1747424128611.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003142422-1747424128120-1747424128656.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003154798-1747424128120-1747424128712.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003211476-1747424128120-1747424128754.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003248752-1747424128121-1747424128789.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003305088-1747424128121-1747424128887.webp"
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17002942384-1747424128119-1747424128462.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003111583-1747424128120-1747424128560.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003125855-1747424128120-1747424128611.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003142422-1747424128120-1747424128656.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003154798-1747424128120-1747424128712.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003211476-1747424128120-1747424128754.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003248752-1747424128121-1747424128789.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003305088-1747424128121-1747424128887.webp"
     ],
     "images": [
-      "/storage/catalog-televizory/izobrazhenie2025-05-17002945304-1747424128121-1747424128988.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003116087-1747424128121-1747424129065.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003127805-1747424128121-1747424129117.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003143927-1747424128121-1747424129164.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003157275-1747424128122-1747424129218.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003209457-1747424128122-1747424129264.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003250810-1747424128122-1747424129302.webp",
-      "/storage/catalog-televizory/izobrazhenie2025-05-17003302742-1747424128122-1747424129396.webp"
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17002945304-1747424128121-1747424128988.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003116087-1747424128121-1747424129065.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003127805-1747424128121-1747424129117.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003143927-1747424128121-1747424129164.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003157275-1747424128122-1747424129218.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003209457-1747424128122-1747424129264.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003250810-1747424128122-1747424129302.webp",
+      "/uploads/catalog-televizory/izobrazhenie2025-05-17003302742-1747424128122-1747424129396.webp"
     ],
     "reviews": []
   }

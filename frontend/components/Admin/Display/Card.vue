@@ -110,7 +110,7 @@ function removeItem() {
     />
 
     <AdminFieldsMainBlock
-        v-if="title"
+        v-if="action === 'edit' ? title : true"
         v-model:title="title"
         v-model:description="description"
         v-model:active="active"

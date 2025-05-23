@@ -35,7 +35,12 @@ export default defineEventHandler(async (event) => {
         if (Array.isArray(item.videos)) allPaths.push(...item.videos)
 
         for (const path of allPaths) {
-            const absolutePath = resolve('public', path.replace(/^\/+/, ''))
+            const UPLOADS_DIR = process.env.NUXT_UPLOADS_DIR
+                ? resolve(process.cwd(), process.env.NUXT_UPLOADS_DIR)
+                : resolve(process.cwd(), 'uploads')
+            const relativePath = path.replace(/^\/?uploads\/?/, '')
+            const absolutePath = join(UPLOADS_DIR, relativePath)
+
             try {
                 await unlink(absolutePath)
             } catch (err) {

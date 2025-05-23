@@ -36,7 +36,7 @@
         "active": true
       }
     ],
-    "image": "/storage/categories/test-1746621791696-1746621792021.webp"
+    "image": "/uploads/categories/test-1746621791696-1746621792021.webp"
   },
   {
     "id": 2,
@@ -75,7 +75,7 @@
         "active": true
       }
     ],
-    "image": "/storage/categories/kompyuternaya-tekhnika-1746623203120-1746623203429.webp"
+    "image": "/uploads/categories/kompyuternaya-tekhnika-1746623203120-1746623203429.webp"
   },
   {
     "id": 3,
@@ -107,7 +107,7 @@
         "active": true
       }
     ],
-    "image": "/storage/categories/krupnaya-bytovaya-tekhnika-1746623252631-1746623252945.webp"
+    "image": "/uploads/categories/krupnaya-bytovaya-tekhnika-1746623252631-1746623252945.webp"
   },
   {
     "id": 4,
@@ -139,7 +139,7 @@
         "active": true
       }
     ],
-    "image": "/storage/categories/vstraivaemaya-tekhnika-1746623382311-1746623382627.webp"
+    "image": "/uploads/categories/vstraivaemaya-tekhnika-1746623382311-1746623382627.webp"
   },
   {
     "id": 5,
@@ -185,7 +185,7 @@
         "active": true
       }
     ],
-    "image": "/storage/categories/malaya-bytovaya-tekhnika-1746623559680-1746623560001.webp"
+    "image": "/uploads/categories/malaya-bytovaya-tekhnika-1746623559680-1746623560001.webp"
   },
   {
     "id": 6,
@@ -210,6 +210,6 @@
         "active": true
       }
     ],
-    "image": "/storage/categories/klimaticheskaya-tekhnika-1746623599822-1746623599829.webp"
+    "image": "/uploads/categories/klimaticheskaya-tekhnika-1746623599822-1746623599829.webp"
   }
 ]

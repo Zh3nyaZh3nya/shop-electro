@@ -137,11 +137,12 @@ watchEffect(() => {
     />
 
     <AdminFieldsMainBlock
-      v-model:title="label"
-      v-model:active="active"
-      v-model:for-main-page="forMainPage"
-      :is_for_main_page="is_for_main_page"
-      :is_description="false"
+        v-if="action === 'edit' ? label : true"
+        v-model:title="label"
+        v-model:active="active"
+        v-model:for-main-page="forMainPage"
+        :is_for_main_page="is_for_main_page"
+        :is_description="false"
     >
       <template #beforeSwitches>
         <div v-if="is_subcategory">

@@ -11,7 +11,11 @@ export default defineEventHandler(async (event) => {
     requireAdmin(event)
 
     const { model } = event.context.params as { model: string }
-    const uploadDir = resolve('public/storage', model)
+    const UPLOADS_DIR = process.env.NUXT_UPLOADS_DIR
+        ? resolve(process.cwd(), process.env.NUXT_UPLOADS_DIR)
+        : resolve(process.cwd(), 'uploads')
+
+    const uploadDir = join(UPLOADS_DIR, model)
     await mkdir(uploadDir, { recursive: true })
 
     const fields: Record<string, any> = {}
@@ -69,7 +73,7 @@ export default defineEventHandler(async (event) => {
             await writeFile(saveTo, buffer)
         }
 
-        const filePath = `/storage/${model}/${basename(saveTo)}`
+        const filePath = `/uploads/${model}/${basename(saveTo)}`
         const baseField = fieldname.replace(/\[\]$/, '')
 
         if (!fileGroups[baseField]) fileGroups[baseField] = []
@@ -99,11 +103,9 @@ export default defineEventHandler(async (event) => {
             ...fields,
         }
 
-        // image/video conflict
         if ('video' in fileGroups && 'image' in updated) updated.image = null
         if ('image' in fileGroups && 'video' in updated) updated.video = null
 
-        // apply uploaded files
         for (const [key, paths] of Object.entries(fileGroups)) {
             const cleaned = paths.filter(p => typeof p === 'string' && p.trim())
 
@@ -117,7 +119,6 @@ export default defineEventHandler(async (event) => {
             }
         }
 
-        // final cleanup for known media arrays
         const mediaFields = ['preview_images', 'images', 'reviews']
         for (const key of mediaFields) {
             if (Array.isArray(updated[key])) {

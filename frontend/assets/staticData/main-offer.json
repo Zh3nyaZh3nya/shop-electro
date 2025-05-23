@@ -9,7 +9,7 @@
     "link": "/catalog/klimaticheskaya-tekhnika/konditsionery",
     "link_external": false,
     "link_text": "Перейти к выбору",
-    "image": "/storage/main-offer/bolshe-chem-komfort-i-prokhlada-1746712959446-1746712959779.webp"
+    "image": "/uploads/main-offer/bolshe-chem-komfort-i-prokhlada-1746712959446-1746712959779.webp"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "link": "/content/promo/1",
     "link_external": false,
     "link_text": "Перейти к выбору",
-    "image": "/storage/main-offer/povrezhdennaya-upakovka-1746713102430-1746713102441.webp"
+    "image": "/uploads/main-offer/povrezhdennaya-upakovka-1746713102430-1746713102441.webp"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "link": "Выбери свой",
     "link_external": false,
     "link_text": "Подробнее",
-    "image": "/storage/main-offer/pokupayte-v-rassrochku-1746713186110-1746713186424.webp"
+    "image": "/uploads/main-offer/pokupayte-v-rassrochku-1746713186110-1746713186424.webp"
   },
   {
     "id": 4,
@@ -45,6 +45,6 @@
     "link": "/catalog/televizory/oled",
     "link_external": false,
     "link_text": "Выбери свой",
-    "image": "/storage/main-offer/televizory-oled-1746713236830-1746713237149.webp"
+    "image": "/uploads/main-offer/televizory-oled-1746713236830-1746713237149.webp"
   }
 ]

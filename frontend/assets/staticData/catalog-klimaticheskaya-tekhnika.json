@@ -17,7 +17,7 @@
       "label": "Климатическая техника",
       "active": true,
       "for_main_page": true,
-      "image": "/storage/categories/klimaticheskaya-tekhnika-1746623599822-1746623599829.webp"
+      "image": "/uploads/categories/klimaticheskaya-tekhnika-1746623599822-1746623599829.webp"
     },
     "subcategory": {
       "id": 1746623564136,
@@ -91,17 +91,17 @@
     "active": true,
     "for_main_page": false,
     "preview_images": [
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231529637-1747073869953-1747073870289.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231541882-1747073869953-1747073870317.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231553163-1747073869953-1747073870352.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231605109-1747073869953-1747073870402.webp"
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231529637-1747073869953-1747073870289.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231541882-1747073869953-1747073870317.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231553163-1747073869953-1747073870352.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231605109-1747073869953-1747073870402.webp"
     ],
     "images": [
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231531316-1747073869954-1747073870544.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231543586-1747073869954-1747073870573.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231554363-1747073869954-1747073870607.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231606868-1747073869954-1747073870656.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231620287-1747073869954-1747073870807.webp"
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231531316-1747073869954-1747073870544.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231543586-1747073869954-1747073870573.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231554363-1747073869954-1747073870607.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231606868-1747073869954-1747073870656.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12231620287-1747073869954-1747073870807.webp"
     ],
     "reviews": []
   },
@@ -123,7 +123,7 @@
       "label": "Климатическая техника",
       "active": true,
       "for_main_page": true,
-      "image": "/storage/categories/klimaticheskaya-tekhnika-1746623599822-1746623599829.webp"
+      "image": "/uploads/categories/klimaticheskaya-tekhnika-1746623599822-1746623599829.webp"
     },
     "subcategory": {
       "id": 1746623584878.689,
@@ -194,16 +194,16 @@
     "active": true,
     "for_main_page": false,
     "preview_images": [
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232010607-1747074124267-1747074124587.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232024119-1747074124268-1747074124964.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232040797-1747074124268-1747074125318.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232054721-1747074124268-1747074125634.webp"
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232010607-1747074124267-1747074124587.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232024119-1747074124268-1747074124964.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232040797-1747074124268-1747074125318.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232054721-1747074124268-1747074125634.webp"
     ],
     "images": [
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232013952-1747074124268-1747074125886.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232026249-1747074124268-1747074126225.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232043124-1747074124269-1747074126585.webp",
-      "/storage/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232052511-1747074124269-1747074126926.webp"
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232013952-1747074124268-1747074125886.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232026249-1747074124268-1747074126225.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232043124-1747074124269-1747074126585.webp",
+      "/uploads/klimaticheskaya-tekhnika/izobrazhenie2025-05-12232052511-1747074124269-1747074126926.webp"
     ],
     "reviews": []
   }

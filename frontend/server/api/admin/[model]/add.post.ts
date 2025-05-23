@@ -11,7 +11,11 @@ export default defineEventHandler(async (event) => {
     requireAdmin(event)
 
     const { model } = event.context.params as { model: string }
-    const uploadDir = resolve('public/storage', model)
+    const UPLOADS_DIR = process.env.NUXT_UPLOADS_DIR
+        ? resolve(process.cwd(), process.env.NUXT_UPLOADS_DIR)
+        : resolve(process.cwd(), 'uploads')
+
+    const uploadDir = join(UPLOADS_DIR, model)
     await mkdir(uploadDir, { recursive: true })
 
     const fields: Record<string, any> = {}
@@ -70,23 +74,25 @@ export default defineEventHandler(async (event) => {
 
         if (!isImage && !isVideo) continue
 
-        let finalFilename = `${nameWithoutExt}-${timestamp}`
-        let saveTo: string
+        const finalFilename = `${nameWithoutExt}-${timestamp}.${isImage ? 'webp' : ext}`
+        const saveTo = join(uploadDir, finalFilename)
 
-        if (isImage) {
-            finalFilename += '.webp'
-            saveTo = join(uploadDir, finalFilename)
-            await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
-        } else {
-            finalFilename += `.${ext}`
-            saveTo = join(uploadDir, finalFilename)
-            await writeFile(saveTo, buffer)
+        try {
+            if (isImage) {
+                await sharp(buffer).webp({ quality: 80 }).toFile(saveTo)
+            } else {
+                await writeFile(saveTo, buffer)
+            }
+            console.log('✅ Файл сохранён:', saveTo)
+        } catch (err) {
+            console.error(`❌ Ошибка сохранения файла ${filename}:`, err)
+            continue
         }
 
-        const webPath = `/storage/${model}/${finalFilename}`
-
-        if (!groupedPaths[fieldname]) groupedPaths[fieldname] = []
-        groupedPaths[fieldname].push(webPath)
+        const webPath = `/uploads/${model}/${finalFilename}`
+        const key = fieldname.replace(/\[\]$/, '')
+        if (!groupedPaths[key]) groupedPaths[key] = []
+        groupedPaths[key].push(webPath)
     }
 
     const dataPath = resolve('assets/staticData', `${model}.json`)
@@ -108,9 +114,8 @@ export default defineEventHandler(async (event) => {
     }
 
     for (const [field, paths] of Object.entries(groupedPaths)) {
-        const key = field.replace(/\[\]$/, '')
         const cleaned = paths.filter(p => typeof p === 'string' && p.trim())
-        newItem[key] = multipleFields.includes(key)
+        newItem[field] = multipleFields.includes(field)
             ? cleaned
             : (cleaned.length === 1 ? cleaned[0] : cleaned)
     }
