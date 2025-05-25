@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { pluralize } from "~/utils/pluralize";
 
-const { cart } = storeToRefs(useStore())
+const { cart, order } = storeToRefs(useStore())
+const { makeOrder } = useStore()
 
 const crumbs: IBreadcrumbs[] = [
   {
@@ -15,10 +16,11 @@ const crumbs: IBreadcrumbs[] = [
     disabled: true,
   }
 ]
+
 </script>
 
 <template>
-  <v-main class="bg-grey-light-4">
+  <v-main class="bg-grey-light-4 cart">
     <section>
       <v-container>
         <UIBreadcrumbs :crumbs="crumbs" />
@@ -96,7 +98,43 @@ const crumbs: IBreadcrumbs[] = [
                 ).toLocaleString('ru-RU')
               }} ₸</p>
           </div>
+
+          <div class="d-flex justify-end mt-4">
+            <v-btn
+                @click="makeOrder"
+                color="primary"
+                elevation="0"
+                size="large"
+            >
+              Оформить заказ
+            </v-btn>
+          </div>
         </v-sheet>
+      </v-container>
+    </section>
+    <section v-else-if="order">
+      <v-container>
+        <v-container>
+          <v-sheet
+              rounded="lg"
+              class="pa-10 text-h6 text-center text-secondary"
+              elevation="0"
+          >
+            <p class="text-h5 font-weight-medium mb-2">Спасибо за заказ!</p>
+            <p class="font-weight-regular lh-normal">Мы получили ваш заказ и уже начали его обработку. В ближайшее время наш менеджер свяжется с вами для подтверждения деталей.</p>
+            <p class="font-weight-regular lh-normal">Пожалуйста, не отключайте телефон — мы хотим доставить ваш заказ как можно скорее.</p>
+            <v-btn
+                @click="order = !order"
+                class="mt-8"
+                color="primary"
+                size="large"
+                elevation="0"
+                rounded="lg"
+            >
+              Перейти в корзину
+            </v-btn>
+          </v-sheet>
+        </v-container>
       </v-container>
     </section>
     <section v-else>
@@ -123,6 +161,5 @@ const crumbs: IBreadcrumbs[] = [
   </v-main>
 </template>
 
-<style scoped lang="scss">
-
+<style lang="scss">
 </style>

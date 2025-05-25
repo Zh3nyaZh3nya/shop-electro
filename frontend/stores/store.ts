@@ -11,6 +11,7 @@ export const useStore = defineStore('store', () => {
 
     const favorites = ref<IProductCard[]>(loadFromLocalStorage(FAVORITE_KEY))
     const cart = ref<IProductCard[]>(loadFromLocalStorage(CART_KEY))
+    const order = ref<boolean>(false)
 
     async function fetchCategories(isMain?: boolean) {
         if (!categories.value.length || !categoriesMain.value.length) {
@@ -43,6 +44,13 @@ export const useStore = defineStore('store', () => {
         cart.value.find(i => i.id === productId).count_cart = count
     }
 
+    function makeOrder() {
+        if (!cart.value.length) return
+
+        order.value = true
+        cart.value = []
+    }
+
     watch(favorites, (val) => saveToLocalStorage(FAVORITE_KEY, val), { deep: true })
     watch(cart, (val) => saveToLocalStorage(CART_KEY, val), { deep: true })
 
@@ -51,11 +59,13 @@ export const useStore = defineStore('store', () => {
         categoriesMain,
         favorites,
         cart,
+        order,
 
         fetchCategories,
         addProduct,
         removeProduct,
-        updateCountProduct
+        updateCountProduct,
+        makeOrder
     }
 })
 
